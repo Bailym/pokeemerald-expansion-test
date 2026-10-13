@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build ROM",
+            "type": "shell",
+            "command": "make -j$(nproc)",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": ["relative", "${workspaceFolder}"]
+            },
+            "presentation": {
+                "reveal": "always",
+                "clear": true
+            }
+        },
+        {
+            "label": "Run in mGBA",
+            "type": "shell",
+            "command": "rom=$(wslpath -w \"${workspaceFolder}/pokeemerald.gba\") && cd /mnt/c && cmd.exe /c start \"\" \"C:\\Program Files\\mGBA\\mGBA.exe\" \"$rom\"",
+            "dependsOn": "Build ROM",
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "make clean",
+            "problemMatcher": []
+        }
+    ]
+}
