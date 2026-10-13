@@ -73,5 +73,11 @@ Follow vanilla's naming so generated constants read consistently:
 - No `_Frlg` suffix; that marks FireRed/LeafGreen maps only.
 - Renaming a map also means updating its layout, constants, and any references (e.g. the new-game spawn point).
 
+### Testing approach (this hack)
+Use TDD (failing test first, then implement) where it's straightforward and worthwhile; don't force it otherwise.
+- Good fit: battle mechanics (moves, abilities, items, config changes) via `SINGLE_BATTLE_TEST`/`DOUBLE_BATTLE_TEST`, C logic via `TEST`, script commands via `RUN_OVERWORLD_SCRIPT`.
+- Poor fit, test manually in mGBA instead (R+Start opens the debug menu): maps, layouts, warps, NPC placement, graphics/UI, and map scripts with dialogue — the test runner doesn't load maps or simulate input.
+- Iterate with `make check TESTS="..."`; run the full `make check` before committing mechanic changes.
+
 ## Contributing upstream
 PRs to RHH target `master` only for bug fixes present on master, docs-only, or tests-only changes; everything else targets `upcoming` (`CONTRIBUTING.md`). Version migration scripts for downstream hacks are in `migration_scripts/`.
