@@ -9325,14 +9325,14 @@
       "layout_version": "frlg"
     },
     {
-      "id": "LAYOUT_MY_TEST_MAP",
-      "name": "MyTestMap_Layout",
+      "id": "LAYOUT_TEST_TOWN",
+      "name": "TestTown_Layout",
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/MyTestMap/border.bin",
-      "blockdata_filepath": "data/layouts/MyTestMap/map.bin"
+      "border_filepath": "data/layouts/TestTown/border.bin",
+      "blockdata_filepath": "data/layouts/TestTown/map.bin"
     }
   ]
 }
