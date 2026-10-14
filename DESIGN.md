@@ -22,14 +22,21 @@
 ## Characters
 
 - Player: from a mining family.
+- Parent: at home in the village; the classic parent who heals your team and sends you off.
 - Grandparent: an old miner who knew the legends, passed away before the game starts. Leaves the player a journal of legends and mine maps that reveals story locations as the game goes on.
-- Rival: a trainer sponsored by the corporation as the PR face of its gym challenge. Starts on the corporation's side and changes as the truth comes out.
-- Professor: a folklore scholar who studies how Pokémon shaped Cornish legends; the link between myth and science. Has a lab in Truro, but visits the player's village (researching the grandparent's legends) and gives the player their starter there.
-- Corporation leader: a polished outside CEO who sees Cornwall as a resource.
+- Rival: a trainer sponsored by the corporation as the PR face of its gym challenge.
+  - A media darling: polished, confident, always on camera, and fully believes the corporation's message.
+  - Turns against the corporation when one of their Pokémon is harmed or taken by its experiments, and the grandparent's journal makes the legends click.
+- Professor: a folklore scholar who studies how Pokémon shaped Cornish legends; the link between myth and science.
+  - An old friend of the grandparent, which is why they visit the village and give the player their starter. Has a lab in Truro.
+  - Secretly also the Champion at Land's End (see Gyms and League).
+- Corporation leader: an outside CEO who sees Cornwall as a resource. A charming visionary who gives inspiring speeches, but is driven by wanting the legendary's power for themselves.
 
 ## Corporation
 
 - Public image: heritage revival ("bringing the mines home", local pride) combined with green energy (lithium and rare metals for a clean future).
+- Also sponsors the Pokémon League.
+- Field operations: a uniformed security division of grunts, led by 2–3 admins.
 
 ## Towns and Routes
 
@@ -59,6 +66,7 @@
 | Tintagel | Dragon | |
 
 - Order: Truro's gym comes early-middle (around badge 3 or 4). The rest of the order is open.
+- Champion: the professor. An ageing Champion who still holds the title, and whose final match is against the player. Can't openly act against the corporation because the League is officially neutral and the corporation sponsors it.
 
 ## Pokémon
 
@@ -76,6 +84,7 @@
 - How each of the other five leaders resists the corporation.
 - Final region name.
 - The corporation's name and look.
-- The CEO's name and personality.
+- Names for the rival, professor, CEO, and admins.
+- Elite Four members and types.
 - Which badges or story events unlock each section of Bodmin Moor.
 - Which starter Pokémon are offered.
