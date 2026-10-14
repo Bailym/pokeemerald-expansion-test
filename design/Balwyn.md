@@ -55,11 +55,15 @@
 ## Characters
 
 - Mum: at home; sets the scene in the morning, heals the player's team, and gives them the journal at the kitchen table.
-- Cottage (red roof): a retired miner who knew the grandparent. Keeper of the legends, suspicious of Lumen.
-- Neighbour's house (blue roof): a young family. The dad is out of work and hopeful about Lumen's jobs, and the kid is excited.
+- Cottage (red roof): Old Jacca, a retired miner. He worked Wheal Gwyn with Grampy forty years ago and heard the Knockers tapping down there. Keeper of the legends, against reopening the mine ("some things should stay asleep").
+- Neighbour's house (blue roof): Treve, out of work since the last mine shut, first in the queue for Lumen's jobs rather than moving up-country. His daughter Wenna is a Nova fan with a Pawmi plushie she wants signed.
 - Professor Kelyn (visiting): sceptical of Lumen. Gives the starter, Pokédex, and Poké Balls, then returns to Truro.
 - Nova and Lumen's PR team (visiting for the opening). A hi-vis grunt redirects the player to the event, and grunts stay posted at Wheal Gwyn afterwards.
-- Sprites: vanilla stand-ins for Nova, Kelyn, and the grunts until custom art exists.
+- The Knocker's Arms: Morwenna, the landlady, behind the bar. She explains the pub's name and the miners' custom of leaving pasty crust for the Knockers. A regular at the bar tells how his granfer emigrated to Australia when the mines shut (the "Cousin Jacks"), and how the young now leave for up-country.
+- Sprites: vanilla Emerald stand-ins (FireRed sprites are invisible in Emerald builds).
+  - Old Jacca: `OLD_MAN`. Treve: `MAN_3`. Wenna: `LITTLE_GIRL`. Morwenna: `WOMAN_2`. The regular: `MAN_4`. The road grunt: `DEVON_EMPLOYEE`.
+  - Nova and Kelyn still need picking.
+- The bar counter isn't `MB_COUNTER`, so a `bg_event` on the counter tile in front of Morwenna lets the player talk to her across it.
 
 ## Connections
 

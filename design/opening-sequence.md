@@ -56,7 +56,8 @@ It turns Balwyn from an empty set into the game's first act, and closes the hole
 
 **Not yet:** the event itself (the grunt just points you to the mine), other villagers, and the starter.
 
-### Phase 2 — The villagers before the event
+### Phase 2 — The villagers before the event ✅
+*Each villager has one plain script for now. The state branch is added in phase 6, when there are "after" lines to branch to.*
 **Deliverable:** Balwyn feels lived in. The retired miner in the cottage, the young family in the blue house (dad and kid), and the pub landlord and a regular each have lore-rich "before" lines about the legends, the closed mines, and the Lumen visit.
 **Verify:** Build, start a new game, and talk to every villager. Each line fits the lore rule (dialect, one to three short pages, nothing running off the box). The miner and the dad clearly sit on opposite sides of the Lumen divide.
 **Work:**
