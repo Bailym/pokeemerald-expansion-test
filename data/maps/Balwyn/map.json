@@ -19,7 +19,22 @@
       "direction": "right"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_BALWYN_ROAD_GRUNT",
+      "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
+      "x": 21,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Balwyn_EventScript_RoadGrunt",
+      "flag": "FLAG_HIDE_BALWYN_ROAD_GRUNT"
+    }
+  ],
   "warp_events": [
     {
       "x": 7,
@@ -50,7 +65,26 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 11,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "Balwyn_EventScript_RoadBlockTop"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "Balwyn_EventScript_RoadBlockBottom"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

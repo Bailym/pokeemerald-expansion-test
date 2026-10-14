@@ -14,11 +14,27 @@
 
 ## Story
 
-- Opening:
-  1. Lumen's PR team arrives in the village with big promises, with Nova as its face. The player meets Nova here.
-  2. Professor Kelyn, an old friend of the grandparent, is also visiting, researching the grandparent's legends, and is skeptical of Lumen.
-  3. After Lumen's event, Kelyn gives the player their starter: Fletchling, Spheal, or Shinx.
-  4. As the player leaves, their parent hands them the grandparent's journal of legends and mine maps.
+- Opening: a slow-burn village. The player is free to wander Balwyn and pick up lore from every villager before the story starts.
+  1. Morning: the player wakes in their bedroom. Downstairs, Mum sets the scene: Lumen's people are in the village today, and Kelyn, Grampy's old friend, is visiting.
+  2. Free roam: the player can talk to everyone. The two neighbours show the village's divide over Lumen (see Characters).
+  3. Trigger: heading east towards Route 1, the player is stopped by a hi-vis Lumen grunt and sent to the event at Wheal Gwyn. This is also what keeps the player off Route 1 without a Pokémon.
+  4. The event, at the Wheal Gwyn fence:
+     - Nova announces that Lumen is reopening Wheal Gwyn, with jobs right here in Balwyn.
+     - The villagers react aloud: the hopeful dad from the blue house, and the old miner muttering.
+     - Kelyn asks one public question about the old legends, and Nova laughs it off.
+  5. The kitchen table: Kelyn walks the player home. With Mum there, they talk about the grandparent.
+     - Kelyn gives the starter (Fletchling, Spheal, or Shinx), the Pokédex, and a few Poké Balls.
+     - Mum hands over the grandparent's journal of legends and mine maps, and Kelyn recognises them.
+  6. Nova battle: outside the house, Nova challenges the player, all smiles for the cameras.
+     - Pawmi is Lv5 with only Normal-type moves, so it's fair against every starter (Electric would beat Fletchling and Spheal). Its Electric moves come later as Nova's team grows.
+     - Win or lose, the story continues, and Nova has a line for each.
+  7. Wrap-up:
+     - Nova heads for Carnrudh ("see you at the gym"), and Kelyn returns to the Truro lab.
+     - The grunts stay posted at the mine.
+     - The first time the player passes the mine fence afterwards, they hear faint knocking: the first hint of Bucca.
+- After the announcement:
+  - Every villager has a "before" and an "after" line.
+  - The village visibly changes: Lumen signs, a site hut at Wheal Gwyn, a "WHEAL GWYN REOPENS" notice, and grunts at the fence.
 - The player's family are miners. The grandparent, an old miner who knew the legends, passed away before the game starts.
 - The deepest old mine, where Bucca sleeps, is visible from day one: an engine house on the cliffs just outside the village, its entrance fenced off and sealed. After badge 8 the player returns home for the climax there.
 
@@ -34,13 +50,16 @@
   - The old miners' pub (east), The Knocker's Arms: the community hub, where locals talk about the mines, the legends, and Lumen.
 - The deepest old mine, Wheal Gwyn ("white mine", echoing the village's name), under the cliffs in the north-west corner: a fenced-off yard with the sealed entrance and a warning sign outside the fence.
 - Only two neighbours' homes, so the "faded" feel has to come from these two and from NPC dialogue rather than rows of empty houses.
-- No Pokémon Center and no lab; the parent heals the player's team.
+- No Pokémon Center and no lab; Mum heals the player's team.
 
 ## Characters
 
-- Parent: at home; heals the player's team and gives them the journal as they leave.
-- Professor Kelyn (visiting).
-- Nova and Lumen's PR team (visiting, opening only).
+- Mum: at home; sets the scene in the morning, heals the player's team, and gives them the journal at the kitchen table.
+- Cottage (red roof): a retired miner who knew the grandparent. Keeper of the legends, suspicious of Lumen.
+- Neighbour's house (blue roof): a young family. The dad is out of work and hopeful about Lumen's jobs, and the kid is excited.
+- Professor Kelyn (visiting): sceptical of Lumen. Gives the starter, Pokédex, and Poké Balls, then returns to Truro.
+- Nova and Lumen's PR team (visiting for the opening). A hi-vis grunt redirects the player to the event, and grunts stay posted at Wheal Gwyn afterwards.
+- Sprites: vanilla stand-ins for Nova, Kelyn, and the grunts until custom art exists.
 
 ## Connections
 
@@ -66,11 +85,13 @@
 
 ## Open questions
 
-- Who lives in the neighbour's house and the cottage, and is either of them empty or boarded up?
-- Where in the village Lumen's opening event takes place (e.g. on the road outside the pub).
-- Whether the player's house gets a mailbox.
+- Kelyn's exact question at the event, and Nova's win and lose lines.
+- The knocking: a sound effect, text only ("...knock... knock..."), or both.
+- Lumen signs and the site hut: whether vanilla tiles will do or custom tiles are needed.
+- Whether the player is referred to by name or gender (Mum is decided: she's "Mum", with `OBJ_EVENT_GFX_MOM`).
+- How many other villagers there are beyond the two households (e.g. pub landlord and regulars).
+- The starter level (presumably 5), and whether the player's house gets a mailbox.
 
 ## Next steps
 
-- Script the opening sequence (Lumen's event, Kelyn and the starter, the parent and the journal). It must stop the player leaving for Route 1 before they have a starter: wild battles in Route 1's tall grass start even with an empty party (seen in testing).
-- Finish Route 1 (see `route-1.md` for the phase plan).
+- Script the opening sequence (see Story). The grunt's block must stop the player leaving for Route 1 before they have a starter: wild battles in Route 1's tall grass start even with an empty party (seen in testing).

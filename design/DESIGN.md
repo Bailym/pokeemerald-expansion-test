@@ -42,7 +42,7 @@
 
 - Naming: Cornish names for locals; pun or brand-style names for Lumen and outsiders. Trainer names must fit 10 characters (`TRAINER_NAME_LENGTH`), Pokémon names 12.
 - Player: from a mining family.
-- Parent: at home in the village; the classic parent who heals your team and sends you off.
+- Mum: at home in the village; the classic parent who heals your team and sends you off. The game calls her "Mum" (British spelling).
 - Grandparent: an old miner who knew the legends, passed away before the game starts. Leaves the player a journal of legends and mine maps that reveals story locations as the game goes on.
 - Rival — Nova (a stage name given by Lumen's PR team): a trainer sponsored by the corporation as the PR face of its gym challenge.
   - A media darling: polished, confident, always on camera, and fully believes the corporation's message.

@@ -97,7 +97,7 @@
 #define VAR_POKELOT_RND1                                 0x404B // Unused if OW_USE_DAILY_SEED_FOR_VANILLA_VARIABLES is TRUE
 #define VAR_POKELOT_RND2                                 0x404C // Unused if OW_USE_DAILY_SEED_FOR_VANILLA_VARIABLES is TRUE
 #define VAR_POKELOT_PRIZE_PLACE                          0x404D
-#define VAR_UNUSED_0x404E                                0x404E // Unused Var
+#define VAR_BALWYN_STATE                                 0x404E // Balwyn's opening sequence, see BALWYN_STATE_*
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
 #define VAR_OLDALE_TOWN_STATE                            0x4051
@@ -337,5 +337,14 @@
 #define TESTING_VAR_UNUSED_6                (TESTING_VARS_START + 0x6)
 #define TESTING_VAR_UNUSED_7                (TESTING_VARS_START + 0x7)
 #endif // TESTING
+
+// Values for VAR_BALWYN_STATE, in story order (see design/opening-sequence.md).
+#define BALWYN_STATE_NEW_GAME       0 // Woke up; Mum's morning scene plays on first coming downstairs.
+#define BALWYN_STATE_MORNING_DONE   1 // Free to roam Balwyn.
+#define BALWYN_STATE_SENT_TO_MINE   2 // The road grunt has sent the player to Wheal Gwyn.
+#define BALWYN_STATE_EVENT_DONE     3 // Lumen's announcement at Wheal Gwyn has played.
+#define BALWYN_STATE_HAS_STARTER    4 // Kitchen table done; the road east is open.
+#define BALWYN_STATE_NOVA_BATTLED   5 // Nova's first battle and the send-off are done.
+#define BALWYN_STATE_KNOCKING_HEARD 6 // The first knocking at the Wheal Gwyn fence has played.
 
 #endif // GUARD_CONSTANTS_VARS_H
