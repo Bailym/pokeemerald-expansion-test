@@ -9353,6 +9353,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/TestRoute/border.bin",
       "blockdata_filepath": "data/layouts/TestRoute/map.bin"
+    },
+    {
+      "id": "LAYOUT_BALWYN",
+      "name": "Balwyn_Layout",
+      "width": 24,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/Balwyn/border.bin",
+      "blockdata_filepath": "data/layouts/Balwyn/map.bin"
     }
   ]
 }

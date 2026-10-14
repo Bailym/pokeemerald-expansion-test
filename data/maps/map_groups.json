@@ -76,7 +76,8 @@
     "gMapGroup_IndoorSixIslandRoute_Frlg",
     "gMapGroup_IndoorSevenIslandRoute_Frlg",
     "gMapGroup_MyTownsAndRoutes",
-    "gMapGroup_IndoorTestTown"
+    "gMapGroup_IndoorTestTown",
+    "gMapGroup_KerniaTownsAndRoutes"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -1169,5 +1170,8 @@
   ],
   "gMapGroup_IndoorTestTown": [
     "TestTown_House1_1F"
+  ],
+  "gMapGroup_KerniaTownsAndRoutes": [
+    "Balwyn"
   ]
 }

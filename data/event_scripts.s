@@ -1744,3 +1744,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/TestTown_House1_1F/scripts.inc"
 
 	.include "data/maps/TestRoute/scripts.inc"
+
+	.include "data/maps/Balwyn/scripts.inc"

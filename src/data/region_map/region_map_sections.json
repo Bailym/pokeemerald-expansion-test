@@ -1634,6 +1634,10 @@
     {
       "id": "MAPSEC_TEST_ROUTE",
       "name": "TEST ROUTE"
+    },
+    {
+      "id": "MAPSEC_BALWYN",
+      "name": "BALWYN"
     }
   ]
 }
