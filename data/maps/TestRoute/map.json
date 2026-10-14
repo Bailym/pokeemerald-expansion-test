@@ -1,0 +1,26 @@
+{
+  "id": "MAP_TEST_ROUTE",
+  "name": "TestRoute",
+  "layout": "LAYOUT_TEST_ROUTE",
+  "music": "MUS_ROUTE101",
+  "region_map_section": "MAPSEC_TEST_ROUTE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_TEST_TOWN",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -9343,6 +9343,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/TestTown_House1_1F/border.bin",
       "blockdata_filepath": "data/layouts/TestTown_House1_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEST_ROUTE",
+      "name": "TestRoute_Layout",
+      "width": 20,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/TestRoute/border.bin",
+      "blockdata_filepath": "data/layouts/TestRoute/map.bin"
     }
   ]
 }

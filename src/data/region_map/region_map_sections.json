@@ -1630,6 +1630,10 @@
     {
       "id": "MAPSEC_TEST_TOWN",
       "name": "TEST TOWN"
+    },
+    {
+      "id": "MAPSEC_TEST_ROUTE",
+      "name": "TEST ROUTE"
     }
   ]
 }
