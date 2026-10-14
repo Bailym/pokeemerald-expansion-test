@@ -29,7 +29,8 @@
 - Grandparent: an old miner who knew the legends, passed away before the game starts. Leaves the player a journal of legends and mine maps that reveals story locations as the game goes on.
 - Rival: a trainer sponsored by the corporation as the PR face of its gym challenge.
   - A media darling: polished, confident, always on camera, and fully believes the corporation's message.
-  - Turns against the corporation when one of their Pokémon is harmed or taken by its experiments, and the grandparent's journal makes the legends click.
+  - Their partner Pokémon was issued by the corporation, not chosen from the starter trio.
+  - Turns against the corporation when that partner is harmed or taken by its experiments, and the grandparent's journal makes the legends click.
 - Professor: a folklore scholar who studies how Pokémon shaped Cornish legends; the link between myth and science.
   - An old friend of the grandparent, which is why they visit the village and give the player their starter. Has a lab in Truro.
   - Secretly also the Champion at Land's End (see Gyms and League).
@@ -81,6 +82,10 @@
 
 ## Pokémon
 
+- Starters: a themed trio of British wildlife, given by the professor in the player's village. All are 3-stage lines that evolve purely by level. No Grass starter.
+  - Fletchling line (robin): Normal/Flying, becoming Fire/Flying when it evolves at 17.
+  - Spheal line (grey seal, a Cornish coast icon): Ice/Water.
+  - Shinx line (big cat, after the Beast of Bodmin Moor legend): Electric.
 - Legendary: just one. Groudon is a placeholder for now; if it becomes a fakemon later, it would be Ground/Ghost.
 
 ## Postgame
@@ -99,4 +104,4 @@
 - Names for the rival, professor, CEO, and admins.
 - Elite Four members and types.
 - Which badges or story events unlock each section of Bodmin Moor.
-- Which starter Pokémon are offered.
+- The rival's corporation-issued partner species.
