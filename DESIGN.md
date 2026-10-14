@@ -66,18 +66,21 @@
 - Gym types are driven by each town's character and by the story.
 - Leaders have split loyalties: some back the corporation (at least at first), others resist it.
 
-| Town (inspired by) | Type | Stance on corporation |
-|---|---|---|
-| St Ives / Penzance | Flying | |
-| Camborne / Redruth | Fire | Backs it |
-| Truro | Psychic | Backs it |
-| St Austell clay country | Rock | |
-| Falmouth | Steel | Backs it |
-| Newquay | Water | |
-| Padstow | Ice | |
-| Tintagel | Dragon | |
+| # | Town (inspired by) | Type | Stance on corporation |
+|---|---|---|---|
+| 1 | Camborne / Redruth | Fire | Backs it |
+| 2 | St Ives / Penzance | Flying | Resists |
+| 3 | Truro | Psychic | Backs it |
+| 4 | Falmouth | Steel | Backs it |
+| 5 | St Austell clay country | Rock | Resists |
+| 6 | Newquay | Water | Resists |
+| 7 | Padstow | Ice | Resists |
+| 8 | Tintagel | Dragon | Resists |
 
-- Order: Truro's gym comes early-middle (around badge 3 or 4). The rest of the order is open.
+- Route through the order: the far west first (1–2), then Truro (3), then the south coast (4–5), then across Bodmin Moor to the north coast, travelling south-west to north-east (6–8).
+- The Fire gym opening introduces the mines and the corporation straight away. All three corporation-backing leaders come in the first four gyms.
+- After badge 5, the way across the moor to the north coast opens through a weather or terrain change (e.g. moor fog lifts, or a flooded path drains).
+- After badge 8, the player heads home to the far west for the climax at the deepest mine, then on to the League at Land's End.
 - Champion: the professor. An ageing Champion who still holds the title, and whose final match is against the player. Can't openly act against the corporation because the League is officially neutral and the corporation sponsors it.
 
 ## Pokémon
@@ -96,7 +99,7 @@
 
 ## Open questions
 
-- Full gym order (beyond Truro being early-middle).
+- What causes the weather/terrain change that opens the moor to the north coast.
 - How each of the other five leaders resists the corporation.
 - The legendary's name.
 - The corporation's name and logo.
