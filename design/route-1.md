@@ -63,7 +63,7 @@ Reopen Porymap and check that the connection shows on both maps.
 
 **Not yet:** berry trees and lore landmarks (the journal tie-ins come later).
 
-### Phase 4 — First trainers
+### Phase 4 — First trainers ✅
 **Deliverable:** Two trainers on the route spot the player, walk up, battle, and stay defeated afterwards.
 **Verify:** Build, start a new game, and give yourself a Pokémon (debug menu). Walk into each trainer's line of sight and check that they spot you (the "!" appears), walk to you, and battle with the parties in `trainers.party`. After winning, talk to them again and check you get the post-battle line, not a second battle. Then reload the save and check that they're still defeated.
 **Work:**

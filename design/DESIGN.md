@@ -22,6 +22,22 @@
   - To calm it, the player destroys the corporation's control device and battles it. Then, following the grandparent's journal, they leave the traditional miners' offering (the crust of a pasty) to end its rage.
 - The corporation plot resolves before the player takes on the League.
 
+## Lore and dialogue
+
+- Lore everywhere: the region's story is told mostly through its text. Every NPC, trainer (intro, defeat, and post-battle lines), sign, and notice should add a piece of Kernia where it can, rather than generic filler.
+- What to weave in:
+  - Cornish folklore: the Knockers and Bucca, piskies, giants, the Mermaid of Zennor, black dogs. Later this ties in with the Elite Four's legends.
+  - Mining heritage: wheals and engine houses, tinners and bal maidens, pasties and the crust left for the Knockers, and families who emigrated when the mines closed.
+  - The decline and the divide: closed mines, young people leaving, and how locals feel about Lumen's promised jobs (some hopeful, some suspicious).
+  - The grandparent's legends, so the journal feels grounded in what people already half-remember.
+- Foreshadow and escalate: early text plants the legends (the knocking, the crust offering) as old superstition. After key story beats, such as the tremors after badge 5, dialogue should change to match, using flags where it's cheap to do.
+- Voice:
+  - Locals speak with a light Cornish dialect and a few Cornish words ("dreckly", "proper job", "my 'ansum", "emmet" for outsiders).
+  - Lumen staff use upbeat corporate and PR speak.
+  - Keep both readable, not caricatured.
+- Brevity: GBA text boxes are small, so aim for one to three short pages per speaker. Each line should carry one idea.
+- Consistency: recurring lore facts (names, legends, dates) are recorded here or in the town docs, so the same story is told everywhere.
+
 ## Characters
 
 - Naming: Cornish names for locals; pun or brand-style names for Lumen and outsiders. Trainer names must fit 10 characters (`TRAINER_NAME_LENGTH`), Pokémon names 12.

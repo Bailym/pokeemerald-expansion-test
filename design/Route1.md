@@ -49,10 +49,19 @@
   - Two span the whole path, so the player has to walk through them: the first bend north (x 14–17, rows 6–8) and the leg heading south (x 24–27, rows 10–13).
   - Two are optional side areas: the meadow's dead-end corner (x 10–13, row 13) and the bottom leg (x 29–33, rows 15–16, with the path clear on rows 17–18).
 
+## Trainers
+
+| Trainer | Where | Team | Lore |
+|---|---|---|---|
+| Youngster Jory (`TRAINER_JORY`) | (16, 10), at the first bend, facing south across the lane, sight 3 | Skwovet Lv4 | His grampy hears the Knockers in Wheal Gwyn and leaves pasty crust by the mine fence for them. |
+| Lass Tamsin (`TRAINER_TAMSIN`) | (35, 9), at the top of the last leg, facing south, sight 4 | Rookidee Lv4, Wooloo Lv5 | Her brother has gone to Carnrudh for a Lumen job. Lumen's posters say "Bringing the mines home!", but her mam reckons some holes are best left shut. |
+
+- IDs 855–856 in `include/constants/opponents.h` (`TRAINERS_COUNT_EMERALD` is now 857, which leaves room for 7 more before the 864 limit).
+
 ## Open questions
 
 - None at the moment.
 
 ## Next steps
 
-- See `route-1.md` for the phase plan: trainers next.
+- See `route-1.md` for the phase plan: retiring TestTown and TestRoute is the last phase.
