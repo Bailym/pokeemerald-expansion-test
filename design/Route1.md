@@ -23,11 +23,29 @@
   - The sand path tileset has no corner pieces, so the bends are grass.
   - The cliff ends at x 10 with a straight edge against the trees. It could be softened by hand.
 
+## Wild Pokémon
+
+- Galar's UK-inspired wildlife, matching the British-wildlife starters, with Wingull for the coast and Gossifleur as an early Grass type (there's no Grass starter).
+- Tall grass only (`src/data/wild_encounters.json`, `gKerniaRoute1`, encounter rate 20), levels 2–4:
+
+| Pokémon | Levels | Chance |
+|---|---|---|
+| Skwovet | 2–4 | 30% |
+| Rookidee | 2–4 | 25% |
+| Wooloo | 2–4 | 14% |
+| Nickit | 2–4 | 11% |
+| Gossifleur | 2–3 | 10% |
+| Blipbug | 2–4 | 6% |
+| Wingull | 3–4 | 4% |
+
+- Tall grass patches:
+  - Two span the whole path, so the player has to walk through them: the first bend north (x 14–17, rows 6–8) and the leg heading south (x 24–27, rows 10–13).
+  - Two are optional side areas: the meadow's dead-end corner (x 10–13, row 13) and the bottom leg (x 29–33, rows 15–16, with the path clear on rows 17–18).
+
 ## Open questions
 
-- Which wild Pokémon live here (before tall grass is added).
 - The first gym town's name, for the route sign.
 
 ## Next steps
 
-- See `route-1.md` for the phase plan: tall grass and wild Pokémon, then sign, items, and ledge, then trainers.
+- See `route-1.md` for the phase plan: sign, items, and ledge, then trainers.

@@ -36,7 +36,9 @@ Reopen Porymap and check that the connection shows on both maps.
 
 **Not yet:** tall grass and wild Pokémon, items, signs, trainers, ledges, the town at the east end (the road just stops at the map edge), and any custom tiles (engine houses).
 
-### Phase 2 — Tall grass and wild Pokémon
+### Phase 2 — Tall grass and wild Pokémon ✅
+*Partly checked in-game: one wild encounter, triggered with an empty party, which the game allowed. The full species and level check is still to do.*
+
 **Deliverable:** Tall-grass patches along the route trigger wild battles with early-game Pokémon at levels 2–4. Grass outside the patches never does.
 **Verify:** Build, start a new game, and give yourself a Pokémon from the debug menu (R+Start). Walk around in the tall grass until you've had several battles. Check that every species is on the table and the levels are between 2 and 4. Walk the lane and short grass for a while and check that no battles happen.
 **Work:**
@@ -82,7 +84,6 @@ Reopen Porymap and check that the connection shows on both maps.
 **Not yet:** n/a. This is the final cleanup.
 
 ## Open questions
-- **Wild Pokémon for Route 1 (needed before phase 2):** there's no regional dex yet. One option is Galar's UK-inspired wildlife, which fits the British-wildlife starters: Rookidee (rook), Skwovet (squirrel), Nickit (fox), Wooloo (sheep), Blipbug, plus Wingull for the coast. Gossifleur would give an early Grass type, since there's no Grass starter.
 - **Gym town's name (nice to have for phase 3's sign):** if it isn't decided, the sign just says "ROUTE 1 / ← BALWYN".
 - **Removing the test map groups (phase 5):** removing groups from `group_order` shifts the group number of every group after them, including `gMapGroup_KerniaTownsAndRoutes` and `gMapGroup_IndoorBalwyn`. Saves store those numbers, so existing test saves would break. That's harmless before release (just start a new game). The alternative is to keep the two groups as empty placeholders, if mapjson accepts empty groups. Decide at phase 5.
 - **Route length and shape:** 40–50 tiles wide is a guess for a first route. Adjust after walking it in phase 1.
