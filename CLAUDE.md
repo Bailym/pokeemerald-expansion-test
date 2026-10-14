@@ -65,11 +65,11 @@ Tests are C files under `test/` built into a separate ROM and run in `mgba-rom-t
 - Comments explain *why*, are capitalized, and end with a period.
 
 ### Map naming (custom maps in this hack)
-Follow vanilla's naming so generated constants read consistently:
-- Outdoor maps: `<Name>Town`, `<Name>City`, `Route<N>` (PascalCase) → `MAP_<NAME>_TOWN`, etc.
-- Interiors: prefixed with their town, `_` between parts, floors as `_1F`/`_B1F` (e.g. `<Name>Town_PokemonCenter_1F`).
-- Layouts: `<MapName>_Layout`. Region map sections: `MAPSEC_<NAME>_TOWN`.
-- Groups: custom outdoor maps go in `gMapGroup_MyTownsAndRoutes`; each town's interiors get their own `gMapGroup_Indoor<Name>`. Append new groups to the end of `group_order` in `data/maps/map_groups.json`, never reorder (group numbers are saved data).
+Mostly vanilla's naming, but towns and cities are just their name, with no `Town`/`City` suffix:
+- Towns and cities: `<Name>` (PascalCase), e.g. `Balwyn` → `MAP_BALWYN`. Routes: `Route<N>` → `MAP_ROUTE<N>`.
+- Interiors: prefixed with their town, `_` between parts, floors as `_1F`/`_B1F` (e.g. `Balwyn_PlayersHouse_1F`, `Balwyn_Pub`).
+- Layouts: `<MapName>_Layout` → `LAYOUT_<NAME>`. Region map sections: `MAPSEC_<NAME>` (e.g. `MAPSEC_BALWYN`).
+- Groups: Kernia's outdoor maps go in `gMapGroup_KerniaTownsAndRoutes`; each town's interiors get their own `gMapGroup_Indoor<Name>` (e.g. `gMapGroup_IndoorBalwyn`). Append new groups to the end of `group_order` in `data/maps/map_groups.json`, never reorder (group numbers are saved data). The early test maps (`TestTown`, `TestRoute`) predate this and sit in `gMapGroup_MyTownsAndRoutes`.
 - No `_Frlg` suffix; that marks FireRed/LeafGreen maps only.
 - Renaming a map also means updating its layout, constants, and any references (e.g. the new-game spawn point).
 

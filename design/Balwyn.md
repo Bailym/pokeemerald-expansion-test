@@ -69,3 +69,11 @@
 - Who lives in the neighbour's house and the cottage, and is either of them empty or boarded up?
 - Where in the village Lumen's opening event takes place (e.g. on the road outside the pub).
 - Whether the player's house gets a mailbox.
+
+## Next steps
+
+- Create the four interiors and add the door warps (see the table in Map notes).
+- Write the two signs' text.
+- Script the opening sequence (Lumen's event, Kelyn and the starter, the parent and the journal).
+- Build the first route east and connect it on rows 11–12.
+- Retire TestTown and TestRoute (and the TestTown house interior) once Balwyn and the first route replace them.
