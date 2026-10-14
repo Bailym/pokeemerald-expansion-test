@@ -30,7 +30,8 @@
 - Grandparent: an old miner who knew the legends, passed away before the game starts. Leaves the player a journal of legends and mine maps that reveals story locations as the game goes on.
 - Rival — Nova (a stage name given by Lumen's PR team): a trainer sponsored by the corporation as the PR face of its gym challenge.
   - A media darling: polished, confident, always on camera, and fully believes the corporation's message.
-  - Their partner Pokémon was issued by the corporation, not chosen from the starter trio.
+  - Their partner Pokémon, a Pawmi (cute Electric mascot for an energy brand), was issued by the corporation, not chosen from the starter trio.
+  - Nova is their only name; no real name behind it.
   - Turns against the corporation when that partner is harmed or taken by its experiments, and the grandparent's journal makes the legends click.
 - Professor — Kelyn (Cornish for 'holly', after the tradition of professors named for trees): a folklore scholar who studies how Pokémon shaped Cornish legends; the link between myth and science.
   - An old friend of the grandparent, which is why they visit the village and give the player their starter. Has a lab in Truro.
@@ -40,6 +41,7 @@
 ## Corporation
 
 - Name: Lumen, a sleek, abstract corporate brand (like Macro Cosmos or Silph).
+- Logo: a stylised green leaf with a lightning spark (eco-energy branding).
 - Public image: heritage revival ("bringing the mines home", local pride) combined with green energy (lithium and rare metals for a clean future).
 - Headquarters in Truro. Also sponsors the Pokémon League.
 - Look varies by rank: grunts wear hi-vis and hard hats on site; admins and HQ staff wear sleek corporate dress.
@@ -72,13 +74,13 @@
   - Woods & ruins: oak valleys, old engine houses, and abandoned quarries.
 - Unlocking:
   - Heath & tors opens first, from Truro, around badge 3.
-  - Woods & ruins and Lake & river open with later badges.
+  - Woods & ruins and Lake & river both open after badge 4.
   - After badge 5, the first tremors and knocking from Bucca stirring shift rocks or drain water, opening the bog and the way to the north coast. This foreshadows the legendary.
 - Wild Pokémon:
   - Both visible Pokémon roaming the map and random encounters in tall grass.
   - Visible Pokémon appear only on the moor, not on regular routes.
-  - Wild levels scale with the player's badge count, so the moor stays relevant all game.
-- Weather is fixed per zone.
+  - Wild levels scale with the player's badge count, so the moor stays relevant all game. The exact rise per badge is decided when balancing trainer levels.
+- Weather is fixed per zone: Heath & tors sunny, Bog & mire fog, Lake & river rain, Woods & ruins shade.
 - Other things to do: hidden items and berry trees; landmarks and lore (standing stones, old inns, engine houses), with the grandparent's journal tying in.
 - Technical notes:
   - A single map can be at most about 86×86 tiles (`MAX_MAP_DATA_SIZE` check in `src/fieldmap.c`), so each zone is built from connected maps.
@@ -92,6 +94,8 @@
 - Gyms are taken in a fixed order.
 - Gym types are driven by each town's character and by the story.
 - Leaders have split loyalties: some back the corporation (at least at first), others resist it.
+  - The five resisting leaders push back mainly by warning the player: each shares a suspicion or clue about Lumen after their battle.
+  - The three backing leaders don't act in time when Bucca rampages, but each has a remorseful line afterwards.
 
 | # | Town (inspired by) | Type | Leader | Stance on corporation |
 |---|---|---|---|---|
@@ -142,11 +146,4 @@
 
 ## Open questions
 
-- How each of the other five leaders resists the corporation.
-- Lumen's logo.
-- How the three backing gym leaders react once the legendary rampages.
-- Nova's real name, if any.
-- Which badges open Woods & ruins and Lake & river.
-- How much wild levels rise per badge on the moor.
-- Each moor zone's weather.
-- The rival's corporation-issued partner species.
+- How much moor wild levels rise per badge (decide when balancing trainer levels).
