@@ -34,9 +34,17 @@
 
 ## Corporation
 
+- Name: a sleek, abstract corporate brand (like Macro Cosmos or Silph). Exact name TBD.
 - Public image: heritage revival ("bringing the mines home", local pride) combined with green energy (lithium and rare metals for a clean future).
-- Also sponsors the Pokémon League.
+- Headquarters in Truro. Also sponsors the Pokémon League.
+- Look varies by rank: grunts wear hi-vis and hard hats on site; admins and HQ staff wear sleek corporate dress.
 - Field operations: a uniformed security division of grunts, led by 2–3 admins.
+  - Admins are split by department (e.g. Head of Security, Chief Engineer building the device, Head of PR managing the rival).
+  - One admin is a local who sold out.
+- The plan: build a control device to bind the legendary and command it.
+- The legendary sleeps in the deepest old mine, near the player's village, so the climax brings the story full circle.
+- The public is never told the truth; they stay fooled until the legendary rampages.
+- Aftermath: the CEO is arrested, and the rival takes over and reforms the company into one they can believe in.
 
 ## Towns and Routes
 
@@ -83,7 +91,8 @@
 - Full gym order (beyond Truro being early-middle).
 - How each of the other five leaders resists the corporation.
 - Final region name.
-- The corporation's name and look.
+- The corporation's name and logo.
+- How the three backing gym leaders react once the legendary rampages.
 - Names for the rival, professor, CEO, and admins.
 - Elite Four members and types.
 - Which badges or story events unlock each section of Bodmin Moor.
