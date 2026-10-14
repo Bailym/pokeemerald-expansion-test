@@ -59,7 +59,7 @@
 
 - Structure: hub and spokes, with the Bodmin Moor Wild Area as the hub and gym towns branching off it.
 - Sections of the moor unlock with badges or story progress.
-- Hometown: a quiet former tin-mining village in the far west.
+- Hometown: Balwyn, a quiet former tin-mining village in the far west (see `Balwyn.md`).
 - Truro is the main city: corporation HQ, the professor's lab, and the region's main shopping and services.
 - Towns inspired by (and renamed from): St Ives / Penzance, Camborne / Redruth, Truro, St Austell clay country, Falmouth, and the north coast (Newquay, Padstow, Tintagel).
 - Pokémon League: Land's End.
