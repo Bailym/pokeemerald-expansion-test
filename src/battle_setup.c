@@ -1463,7 +1463,9 @@ void BattleSetup_StartTrainerBattle(void)
         }
     }
 
-    if (TRAINER_BATTLE_PARAM.earlyRival && GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL)
+    // RIVAL_BATTLE_TUTORIAL includes the RIVAL_BATTLE_HEAL_AFTER bit, so check for all of its bits; otherwise a
+    // heal-after-only early rival battle becomes a first battle (in Emerald, the wild Zigzagoon replaces the rival).
+    if (TRAINER_BATTLE_PARAM.earlyRival && (GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL) == RIVAL_BATTLE_TUTORIAL)
         gBattleTypeFlags |= BATTLE_TYPE_FIRST_BATTLE;
 
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)

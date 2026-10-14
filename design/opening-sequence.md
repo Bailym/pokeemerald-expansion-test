@@ -124,11 +124,17 @@ It turns Balwyn from an empty set into the game's first act, and closes the hole
 
 **Not yet:** Nova's battle (leaving the house is uneventful until phase 5), and Kelyn leaving town.
 
-### Phase 5 — Nova's battle and the send-off
+### Phase 5 — Nova's battle and the send-off ✅
+*As built:*
+- *The send-off cast (Nova, Pawmi, and Kelyn outside) uses `FLAG_HIDE_BALWYN_SENDOFF`, cleared at the end of the kitchen scene. The kitchen scene also hides Kelyn in the house.*
+- *It's triggered by Balwyn's `ON_FRAME` while the state is "has starter", which can only happen as the player steps out of the door to (7, 18).*
+- *`trainerbattle_earlyrival` with `RIVAL_BATTLE_HEAL_AFTER`: losing heals instead of whiting out, and `VAR_RESULT` picks Nova's after-battle line.*
+- *Everyone leaves east along rows 19–20 and is removed off-screen.*
+- *Engine fix in `src/battle_setup.c`: `RIVAL_BATTLE_TUTORIAL` (3) contains the `RIVAL_BATTLE_HEAL_AFTER` bit (1), and the "is this a tutorial battle" check used `flags & RIVAL_BATTLE_TUTORIAL`. So a heal-after-only early rival battle became a "first battle", and in Emerald that swapped Nova for Birch's wild Zigzagoon Lv2. It now checks for all the tutorial bits. This is an upstream bug that FireRed's scripts never hit (they always pass 3), so it could be sent to RHH as a bug-fix PR against `master`.*
 **Deliverable:** Stepping outside after the kitchen scene:
 - Nova challenges you, with Pawmi Lv5 using Normal moves only.
 - Win or lose, Nova has a line for that outcome, and the story continues.
-- Nova heads east for Carnrudh, and Kelyn heads east for Truro, both walking off.
+- Nova heads east for Carnrudh, and Kelyn heads east for Treveur, both walking off.
 - You're free to leave Balwyn for Route 1.
 
 **Verify:** Build, then from a save state before leaving the house:

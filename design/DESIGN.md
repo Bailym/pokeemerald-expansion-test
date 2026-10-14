@@ -57,7 +57,7 @@
   - Turns against the corporation when that partner is harmed or taken by its experiments, and the grandparent's journal makes the legends click.
 - Professor — Kelyn (Cornish for 'holly', after the tradition of professors named for trees): a folklore scholar who studies how Pokémon shaped Cornish legends; the link between myth and science.
   - Reads as an older woman (stand-in sprite: Expert, female).
-  - An old friend of the grandparent, which is why they visit the village and give the player their starter. Has a lab in Truro.
+  - An old friend of the grandparent, which is why they visit the village and give the player their starter. Has a lab in Treveur.
   - Secretly also the Champion at Land's End (see Gyms and League).
 - Corporation leader — Sterling: an outside CEO who sees Cornwall as a resource. A charming visionary who gives inspiring speeches, but is driven by wanting the legendary's power for themselves.
 
@@ -66,7 +66,7 @@
 - Name: Lumen, a sleek, abstract corporate brand (like Macro Cosmos or Silph).
 - Logo: a stylised green leaf with a lightning spark (eco-energy branding).
 - Public image: heritage revival ("bringing the mines home", local pride) combined with green energy (lithium and rare metals for a clean future).
-- Headquarters in Truro. Also sponsors the Pokémon League.
+- Headquarters in Treveur. Also sponsors the Pokémon League.
 - Look varies by rank: grunts wear hi-vis and hard hats on site; admins and HQ staff wear sleek corporate dress.
 - Field operations: a uniformed security division of grunts, led by 2–3 admins.
   - Admins are split by department:
@@ -83,8 +83,9 @@
 - Structure: hub and spokes, with the Bodmin Moor Wild Area as the hub and gym towns branching off it.
 - Sections of the moor unlock with badges or story progress.
 - Hometown: Balwyn, a quiet former tin-mining village in the far west (see `Balwyn.md`).
+- Main city: Treveur, from tre (town) + meur (great), "great town". Inspired by Truro.
 - First gym town: Carnrudh, from carn (rocky hill or tor) + rudh (red), "red tor". Inspired by Camborne / Redruth, and named for Carn Brea, the hill between them, and for Redruth.
-- Truro is the main city: corporation HQ, the professor's lab, and the region's main shopping and services.
+- Treveur is the main city: corporation HQ, the professor's lab, and the region's main shopping and services.
 - Towns inspired by (and renamed from): St Ives / Penzance, Camborne / Redruth, Truro, St Austell clay country, Falmouth, and the north coast (Newquay, Padstow, Tintagel).
 - Pokémon League: Land's End.
 
@@ -97,7 +98,7 @@
   - Lake & river: moorland pools, reservoirs, streams, and waterfalls.
   - Woods & ruins: oak valleys, old engine houses, and abandoned quarries.
 - Unlocking:
-  - Heath & tors opens first, from Truro, around badge 3.
+  - Heath & tors opens first, from Treveur, around badge 3.
   - Woods & ruins and Lake & river both open after badge 4.
   - After badge 5, the first tremors and knocking from Bucca stirring shift rocks or drain water, opening the bog and the way to the north coast. This foreshadows the legendary.
 - Wild Pokémon:
@@ -125,14 +126,14 @@
 |---|---|---|---|---|
 | 1 | Carnrudh (Camborne / Redruth) | Fire | Tanek (tan = fire) | Backs it |
 | 2 | St Ives / Penzance | Flying | Enys (island) | Resists |
-| 3 | Truro | Psychic | Locryn (a legendary king) | Backs it |
+| 3 | Treveur (Truro) | Psychic | Locryn (a legendary king) | Backs it |
 | 4 | Falmouth | Steel | Hornor (horn = iron) | Backs it |
 | 5 | St Austell clay country | Rock | Karrek (rock) | Resists |
 | 6 | Newquay | Water | Mordon (mor = sea) | Resists |
 | 7 | Padstow | Ice | Rew (frost) | Resists |
 | 8 | Tintagel | Dragon | Pendra (from Pendragon) | Resists |
 
-- Route through the order: the far west first (1–2), then Truro (3), then the south coast (4–5), then across Bodmin Moor to the north coast, travelling south-west to north-east (6–8).
+- Route through the order: the far west first (1–2), then Treveur (3), then the south coast (4–5), then across Bodmin Moor to the north coast, travelling south-west to north-east (6–8).
 - The Fire gym opening introduces the mines and the corporation straight away. All three corporation-backing leaders come in the first four gyms.
 - After badge 5, the way across the moor to the north coast opens when Bucca's first tremors shift rocks or drain water (see Bodmin Moor Wild Area).
 - After badge 8, the player heads home to the far west for the climax at the deepest mine, then on to the League at Land's End.

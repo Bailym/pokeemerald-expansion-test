@@ -29,7 +29,7 @@
      - Pawmi is Lv5 with only Normal-type moves, so it's fair against every starter (Electric would beat Fletchling and Spheal). Its Electric moves come later as Nova's team grows.
      - Win or lose, the story continues, and Nova has a line for each.
   7. Wrap-up:
-     - Nova heads for Carnrudh ("see you at the gym"), and Kelyn returns to the Truro lab.
+     - Nova heads for Carnrudh ("see you at the gym"), and Kelyn returns to her lab in Treveur.
      - The grunts stay posted at the mine.
      - The first time the player passes the mine fence afterwards, they hear faint knocking: the first hint of Bucca.
 - After the announcement:
@@ -47,6 +47,9 @@
   - Kelyn says Grampy wrote to her often about the player, hoping they'd see Kernia with Pokémon.
   - Kelyn's starter lines: Fletchling, "the robin. Bold as brass, and loyal with it". Spheal, "a seal pup from the coves. Gentle, but tough". Shinx, "a wildcat cub. Folk say a great beast roams the moor..." (the Beast of Bodmin).
   - The player gets the starter at Lv5, the Pokédex, 5 Poké Balls, and Grampy's Journal from Mum. Kelyn: "There's more to it than stories."
+
+- Nova's first battle (`TRAINER_NOVA_BALWYN`, class Rival, Rich Boy pic): Pawmi Lv5 with Scratch and Growl only. Nova calls the player "local" and plays to the cameras ("And that's how Lumen does it!").
+- Kelyn's goodbye invites the player to her lab in Treveur.
 
 ## Locations
 
@@ -67,7 +70,7 @@
 - Mum: at home; sets the scene in the morning, heals the player's team, and gives them the journal at the kitchen table.
 - Cottage (red roof): Old Jacca, a retired miner. He worked Wheal Gwyn with Grampy forty years ago and heard the Knockers tapping down there. Keeper of the legends, against reopening the mine ("some things should stay asleep").
 - Neighbour's house (blue roof): Treve, out of work since the last mine shut, first in the queue for Lumen's jobs rather than moving up-country. His daughter Wenna is a Nova fan with a Pawmi plushie she wants signed.
-- Professor Kelyn (visiting): sceptical of Lumen. Gives the starter, Pokédex, and Poké Balls, then returns to Truro.
+- Professor Kelyn (visiting): sceptical of Lumen. Gives the starter, Pokédex, and Poké Balls, then returns to her lab in Treveur.
 - Nova and Lumen's PR team (visiting for the opening). A hi-vis grunt redirects the player to the event, and grunts stay posted at Wheal Gwyn afterwards.
 - The Knocker's Arms: Morwenna, the landlady, behind the bar. She explains the pub's name and the miners' custom of leaving pasty crust for the Knockers. A regular at the bar tells how his granfer emigrated overseas when the mines shut (the "Cousin Jacks"), and how the young now leave for up-country.
 - Sprites: vanilla Emerald stand-ins (FireRed sprites are invisible in Emerald builds).

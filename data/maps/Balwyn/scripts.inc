@@ -1,6 +1,11 @@
 Balwyn_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Balwyn_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Balwyn_OnFrame
 	.byte 0
+
+Balwyn_OnFrame:
+	map_script_2 VAR_BALWYN_STATE, BALWYN_STATE_HAS_STARTER, Balwyn_EventScript_NovaBattle
+	.2byte 0
 
 Balwyn_OnTransition:
 	call_if_ge VAR_BALWYN_STATE, BALWYN_STATE_HAS_STARTER, Balwyn_EventScript_OpenRoadEast
@@ -430,3 +435,118 @@ Balwyn_Text_KelynToPlayer:
 	.string "your Grampy's look about you.\p"
 	.string "Walk with me to your mum's?\n"
 	.string "I've something for you.$"
+
+@ Stepping out of the house with a starter (to (7, 18)), Nova is waiting below with Pawmi and challenges the player.
+@ trainerbattle_earlyrival continues either way; VAR_RESULT is TRUE if the player lost (and the team is healed).
+Balwyn_EventScript_NovaBattle::
+	lockall
+	applymovement LOCALID_BALWYN_SENDOFF_NOVA, Common_Movement_WalkUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	setspeaker SP_NAME_NOVA
+	msgbox Balwyn_Text_NovaChallenge, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_earlyrival TRAINER_NOVA_BALWYN, RIVAL_BATTLE_HEAL_AFTER, Balwyn_Text_NovaDefeated, Balwyn_Text_NovaVictory
+	goto_if_eq VAR_RESULT, TRUE, Balwyn_EventScript_NovaWon
+	setspeaker SP_NAME_NOVA
+	msgbox Balwyn_Text_NovaAfterPlayerWon, MSGBOX_DEFAULT
+	goto Balwyn_EventScript_NovaSendOff
+
+Balwyn_EventScript_NovaWon::
+	setspeaker SP_NAME_NOVA
+	msgbox Balwyn_Text_NovaAfterPlayerLost, MSGBOX_DEFAULT
+Balwyn_EventScript_NovaSendOff::
+	setspeaker SP_NAME_NOVA
+	msgbox Balwyn_Text_NovaOffToCarnrudh, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BALWYN_SENDOFF_NOVA, Balwyn_Movement_NovaLeavesEast
+	applymovement LOCALID_BALWYN_SENDOFF_PAWMI, Balwyn_Movement_PawmiLeavesEast
+	waitmovement 0
+	removeobject LOCALID_BALWYN_SENDOFF_NOVA
+	removeobject LOCALID_BALWYN_SENDOFF_PAWMI
+	applymovement LOCALID_BALWYN_SENDOFF_KELYN, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	setspeaker SP_NAME_KELYN
+	msgbox Balwyn_Text_KelynGoodbye, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BALWYN_SENDOFF_KELYN, Balwyn_Movement_KelynLeavesEast
+	waitmovement 0
+	removeobject LOCALID_BALWYN_SENDOFF_KELYN
+	setflag FLAG_HIDE_BALWYN_SENDOFF
+	setvar VAR_BALWYN_STATE, BALWYN_STATE_NOVA_BATTLED
+	releaseall
+	end
+
+@ East along row 19 (and 20 for Pawmi) until off-screen.
+Balwyn_Movement_NovaLeavesEast:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Balwyn_Movement_PawmiLeavesEast:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Balwyn_Movement_KelynLeavesEast:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Balwyn_Text_NovaChallenge:
+	.string "Hey, it's the local kid! You got\n"
+	.string "a Pokémon? Nice!\p"
+	.string "How about a quick battle? The\n"
+	.string "cameras would love it!$"
+
+Balwyn_Text_NovaDefeated:
+	.string "Whoa, nice! The fans are gonna\n"
+	.string "love this!$"
+
+Balwyn_Text_NovaVictory:
+	.string "And that's how Lumen does it!\n"
+	.string "No hard feelings, local!$"
+
+Balwyn_Text_NovaAfterPlayerWon:
+	.string "You're a natural! You'll do well\n"
+	.string "in the gym challenge, local.$"
+
+Balwyn_Text_NovaAfterPlayerLost:
+	.string "Don't sweat it! Everyone starts\n"
+	.string "somewhere. Even me!$"
+
+Balwyn_Text_NovaOffToCarnrudh:
+	.string "Pawmi and I are off to Carnrudh.\n"
+	.string "See you at the gym!$"
+
+Balwyn_Text_KelynGoodbye:
+	.string "Well fought, {PLAYER}.\p"
+	.string "I must get back to my lab in\n"
+	.string "Treveur. Come and find me there.\p"
+	.string "And keep that journal close,\n"
+	.string "won't you?$"

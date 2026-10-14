@@ -158,6 +158,9 @@ Balwyn_PlayersHouse_1F_EventScript_StarterHandover::
 	waitmovement 0
 	@ With a starter in hand, the road grunt is no longer needed.
 	setflag FLAG_HIDE_BALWYN_ROAD_GRUNT
+	@ Kelyn heads out with the player, and Nova is waiting outside.
+	setflag FLAG_HIDE_BALWYN_HOUSE_KELYN
+	clearflag FLAG_HIDE_BALWYN_SENDOFF
 	setvar VAR_BALWYN_STATE, BALWYN_STATE_HAS_STARTER
 	releaseall
 	end
