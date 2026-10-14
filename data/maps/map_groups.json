@@ -1173,7 +1173,8 @@
     "TestTown_House1_1F"
   ],
   "gMapGroup_KerniaTownsAndRoutes": [
-    "Balwyn"
+    "Balwyn",
+    "KerniaRoute1"
   ],
   "gMapGroup_IndoorBalwyn": [
     "Balwyn_PlayersHouse_1F",

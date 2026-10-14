@@ -66,7 +66,7 @@ Tests are C files under `test/` built into a separate ROM and run in `mgba-rom-t
 
 ### Map naming (custom maps in this hack)
 Mostly vanilla's naming, but towns and cities are just their name, with no `Town`/`City` suffix:
-- Towns and cities: `<Name>` (PascalCase), e.g. `Balwyn` → `MAP_BALWYN`. Routes: `Route<N>` → `MAP_ROUTE<N>`.
+- Towns and cities: `<Name>` (PascalCase), e.g. `Balwyn` → `MAP_BALWYN`. Routes: `KerniaRoute<N>` → `MAP_KERNIA_ROUTE<N>`, layout `LAYOUT_KERNIA_ROUTE<N>` (plain `MAP_ROUTE<N>`/`LAYOUT_ROUTE<N>` are taken by FireRed's routes 1–25 and Emerald's 101–134; FireRed map IDs mostly have no `_FRLG` suffix even though their folders do). The in-game name stays "ROUTE <N>" via `MAPSEC_ROUTE_<N>`.
 - Interiors: prefixed with their town, `_` between parts, floors as `_1F`/`_B1F` (e.g. `Balwyn_PlayersHouse_1F`, `Balwyn_Pub`).
 - Layouts: `<MapName>_Layout` → `LAYOUT_<NAME>`. Region map sections: `MAPSEC_<NAME>` (e.g. `MAPSEC_BALWYN`).
 - Groups: Kernia's outdoor maps go in `gMapGroup_KerniaTownsAndRoutes`; each town's interiors get their own `gMapGroup_Indoor<Name>` (e.g. `gMapGroup_IndoorBalwyn`). Append new groups to the end of `group_order` in `data/maps/map_groups.json`, never reorder (group numbers are saved data). The early test maps (`TestTown`, `TestRoute`) predate this and sit in `gMapGroup_MyTownsAndRoutes`.

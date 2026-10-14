@@ -44,7 +44,7 @@
 
 ## Connections
 
-- One route east, towards Camborne / Redruth (gym 1).
+- One route east, Route 1 (`KerniaRoute1`, see `Route1.md`), towards Camborne / Redruth (gym 1).
 
 ## Map notes
 
@@ -60,7 +60,7 @@
 | 3 | Pub | (17, 17) | `Balwyn_Pub` (bar counter across the back right with bookshelves behind as bottle shelves, two tables on the left) | Composed from Trainer Fan Club / Dewford Hall pieces |
 
 - Signs (`bg_events`, scripts in `Balwyn/scripts.inc`): the Wheal Gwyn warning sign at (6, 9), and The Knocker's Arms sign at (20, 17), whose "Leave a crust for the Knockers!" foreshadows the pasty-crust offering at the climax.
-- The road leaves the east edge on rows 11–12, where the first route will connect. Until then the road runs into the sea border.
+- The road leaves the east edge on rows 11–12 and continues onto Route 1 (`right` connection to `MAP_KERNIA_ROUTE1`, offset 0). The two maps share tilesets so the join draws cleanly.
 - New-game spawn point (`WarpToTruck` in `src/new_game.c`): (4, 4) in the bedroom, `Balwyn_PlayersHouse_2F`.
 - Mine placeholder: an adit (Granite Cave's entrance tile, from Route 106) cut into the cliff at (6, 4), with a gravel apron and a boulder. It sits in a yard in the north-west corner, closed off by the sea to the west, trees to the east, and a picket fence across the front (row 8), with a warning sign outside at (6, 9). The adit tile also has collision set. To open the mine later, remove part of the fence (or replace it with a scripted barrier) and add a warp on the adit. A proper engine house needs custom tiles.
 
@@ -73,5 +73,5 @@
 ## Next steps
 
 - Script the opening sequence (Lumen's event, Kelyn and the starter, the parent and the journal).
-- Build the first route east and connect it on rows 11–12.
+- Finish Route 1 (see `route-1.md` for the phase plan).
 - Retire TestTown and TestRoute (and the TestTown house interior) once Balwyn and the first route replace them.
