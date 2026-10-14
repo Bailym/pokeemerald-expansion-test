@@ -64,4 +64,4 @@
 
 ## Next steps
 
-- See `route-1.md` for the phase plan: retiring TestTown and TestRoute is the last phase.
+- Connect Carnrudh at the east edge (rows 11–12, from x 40) once the town exists.

@@ -75,8 +75,6 @@
     "gMapGroup_IndoorTwoIslandRoute_Frlg",
     "gMapGroup_IndoorSixIslandRoute_Frlg",
     "gMapGroup_IndoorSevenIslandRoute_Frlg",
-    "gMapGroup_MyTownsAndRoutes",
-    "gMapGroup_IndoorTestTown",
     "gMapGroup_KerniaTownsAndRoutes",
     "gMapGroup_IndoorBalwyn"
   ],
@@ -1164,13 +1162,6 @@
   ],
   "gMapGroup_IndoorSevenIslandRoute_Frlg": [
     "SevenIsland_SevaultCanyon_House_Frlg"
-  ],
-  "gMapGroup_MyTownsAndRoutes": [
-    "TestTown",
-    "TestRoute"
-  ],
-  "gMapGroup_IndoorTestTown": [
-    "TestTown_House1_1F"
   ],
   "gMapGroup_KerniaTownsAndRoutes": [
     "Balwyn",

@@ -74,4 +74,3 @@
 
 - Script the opening sequence (Lumen's event, Kelyn and the starter, the parent and the journal). It must stop the player leaving for Route 1 before they have a starter: wild battles in Route 1's tall grass start even with an empty party (seen in testing).
 - Finish Route 1 (see `route-1.md` for the phase plan).
-- Retire TestTown and TestRoute (and the TestTown house interior) once Balwyn and the first route replace them.

@@ -9325,36 +9325,6 @@
       "layout_version": "frlg"
     },
     {
-      "id": "LAYOUT_TEST_TOWN",
-      "name": "TestTown_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/TestTown/border.bin",
-      "blockdata_filepath": "data/layouts/TestTown/map.bin"
-    },
-    {
-      "id": "LAYOUT_TEST_TOWN_HOUSE1_1F",
-      "name": "TestTown_House1_1F_Layout",
-      "width": 5,
-      "height": 5,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_GenericBuilding",
-      "border_filepath": "data/layouts/TestTown_House1_1F/border.bin",
-      "blockdata_filepath": "data/layouts/TestTown_House1_1F/map.bin"
-    },
-    {
-      "id": "LAYOUT_TEST_ROUTE",
-      "name": "TestRoute_Layout",
-      "width": 20,
-      "height": 10,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/TestRoute/border.bin",
-      "blockdata_filepath": "data/layouts/TestRoute/map.bin"
-    },
-    {
       "id": "LAYOUT_BALWYN",
       "name": "Balwyn_Layout",
       "width": 24,

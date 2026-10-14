@@ -73,7 +73,8 @@ Reopen Porymap and check that the connection shows on both maps.
 
 **Not yet:** rematches, Match Call, double battles, and any Lumen-themed trainers (they can come once the opening sequence introduces Lumen).
 
-### Phase 5 — Retire TestTown and TestRoute
+### Phase 5 — Retire TestTown and TestRoute ✅
+*The groups were deleted, not kept as placeholders. Kernia's groups each moved up by two (Balwyn's is now 75), so start a new game. `FLAG_RECEIVED_TEST_TOWN_POKEMON` went back to `FLAG_UNUSED_0x020`, and the test town's popup-style entries were removed from `src/map_name_popup.c`.*
 **Deliverable:** The test maps are gone, and the game builds and plays exactly as before.
 **Verify:** `make clean-generated && make -j$(nproc)` succeeds. Check that `grep -rn "TEST_TOWN\|TEST_ROUTE\|TestTown\|TestRoute" data src include` finds nothing. Start a new game and walk Balwyn → Route 1 → back. Check that Porymap opens the project with no missing-map errors.
 **Work:**
@@ -84,7 +85,6 @@ Reopen Porymap and check that the connection shows on both maps.
 **Not yet:** n/a. This is the final cleanup.
 
 ## Open questions
-- **Removing the test map groups (phase 5):** removing groups from `group_order` shifts the group number of every group after them, including `gMapGroup_KerniaTownsAndRoutes` and `gMapGroup_IndoorBalwyn`. Saves store those numbers, so existing test saves would break. That's harmless before release (just start a new game). The alternative is to keep the two groups as empty placeholders, if mapjson accepts empty groups. Decide at phase 5.
 - **Route length and shape:** 40–50 tiles wide is a guess for a first route. Adjust after walking it in phase 1.
 
 ## Rejected alternatives

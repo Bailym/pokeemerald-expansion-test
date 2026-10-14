@@ -1628,14 +1628,6 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_TEST_TOWN",
-      "name": "TEST TOWN"
-    },
-    {
-      "id": "MAPSEC_TEST_ROUTE",
-      "name": "TEST ROUTE"
-    },
-    {
       "id": "MAPSEC_BALWYN",
       "name": "BALWYN"
     }
