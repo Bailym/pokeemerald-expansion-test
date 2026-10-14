@@ -81,6 +81,12 @@
 - The Fire gym opening introduces the mines and the corporation straight away. All three corporation-backing leaders come in the first four gyms.
 - After badge 5, the way across the moor to the north coast opens through a weather or terrain change (e.g. moor fog lifts, or a flooded path drains).
 - After badge 8, the player heads home to the far west for the climax at the deepest mine, then on to the League at Land's End.
+- Elite Four: each member embodies a Cornish legend, and dresses and acts the part (a storyteller, a wrestler, a singer, a moor-walker). Faced in this order:
+  1. Piskies (mischievous little folk who lead travellers astray): Fairy.
+  2. The Mermaid of Zennor (lured a man into the sea with her singing): Water dual-types, e.g. Water/Fairy, Water/Psychic, Water/Ghost.
+  3. The Giants (Cormoran and Bolster; Cornish wrestling): Fighting.
+  4. Black dogs (spectral hounds of the moors and lanes): Dark.
+- Each Elite Four member has a line reacting to the corporation's fall, since it sponsored the League.
 - Champion: the professor. An ageing Champion who still holds the title, and whose final match is against the player. Can't openly act against the corporation because the League is officially neutral and the corporation sponsors it.
 
 ## Pokémon
@@ -105,6 +111,6 @@
 - The corporation's name and logo.
 - How the three backing gym leaders react once the legendary rampages.
 - Names for the rival, professor, CEO, and admins.
-- Elite Four members and types.
+- Elite Four members' names.
 - Which badges or story events unlock each section of Bodmin Moor.
 - The rival's corporation-issued partner species.
