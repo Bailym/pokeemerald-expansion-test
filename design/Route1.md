@@ -4,7 +4,7 @@
 
 ## Overview
 
-- The first route, running east from Balwyn towards the first gym town (Camborne / Redruth).
+- The first route, running east from Balwyn towards Carnrudh, the first gym town (inspired by Camborne / Redruth).
 - A moorland lane: it leaves the village between hedges with the cliffs to the north and the sea to the south, then winds inland through woodland and heath.
 
 ## Inspiration
@@ -22,6 +22,13 @@
   - From x 10: the lane opens into a meadow, then a grass corridor winds north, south, and north again through woodland, and the sand road resumes at x 40.
   - The sand path tileset has no corner pieces, so the bends are grass.
   - The cliff ends at x 10 with a straight edge against the trees. It could be softened by hand.
+
+## Sign, items, and ledge
+
+- Route sign at (10, 10), where the lane opens into the meadow: "ROUTE 1 / ← BALWYN   CARNRUDH →".
+- Item ball: a Poké Ball in the meadow's dead-end corner at (10, 13) (`FLAG_ITEM_KERNIA_ROUTE1_POKE_BALL`, renamed from `FLAG_UNUSED_0x468`).
+- Hidden item: a Potion at (10, 5) in the ledge nook (`FLAG_HIDDEN_ITEM_KERNIA_ROUTE1_POTION`, renamed from `FLAG_UNUSED_0x264`; hidden-item flags must be ≥ `FLAG_HIDDEN_ITEMS_START`).
+- Ledge: a nook off the top corridor (x 10–13, rows 5–7) with a south-facing ledge across row 8 (`0x0D5`/`0x087`/`0x0D6`). It's a one-way hop down into the meadow on the way back to Balwyn. The ledge blocks the nook from the meadow, so the first-bend tall grass still can't be avoided going east.
 
 ## Wild Pokémon
 
@@ -44,8 +51,8 @@
 
 ## Open questions
 
-- The first gym town's name, for the route sign.
+- None at the moment.
 
 ## Next steps
 
-- See `route-1.md` for the phase plan: sign, items, and ledge, then trainers.
+- See `route-1.md` for the phase plan: trainers next.

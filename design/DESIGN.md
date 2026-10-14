@@ -60,6 +60,7 @@
 - Structure: hub and spokes, with the Bodmin Moor Wild Area as the hub and gym towns branching off it.
 - Sections of the moor unlock with badges or story progress.
 - Hometown: Balwyn, a quiet former tin-mining village in the far west (see `Balwyn.md`).
+- First gym town: Carnrudh, from carn (rocky hill or tor) + rudh (red), "red tor". Inspired by Camborne / Redruth, and named for Carn Brea, the hill between them, and for Redruth.
 - Truro is the main city: corporation HQ, the professor's lab, and the region's main shopping and services.
 - Towns inspired by (and renamed from): St Ives / Penzance, Camborne / Redruth, Truro, St Austell clay country, Falmouth, and the north coast (Newquay, Padstow, Tintagel).
 - Pokémon League: Land's End.
@@ -99,7 +100,7 @@
 
 | # | Town (inspired by) | Type | Leader | Stance on corporation |
 |---|---|---|---|---|
-| 1 | Camborne / Redruth | Fire | Tanek (tan = fire) | Backs it |
+| 1 | Carnrudh (Camborne / Redruth) | Fire | Tanek (tan = fire) | Backs it |
 | 2 | St Ives / Penzance | Flying | Enys (island) | Resists |
 | 3 | Truro | Psychic | Locryn (a legendary king) | Backs it |
 | 4 | Falmouth | Steel | Hornor (horn = iron) | Backs it |

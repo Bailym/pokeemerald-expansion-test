@@ -44,7 +44,7 @@
 
 ## Connections
 
-- One route east, Route 1 (`KerniaRoute1`, see `Route1.md`), towards Camborne / Redruth (gym 1).
+- One route east, Route 1 (`KerniaRoute1`, see `Route1.md`), towards Carnrudh (gym 1, inspired by Camborne / Redruth).
 
 ## Map notes
 

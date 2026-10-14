@@ -1,7 +1,7 @@
 # Route 1
 
 ## Goal
-Build the first route east out of Balwyn: a walkable moorland lane with wild Pokémon, a couple of items, and the first trainers. This gives the player somewhere to go after the opening and somewhere to catch their first Pokémon. The road continues towards the first gym town (Camborne / Redruth), which will connect at the route's east end once it exists. Once the route is in, TestTown and TestRoute have no remaining purpose and can be retired.
+Build the first route east out of Balwyn: a walkable moorland lane with wild Pokémon, a couple of items, and the first trainers. This gives the player somewhere to go after the opening and somewhere to catch their first Pokémon. The road continues towards Carnrudh, the first gym town (inspired by Camborne / Redruth), which will connect at the route's east end once it exists. Once the route is in, TestTown and TestRoute have no remaining purpose and can be retired.
 
 ## Context
 - `Balwyn` (24×24, `gTileset_General` + `gTileset_Dewford`, `MAP_TYPE_TOWN`, no connections yet) has its road leaving the east edge on rows 11–12 (`design/Balwyn.md`).
@@ -48,7 +48,7 @@ Reopen Porymap and check that the connection shows on both maps.
 
 **Not yet:** water/fishing encounters, Overworld (visible) Pokémon (moor-only by design), and per-time-of-day tables.
 
-### Phase 3 — Route sign, items, and a ledge shortcut
+### Phase 3 — Route sign, items, and a ledge shortcut ✅
 **Deliverable:** A route sign at the Balwyn end, a visible item ball and a hidden item to find, and a one-way ledge that lets the player hop back towards Balwyn quickly.
 **Verify:** Build and start a new game, then check each of these:
 - Read the sign.
@@ -84,7 +84,6 @@ Reopen Porymap and check that the connection shows on both maps.
 **Not yet:** n/a. This is the final cleanup.
 
 ## Open questions
-- **Gym town's name (nice to have for phase 3's sign):** if it isn't decided, the sign just says "ROUTE 1 / ← BALWYN".
 - **Removing the test map groups (phase 5):** removing groups from `group_order` shifts the group number of every group after them, including `gMapGroup_KerniaTownsAndRoutes` and `gMapGroup_IndoorBalwyn`. Saves store those numbers, so existing test saves would break. That's harmless before release (just start a new game). The alternative is to keep the two groups as empty placeholders, if mapjson accepts empty groups. Decide at phase 5.
 - **Route length and shape:** 40–50 tiles wide is a guess for a first route. Adjust after walking it in phase 1.
 
