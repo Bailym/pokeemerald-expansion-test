@@ -62,6 +62,30 @@
 - Towns inspired by (and renamed from): St Ives / Penzance, Camborne / Redruth, Truro, St Austell clay country, Falmouth, and the north coast (Newquay, Padstow, Tintagel).
 - Pokémon League: Land's End.
 
+## Bodmin Moor Wild Area
+
+- The central hub, like Sword/Shield's Wild Area, with gym towns branching off it.
+- Zones, each its own map (or set of maps) with its own encounter table and weather:
+  - Heath & tors: open heather and gorse, granite tors.
+  - Bog & mire: wet, misty bogland.
+  - Lake & river: moorland pools, reservoirs, streams, and waterfalls.
+  - Woods & ruins: oak valleys, old engine houses, and abandoned quarries.
+- Unlocking:
+  - Heath & tors opens first, from Truro, around badge 3.
+  - Woods & ruins and Lake & river open with later badges.
+  - After badge 5, the first tremors and knocking from Bucca stirring shift rocks or drain water, opening the bog and the way to the north coast. This foreshadows the legendary.
+- Wild Pokémon:
+  - Both visible Pokémon roaming the map and random encounters in tall grass.
+  - Visible Pokémon appear only on the moor, not on regular routes.
+  - Wild levels scale with the player's badge count, so the moor stays relevant all game.
+- Weather is fixed per zone.
+- Other things to do: hidden items and berry trees; landmarks and lore (standing stones, old inns, engine houses), with the grandparent's journal tying in.
+- Technical notes:
+  - A single map can be at most about 86×86 tiles (`MAX_MAP_DATA_SIZE` check in `src/fieldmap.c`), so each zone is built from connected maps.
+  - Visible Pokémon use the expansion's Overworld Wild Encounters (`WE_OW_ENCOUNTERS` in `include/config/wild_encounter.h`, which needs `OW_POKEMON_OBJECT_EVENTS`). They spawn on encounter tiles (e.g. tall grass), so open areas meant to have roaming Pokémon need encounter tiles. See `docs/tutorials/how_to_overworld_wild_encounters.md`.
+  - Visible spawning is a global setting. Keeping it moor-only means assigning a flag to `WE_OWE_FLAG_DISABLED` and setting/clearing it when entering and leaving the moor.
+  - Badge-scaled wild levels aren't built in; they need a code change around `ChooseWildMonLevel` in `src/wild_encounter.c`.
+
 ## Gyms and League
 
 - Classic structure: 8 gym badges, then the Pokémon League.
@@ -82,7 +106,7 @@
 
 - Route through the order: the far west first (1–2), then Truro (3), then the south coast (4–5), then across Bodmin Moor to the north coast, travelling south-west to north-east (6–8).
 - The Fire gym opening introduces the mines and the corporation straight away. All three corporation-backing leaders come in the first four gyms.
-- After badge 5, the way across the moor to the north coast opens through a weather or terrain change (e.g. moor fog lifts, or a flooded path drains).
+- After badge 5, the way across the moor to the north coast opens when Bucca's first tremors shift rocks or drain water (see Bodmin Moor Wild Area).
 - After badge 8, the player heads home to the far west for the climax at the deepest mine, then on to the League at Land's End.
 - Elite Four: each member embodies a Cornish legend, and dresses and acts the part (a storyteller, a wrestler, a singer, a moor-walker). Faced in this order:
   1. Kitto — Piskies (mischievous little folk who lead travellers astray): Fairy.
@@ -108,10 +132,11 @@
 
 ## Open questions
 
-- What causes the weather/terrain change that opens the moor to the north coast.
 - How each of the other five leaders resists the corporation.
 - Lumen's logo.
 - How the three backing gym leaders react once the legendary rampages.
 - Nova's real name, if any.
-- Which badges or story events unlock each section of Bodmin Moor.
+- Which badges open Woods & ruins and Lake & river.
+- How much wild levels rise per badge on the moor.
+- Each moor zone's weather.
 - The rival's corporation-issued partner species.
