@@ -173,6 +173,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Balwyn_EventScript_EventCast",
       "flag": "FLAG_HIDE_BALWYN_SENDOFF"
+    },
+    {
+      "local_id": "LOCALID_BALWYN_MINE_GRUNT_1",
+      "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
+      "x": 7,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Balwyn_EventScript_MineGrunt1",
+      "flag": "FLAG_HIDE_BALWYN_MINE_GRUNTS"
+    },
+    {
+      "local_id": "LOCALID_BALWYN_MINE_GRUNT_2",
+      "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
+      "x": 8,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Balwyn_EventScript_MineGrunt2",
+      "flag": "FLAG_HIDE_BALWYN_MINE_GRUNTS"
     }
   ],
   "warp_events": [
@@ -331,6 +359,204 @@
       "var": "VAR_BALWYN_STATE",
       "var_value": "BALWYN_STATE_SENT_TO_MINE",
       "script": "Balwyn_EventScript_MineEventAt_12_12"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 10,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 10,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 10,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 10,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 10,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 10,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 11,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 11,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 11,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 11,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 11,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 11,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_BALWYN_STATE",
+      "var_value": "BALWYN_STATE_NOVA_BATTLED",
+      "script": "Balwyn_EventScript_FirstKnocking"
     }
   ],
   "bg_events": [
@@ -349,6 +575,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Balwyn_EventScript_PubSign"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Balwyn_EventScript_LumenNotice"
     }
   ]
 }

@@ -99,6 +99,12 @@
 - The road leaves the east edge on rows 11–12 and continues onto Route 1 (`right` connection to `MAP_KERNIA_ROUTE1`, offset 0). The two maps share tilesets so the join draws cleanly.
 - New-game spawn point (`WarpToTruck` in `src/new_game.c`): (4, 4) in the bedroom, `Balwyn_PlayersHouse_2F`.
 - Mine placeholder: an adit (Granite Cave's entrance tile, from Route 106) cut into the cliff at (6, 4), with a gravel apron and a boulder. It sits in a yard in the north-west corner, closed off by the sea to the west, trees to the east, and a picket fence across the front (row 8), with a warning sign outside at (6, 9). The adit tile also has collision set. To open the mine later, remove part of the fence (or replace it with a scripted barrier) and add a warp on the adit. A proper engine house needs custom tiles.
+- After the announcement (`ON_LOAD`, state "event done" or later):
+  - Lumen has opened the middle of the fence (x 7–8, row 8), and two posted grunts (`FLAG_HIDE_BALWYN_MINE_GRUNTS`) stand in the gap.
+  - A notice board (`0x37B`: Dewford's `0x232` board redrawn on grass, added to the end of `gTileset_Dewford`) by the path at (10, 9) reads "WHEAL GWYN REOPENS! A Lumen heritage project."
+  - The tiles are set by `setmetatile`, so `map.bin` stays as before the announcement.
+  - No site hut yet: neither tileset has one that fits the yard. Custom tiles are needed, along with the engine house.
+- The first knocking: 22 triggers in front of the fence (x 5–10, rows 9–12) fire once after Nova's send-off. They play three `SE_WALL_HIT` thuds and "...tok... tok... tok...", and a grunt says it "must be the pipes".
 
 ## Open questions
 
@@ -111,4 +117,4 @@
 
 ## Next steps
 
-- Script the opening sequence (see Story). The grunt's block must stop the player leaving for Route 1 before they have a starter: wild battles in Route 1's tall grass start even with an empty party (seen in testing).
+- The opening sequence is done (see `opening-sequence.md`). Next for Balwyn: custom art (Nova, Kelyn, the grunts, the engine house and a site hut), and its mid-game and endgame states.

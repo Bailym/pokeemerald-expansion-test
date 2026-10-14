@@ -1,4 +1,5 @@
 Balwyn_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Balwyn_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Balwyn_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Balwyn_OnFrame
 	.byte 0
@@ -6,6 +7,22 @@ Balwyn_MapScripts::
 Balwyn_OnFrame:
 	map_script_2 VAR_BALWYN_STATE, BALWYN_STATE_HAS_STARTER, Balwyn_EventScript_NovaBattle
 	.2byte 0
+
+Balwyn_OnLoad:
+	call_if_ge VAR_BALWYN_STATE, BALWYN_STATE_EVENT_DONE, Balwyn_EventScript_ShowMineWorks
+	end
+
+@ After the announcement, Lumen has opened the middle of the Wheal Gwyn fence (posted grunts stand in the gap)
+@ and put up a notice board by the path.
+Balwyn_EventScript_ShowMineWorks::
+	setmetatile 5, 8, 0x148, TRUE
+	setmetatile 6, 8, 0x14A, TRUE
+	setmetatile 7, 8, 0x001, FALSE
+	setmetatile 8, 8, 0x001, FALSE
+	setmetatile 9, 8, 0x148, TRUE
+	setmetatile 10, 8, 0x14A, TRUE
+	setmetatile 10, 9, 0x37B, TRUE
+	return
 
 Balwyn_OnTransition:
 	call_if_ge VAR_BALWYN_STATE, BALWYN_STATE_HAS_STARTER, Balwyn_EventScript_OpenRoadEast
@@ -352,6 +369,7 @@ Balwyn_EventScript_MineEvent::
 	setflag FLAG_HIDE_BALWYN_EVENT_CAST
 	clearflag FLAG_HIDE_BALWYN_VILLAGERS_HOME
 	clearflag FLAG_HIDE_BALWYN_HOUSE_KELYN
+	clearflag FLAG_HIDE_BALWYN_MINE_GRUNTS
 	setvar VAR_BALWYN_STATE, BALWYN_STATE_EVENT_DONE
 	@ Kelyn walks the player home; the kitchen-table scene picks up inside, just above the doormat.
 	warp MAP_BALWYN_PLAYERS_HOUSE_1F, 8, 7
@@ -550,3 +568,72 @@ Balwyn_Text_KelynGoodbye:
 	.string "Treveur. Come and find me there.\p"
 	.string "And keep that journal close,\n"
 	.string "won't you?$"
+
+@ Lumen's notice board only exists once the announcement has happened (see Balwyn_EventScript_ShowMineWorks).
+Balwyn_EventScript_LumenNotice::
+	goto_if_lt VAR_BALWYN_STATE, BALWYN_STATE_EVENT_DONE, Balwyn_EventScript_RoadBlockEnd
+	msgbox Balwyn_Text_LumenNotice, MSGBOX_SIGN
+	end
+
+Balwyn_EventScript_MineGrunt1::
+	msgbox Balwyn_Text_MineGrunt1, MSGBOX_NPC
+	end
+
+Balwyn_EventScript_MineGrunt2::
+	msgbox Balwyn_Text_MineGrunt2, MSGBOX_NPC
+	end
+
+@ The first time the player comes near the Wheal Gwyn fence after Nova's send-off, they hear the Knockers.
+Balwyn_EventScript_FirstKnocking::
+	lockall
+	delay 30
+	playse SE_WALL_HIT
+	waitse
+	delay 24
+	playse SE_WALL_HIT
+	waitse
+	delay 24
+	playse SE_WALL_HIT
+	waitse
+	delay 30
+	msgbox Balwyn_Text_KnockKnock, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	waitmovement 0
+	msgbox Balwyn_Text_KnockingFromTheMine, MSGBOX_DEFAULT
+	msgbox Balwyn_Text_GruntPipes, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_BALWYN_STATE, BALWYN_STATE_KNOCKING_HEARD
+	releaseall
+	end
+
+Balwyn_Text_LumenNotice:
+	.string "WHEAL GWYN REOPENS!\n"
+	.string "A Lumen heritage project.\p"
+	.string "Bringing the mines home.\n"
+	.string "Clean. Safe. Modern.$"
+
+Balwyn_Text_MineGrunt1:
+	.string "Wheal Gwyn's in safe hands now!\n"
+	.string "Our engineers are surveying.\p"
+	.string "Site's closed to the public for\n"
+	.string "now, though. Safety first!$"
+
+Balwyn_Text_MineGrunt2:
+	.string "Funny old place, this. The lads\n"
+	.string "hear tapping down there, nights.\p"
+	.string "Probably just the pipes.$"
+
+Balwyn_Text_KnockKnock:
+	.string "...tok... tok... tok...$"
+
+Balwyn_Text_KnockingFromTheMine:
+	.string "The tapping seems to come from\n"
+	.string "deep inside Wheal Gwyn...$"
+
+Balwyn_Text_GruntPipes:
+	.string "There it goes again. Must be\n"
+	.string "the pipes. ...Right?$"

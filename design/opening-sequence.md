@@ -151,7 +151,11 @@ It turns Balwyn from an empty set into the game's first act, and closes the hole
 
 **Not yet:** the village's "after" state and the knocking.
 
-### Phase 6 — Balwyn afterwards, and the first knocking
+### Phase 6 — Balwyn afterwards, and the first knocking ✅
+*As built:*
+- *The villagers branch on "event done" for their after lines.*
+- *The site hut is deferred: there's no fitting vanilla tile. The fence gap, notice board, and posted grunts carry the visible change.*
+- *The knocking uses three `SE_WALL_HIT` thuds plus text.*
 **Deliverable:**
 - Every villager has an "after" line reacting to the announcement.
 - Wheal Gwyn visibly changes: grunts posted at the fence, Lumen signs, a site hut, and a "WHEAL GWYN REOPENS" notice.
