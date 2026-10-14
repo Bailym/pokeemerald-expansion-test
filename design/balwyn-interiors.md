@@ -45,7 +45,7 @@ For each building, copy a vanilla interior layout into its own `data/layouts/Bal
 **Not yet:** the bedroom PC, the clock, and any vanilla furniture interactions (the tiles are just decoration with no `bg_events`), and the mailbox.
 
 
-### Phase 3 — The two neighbours' houses
+### Phase 3 — The two neighbours' houses ✅
 **Deliverable:** The blue-roof neighbour's house and the red-roof cottage can be walked into and out of.
 **Verify:** Build, start a new game, and go in and out of each door at (15, 9) and (19, 9). The cottage's `0x021` door doesn't animate the same way as the others; check that the warp still fires and the player comes out on (19, 10).
 **Work:**
