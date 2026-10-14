@@ -11,11 +11,13 @@ KerniaRoute1_Text_RouteSign:
 
 KerniaRoute1_EventScript_Jory::
 	trainerbattle_single TRAINER_JORY, KerniaRoute1_Text_JoryIntro, KerniaRoute1_Text_JoryDefeated
+	setspeaker SP_NAME_JORY
 	msgbox KerniaRoute1_Text_JoryPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 KerniaRoute1_EventScript_Tamsin::
 	trainerbattle_single TRAINER_TAMSIN, KerniaRoute1_Text_TamsinIntro, KerniaRoute1_Text_TamsinDefeated
+	setspeaker SP_NAME_TAMSIN
 	msgbox KerniaRoute1_Text_TamsinPostBattle, MSGBOX_AUTOCLOSE
 	end
 

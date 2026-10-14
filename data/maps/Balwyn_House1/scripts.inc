@@ -2,10 +2,12 @@ Balwyn_House1_MapScripts::
 	.byte 0
 
 Balwyn_House1_EventScript_Treve::
+	setspeaker SP_NAME_TREVE
 	msgbox Balwyn_House1_Text_Treve, MSGBOX_NPC
 	end
 
 Balwyn_House1_EventScript_Wenna::
+	setspeaker SP_NAME_WENNA
 	msgbox Balwyn_House1_Text_Wenna, MSGBOX_NPC
 	end
 

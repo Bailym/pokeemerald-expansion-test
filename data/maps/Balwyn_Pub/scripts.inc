@@ -2,6 +2,7 @@ Balwyn_Pub_MapScripts::
 	.byte 0
 
 Balwyn_Pub_EventScript_Morwenna::
+	setspeaker SP_NAME_MORWENNA
 	msgbox Balwyn_Pub_Text_Morwenna, MSGBOX_NPC
 	end
 
@@ -10,6 +11,7 @@ Balwyn_Pub_EventScript_MorwennaAcrossCounter::
 	lockall
 	applymovement LOCALID_BALWYN_PUB_MORWENNA, Common_Movement_FaceDown
 	waitmovement 0
+	setspeaker SP_NAME_MORWENNA
 	msgbox Balwyn_Pub_Text_Morwenna, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -27,7 +29,7 @@ Balwyn_Pub_Text_Morwenna:
 	.string "pasty crust. For luck, see.$"
 
 Balwyn_Pub_Text_Regular:
-	.string "My granfer went to Australia\n"
+	.string "My granfer went overseas\n"
 	.string "when the mines here shut.\p"
 	.string "Half of Balwyn did. Cousin\n"
 	.string "Jacks, they called 'em.\p"

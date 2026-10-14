@@ -67,7 +67,14 @@ It turns Balwyn from an empty set into the game's first act, and closes the hole
 
 **Not yet:** "after" lines, villagers at the event, and visible village changes.
 
-### Phase 3 — The Wheal Gwyn event
+### Phase 3 — The Wheal Gwyn event ✅
+*As built:*
+- *The grunt's first speech spawns the cast (`FLAG_HIDE_BALWYN_EVENT_CAST`, `addobject`) and empties Jacca's and Treve's homes (`FLAG_HIDE_BALWYN_VILLAGERS_HOME`).*
+- *Triggers are on x 13 (rows 9–12) and row 12 (x 5–12), conditioned on `BALWYN_STATE_SENT_TO_MINE`.*
+- *Each trigger tile has its own short walk that brings the player into the crowd at (9, 11), via row 11, which the crowd leaves clear.*
+- *Every line has a name box (NOVA, TREVE, WENNA, JACCA, KELYN), and each speaker also steps in place.*
+- *Kelyn steps forward for her question. At the end she walks round to (10, 11), and she and the player turn to face each other before she speaks.*
+- *It ends with a warp to the house at (8, 7). No event music yet.*
 **Deliverable:** After the grunt sends you, walking up to the crowd at the Wheal Gwyn fence plays the announcement:
 - Nova, with Pawmi, announces that Lumen is reopening Wheal Gwyn.
 - The dad and the old miner react aloud.

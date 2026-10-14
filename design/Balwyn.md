@@ -38,6 +38,11 @@
 - The player's family are miners. The grandparent, an old miner who knew the legends, passed away before the game starts.
 - The deepest old mine, where Bucca sleeps, is visible from day one: an engine house on the cliffs just outside the village, its entrance fenced off and sealed. After badge 8 the player returns home for the climax there.
 
+- At the event:
+  - Kelyn introduces herself as a professor who studies the old legends, and asks about "the Bucca below" that the miners who sealed Wheal Gwyn spoke of.
+  - Nova: "We've got engineers, not piskies! The only spirit down there is team spirit!"
+  - Lumen's slogan: "bringing the mines home", with "clean, safe, and modern" mining.
+
 ## Locations
 
 - A small village of four buildings either side of the road east, on a headland: cliffs to the north, sea to the west and south.
@@ -59,10 +64,10 @@
 - Neighbour's house (blue roof): Treve, out of work since the last mine shut, first in the queue for Lumen's jobs rather than moving up-country. His daughter Wenna is a Nova fan with a Pawmi plushie she wants signed.
 - Professor Kelyn (visiting): sceptical of Lumen. Gives the starter, Pokédex, and Poké Balls, then returns to Truro.
 - Nova and Lumen's PR team (visiting for the opening). A hi-vis grunt redirects the player to the event, and grunts stay posted at Wheal Gwyn afterwards.
-- The Knocker's Arms: Morwenna, the landlady, behind the bar. She explains the pub's name and the miners' custom of leaving pasty crust for the Knockers. A regular at the bar tells how his granfer emigrated to Australia when the mines shut (the "Cousin Jacks"), and how the young now leave for up-country.
+- The Knocker's Arms: Morwenna, the landlady, behind the bar. She explains the pub's name and the miners' custom of leaving pasty crust for the Knockers. A regular at the bar tells how his granfer emigrated overseas when the mines shut (the "Cousin Jacks"), and how the young now leave for up-country.
 - Sprites: vanilla Emerald stand-ins (FireRed sprites are invisible in Emerald builds).
   - Old Jacca: `OLD_MAN`. Treve: `MAN_3`. Wenna: `LITTLE_GIRL`. Morwenna: `WOMAN_2`. The regular: `MAN_4`. The road grunt: `DEVON_EMPLOYEE`.
-  - Nova and Kelyn still need picking.
+  - Nova: `RICH_BOY`, with Pawmi beside him as `OBJ_EVENT_GFX_SPECIES(PAWMI)`. Kelyn: `EXPERT_F`. The event grunt: `DEVON_EMPLOYEE`.
 - The bar counter isn't `MB_COUNTER`, so a `bg_event` on the counter tile in front of Morwenna lets the player talk to her across it.
 
 ## Connections

@@ -16,6 +16,7 @@ Balwyn_PlayersHouse_1F_EventScript_MorningScene::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
+	setspeaker SP_NAME_MUM
 	msgbox Balwyn_PlayersHouse_1F_Text_MumMorning, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_BALWYN_PLAYERS_HOUSE_1F_MUM, Balwyn_PlayersHouse_1F_Movement_MumToSink
@@ -25,6 +26,7 @@ Balwyn_PlayersHouse_1F_EventScript_MorningScene::
 	end
 
 Balwyn_PlayersHouse_1F_EventScript_Mum::
+	setspeaker SP_NAME_MUM
 	msgbox Balwyn_PlayersHouse_1F_Text_MumKelyn, MSGBOX_NPC
 	end
 

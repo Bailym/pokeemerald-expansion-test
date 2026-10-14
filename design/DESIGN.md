@@ -35,7 +35,12 @@
   - Locals speak with a light Cornish dialect and a few Cornish words ("dreckly", "proper job", "my 'ansum", "emmet" for outsiders).
   - Lumen staff use upbeat corporate and PR speak.
   - Keep both readable, not caricatured.
+- Name boxes: named characters always show their name above the text box, in cutscenes and in ordinary chats alike (`setspeaker SP_NAME_*`, with names in `src/data/speaker_names.h`). Unnamed NPCs ("a regular", grunts) don't get one. Trainers show theirs automatically when they spot the player (`OW_NAME_BOX_NPC_TRAINER` in `include/config/name_box.h`), and their after-battle lines use `setspeaker`.
 - Brevity: GBA text boxes are small, so aim for one to three short pages per speaker. Each line should carry one idea.
+- No real-world place names in dialogue:
+  - Places in Kernia use their Kernia names.
+  - Places outside it stay vague ("overseas", "up-country", "across the sea"), like most Pokémon regions.
+  - If a Kernia name isn't decided yet, write around it rather than using the real-world name as a placeholder.
 - Consistency: recurring lore facts (names, legends, dates) are recorded here or in the town docs, so the same story is told everywhere.
 
 ## Characters
@@ -48,8 +53,10 @@
   - A media darling: polished, confident, always on camera, and fully believes the corporation's message.
   - Their partner Pokémon, a Pawmi (cute Electric mascot for an energy brand), was issued by the corporation, not chosen from the starter trio.
   - Nova is their only name; no real name behind it.
+  - Reads as a young man (stand-in sprite: Rich Boy).
   - Turns against the corporation when that partner is harmed or taken by its experiments, and the grandparent's journal makes the legends click.
 - Professor — Kelyn (Cornish for 'holly', after the tradition of professors named for trees): a folklore scholar who studies how Pokémon shaped Cornish legends; the link between myth and science.
+  - Reads as an older woman (stand-in sprite: Expert, female).
   - An old friend of the grandparent, which is why they visit the village and give the player their starter. Has a lab in Truro.
   - Secretly also the Champion at Land's End (see Gyms and League).
 - Corporation leader — Sterling: an outside CEO who sees Cornwall as a resource. A charming visionary who gives inspiring speeches, but is driven by wanting the legendary's power for themselves.

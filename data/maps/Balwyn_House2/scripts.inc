@@ -2,6 +2,7 @@ Balwyn_House2_MapScripts::
 	.byte 0
 
 Balwyn_House2_EventScript_Jacca::
+	setspeaker SP_NAME_JACCA
 	msgbox Balwyn_House2_Text_Jacca, MSGBOX_NPC
 	end
 
