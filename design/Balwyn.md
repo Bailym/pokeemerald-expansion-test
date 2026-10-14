@@ -50,14 +50,14 @@
 
 - Map `Balwyn` (`MAP_BALWYN`), layout `LAYOUT_BALWYN` (24×24, `gTileset_General` + `gTileset_Dewford`), region map section `MAPSEC_BALWYN`, outdoor maps group `gMapGroup_KerniaTownsAndRoutes`.
 - Music `MUS_LITTLEROOT`, weather `WEATHER_SUNNY` (not `WEATHER_SUNNY_CLOUDS`, whose cloud shadows streak across the buildings). Border is plain sea (`0x170`) to match the shoreline water.
-- Interiors in their own group `gMapGroup_IndoorBalwyn`. Four doors need warps and interior maps:
+- Interiors are in their own group, `gMapGroup_IndoorBalwyn`, each with its own layout copied from a vanilla interior. The door warps on `Balwyn` are numbered in the order below; don't reorder them, because each interior's doormat warps back to that number.
 
-| Building | Door | Interior map (suggested) |
-|---|---|---|
-| Neighbour's house | (15, 9) | `Balwyn_House1` |
-| Cottage | (19, 9) | `Balwyn_House2` |
-| Player's house | (7, 17) | `Balwyn_PlayersHouse_1F` + `Balwyn_PlayersHouse_2F` (bedroom; stairs 1F (8, 2) ↔ 2F (7, 1)) |
-| Pub | (17, 17) | `Balwyn_Pub` |
+| Warp | Building | Door | Interior map | Copied from |
+|---|---|---|---|---|
+| 0 | Player's house | (7, 17) | `Balwyn_PlayersHouse_1F` + `Balwyn_PlayersHouse_2F` (bedroom; stairs 1F (8, 2) ↔ 2F (7, 1)) | Brendan's house |
+| 1 | Neighbour's house | (15, 9) | `Balwyn_House1` | Dewford House 1 |
+| 2 | Cottage | (19, 9) | `Balwyn_House2` | Dewford House 2 |
+| 3 | Pub | (17, 17) | `Balwyn_Pub` (bar counter across the back right with bookshelves behind as bottle shelves, two tables on the left) | Composed from Trainer Fan Club / Dewford Hall pieces |
 
 - Signs needing text (`bg_events`): mine warning sign (6, 9); pub sign (20, 17).
 - The road leaves the east edge on rows 11–12, where the first route will connect. Until then the road runs into the sea border.
@@ -72,7 +72,6 @@
 
 ## Next steps
 
-- Create the four interiors and add the door warps (see the table in Map notes).
 - Write the two signs' text.
 - Script the opening sequence (Lumen's event, Kelyn and the starter, the parent and the journal).
 - Build the first route east and connect it on rows 11–12.

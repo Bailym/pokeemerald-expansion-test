@@ -1754,3 +1754,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Balwyn_House1/scripts.inc"
 
 	.include "data/maps/Balwyn_House2/scripts.inc"
+
+	.include "data/maps/Balwyn_Pub/scripts.inc"

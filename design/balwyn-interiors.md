@@ -19,7 +19,7 @@ For each building, copy a vanilla interior layout into its own `data/layouts/Bal
 | Player's house | (7, 17) | `Balwyn_PlayersHouse_1F` / `_2F` | `LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F` / `_2F` (11×9 / 9×8, `gTileset_BrendansMaysHouse`) |
 | Neighbour's house | (15, 9) | `Balwyn_House1` | `LAYOUT_HOUSE3` (Dewford House 1, 10×8) |
 | Cottage | (19, 9) | `Balwyn_House2` | `LAYOUT_HOUSE4` (Dewford House 2, 10×9) |
-| Pub | (17, 17) | `Balwyn_Pub` | `LAYOUT_LILYCOVE_CITY_COVE_LILY_MOTEL_1F` (12×9, reception counter as the bar) |
+| Pub | (17, 17) | `Balwyn_Pub` Composed 12×9 from Trainer Fan Club / Dewford Hall blocks (the motel's tables-and-chairs room was tried first) |
 
 ## Phases
 
@@ -44,7 +44,6 @@ For each building, copy a vanilla interior layout into its own `data/layouts/Bal
 
 **Not yet:** the bedroom PC, the clock, and any vanilla furniture interactions (the tiles are just decoration with no `bg_events`), and the mailbox.
 
-
 ### Phase 3 — The two neighbours' houses ✅
 **Deliverable:** The blue-roof neighbour's house and the red-roof cottage can be walked into and out of.
 **Verify:** Build, start a new game, and go in and out of each door at (15, 9) and (19, 9). The cottage's `0x021` door doesn't animate the same way as the others; check that the warp still fires and the player comes out on (19, 10).
@@ -54,20 +53,18 @@ For each building, copy a vanilla interior layout into its own `data/layouts/Bal
 
 **Not yet:** who lives there, and whether either house is boarded up or left empty (open question). If one ends up locked, its door gets a script instead of a warp later.
 
-### Phase 4 — The pub
-**Deliverable:** The pub at (17, 17) opens into a room with a bar counter.
-**Verify:** Build, start a new game, and go in and out of the pub. Check that the counter blocks movement and the room reads as a pub rather than a motel reception. If it doesn't, swap in a different vanilla layout before moving on.
+### Phase 4 — The pub ✅
+**Deliverable:** The pub at (17, 17) opens into a room with a bar counter, shelves behind it, and tables with chairs.
+**Verify:** Build, start a new game, and go in and out of the pub. Check that the counter and tables block movement and the room reads as a pub. If it doesn't, swap in a different vanilla layout before moving on.
 **Work:**
-- Copy the Cove Lily Motel 1F layout → `Balwyn_Pub` and register the map.
+- Register `Balwyn_Pub`. Its layout is composed from vanilla blocks (copied with their collision): Fan Club walls, floorboards, bookshelves, and doormat, and the Dewford Hall white counter. The counter tiles have the yellow floorboards drawn in, so the pub uses those floorboards throughout. The FireRed restaurant tilesets aren't built into Emerald.
 - Add outdoor warp 3 at (17, 17) and the matching doormat warps.
-- Leave the motel's stair tile with no warp event (or swap it for wall/floor) so it isn't a dead end.
 - Update `design/Balwyn.md` Map notes: list the interiors and the warp index order, and tick off the "Create the four interiors" next step.
 
-**Not yet:** pub NPCs, bartender dialogue, the pub sign's text (a separate next step), and any custom pub tiles.
+**Not yet:** pub NPCs, bartender dialogue, the pub sign's text (a separate next step), talking to a bartender across the counter (these counter tiles aren't `MB_COUNTER`, so a bartender script would need the NPC adjacent or a counter-behaviour tile), bar stools, and any custom pub tiles.
 
 ## Open questions
 - **Is the neighbour's house or the cottage empty or boarded up?** This doesn't block phase 3, but a boarded-up house might have a locked door script instead of a warp.
-- **Pub layout fit:** whether the motel reception reads as a bar is only settled by seeing it in-game (phase 4's verify step).
 
 ## Rejected alternatives
 - **Point the maps at shared vanilla layouts (`LAYOUT_HOUSE3` etc.) instead of copying them:** less work, but any Porymap edit to a Balwyn room would also change every vanilla map using that layout, and the names wouldn't follow the `<MapName>_Layout` convention.
