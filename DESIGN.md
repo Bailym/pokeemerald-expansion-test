@@ -5,7 +5,7 @@
 ## Region
 
 - UK-based region, themed largely around Cornwall in the South West.
-- Region name: something riffing on Kernow (Cornish for Cornwall), e.g. Kernow, Kerno, Kernia.
+- Region name: Kernia, from Kernow (Cornish for Cornwall).
 - Main game covers Cornwall; other UK areas open up postgame.
 - Tone mixes cosy seaside towns, Cornish myth, rugged nature, and industrial (mining) heritage.
 - Place names: Pokémon-style names with Cornish-language roots.
@@ -16,7 +16,10 @@
 - Main themes: industry vs. the wild land and coast, with a thread of myth running through.
 - A corporation publicly revives Cornwall's old mines and brings back jobs. Secretly, it wants to harness the power of a legendary Pokémon.
 - The legendary is a spirit of the mines, inspired by the Knockers of Cornish folklore.
+  - Like the Knockers, it helps those who respect the mine and punishes those who exploit it.
 - The corporation awakens it, it rampages, and the player calms it and can catch it.
+  - The rampage starts with eerie knocking heard across the region as an early warning, then builds to earthquakes, collapsing mine shafts, and rockfalls blocking routes.
+  - To calm it, the player destroys the corporation's control device and battles it. Then, following the grandparent's journal, they leave the traditional miners' offering (the crust of a pasty) to end its rage.
 - The corporation plot resolves before the player takes on the League.
 
 ## Characters
@@ -78,7 +81,7 @@
 
 ## Pokémon
 
-- Legendary: Groudon as a placeholder for now; may become a fakemon later.
+- Legendary: just one. Groudon is a placeholder for now; if it becomes a fakemon later, it would be Ground/Ghost.
 
 ## Postgame
 
@@ -90,7 +93,7 @@
 
 - Full gym order (beyond Truro being early-middle).
 - How each of the other five leaders resists the corporation.
-- Final region name.
+- The legendary's name.
 - The corporation's name and logo.
 - How the three backing gym leaders react once the legendary rampages.
 - Names for the rival, professor, CEO, and admins.
