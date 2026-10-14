@@ -56,12 +56,12 @@
 |---|---|---|
 | Neighbour's house | (15, 9) | `Balwyn_House1` |
 | Cottage | (19, 9) | `Balwyn_House2` |
-| Player's house | (7, 17) | `Balwyn_PlayersHouse_1F` (+ `_2F` if it has an upstairs) |
+| Player's house | (7, 17) | `Balwyn_PlayersHouse_1F` + `Balwyn_PlayersHouse_2F` (bedroom; stairs 1F (8, 2) ↔ 2F (7, 1)) |
 | Pub | (17, 17) | `Balwyn_Pub` |
 
 - Signs needing text (`bg_events`): mine warning sign (6, 9); pub sign (20, 17).
 - The road leaves the east edge on rows 11–12, where the first route will connect. Until then the road runs into the sea border.
-- New-game spawn point (`WarpToTruck` in `src/new_game.c`): (7, 18), outside the player's house. Temporary until the house interior exists.
+- New-game spawn point (`WarpToTruck` in `src/new_game.c`): (4, 4) in the bedroom, `Balwyn_PlayersHouse_2F`.
 - Mine placeholder: an adit (Granite Cave's entrance tile, from Route 106) cut into the cliff at (6, 4), with a gravel apron and a boulder. It sits in a yard in the north-west corner, closed off by the sea to the west, trees to the east, and a picket fence across the front (row 8), with a warning sign outside at (6, 9). The adit tile also has collision set. To open the mine later, remove part of the fence (or replace it with a scripted barrier) and add a warp on the adit. A proper engine house needs custom tiles.
 
 ## Open questions

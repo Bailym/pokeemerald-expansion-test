@@ -1176,6 +1176,7 @@
     "Balwyn"
   ],
   "gMapGroup_IndoorBalwyn": [
-    "Balwyn_PlayersHouse_1F"
+    "Balwyn_PlayersHouse_1F",
+    "Balwyn_PlayersHouse_2F"
   ]
 }

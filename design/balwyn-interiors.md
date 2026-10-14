@@ -34,7 +34,7 @@ For each building, copy a vanilla interior layout into its own `data/layouts/Bal
 
 **Not yet:** the stairs (the vanilla stair tile stays but leads nowhere), the parent NPC, the spawn point change, and the other three buildings.
 
-### Phase 2 — Upstairs bedroom, and new games start in it
+### Phase 2 — Upstairs bedroom, and new games start in it ✅
 **Deliverable:** The player's house has a 2F bedroom reached by the stairs, and a new game starts there instead of outside.
 **Verify:** Build. Start a new game: you should appear in the bedroom, walk down the stairs to 1F, back up, then down and out the door. Check that the 1F stair warp lands you on the 2F stairs and the 2F stair warp lands you on the 1F stairs.
 **Work:**
