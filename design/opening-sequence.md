@@ -91,7 +91,15 @@ It turns Balwyn from an empty set into the game's first act, and closes the hole
 
 **Not yet:** the starter (the scene ends at your door), the villagers' "after" lines, and the site hut and signs.
 
-### Phase 4 — Kitchen table: starter, Pokédex, Poké Balls, and journal
+### Phase 4 — Kitchen table: starter, Pokédex, Poké Balls, and journal ✅
+*As built:*
+- *Kelyn offers the starters from a `dynmultichoice` menu (FLETCHLING / SPHEAL / SHINX). Each choice shows the Pokémon's picture and her description, and confirming "no" returns to the menu.*
+  - *Poké Balls on the table were tried first, but the table's surface is only two tiles wide, and the third ball hung off its edge.*
+  - *The choice happens inside the one scene, so there's no separate "choosing" state.*
+- *Positions: Kelyn at (5, 5) and the player at (5, 6), beside the table. Mum walks to (6, 6) for the journal.*
+- *`VAR_STARTER_MON` is set to 0/1/2, and `src/starter_choose.c`'s Emerald starters are now Fletchling, Spheal, and Shinx, so `GetStarterPokemon` agrees.*
+- *The road grunt is hidden once the player has a starter, and before then he says "Safety first!" after the event.*
+- *Tests: `test/kernia_items.c` (the journal is a key item and important). The full `make check` caught the journal description being 104px against a 102px limit, which is now shortened.*
 **Deliverable:** Arriving home after the event, Kelyn and Mum are at the table:
 - You choose Fletchling, Spheal, or Shinx from three Poké Balls.
 - You receive the Pokédex and five Poké Balls.
@@ -165,7 +173,8 @@ It turns Balwyn from an empty set into the game's first act, and closes the hole
 - **How the grunt turns the player back:** phase 1 walks them two tiles west. Change it if it feels wrong in-game.
 
 ## Rejected alternatives
-- **Birch's bag starter screen (`ChooseStarter` / `src/starter_choose.c`):** it shows Birch's bag graphic with fixed Hoenn starters, and doesn't fit a kitchen table. FireRed's "balls on a table" pattern is pure scripting.
+- **Birch's bag starter screen (`ChooseStarter` / `src/starter_choose.c`):** it shows Birch's bag graphic with fixed Hoenn starters, and doesn't fit a kitchen table.
+- **FireRed's Poké Balls on a table (tried in phase 4):** Brendan's dining table only has room for two balls on its surface. Widening it would need new metatiles, so a menu was used instead.
 - **One phase per map:** the story's scenes cross maps (the event ends with you home, and the kitchen leads outside to Nova). Slicing by scene keeps each phase playable end to end.
 - **Villagers last:** the slow-burn feel depends on them, and their scripts need the state branch from the start. Adding them early means every later phase is tested in a lived-in village.
 - **A normal trainer battle for Nova:** losing would white out and send you home mid-scene. `trainerbattle_earlyrival` exists for exactly this.

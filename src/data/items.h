@@ -7307,6 +7307,23 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_Glimmoranite,
     },
 
+    [ITEM_GRAMPYS_JOURNAL] =
+    {
+        .name = ITEM_NAME("Grampy's Journal"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Grampy's notes on\n"
+            "Kernia's legends,\n"
+            "and his mine maps."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        // Borrows the Old Sea Map's icon until the journal has its own.
+        .iconPic = gItemIcon_OldSeaMap,
+        .iconPalette = gItemIconPalette_OldSeaMap,
+    },
+
 // Gems
 #if I_PRICE >= GEN_9
     #define GEM_PRICE 15000

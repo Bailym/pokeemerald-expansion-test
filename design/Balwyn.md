@@ -43,6 +43,11 @@
   - Nova: "We've got engineers, not piskies! The only spirit down there is team spirit!"
   - Lumen's slogan: "bringing the mines home", with "clean, safe, and modern" mining.
 
+- At the kitchen table:
+  - Kelyn says Grampy wrote to her often about the player, hoping they'd see Kernia with Pokémon.
+  - Kelyn's starter lines: Fletchling, "the robin. Bold as brass, and loyal with it". Spheal, "a seal pup from the coves. Gentle, but tough". Shinx, "a wildcat cub. Folk say a great beast roams the moor..." (the Beast of Bodmin).
+  - The player gets the starter at Lv5, the Pokédex, 5 Poké Balls, and Grampy's Journal from Mum. Kelyn: "There's more to it than stories."
+
 ## Locations
 
 - A small village of four buildings either side of the road east, on a headland: cliffs to the north, sea to the west and south.

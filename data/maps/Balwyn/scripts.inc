@@ -71,7 +71,13 @@ Balwyn_EventScript_RoadGruntSpeech::
 	return
 
 Balwyn_EventScript_RoadGruntSpeechRepeat::
+	goto_if_ge VAR_BALWYN_STATE, BALWYN_STATE_EVENT_DONE, Balwyn_EventScript_RoadGruntSafetyFirst
 	msgbox Balwyn_Text_RoadGruntRepeat, MSGBOX_DEFAULT
+	closemessage
+	return
+
+Balwyn_EventScript_RoadGruntSafetyFirst::
+	msgbox Balwyn_Text_RoadGruntSafetyFirst, MSGBOX_DEFAULT
 	closemessage
 	return
 
@@ -96,6 +102,10 @@ Balwyn_Text_RoadGruntSendToMine:
 	.string "has an exciting announcement.\p"
 	.string "Everyone's meeting up at the old\n"
 	.string "mine, Wheal Gwyn. Head on over!$"
+
+Balwyn_Text_RoadGruntSafetyFirst:
+	.string "Safety first! Wild Pokémon on\n"
+	.string "the road. Not without your own!$"
 
 Balwyn_Text_RoadGruntRepeat:
 	.string "The announcement's up at Wheal\n"
@@ -336,6 +346,7 @@ Balwyn_EventScript_MineEvent::
 	closemessage
 	setflag FLAG_HIDE_BALWYN_EVENT_CAST
 	clearflag FLAG_HIDE_BALWYN_VILLAGERS_HOME
+	clearflag FLAG_HIDE_BALWYN_HOUSE_KELYN
 	setvar VAR_BALWYN_STATE, BALWYN_STATE_EVENT_DONE
 	@ Kelyn walks the player home; the kitchen-table scene picks up inside, just above the doormat.
 	warp MAP_BALWYN_PLAYERS_HOUSE_1F, 8, 7

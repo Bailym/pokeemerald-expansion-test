@@ -342,9 +342,9 @@
 #define BALWYN_STATE_NEW_GAME       0 // Woke up; Mum's morning scene plays on first coming downstairs.
 #define BALWYN_STATE_MORNING_DONE   1 // Free to roam Balwyn.
 #define BALWYN_STATE_SENT_TO_MINE   2 // The road grunt has sent the player to Wheal Gwyn.
-#define BALWYN_STATE_EVENT_DONE     3 // Lumen's announcement at Wheal Gwyn has played.
-#define BALWYN_STATE_HAS_STARTER    4 // Kitchen table done; the road east is open.
-#define BALWYN_STATE_NOVA_BATTLED   5 // Nova's first battle and the send-off are done.
-#define BALWYN_STATE_KNOCKING_HEARD 6 // The first knocking at the Wheal Gwyn fence has played.
+#define BALWYN_STATE_EVENT_DONE        3 // Lumen's announcement at Wheal Gwyn has played; Kelyn is waiting at home.
+#define BALWYN_STATE_HAS_STARTER       4 // Kitchen table done; the road east is open.
+#define BALWYN_STATE_NOVA_BATTLED      5 // Nova's first battle and the send-off are done.
+#define BALWYN_STATE_KNOCKING_HEARD    6 // The first knocking at the Wheal Gwyn fence has played.
 
 #endif // GUARD_CONSTANTS_VARS_H

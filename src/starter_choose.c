@@ -110,9 +110,11 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
     {8, 4},
 };
 
-#define GRASS_STARTER (IS_FRLG ? SPECIES_BULBASAUR  : SPECIES_TREECKO)
-#define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_TORCHIC)
-#define WATER_STARTER (IS_FRLG ? SPECIES_SQUIRTLE   : SPECIES_MUDKIP )
+// Kernia's starters (see design/DESIGN.md) in the Emerald build, so VAR_STARTER_MON (0, 1, 2) maps to them
+// wherever GetStarterPokemon is used. Kelyn gives them by script in Balwyn_PlayersHouse_1F, not via this screen.
+#define GRASS_STARTER (IS_FRLG ? SPECIES_BULBASAUR  : SPECIES_FLETCHLING)
+#define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_SPHEAL)
+#define WATER_STARTER (IS_FRLG ? SPECIES_SQUIRTLE   : SPECIES_SHINX)
 
 static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
