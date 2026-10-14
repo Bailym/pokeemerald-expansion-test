@@ -122,11 +122,21 @@
   - Fletchling line (robin): Normal/Flying, becoming Fire/Flying when it evolves at 17.
   - Spheal line (grey seal, a Cornish coast icon): Ice/Water.
   - Shinx line (big cat, after the Beast of Bodmin Moor legend): Electric.
-- Legendary: just one. Groudon is a placeholder for now; if it becomes a fakemon later, it would be Ground/Ghost.
+- Main-story legendary: just one. Groudon is a placeholder for now; if it becomes a fakemon later, it would be Ground/Ghost.
 
 ## Postgame
 
-- Areas: Devon / Dartmoor, the Isles of Scilly, and Wales.
+- Driven by exploration and legends, with a light story.
+- Professor Kelyn, free of Champion duties, researches legends beyond Cornwall and sends the player to each area.
+- Three small areas, each with one town, a route or two, and the legend's site. Reached by real-world routes:
+
+| Area | Getting there | Legend | Placeholder legendary |
+|---|---|---|---|
+| Devon / Dartmoor | Across the Tamar bridge | Old Crockern, the ancient spirit of Dartmoor guarding its granite and tin (a counterpart to Bucca) | Regigigas |
+| Isles of Scilly | Ferry from Penzance (like the real Scillonian) | Lyonesse, the sunken kingdom between Land's End and Scilly | Walking Wake |
+| Wales | Train or boat | The red and white dragons fighting beneath Dinas Emrys | Reshiram & Zekrom |
+
+- All postgame legendaries are existing species as placeholders for now.
 
 ## Ideas
 
