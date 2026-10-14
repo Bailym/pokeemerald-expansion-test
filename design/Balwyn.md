@@ -31,8 +31,8 @@
   - The mine yard in the north-west corner (see below).
 - South of the road, reached by a lane branching off the main road:
   - Player's house (west).
-  - The old miners' pub (east): the community hub, where locals talk about the mines, the legends, and Lumen.
-- The deepest old mine, under the cliffs in the north-west corner: a fenced-off yard with the sealed entrance and a warning sign outside the fence.
+  - The old miners' pub (east), The Knocker's Arms: the community hub, where locals talk about the mines, the legends, and Lumen.
+- The deepest old mine, Wheal Gwyn ("white mine", echoing the village's name), under the cliffs in the north-west corner: a fenced-off yard with the sealed entrance and a warning sign outside the fence.
 - Only two neighbours' homes, so the "faded" feel has to come from these two and from NPC dialogue rather than rows of empty houses.
 - No Pokémon Center and no lab; the parent heals the player's team.
 
@@ -59,7 +59,7 @@
 | 2 | Cottage | (19, 9) | `Balwyn_House2` | Dewford House 2 |
 | 3 | Pub | (17, 17) | `Balwyn_Pub` (bar counter across the back right with bookshelves behind as bottle shelves, two tables on the left) | Composed from Trainer Fan Club / Dewford Hall pieces |
 
-- Signs needing text (`bg_events`): mine warning sign (6, 9); pub sign (20, 17).
+- Signs (`bg_events`, scripts in `Balwyn/scripts.inc`): the Wheal Gwyn warning sign at (6, 9), and The Knocker's Arms sign at (20, 17), whose "Leave a crust for the Knockers!" foreshadows the pasty-crust offering at the climax.
 - The road leaves the east edge on rows 11–12, where the first route will connect. Until then the road runs into the sea border.
 - New-game spawn point (`WarpToTruck` in `src/new_game.c`): (4, 4) in the bedroom, `Balwyn_PlayersHouse_2F`.
 - Mine placeholder: an adit (Granite Cave's entrance tile, from Route 106) cut into the cliff at (6, 4), with a gravel apron and a boulder. It sits in a yard in the north-west corner, closed off by the sea to the west, trees to the east, and a picket fence across the front (row 8), with a warning sign outside at (6, 9). The adit tile also has collision set. To open the mine later, remove part of the fence (or replace it with a scripted barrier) and add a warp on the adit. A proper engine house needs custom tiles.
@@ -72,7 +72,6 @@
 
 ## Next steps
 
-- Write the two signs' text.
 - Script the opening sequence (Lumen's event, Kelyn and the starter, the parent and the journal).
 - Build the first route east and connect it on rows 11–12.
 - Retire TestTown and TestRoute (and the TestTown house interior) once Balwyn and the first route replace them.
