@@ -77,7 +77,8 @@
     "gMapGroup_IndoorSevenIslandRoute_Frlg",
     "gMapGroup_MyTownsAndRoutes",
     "gMapGroup_IndoorTestTown",
-    "gMapGroup_KerniaTownsAndRoutes"
+    "gMapGroup_KerniaTownsAndRoutes",
+    "gMapGroup_IndoorBalwyn"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -1173,5 +1174,8 @@
   ],
   "gMapGroup_KerniaTownsAndRoutes": [
     "Balwyn"
+  ],
+  "gMapGroup_IndoorBalwyn": [
+    "Balwyn_PlayersHouse_1F"
   ]
 }

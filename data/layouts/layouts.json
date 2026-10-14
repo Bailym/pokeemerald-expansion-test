@@ -9363,6 +9363,16 @@
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Balwyn/border.bin",
       "blockdata_filepath": "data/layouts/Balwyn/map.bin"
+    },
+    {
+      "id": "LAYOUT_BALWYN_PLAYERS_HOUSE_1F",
+      "name": "Balwyn_PlayersHouse_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/Balwyn_PlayersHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Balwyn_PlayersHouse_1F/map.bin"
     }
   ]
 }
