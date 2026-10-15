@@ -89,6 +89,8 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 **Story:** with the tor saved, the festival is on: a crowd round the *Puffing Bucca* (a stand-in truck), dancers, a treats stall, a Cornish wrestler, and Nova defending Lumen. The miners' school teacher gives you a Hard Stone.
 
 - ⚠ Festival music plays when you walk down from the climb, and again after leaving a building. Before the tor, the town has its normal music.
+- ⚠ **The engineman's welcome:** walking down from the tor (from either path tile), the engineman hurries up to you and leads you to the engine without walking through anyone. You pull the whistle, the screen shakes, and he gives you Charcoal. Walking back up and down again doesn't replay it, and afterwards he's at his spot by the engine (also after a reload).
+- ⚠ **Missed welcome:** white out after the tor (or reach town without coming down the path) and talk to the engineman by the engine: he offers the whistle and Charcoal instead, once.
 - ⚠ The festival crowd, Nova, and the wrestler only appear after the tor, and townsfolk switch to festival lines.
 - You can't walk onto any part of the engine.
 - The treats stall sells Fresh Water, Soda Pop, Lemonade, and Lava Cookies.
@@ -106,8 +108,8 @@ After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new 
 | `carnrudh_arrived` | Outside Carnrudh's Pokémon Center (also the respawn point); Route 1 done | Spheal 8, Rookidee 6 | Carnrudh before the climb, the verse trigger |
 | `carnrudh_riddle` | Just past the verse trigger on Carn Kowr (`RIDDLE_READ`) | Spheal 8, Rookidee 6 | The climb grunts and stones |
 | `carnrudh_cradle` | Below the gate grunt (`CRADLE_DONE`) | Spheal 9, Rookidee 7, Rolycoly 6 | The gate battle, then read the Well for the proof scene |
-| `carnrudh_well` | In front of the Well on the peak, Peran just below; gate grunt beaten (`CRADLE_DONE`) | Spheal 10, Rookidee 8, Rolycoly 7 | Read the Well: the proof scene, Peran's battle and the walk-off. Also try from the right-hand Well tile, and losing |
-| `carnrudh_gym` | Outside the gym door; festival on (`TOR_DONE`) | Spheal 13, Rookidee 11, Rolycoly 10 | The festival, the gym and Tanek |
+| `carnrudh_well` | In front of the Well on the peak, Peran just below; gate grunt beaten (`CRADLE_DONE`) | Spheal 10, Rookidee 8, Rolycoly 7 | Read the Well: the proof scene, Peran's battle and the walk-off. Also try from the right-hand Well tile, and losing. Then walk down to town for the engineman's welcome |
+| `carnrudh_gym` | Outside the gym door; festival on and the engineman's welcome done, with Charcoal (`TOR_DONE`) | Spheal 13, Rookidee 11, Rolycoly 10 | The festival, the gym and Tanek |
 | `carnrudh_badge1` | Outside the gym door with badge 1 and TM51 (`BADGE_WON`) | Spheal 14, Rookidee 12, Rolycoly 11 | Post-badge town and NPCs |
 
 - Optional extras (the Carnrudh wrestler, the school's Hard Stone) are left for you to do.

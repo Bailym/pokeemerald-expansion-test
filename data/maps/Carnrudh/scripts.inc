@@ -95,9 +95,137 @@ Carnrudh_EventScript_Engineman::
 	msgbox Carnrudh_Text_Engineman, MSGBOX_NPC
 	end
 
+@ If the player missed his welcome at the north entrance (e.g. whited out to the Center), he
+@ offers the whistle here instead.
 Carnrudh_EventScript_EnginemanFestival::
+	goto_if_unset FLAG_RECEIVED_CHARCOAL_CARNRUDH, Carnrudh_EventScript_EnginemanOffersWhistle
 	msgbox Carnrudh_Text_EnginemanFestival, MSGBOX_NPC
 	end
+
+Carnrudh_EventScript_EnginemanOffersWhistle::
+	lock
+	faceplayer
+	msgbox Carnrudh_Text_EnginemanOffersWhistle, MSGBOX_DEFAULT
+	closemessage
+	call Carnrudh_EventScript_PullWhistle
+	release
+	end
+
+@ Coming back down from the tor with the festival on, the engineman meets the player at the north
+@ entrance and leads them to the engine. He's out of loading range at the engine, so he's moved
+@ just off screen to (15, 11), spawned there, and put back at (23, 22) once he's walked home.
+Carnrudh_EventScript_EnginemanWelcome::
+	goto_if_set FLAG_RECEIVED_CHARCOAL_CARNRUDH, Carnrudh_EventScript_EnginemanWelcomeEnd
+	lockall
+	getplayerxy VAR_0x8004, VAR_0x8005
+	goto_if_eq VAR_0x8004, 15, Carnrudh_EventScript_EnginemanArrives
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	waitmovement 0
+Carnrudh_EventScript_EnginemanArrives::
+	setobjectxyperm LOCALID_CARNRUDH_ENGINEMAN, 15, 11
+	addobject LOCALID_CARNRUDH_ENGINEMAN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	applymovement LOCALID_CARNRUDH_ENGINEMAN, Carnrudh_Movement_EnginemanArrives
+	waitmovement 0
+	msgbox Carnrudh_Text_EnginemanWelcome, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CARNRUDH_ENGINEMAN, Carnrudh_Movement_EnginemanLeads
+	applymovement OBJ_EVENT_ID_PLAYER, Carnrudh_Movement_PlayerFollows
+	waitmovement 0
+	setobjectxyperm LOCALID_CARNRUDH_ENGINEMAN, 23, 22
+	msgbox Carnrudh_Text_EnginemanPullTheWhistle, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	call Carnrudh_EventScript_PullWhistle
+	releaseall
+Carnrudh_EventScript_EnginemanWelcomeEnd::
+	end
+
+Carnrudh_EventScript_PullWhistle::
+	msgbox Carnrudh_Text_PulledWhistle, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_0x8004, 1  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 5  @ shake delay
+	special ShakeCamera
+	waitstate
+	msgbox Carnrudh_Text_EnginemanGift, MSGBOX_DEFAULT
+	giveitem ITEM_CHARCOAL
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_CHARCOAL_CARNRUDH
+	msgbox Carnrudh_Text_EnginemanExplainCharcoal, MSGBOX_DEFAULT
+	return
+
+@ From (15, 11) up to just below the player at (15, 4).
+Carnrudh_Movement_EnginemanArrives:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+@ Down the x 15 gap past the pasty shop, along row 20 above the engine, and down to his spot at
+@ (23, 22). The player follows a step behind and stops at (23, 21), with the engine to the left.
+Carnrudh_Movement_EnginemanLeads:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	face_up
+	step_end
+
+Carnrudh_Movement_PlayerFollows:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	step_end
 
 @ Festival only (FLAG_HIDE_CARNRUDH_FESTIVAL, cleared when the tor is done).
 Carnrudh_EventScript_Singer::
@@ -236,6 +364,35 @@ Carnrudh_Text_Engineman:
 Carnrudh_Text_EnginemanFestival:
 	.string "Steam's up! She'll go up the\n"
 	.string "hill at noon, same as ever.$"
+
+Carnrudh_Text_EnginemanWelcome:
+	.string "There you are! Word's come down\n"
+	.string "from the tor. You did it!\p"
+	.string "Engine day's started, and the\n"
+	.string "PUFFING BUCCA's got steam up.\p"
+	.string "Come on, follow me!$"
+
+Carnrudh_Text_EnginemanPullTheWhistle:
+	.string "Go on, then. Whoever saved the\n"
+	.string "tor gets to pull the whistle!$"
+
+Carnrudh_Text_EnginemanOffersWhistle:
+	.string "You're the one who saved the\n"
+	.string "tor! Steam's up, look.\p"
+	.string "Go on, then. You've earned a\n"
+	.string "pull of the whistle!$"
+
+Carnrudh_Text_PulledWhistle:
+	.string "{PLAYER} pulled the whistle cord!$"
+
+Carnrudh_Text_EnginemanGift:
+	.string "Hark at her! Proper job.\p"
+	.string "Here, have this. A lump from\n"
+	.string "her firebox, that is.$"
+
+Carnrudh_Text_EnginemanExplainCharcoal:
+	.string "Give CHARCOAL to a POKéMON\n"
+	.string "and its FIRE moves burn hotter.$"
 
 Carnrudh_Text_Singer:
 	.string "Goin' up CARNRUDH hill,\n"

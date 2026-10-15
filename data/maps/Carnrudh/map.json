@@ -238,8 +238,8 @@
     {
       "local_id": "LOCALID_CARNRUDH_RUNNING_GIRL",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
-      "x": 15,
-      "y": 21,
+      "x": 14,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -343,7 +343,26 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_CARNRUDH_STATE",
+      "var_value": "CARNRUDH_STATE_TOR_DONE",
+      "script": "Carnrudh_EventScript_EnginemanWelcome"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_CARNRUDH_STATE",
+      "var_value": "CARNRUDH_STATE_TOR_DONE",
+      "script": "Carnrudh_EventScript_EnginemanWelcome"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

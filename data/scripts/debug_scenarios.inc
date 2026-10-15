@@ -53,7 +53,8 @@ DebugScenarioStory_CarnrudhWell:
 	settrainerflag TRAINER_CARN_KOWR_GRUNT_GATE
 	return
 
-@ Peran is beaten and has left the peak with Tanek: the gym is open and the festival is on.
+@ Peran is beaten and has left the peak with Tanek: the gym is open and the festival is on. Back in
+@ town, the engineman has had the player pull the engine's whistle and given them Charcoal.
 DebugScenarioStory_CarnrudhGym:
 	call DebugScenarioStory_CarnrudhWell
 	settrainerflag TRAINER_PERAN_CARN_KOWR
@@ -61,6 +62,8 @@ DebugScenarioStory_CarnrudhGym:
 	setflag FLAG_HIDE_CARNRUDH_GYM_BLOCKER
 	clearflag FLAG_HIDE_CARNRUDH_FESTIVAL
 	setvar VAR_CARNRUDH_STATE, CARNRUDH_STATE_TOR_DONE
+	additem ITEM_CHARCOAL
+	setflag FLAG_RECEIVED_CHARCOAL_CARNRUDH
 	return
 
 @ The gym trainers and Tanek are beaten: badge 1 and TM51 Flame Charge.

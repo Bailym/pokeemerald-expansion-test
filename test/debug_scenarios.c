@@ -164,6 +164,8 @@ TEST("Scenario carnrudh_gym: Peran is beaten, the festival is on and the gym is 
     EXPECT(FlagGet(FLAG_HIDE_CARN_KOWR_PEAK_CAST));
     EXPECT(FlagGet(FLAG_HIDE_CARNRUDH_GYM_BLOCKER));
     EXPECT(!FlagGet(FLAG_HIDE_CARNRUDH_FESTIVAL));
+    EXPECT(FlagGet(FLAG_RECEIVED_CHARCOAL_CARNRUDH));
+    EXPECT(CheckBagHasItem(ITEM_CHARCOAL, 1));
     EXPECT(!FlagGet(FLAG_BADGE01_GET));
     ExpectTeamReadyFor(TANEK_ACE_LEVEL);
     ExpectStartsAt(MAP_GROUP(MAP_CARNRUDH), MAP_NUM(MAP_CARNRUDH), 8, 10);

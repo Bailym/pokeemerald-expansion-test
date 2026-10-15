@@ -24,7 +24,8 @@
 5. The proof: the Well is on the peak, right beside Lumen's drill site. When the stones are done in order, its water drains away to show cup-and-ring carvings, proof that the tor is an ancient monument (see The riddle and the proof). That gives the locals grounds to stop the quarry. The proof turns up under Peran's nose and leads straight into his battle.
 6. Peran: on the peak, the player battles Peran, Lumen's Chief Engineer, in his first appearance. He's a local and knows the tor. Afterwards he just moves on, letting slip that the granite was never the real prize ("It's not what's on the hill. It's what's under it.").
 7. Tanek is shaken but loyal: he's uneasy that Lumen gave up the jobs so easily, but tells himself they'll bring the work somewhere else. This plants the doubt behind his remorse line after Bucca's rampage. He goes back down and opens the gym.
-8. Steam-engine day: with the tor saved, the festival runs, and the gym is open.
+8. Steam-engine day: with the tor saved, the festival runs, and the gym is open. Coming back down from the tor, the engineman meets the player at the north entrance, says engine day has started, and leads them to the *Puffing Bucca*. As thanks for saving the tor, the player pulls the whistle (the screen shakes as she fires up) and gets Charcoal "from her firebox". If the player misses the welcome (e.g. whites out to the Center), the engineman offers the whistle and Charcoal when talked to by the engine.
+   - Rejected: a Pasty as the gift (a custom item that would muddle the pasty-crust offering at the climax), festival music held back until the whistle, and a whistle sound or crowd reaction on top of the shake.
 
 - Lumen's threat on the tor is purely industrial and in the open. Their real aim stays hidden; the tor only hints that they want something deeper.
 
@@ -193,7 +194,7 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 | Old man | Town (13, 14) | `OLD_MAN` | How the *Puffing Bucca* got its name |
 | Tamsin's brother | Town (26, 14) | `MAN_3` | Signed on with Lumen; left hoping after the tor |
 | Stones woman | Town (9, 14) | `WOMAN_5` | Against the quarry; vindicated by the carvings |
-| Engineman | Town (23, 22) | `MAN_5` | Polishing the engine; then steam up for the parade |
+| Engineman | Town (23, 22) | `MAN_5` | Polishing the engine; then steam up for the parade. Gives the whistle scene and Charcoal once (`FLAG_RECEIVED_CHARCOAL_CARNRUDH`): at the north entrance, a trigger on (14, 4) and (15, 4) while `TOR_DONE` |
 | Mum | House 1 | `WOMAN_3` | The town split over Lumen's jobs |
 | Boy | House 1 | `BOY_1` | The giant of Carn Kowr |
 | Old miner and wife | House 2 | `OLD_MAN`, `OLD_WOMAN` | The mines shutting, family gone overseas |
@@ -214,7 +215,7 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 | Spectator (`MAN_4`) | (20, 24) | Has watched the engine every year since he was a nipper |
 | Wooloo and its owner (`WOMAN_1`) | (23, 24), (22, 24) | The Wooloo is scared of the whistle; it cries when talked to |
 | Rolycoly | (24, 21), by the engineman | Puffing smoke like the engine |
-| Running girl (`LITTLE_GIRL`) | (15, 21) | Wants to ride the engine |
+| Running girl (`LITTLE_GIRL`) | (14, 22), wandering one tile, so never onto the engineman's route (x 15 above row 21, and row 20) | Wants to ride the engine |
 | Stall keeper (`WOMAN_4`) | (26, 21) | Sells Fresh Water, Soda Pop, Lemonade, and Lava Cookies |
 | Wrestler JAGO (`BLACK_BELT`, `TRAINER_CARNRUDH_WRESTLER`) | (15, 24) | Optional "wrasslin'" battle when talked to (Makuhita Lv11); giants wrestled on these hills, a nod to Cormoran |
 | Old woman (`OLD_WOMAN`) | (16, 9), by the Center | Remembers festivals as a girl |
