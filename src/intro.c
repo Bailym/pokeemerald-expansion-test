@@ -29,6 +29,7 @@
 #include "constants/rgb.h"
 #include "constants/battle_anim.h"
 #include "pokemon.h"
+#include "debug_scenarios.h"
 
 /*
     The intro is grouped into the following scenes
@@ -1148,6 +1149,10 @@ void CB2_InitCopyrightScreenAfterBootup(void)
             Sav2_ClearSetDefault();
         SetPokemonCryStereo(gSaveBlock2Ptr->optionsSound);
         InitHeap(gHeap, HEAP_SIZE);
+#if DEBUG_SCENARIOS
+        if (gBootScenario != SCENARIO_NONE)
+            SetMainCallback2(CB2_BootScenario);
+#endif
     }
 }
 

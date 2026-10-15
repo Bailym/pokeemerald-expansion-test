@@ -1,6 +1,7 @@
 #include "config/general.h"
 #include "config/battle.h"
 #include "config/item.h"
+#include "config/debug.h"
 #include "constants/global.h"
 #include "constants/apprentice.h"
 #include "constants/apricorn_tree.h"
@@ -1057,6 +1058,9 @@ gStdScripts_End::
 
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
+.if DEBUG_SCENARIOS
+	.include "data/scripts/debug_scenarios.inc"
+.endif
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour

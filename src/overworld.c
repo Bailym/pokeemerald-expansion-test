@@ -8,6 +8,7 @@
 #include "cable_club.h"
 #include "credits_frlg.h"
 #include "clock.h"
+#include "debug_scenarios.h"
 #include "dexnav.h"
 #include "event_data.h"
 #include "event_object_movement.h"
@@ -1944,6 +1945,9 @@ void CB2_NewGame(void)
     StopMapMusic();
     ResetSafariZoneFlag_();
     NewGameInitData();
+#if DEBUG_SCENARIOS
+    RunScenario(gBootScenario);
+#endif
     ResetInitialPlayerAvatarState();
     PlayTimeCounter_Start();
     ScriptContext_Init();

@@ -98,7 +98,17 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 
 ## Shortcuts
 
-Use the debug menu (R+Start) to set these, then warp. Give yourself a Pokémon first.
+### Scenarios
+
+After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new game already at that point (player KERNOW). `--list` shows them all.
+
+| Scenario | Starts |
+|---|---|
+| `balwyn_done` | Outside the house in Balwyn after the opening, with a level 6 Spheal, 5 Poké Balls and Grampy's Journal; Nova is beaten |
+
+### Debug menu
+
+For points without a scenario yet, use the debug menu (R+Start) to set these, then warp. Give yourself a Pokémon first.
 
 | To test from | Set |
 |---|---|
