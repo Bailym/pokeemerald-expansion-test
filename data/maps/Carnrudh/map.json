@@ -22,6 +22,11 @@
       "map": "MAP_CARN_KOWR",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_KERNIA_ROUTE2",
+      "offset": -20,
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -290,6 +295,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Carnrudh_EventScript_FestivalOldWoman",
       "flag": "FLAG_HIDE_CARNRUDH_FESTIVAL"
+    },
+    {
+      "local_id": "LOCALID_CARNRUDH_SURVEY_WORKER",
+      "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
+      "x": 6,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Carnrudh_EventScript_SurveyWorker",
+      "flag": "FLAG_HIDE_CARNRUDH_SURVEY_WORKER"
     }
   ],
   "warp_events": [
@@ -361,6 +380,24 @@
       "var": "VAR_CARNRUDH_STATE",
       "var_value": "CARNRUDH_STATE_TOR_DONE",
       "script": "Carnrudh_EventScript_EnginemanWelcome"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 25,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "Carnrudh_EventScript_SurveyBlock"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 25,
+      "elevation": 3,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "Carnrudh_EventScript_SurveyBlock"
     }
   ],
   "bg_events": [

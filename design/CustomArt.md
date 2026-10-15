@@ -69,6 +69,11 @@ Each needs an overworld sprite, and a trainer front pic if they battle.
 - **The peak:** Carn Brea's castle folly and the monument to a mine-owning family (no stand-ins yet), and Lumen's survey camp and drill site beside the Well (only a sign now).
 - The rest of Carn Kowr (heath, Route 104-style cliffs and stairs) works with vanilla tiles.
 
+### Route 2
+
+- The lighthouse on the headland: a stand-in, the Mirage Tower (Route 111) recoloured to grey granite, copied by `tools/kernia/add_lighthouse_tiles.py` into 18 Dewford metatiles (`0x37C`–`0x38D`, 3 wide by 6 tall) with its own palette (Dewford slot 12). A real lighthouse (a granite tower with a lantern, like Longships or Wolf Rock) can replace the tiles in place; re-run the route generator after changing the size. No interior is planned. (A hand-drawn red-and-white tower was tried first and rejected.)
+- The keeper's cottage: the vanilla red-roofed cottage for now.
+
 ### Carnrudh
 - **Festival dressing:** bunting across the main street and stalls in the field. Neither exists now (vanilla has nothing that fits). The treats stall keeper stands on open grass at (26, 21). Show them with `setmetatile` in an `ON_LOAD` script once `TOR_DONE` is set, or as objects.
 - **Buildings:** Dewford's houses and red cottage stand in for granite miners' cottages, the pasty shop, and the miners' school. Optional, but a granite terrace would sell the town.

@@ -64,7 +64,7 @@
 #define FLAG_HIDE_CARNRUDH_FESTIVAL    0x2A
 #define FLAG_RECEIVED_HARD_STONE_CARNRUDH    0x2B
 #define FLAG_RECEIVED_CHARCOAL_CARNRUDH    0x2C
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
+#define FLAG_HIDE_CARNRUDH_SURVEY_WORKER    0x2D
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag

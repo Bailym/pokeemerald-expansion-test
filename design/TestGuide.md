@@ -46,6 +46,7 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 
 - ⚠ The Pokémon Center heals you and sets the respawn point (lose a battle later and check you come back here).
 - ⚠ The gym door is blocked by a local who says Tanek is on the tor.
+- ⚠ The south-west road is blocked: stepping into the gap turns you back with a Lumen survey worker's line.
 - Every door works and comes back to the right spot: the Center, the Mart, the gym (blocked for now), both houses, the pasty shop, and the school.
 - The Mart sells Poké Balls, Potions, Antidote, Paralyze Heal, and Awakening.
 - Townsfolk have "getting ready" lines. No festival crowd, Nova, or festival music yet.
@@ -97,6 +98,18 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 - The wrestler JAGO battles once if you talk to him, then gives his post-battle line.
 - The school teacher gives the Hard Stone once; with a full bag, talking again gives it.
 - Signs outside the pasty shop and school read correctly.
+
+## 8. Route 2 (the coast path)
+
+**Story:** the cliff-top coast path south-west from Carnrudh, opened once the tor is saved. It runs past a lighthouse headland to a seal cove below the cliffs. (Being built: Nova's battle, trainers, and the fisherman come in later phases of `design/plans/route-2.md`.)
+
+- ⚠ Before the tor, the survey worker blocks the way out of Carnrudh. After it (`carnrudh_tor_done` or later), the worker's gone and the road is open.
+- ⚠ Seamless join with Carnrudh: the tree band and road line up, and the "ROUTE 2" popup shows.
+- You can't walk onto the sea, the cliffs, or the lighthouse, and the south-east corner (the way to Porthliw, not built yet) is closed off.
+- Three sets of steps lead down the terraces: below the road, then by the sea, then from the headland down to the beach. Every level is reachable, and so is the strip in front of the lighthouse.
+- The lighthouse draws cleanly (no garbled tiles), and walking around it never puts it over the player.
+- Tall grass gives wild battles (Lv9–12); open ground and the cove don't.
+- Both signs read correctly.
 
 ## Shortcuts
 

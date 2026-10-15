@@ -95,6 +95,28 @@ Carnrudh_EventScript_Engineman::
 	msgbox Carnrudh_Text_Engineman, MSGBOX_NPC
 	end
 
+@ Lumen's survey traffic shuts the south-west road to Route 2 until the tor is saved. The
+@ worker stands in the gap at (6, 26), and stepping onto row 25 in front of it turns the player back.
+Carnrudh_EventScript_SurveyBlock::
+	goto_if_ge VAR_CARNRUDH_STATE, CARNRUDH_STATE_TOR_DONE, Carnrudh_EventScript_SurveyBlockEnd
+	lockall
+	playse SE_PIN
+	applymovement LOCALID_CARNRUDH_SURVEY_WORKER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox Carnrudh_Text_SurveyWorker, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	releaseall
+Carnrudh_EventScript_SurveyBlockEnd::
+	end
+
+Carnrudh_EventScript_SurveyWorker::
+	msgbox Carnrudh_Text_SurveyWorker, MSGBOX_NPC
+	end
+
 @ If the player missed his welcome at the north entrance (e.g. whited out to the Center), he
 @ offers the whistle here instead.
 Carnrudh_EventScript_EnginemanFestival::
@@ -364,6 +386,13 @@ Carnrudh_Text_Engineman:
 Carnrudh_Text_EnginemanFestival:
 	.string "Steam's up! She'll go up the\n"
 	.string "hill at noon, same as ever.$"
+
+Carnrudh_Text_SurveyWorker:
+	.string "Sorry! Road's shut for LUMEN\n"
+	.string "survey traffic up to the tor.\p"
+	.string "It'll clear once the survey's\n"
+	.string "wrapped up. Thanks for your\l"
+	.string "patience!$"
 
 Carnrudh_Text_EnginemanWelcome:
 	.string "There you are! Word's come down\n"

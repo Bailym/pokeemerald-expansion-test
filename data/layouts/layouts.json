@@ -9395,6 +9395,16 @@
       "blockdata_filepath": "data/layouts/KerniaRoute1/map.bin"
     },
     {
+      "id": "LAYOUT_KERNIA_ROUTE2",
+      "name": "KerniaRoute2_Layout",
+      "width": 40,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/KerniaRoute2/border.bin",
+      "blockdata_filepath": "data/layouts/KerniaRoute2/map.bin"
+    },
+    {
       "id": "LAYOUT_CARNRUDH",
       "name": "Carnrudh_Layout",
       "width": 32,

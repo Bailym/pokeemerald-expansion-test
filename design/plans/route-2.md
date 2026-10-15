@@ -18,7 +18,8 @@ Same as Carnrudh: generate the layout by script, copying vanilla block patterns 
 
 ## Phases
 
-### Phase 1 — Walk from Carnrudh to the headland
+### Phase 1 — Walk from Carnrudh to the headland ✅
+*(As built: a 40×50 map with three terraces stepping down to the sea, the middle steps right by the coast, and a wide sand beach below the headland's cliff. The lighthouse is the Mirage Tower recoloured to granite, copied into the Dewford tileset by `tools/kernia/add_lighthouse_tiles.py`, after a hand-drawn tower was rejected. A keeper's cottage (no interior yet), a path, a fence, and an outcrop were added on the headland, the last tidied by hand in Porymap and copied back into the generator. The survey worker's flag is `FLAG_HIDE_CARNRUDH_SURVEY_WORKER`, set in Peran's walk-off and the `carnrudh_tor_done` story part.)*
 **Deliverable:** After the tor, the player walks south out of Carnrudh onto Route 2 with a "ROUTE 2" popup and no seam at the join. They follow the cliff-top path to the headland, with its stand-in lighthouse and the seal cove below, and wild battles come from the tall grass. Before the tor, a Lumen survey worker blocks Carnrudh's south-west exit.
 **Verify:** `make -j$(nproc)` succeeds. Then in mGBA:
 - `play.py carnrudh_arrived`: walk to the south-west exit and get turned back by the survey worker.
@@ -80,7 +81,8 @@ Also reopen Porymap and check the connection shows on both maps.
 **Not yet:** the connection to Porthliw (Porthliw's plan) and custom art for the lighthouse.
 
 ## Open questions
-- **The lighthouse stand-in:** which vanilla building or object reads best as a lighthouse. Settled by the phase 1 render; the real lighthouse goes on `design/CustomArt.md`.
+- ~~**The lighthouse stand-in:**~~ Settled: the recoloured Mirage Tower. The real lighthouse is on `design/CustomArt.md`.
+- **The keeper's cottage:** what it's for (a keeper with lore, the fisherman's home, or nothing). Settle by phase 4.
 - **Nova's "tech" Pokémon** (Magnemite, Voltorb, or another) and Nova's lines. Needed by phase 3.
 - **The headland's and lighthouse's Kernia names:** needed for the route sign and lines by phases 1–3, but placeholders that avoid real names are fine until then.
 - **Where Route 2 meets Porthliw:** phase 1 bounds the far edge. Porthliw's plan picks the connection side and offset, so phase 1 should leave a clear path to whichever edge is likely (west or south).

@@ -159,7 +159,7 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 
 - West: Route 1 (`KerniaRoute1`), which comes in on its east edge (rows 11–12, from x 40).
 - North: Carn Kowr's climb (`CarnKowr`), and beyond it the peak (`CarnKowr_Peak`).
-- South-west: Route 2 to Porthliw, gym 2 (Enys, see `Route2.md` and `Porthliw.md`). Lumen's survey traffic blocks it until the tor is done, and it clears with the festival.
+- South-west: Route 2 to Porthliw, gym 2 (Enys, see `Route2.md` and `Porthliw.md`). A Lumen survey worker (`DEVON_EMPLOYEE`) stands in the gap at (6, 26), and triggers on (6, 25) and (7, 25) turn the player back while `VAR_CARNRUDH_STATE` is below `TOR_DONE`. Peran's walk-off sets `FLAG_HIDE_CARNRUDH_SURVEY_WORKER`, which hides the worker. Lumen's survey traffic blocks it until the tor is done, and it clears with the festival.
 - East: the road to Treveur, blocked by Lumen roadworks (a hi-vis worker turns the player back) until badge 2. It reopens because Enys, who resists Lumen, shames them publicly for closing a public road: her counter-speech at Porthliw's opening night, with the road reported reopened after badge 2 (see `Porthliw.md`).
 
 ## Map notes
@@ -172,7 +172,7 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
   - North of the street: the gym (Dewford's building, x 5–10, rows 5–9) and its sign at (11, 9), the Pokémon Center (x 18–21, rows 7–10), and the Mart (x 23–26, rows 7–10).
   - The path north to Carn Kowr runs up x 14–15 to the top edge (no connection yet).
   - South of the street: house 1 (x 9–12, rows 16–19), the pasty shop (the red cottage, x 16–19, rows 16–19), the miners' school (the wide house, x 21–25, rows 16–19), and house 2 (x 9–12, rows 21–24).
-  - The south-west route's path runs down x 6–7 to the bottom edge (no connection yet).
+  - The south-west road runs down x 6–7 to the bottom edge, where it joins Route 2 (`down` connection, offset -20).
   - Town sign at (4, 11), at the west entrance.
 - Door warps on `Carnrudh` are numbered in the order below. Don't reorder them, because each interior's doormat warps back to that number.
 

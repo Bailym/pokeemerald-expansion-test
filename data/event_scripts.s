@@ -1756,6 +1756,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Balwyn_Pub/scripts.inc"
 
 	.include "data/maps/KerniaRoute1/scripts.inc"
+	.include "data/maps/KerniaRoute2/scripts.inc"
 
 	.include "data/maps/Carnrudh/scripts.inc"
 
