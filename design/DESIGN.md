@@ -85,6 +85,7 @@
 - Hometown: Balwyn, a quiet former tin-mining village in the far west (see `Balwyn.md`).
 - Main city: Treveur, from tre (town) + meur (great), "great town". Inspired by Truro.
 - First gym town: Carnrudh, from carn (rocky hill or tor) + rudh (red), "red tor". Inspired by Camborne / Redruth, and named for Carn Brea, the hill between them, and for Redruth.
+- Second gym town: Porthliw, from porth (cove) + liw (colour), "cove of colour". Inspired by St Ives, reached along Route 2's cliff path past a lighthouse headland (see `Porthliw.md` and `Route2.md`).
 - Carn Kowr, from carn (tor) + kowr (giant), "giant's tor": the hill above Carnrudh (inspired by Carn Brea), with the giant's stones. Lumen survey it for a quarry before gym 1 (see `Carnrudh.md`).
 - Treveur is the main city: corporation HQ, the professor's lab, and the region's main shopping and services.
 - Towns inspired by (and renamed from): St Ives / Penzance, Camborne / Redruth, Truro, St Austell clay country, Falmouth, and the north coast (Newquay, Padstow, Tintagel).
@@ -126,7 +127,7 @@
 | # | Town (inspired by) | Type | Leader | Stance on corporation |
 |---|---|---|---|---|
 | 1 | Carnrudh (Camborne / Redruth) | Fire | Tanek (tan = fire) | Backs it |
-| 2 | St Ives / Penzance | Flying | Enys (island) | Resists |
+| 2 | Porthliw (St Ives) | Flying | Enys (island) | Resists |
 | 3 | Treveur (Truro) | Psychic | Locryn (a legendary king) | Backs it |
 | 4 | Falmouth | Steel | Hornor (horn = iron) | Backs it |
 | 5 | St Austell clay country | Rock | Karrek (rock) | Resists |

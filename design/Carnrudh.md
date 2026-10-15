@@ -159,8 +159,8 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 
 - West: Route 1 (`KerniaRoute1`), which comes in on its east edge (rows 11–12, from x 40).
 - North: Carn Kowr's climb (`CarnKowr`), and beyond it the peak (`CarnKowr_Peak`).
-- South-west: a route to gym 2 (St Ives / Penzance, Enys). Lumen's survey traffic blocks it until the tor is done, and it clears with the festival.
-- East: the road to Treveur, blocked by Lumen roadworks (a hi-vis worker turns the player back) until badge 2. It reopens because Enys, who resists Lumen, shames them publicly for closing a public road.
+- South-west: Route 2 to Porthliw, gym 2 (Enys, see `Route2.md` and `Porthliw.md`). Lumen's survey traffic blocks it until the tor is done, and it clears with the festival.
+- East: the road to Treveur, blocked by Lumen roadworks (a hi-vis worker turns the player back) until badge 2. It reopens because Enys, who resists Lumen, shames them publicly for closing a public road: her counter-speech at Porthliw's opening night, with the road reported reopened after badge 2 (see `Porthliw.md`).
 
 ## Map notes
 
@@ -281,7 +281,6 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 ## Open questions
 
 - What Lumen's roadworks on the east road are laying (a hint at "what's under it"), decided with Treveur.
-- How Enys's public row with Lumen reaches the player (a news line, an NPC, or a scene in gym 2's town).
 
 ## Next steps
 
