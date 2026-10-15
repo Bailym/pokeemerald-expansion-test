@@ -98,7 +98,7 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 
 ## Shortcuts
 
-After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new game already at that point (player KERNOW, Spheal as the starter), with trainers up to that point beaten and a team levelled for the next fight. `--list` shows them all.
+After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new game already at that point (player KERNOW, Spheal as the starter), with trainers up to that point beaten and a team levelled for the next fight. `--list` shows them all. In VS Code, the **Play scenario** task builds and then lets you pick one.
 
 | Scenario | Starts | Team | To test |
 |---|---|---|---|

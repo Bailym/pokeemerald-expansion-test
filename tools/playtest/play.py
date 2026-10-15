@@ -7,6 +7,7 @@ normally still plays the intro. Scenarios live in include/constants/debug_scenar
 data/scripts/debug_scenarios.inc.
 
     python3 tools/playtest/play.py balwyn_done
+    python3 tools/playtest/play.py            # pick from a numbered list
     python3 tools/playtest/play.py --list
 """
 
@@ -65,6 +66,22 @@ def make_scenario_rom(name, scenario_id):
     return scenario_rom
 
 
+def pick_scenario(scenarios):
+    names = sorted(scenarios, key=scenarios.get)
+    for number, name in enumerate(names, 1):
+        print(f"{number:>2}. {name}")
+    while True:
+        try:
+            choice = input("Scenario (number or name): ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print()
+            sys.exit(1)
+        if choice.isdigit() and 1 <= int(choice) <= len(names):
+            return names[int(choice) - 1]
+        if choice in scenarios:
+            return choice
+
+
 def main():
     scenarios = read_scenarios()
     parser = argparse.ArgumentParser(description="Open mGBA booted into a playtest scenario.")
@@ -72,7 +89,7 @@ def main():
     parser.add_argument("--list", action="store_true", help="list the scenarios and exit")
     args = parser.parse_args()
 
-    if args.list or not args.scenario:
+    if args.list or (not args.scenario and not sys.stdin.isatty()):
         print("\n".join(sorted(scenarios, key=scenarios.get)))
         return
     if not ROM.exists() or not MAP_FILE.exists():
@@ -82,7 +99,8 @@ def main():
     if not MGBA.exists() and not shutil.which(str(MGBA)):
         sys.exit(f"mGBA isn't at {MGBA}. Set the MGBA environment variable to its path.")
 
-    scenario_rom = make_scenario_rom(args.scenario, scenarios[args.scenario])
+    name = args.scenario or pick_scenario(scenarios)
+    scenario_rom = make_scenario_rom(name, scenarios[name])
     windows_rom = subprocess.run(["wslpath", "-w", str(scenario_rom)], capture_output=True, text=True).stdout.strip()
     subprocess.Popen([str(MGBA), windows_rom], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
                      start_new_session=True)

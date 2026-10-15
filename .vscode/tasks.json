@@ -26,6 +26,18 @@
             "problemMatcher": []
         },
         {
+            "label": "Play scenario",
+            "type": "shell",
+            "command": "python3 tools/playtest/play.py",
+            "dependsOn": "Build ROM",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "clear": true
+            }
+        },
+        {
             "label": "Clean",
             "type": "shell",
             "command": "make clean",

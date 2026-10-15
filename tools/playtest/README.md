@@ -8,6 +8,8 @@ python3 tools/playtest/play.py --list
 python3 tools/playtest/play.py carnrudh_pre_festival
 ```
 
+With no scenario, `play.py` shows a numbered list to pick from. In VS Code, run the **Play scenario** task (Terminal → Run Task), which builds first and then asks.
+
 `play.py` copies `pokeemerald.gba` to `%LOCALAPPDATA%\kernia-playtest\<scenario>.gba`, writes the scenario's ID into that copy's `gBootScenario` byte (found through `pokeemerald.map`), and opens mGBA on it. The game skips the intro, starts a new game as KERNOW, runs the scenario script, and warps there. The real ROM is untouched. Set `MGBA` if mGBA isn't at `C:\Program Files\mGBA\mGBA.exe`.
 
 - Each launch deletes that scenario's old `.sav`, so it always starts fresh. Saving in the game is fine.
