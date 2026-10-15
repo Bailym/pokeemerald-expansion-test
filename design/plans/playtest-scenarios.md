@@ -37,7 +37,8 @@ One command opens mGBA with the player already at a chosen point in the story, w
 - `tools/playtest/play.py`: name → ID, symbol → ROM offset, copy and patch, launch with `wslpath -w`. `--list` prints the scenarios.
 **Not yet:** any Carnrudh scenarios, and docs beyond a `--help`.
 
-### Phase 2 — Carnrudh scenarios
+### Phase 2 — Carnrudh scenarios ✅
+*(As built: each scenario is split into a story part, which only sets flags, vars and story items and is chained with `call`, plus its own team and `setwarp`. That way levels go up between scenarios without anything carried over from earlier ones. The tests name each fight's ace level as a constant, because the test build swaps `gTrainers` for its own test trainers. From `carnrudh_arrived` on, the respawn point is Carnrudh's Pokémon Center.)*
 **Deliverable:** Scenarios for every row of the TestGuide jump table, chained from `balwyn_done` to `carnrudh_badge1`, each with a fitting team and items. `carnrudh_pre_festival` is one of them. TestGuide points to the scenarios instead of listing manual flag settings.
 **Verify:**
 - `make check TESTS="Scenario"`: one test per scenario checks its vars and flags, the party levels within the expected range, and the warp map.

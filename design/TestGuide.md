@@ -98,26 +98,18 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 
 ## Shortcuts
 
-### Scenarios
+After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new game already at that point (player KERNOW, Spheal as the starter), with trainers up to that point beaten and a team levelled for the next fight. `--list` shows them all.
 
-After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new game already at that point (player KERNOW). `--list` shows them all.
+| Scenario | Starts | Team | To test |
+|---|---|---|---|
+| `balwyn_done` | Outside the house in Balwyn; Nova beaten, knocking heard | Spheal 6 | Route 1 |
+| `carnrudh_arrived` | Outside Carnrudh's Pokémon Center (also the respawn point); Route 1 done | Spheal 8, Rookidee 6 | Carnrudh before the climb, the verse trigger |
+| `carnrudh_riddle` | Just past the verse trigger on Carn Kowr (`RIDDLE_READ`) | Spheal 8, Rookidee 6 | The climb grunts and stones |
+| `carnrudh_cradle` | Below the gate grunt (`CRADLE_DONE`) | Spheal 9, Rookidee 7, Rolycoly 6 | The gate battle, then read the Well for the proof scene |
+| `carnrudh_pre_festival` | At the Well on the peak, Peran just below (`STONES_DONE`) | Spheal 10, Rookidee 8, Rolycoly 7 | Talk to Peran: his battle and the walk-off |
+| `carnrudh_gym` | Outside the gym door; festival on (`TOR_DONE`) | Spheal 13, Rookidee 11, Rolycoly 10 | The festival, the gym and Tanek |
+| `carnrudh_badge1` | Outside the gym door with badge 1 and TM51 (`BADGE_WON`) | Spheal 14, Rookidee 12, Rolycoly 11 | Post-badge town and NPCs |
 
-| Scenario | Starts |
-|---|---|
-| `balwyn_done` | Outside the house in Balwyn after the opening, with a level 6 Spheal, 5 Poké Balls and Grampy's Journal; Nova is beaten |
-
-### Debug menu
-
-For points without a scenario yet, use the debug menu (R+Start) to set these, then warp. Give yourself a Pokémon first.
-
-| To test from | Set |
-|---|---|
-| After the Balwyn opening | `VAR_BALWYN_STATE` (`0x404E`) = 6 |
-| The riddle on Carn Kowr | `VAR_CARNRUDH_STATE` (`0x4083`) = 1 (`RIDDLE_READ`) |
-| The gate and peak | `VAR_CARNRUDH_STATE` = 4 (`CRADLE_DONE`); the gate grunt still needs beating |
-| The proof and Peran | `VAR_CARNRUDH_STATE` = 4, then read the Well |
-| The gym and festival | `VAR_CARNRUDH_STATE` = 6 (`TOR_DONE`); set flags `0x27` (gym blocker hidden) and `0x28` (peak cast hidden), and clear `0x2A` (festival shown) |
-| After badge 1 | Also beat Tanek, or set `VAR_CARNRUDH_STATE` = 7 and the badge 1 flag |
-
-- The values are in `include/constants/vars.h` (`BALWYN_STATE_*`, `CARNRUDH_STATE_*`) and the flag IDs in `include/constants/flags.h`.
-- Shortcuts skip trainer flags, so skipped trainers will still battle you.
+- Optional extras (the Carnrudh wrestler, the school's Hard Stone) are left for you to do.
+- For anything else, the debug menu (R+Start) sets flags and vars. The values are in `include/constants/vars.h` (`BALWYN_STATE_*`, `CARNRUDH_STATE_*`) and the flag IDs in `include/constants/flags.h`.
+- Adding a scenario: see `tools/playtest/README.md`.

@@ -11,6 +11,12 @@
 #if DEBUG_SCENARIOS
 
 extern const u8 DebugScenario_BalwynDone[];
+extern const u8 DebugScenario_CarnrudhArrived[];
+extern const u8 DebugScenario_CarnrudhRiddle[];
+extern const u8 DebugScenario_CarnrudhCradle[];
+extern const u8 DebugScenario_CarnrudhPreFestival[];
+extern const u8 DebugScenario_CarnrudhGym[];
+extern const u8 DebugScenario_CarnrudhBadge1[];
 
 // play.py writes a scenario ID into this byte in a copy of the ROM. Volatile stops the compiler
 // folding in SCENARIO_NONE, so the patched value is what the game actually reads.
@@ -18,7 +24,13 @@ const volatile u8 gBootScenario = SCENARIO_NONE;
 
 static const u8 *const sScenarioScripts[SCENARIOS_COUNT] =
 {
-    [SCENARIO_BALWYN_DONE] = DebugScenario_BalwynDone,
+    [SCENARIO_BALWYN_DONE]           = DebugScenario_BalwynDone,
+    [SCENARIO_CARNRUDH_ARRIVED]      = DebugScenario_CarnrudhArrived,
+    [SCENARIO_CARNRUDH_RIDDLE]       = DebugScenario_CarnrudhRiddle,
+    [SCENARIO_CARNRUDH_CRADLE]       = DebugScenario_CarnrudhCradle,
+    [SCENARIO_CARNRUDH_PRE_FESTIVAL] = DebugScenario_CarnrudhPreFestival,
+    [SCENARIO_CARNRUDH_GYM]          = DebugScenario_CarnrudhGym,
+    [SCENARIO_CARNRUDH_BADGE1]       = DebugScenario_CarnrudhBadge1,
 };
 
 // Called in place of the intro once the copyright screen has faded out; CB2_NewGame then runs

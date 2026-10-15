@@ -3,9 +3,15 @@
 
 // Starting points for playtesting, loaded with tools/playtest/play.py (see design/plans/playtest-scenarios.md).
 // play.py reads the names and IDs from this file, so keep to one "#define SCENARIO_<NAME> <id>" per line.
-#define SCENARIO_NONE        0
-#define SCENARIO_BALWYN_DONE 1
+#define SCENARIO_NONE                  0
+#define SCENARIO_BALWYN_DONE           1
+#define SCENARIO_CARNRUDH_ARRIVED      2
+#define SCENARIO_CARNRUDH_RIDDLE       3
+#define SCENARIO_CARNRUDH_CRADLE       4
+#define SCENARIO_CARNRUDH_PRE_FESTIVAL 5
+#define SCENARIO_CARNRUDH_GYM          6
+#define SCENARIO_CARNRUDH_BADGE1       7
 
-#define SCENARIOS_COUNT      2
+#define SCENARIOS_COUNT                8
 
 #endif // GUARD_CONSTANTS_DEBUG_SCENARIOS_H
