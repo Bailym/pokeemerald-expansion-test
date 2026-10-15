@@ -24,7 +24,8 @@ def stone(L, x, y):
 
 
 # The climb: three terraces, each reached by stairs on alternating sides, so the path
-# zigzags up the hill through tall grass it can't avoid.
+# zigzags up the hill. The riddle sends the player up and down it, and grunts guard the
+# stones, so the tall grass is in optional patches off the path.
 climb = Layout(32, 40)
 climb.trees(0, 0, 3, 39)
 climb.trees(28, 0, 31, 39)
@@ -38,18 +39,18 @@ climb.fill(8, 30, 11, 35, TALL_GRASS)
 climb.stamp(4, 28, cliff(BAND_W, stairs=[TOWN_PATH_X - 4]))  # The road runs up to these stairs.
 # First terrace (y 20-27): the Hand to the west, the way on to the east.
 climb.stamp(11, 21, outcrop(4, 3))
-climb.fill(16, 20, 25, 26, TALL_GRASS)
+climb.fill(17, 20, 22, 25, TALL_GRASS)
 climb.trees(26, 20, 27, 25)
 climb.stamp(4, 18, cliff(BAND_W, stairs=[20]))      # Stairs at x 24-25.
 # Second terrace (y 10-17): the Cradle in the middle, the way on to the west.
 climb.trees(24, 10, 27, 13)
 climb.stamp(19, 11, outcrop(4, 3))
-climb.fill(4, 10, 11, 17, TALL_GRASS)
+climb.fill(4, 14, 9, 17, TALL_GRASS)
 climb.stamp(4, 8, cliff(BAND_W, stairs=[2]))        # Stairs at x 6-7.
 # Top terrace (y 2-7): the Head, then the gap up to the peak.
 climb.trees(4, 2, 5, 5)
 climb.stamp(16, 2, outcrop(4, 3))
-climb.fill(14, 5, 20, 7, TALL_GRASS)
+climb.fill(12, 6, 17, 7, TALL_GRASS)
 
 STONES = {'hand': (6, 22), 'cradle': (14, 12), 'head': (10, 3)}
 for (x, y) in STONES.values():
