@@ -58,7 +58,7 @@ Reopen Porymap and check that both connections show.
 
 **Not yet:** the riddle and stone order, the peak's gate, the grunts, battles, and the proof.
 
-### Phase 3 — The journal's riddle of the stones
+### Phase 3 — The journal's riddle of the stones ✅
 **Deliverable:** On reaching Carn Kowr, the player opens Grampy's Journal and reads a verse naming the stones in order. A grunt at the top of the climb keeps the player off the peak until the Hand, Head, and Cradle are done in order. Then the Well on the peak completes the riddle and shows the proof that the tor is an ancient monument. A wrong stone resets the order with a hint pointing back to the verse.
 **Verify:** Build, start a new game, and warp to Carnrudh. Check the following:
 - The journal scene plays once on first entering Carn Kowr.
@@ -69,8 +69,8 @@ Reopen Porymap and check that both connections show.
 - The verse can be re-read (see Work).
 
 **Work:**
-- A scripted journal reading (`ON_FRAME` or a trigger at the tor's entrance) that moves the state to `RIDDLE_READ`, plus a way to read it again. The simplest is a line at the first stone, or a trigger.
-- A progress var for the stone order, with each stone's script checking and advancing it, or resetting it with the hint. On the last stone (the Well), move to `STONES_DONE`.
+- A scripted journal reading (`ON_FRAME` or a trigger at the tor's entrance) that moves the state to `RIDDLE_READ`, plus a way to read it again. The simplest is a line at the first stone, or a trigger. (As built: a trigger on the climb's road, and a yes/no to re-read after any wrong stone.)
+- A progress var for the stone order, with each stone's script checking and advancing it, or resetting it with the hint. On the last stone (the Well), move to `STONES_DONE`. (As built: the order is tracked in `VAR_CARNRUDH_STATE` itself, `HAND_DONE` to `CRADLE_DONE`.)
 - The peak's gate: a grunt (not a trainer yet) at the top of the climb, who stands aside once the first three stones are done.
 - Write the verse and the proof text (see Open questions), in Grampy's voice and following DESIGN.md's lore and brevity rules.
 

@@ -349,5 +349,10 @@
 
 // Values for VAR_CARNRUDH_STATE, in story order (see design/plans/carnrudh.md).
 #define CARNRUDH_STATE_ARRIVED      0 // The gym is shut; Tanek is up on Carn Kowr with Lumen.
+#define CARNRUDH_STATE_RIDDLE_READ  1 // Read Grampy's verse on first stepping onto the climb.
+#define CARNRUDH_STATE_HAND_DONE    2 // The giant's stones, inspected in the verse's order.
+#define CARNRUDH_STATE_HEAD_DONE    3 // A stone out of order goes back to CARNRUDH_STATE_RIDDLE_READ.
+#define CARNRUDH_STATE_CRADLE_DONE  4 // The gate grunt lets the player onto the peak.
+#define CARNRUDH_STATE_STONES_DONE  5 // The Well has drained and shown the carvings.
 
 #endif // GUARD_CONSTANTS_VARS_H

@@ -130,7 +130,11 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 - The Mart sells Poké Balls, Potions, Antidotes, Paralyze Heals, and Awakenings.
 - Carnrudh's `up` connection (offset 0) leads onto Carn Kowr's climb, continuing the north path (x 14–15).
 - Gym blocker: a local (`MAN_1`) stands in front of the gym door at (8, 10) and says Tanek is up on Carn Kowr. Hidden by `FLAG_HIDE_CARNRUDH_GYM_BLOCKER` once the tor is done.
-- Story state: `VAR_CARNRUDH_STATE`, with `CARNRUDH_STATE_*` values in `include/constants/vars.h` (only `ARRIVED` so far).
+- Story state: `VAR_CARNRUDH_STATE`, with `CARNRUDH_STATE_*` values in `include/constants/vars.h`: `ARRIVED`, `RIDDLE_READ`, `HAND_DONE`, `HEAD_DONE`, `CRADLE_DONE`, `STONES_DONE`. The stone order lives in the same var: a wrong stone sets it back to `RIDDLE_READ`.
+- The verse plays from a trigger on the climb's road at (14–15, 38) while the state is `ARRIVED`. It can be read again after any wrong stone (a yes/no after the hint).
+- Re-inspecting the stone just done is harmless. Once the Cradle is done, a climb stone only gives the Well hint and doesn't reset, so the gate stays open.
+- The peak's gate: a Lumen grunt (stand-in `DEVON_EMPLOYEE`, `LOCALID_CARN_KOWR_GATE_GRUNT`) stands in the right half of the gap at (23, 1). A trigger on the left half, (22, 1), turns the player back until `CRADLE_DONE` (the `VAR_TEMP_1` = 0 trick, with the state checked in the script). Talking to him gives the same line, or "do say hello" once the gate is open.
+- The proof sets `STONES_DONE`. Afterwards the Well shows the dry basin, and Peran and Tanek have after-proof lines until phase 4 adds the battle.
 
 ### Carn Kowr map notes
 
