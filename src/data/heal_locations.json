@@ -349,6 +349,14 @@
       "y": 12,
       "respawn_map": "MAP_SIX_ISLAND_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_SIX_ISLAND_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_CARNRUDH",
+      "map": "MAP_CARNRUDH",
+      "x": 19,
+      "y": 11,
+      "respawn_map": "MAP_CARNRUDH_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_CARNRUDH_NURSE"
     }
   ]
 }

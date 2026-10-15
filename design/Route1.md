@@ -16,7 +16,7 @@
 - Map `KerniaRoute1` (`MAP_KERNIA_ROUTE1`), layout `LAYOUT_KERNIA_ROUTE1` (48×24, `gTileset_General` + `gTileset_Dewford`, the same as Balwyn so the join draws cleanly). Region map section `MAPSEC_ROUTE_1` (FireRed's, shown as "ROUTE 1"). Group `gMapGroup_KerniaTownsAndRoutes`.
 - Named `KerniaRoute1` because plain `MAP_ROUTE1` / `LAYOUT_ROUTE1` belong to FireRed's Route 1.
 - Music `MUS_ROUTE101`, weather `WEATHER_SUNNY`. Border is trees.
-- Connections: `left` to `MAP_BALWYN` (offset 0). The east edge's sand road (rows 11–12, from x 40) is where the first gym town will connect.
+- Connections: `left` to `MAP_BALWYN` (offset 0), and `right` to `MAP_CARNRUDH` (offset -1), whose main street (rows 12–13) continues the east edge's sand road (rows 11–12, from x 40).
 - Layout:
   - x 0–9: a hedged sand lane continuing Balwyn's road, with the cliff band above and the shore below, as in Balwyn.
   - From x 10: the lane opens into a meadow, then a grass corridor winds north, south, and north again through woodland, and the sand road resumes at x 40.
@@ -62,6 +62,3 @@
 
 - None at the moment.
 
-## Next steps
-
-- Connect Carnrudh at the east edge (rows 11–12, from x 40) once the town exists.

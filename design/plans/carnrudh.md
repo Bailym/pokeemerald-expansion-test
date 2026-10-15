@@ -18,7 +18,7 @@ Same as Balwyn and Route 1: generate the exterior layouts by script, copying van
 
 ## Phases
 
-### Phase 1 — Arrive in Carnrudh, heal, and shop
+### Phase 1 — Arrive in Carnrudh, heal, and shop ✅
 **Deliverable:** The player walks east off Route 1 into Carnrudh with a "CARNRUDH" popup and no seam at the join. They can heal at the Pokémon Center, use the PC, buy from the Mart, and white out back to Carnrudh's Center.
 **Verify:** `make -j$(nproc)` succeeds. In mGBA, start a new game and warp to Route 1 (debug menu), then walk east along rows 11–12. Check the following:
 - The popup appears, and there are no garbled tiles either side of the join.

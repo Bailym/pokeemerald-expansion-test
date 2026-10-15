@@ -76,7 +76,8 @@
     "gMapGroup_IndoorSixIslandRoute_Frlg",
     "gMapGroup_IndoorSevenIslandRoute_Frlg",
     "gMapGroup_KerniaTownsAndRoutes",
-    "gMapGroup_IndoorBalwyn"
+    "gMapGroup_IndoorBalwyn",
+    "gMapGroup_IndoorCarnrudh"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -1165,7 +1166,8 @@
   ],
   "gMapGroup_KerniaTownsAndRoutes": [
     "Balwyn",
-    "KerniaRoute1"
+    "KerniaRoute1",
+    "Carnrudh"
   ],
   "gMapGroup_IndoorBalwyn": [
     "Balwyn_PlayersHouse_1F",
@@ -1173,5 +1175,10 @@
     "Balwyn_House1",
     "Balwyn_House2",
     "Balwyn_Pub"
+  ],
+  "gMapGroup_IndoorCarnrudh": [
+    "Carnrudh_PokemonCenter_1F",
+    "Carnrudh_PokemonCenter_2F",
+    "Carnrudh_Mart"
   ]
 }
