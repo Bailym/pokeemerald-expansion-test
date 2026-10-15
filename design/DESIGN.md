@@ -85,6 +85,7 @@
 - Hometown: Balwyn, a quiet former tin-mining village in the far west (see `Balwyn.md`).
 - Main city: Treveur, from tre (town) + meur (great), "great town". Inspired by Truro.
 - First gym town: Carnrudh, from carn (rocky hill or tor) + rudh (red), "red tor". Inspired by Camborne / Redruth, and named for Carn Brea, the hill between them, and for Redruth.
+- Carn Kowr, from carn (tor) + kowr (giant), "giant's tor": the hill above Carnrudh (inspired by Carn Brea), with the giant's stones. Lumen survey it for a quarry before gym 1 (see `Carnrudh.md`).
 - Treveur is the main city: corporation HQ, the professor's lab, and the region's main shopping and services.
 - Towns inspired by (and renamed from): St Ives / Penzance, Camborne / Redruth, Truro, St Austell clay country, Falmouth, and the north coast (Newquay, Padstow, Tintagel).
 - Pokémon League: Land's End.
