@@ -21,12 +21,57 @@
 2. The gym is shut. Tanek is up on Carn Kowr with Lumen's survey team, backing their plan for a granite quarry. He believes in the jobs (see Characters).
 3. The riddle: Grampy's Journal has a verse about the giant's stones on Carn Kowr. This is the journal's first real use after the opening.
 4. Carn Kowr: the player climbs the tor and inspects the giant's stones in the order the verse names them (Hand, Head, Cradle, Well). Inspecting the wrong one resets the order and gives a hint. The Hand, Head, and Cradle are on the climb, each guarded by a Lumen grunt the player has to beat to reach it. A fourth grunt at the top of the climb keeps the player off the peak until those three are done.
-5. The proof: the Well is on the peak, right beside Lumen's drill site. It shows that the tor is an ancient monument (a carving or a marking; see Open questions), which gives the locals grounds to stop the quarry. The proof turns up under Peran's nose and leads straight into his battle.
+5. The proof: the Well is on the peak, right beside Lumen's drill site. When the stones are done in order, its water drains away to show cup-and-ring carvings, proof that the tor is an ancient monument (see The riddle and the proof). That gives the locals grounds to stop the quarry. The proof turns up under Peran's nose and leads straight into his battle.
 6. Peran: on the peak, the player battles Peran, Lumen's Chief Engineer, in his first appearance. He's a local and knows the tor. Afterwards he just moves on, letting slip that the granite was never the real prize ("It's not what's on the hill. It's what's under it.").
 7. Tanek is shaken but loyal: he's uneasy that Lumen gave up the jobs so easily, but tells himself they'll bring the work somewhere else. This plants the doubt behind his remorse line after Bucca's rampage. He goes back down and opens the gym.
 8. Steam-engine day: with the tor saved, the festival runs, and the gym is open.
 
 - Lumen's threat on the tor is purely industrial and in the open. Their real aim stays hidden; the tor only hints that they want something deeper.
+
+## The riddle and the proof
+
+### The verse
+Grampy's Journal, read at the foot of the climb:
+
+> *Carn Kowr. The rhyme Mam taught me on the way up, every Whitsun:*
+>
+> Shake the giant by the hand,
+> bow where his great head stands.
+> Rock his cradle, soft and low,
+> then drink his well, and know.
+>
+> *Mam said the giants carved their names in the well. Never saw it. Always full of rain.*
+
+- Each line points to a stone through something you'd do to it. The name signs make the answer easy to find, so the verse reads as a rhyme rather than a list.
+- "And know" sets up the proof. The last journal line plants the idea that something is hidden in the Well, and explains why nobody has seen it: it's always full.
+- Lines are kept to 32 characters or fewer, two to a page. Check the fit in mGBA.
+
+### Inspecting the stones
+- In order, each stone gives its normal text, then a short line:
+  - Hand: "You clasp the stone's cold fingers."
+  - Head: "You bow your head to the giant."
+  - Cradle: "You give the slab a gentle push. It rocks, just slightly."
+- Out of order, the order resets and the journal hints at the stone the player should have gone to:
+
+| Stone expected next | Hint |
+|---|---|
+| Hand | "The rhyme starts with a greeting." |
+| Head | "After a handshake… a bow." |
+| Cradle | "Something to rock, soft and low." |
+| Well | "Last of all, a drink." |
+
+### The proof
+The order works as a folk ritual: done right, it empties the Well.
+
+1. The Well, last: "You scoop up a handful of rainwater. The level drops… and keeps dropping, draining away through a crack in the granite."
+2. The empty basin: "Carved into the bottom of the basin: rings of little cups around a spiral, worn soft by thousands of years of rain."
+3. Peran (name box) walks over: "Weathering. Granite does that."
+4. Tanek (name box), shaken: "That's no weathering, Peran. Somebody made that. By hand."
+5. Peran: "Then somebody's in my way." This leads straight into his battle.
+
+- Cup-and-ring marks are real Neolithic rock art. They show people were on the hill thousands of years ago, which gives the locals grounds to stop the quarry.
+- They also suggest the "giants" were people all along, a thread that can come back with the Cormoran legend later.
+- Rejected: a date carved by old miners. Simpler, but not ancient, so weaker as proof. Also rejected: Lumen's drilling cracked the basin and the ritual only shows where to look. More grounded, but it loses the light folk magic.
 
 ## Locations
 
@@ -124,8 +169,6 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 ## Open questions
 
 - The inventor's Kernia name, and the festival's name.
-- What the proof on the last stone is: a Neolithic carving, a date, or a marking.
-- The journal's riddle verse.
 - Where Nova is, and whether there's a rival battle in Carnrudh.
 - Peran's team and levels, the grunts' teams, and Tanek's team.
 - The gym's puzzle and its trainers.
