@@ -9398,7 +9398,7 @@
       "id": "LAYOUT_KERNIA_ROUTE2",
       "name": "KerniaRoute2_Layout",
       "width": 40,
-      "height": 50,
+      "height": 52,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/KerniaRoute2/border.bin",

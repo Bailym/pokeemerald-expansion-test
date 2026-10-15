@@ -101,14 +101,13 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 
 ## 8. Route 2 (the coast path)
 
-**Story:** the cliff-top coast path south-west from Carnrudh, opened once the tor is saved. It runs past a lighthouse headland to a seal cove below the cliffs. (Being built: Nova's battle, trainers, and the fisherman come in later phases of `design/plans/route-2.md`.)
+**Story:** the coast path south from Carnrudh, opened once the tor is saved. A terraced headland steps down to the sea, with a lighthouse on its summit and a sandy bay at its foot. (Being built: Nova's battle, trainers, tall grass, and the fisherman come in later phases of `design/plans/route-2.md`.)
 
 - ⚠ Before the tor, the survey worker blocks the way out of Carnrudh. After it (`carnrudh_tor_done` or later), the worker's gone and the road is open.
 - ⚠ Seamless join with Carnrudh: the tree band and road line up, and the "ROUTE 2" popup shows.
-- You can't walk onto the sea, the cliffs, or the lighthouse, and the south-east corner (the way to Porthliw, not built yet) is closed off.
-- Three sets of steps lead down the terraces: below the road, then by the sea, then from the headland down to the beach. Every level is reachable, and so is the strip in front of the lighthouse.
-- The lighthouse draws cleanly (no garbled tiles), and walking around it never puts it over the player.
-- Tall grass gives wild battles (Lv9–12); open ground and the cove don't.
+- ⚠ **Levels:** you can only change level by the steps: up two flights to the summit, down to the lower terraces, and down to the beach. Walking along a cliff edge never lets you step down (or up) without steps, and you can't get onto the thin ledges in the sea cliffs.
+- You can't walk onto the sea, the lighthouse, or the cottage.
+- The lighthouse and cottage draw cleanly, and walking round them never puts them over the player.
 - Both signs read correctly.
 
 ## Shortcuts
