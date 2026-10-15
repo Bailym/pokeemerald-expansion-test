@@ -1634,6 +1634,10 @@
     {
       "id": "MAPSEC_CARNRUDH",
       "name": "CARNRUDH"
+    },
+    {
+      "id": "MAPSEC_CARN_KOWR",
+      "name": "CARN KOWR"
     }
   ]
 }

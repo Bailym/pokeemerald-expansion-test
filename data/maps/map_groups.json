@@ -1167,7 +1167,9 @@
   "gMapGroup_KerniaTownsAndRoutes": [
     "Balwyn",
     "KerniaRoute1",
-    "Carnrudh"
+    "Carnrudh",
+    "CarnKowr",
+    "CarnKowr_Peak"
   ],
   "gMapGroup_IndoorBalwyn": [
     "Balwyn_PlayersHouse_1F",

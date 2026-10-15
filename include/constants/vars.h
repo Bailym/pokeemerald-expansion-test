@@ -150,7 +150,7 @@
 #define VAR_ROUTE133_STATE                               0x4080 // Unused Var
 #define VAR_ROUTE134_STATE                               0x4081 // Unused Var
 #define VAR_LITTLEROOT_HOUSES_STATE_MAY                  0x4082
-#define VAR_UNUSED_0x4083                                0x4083 // Unused Var
+#define VAR_CARNRUDH_STATE                               0x4083 // Carnrudh and Carn Kowr's story, see CARNRUDH_STATE_*
 #define VAR_BIRCH_LAB_STATE                              0x4084
 #define VAR_PETALBURG_GYM_STATE                          0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
 #define VAR_CONTEST_HALL_STATE                           0x4086
@@ -346,5 +346,8 @@
 #define BALWYN_STATE_HAS_STARTER       4 // Kitchen table done; the road east is open.
 #define BALWYN_STATE_NOVA_BATTLED      5 // Nova's first battle and the send-off are done.
 #define BALWYN_STATE_KNOCKING_HEARD    6 // The first knocking at the Wheal Gwyn fence has played.
+
+// Values for VAR_CARNRUDH_STATE, in story order (see design/plans/carnrudh.md).
+#define CARNRUDH_STATE_ARRIVED      0 // The gym is shut; Tanek is up on Carn Kowr with Lumen.
 
 #endif // GUARD_CONSTANTS_VARS_H

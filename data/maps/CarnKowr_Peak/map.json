@@ -1,0 +1,88 @@
+{
+  "id": "MAP_CARN_KOWR_PEAK",
+  "name": "CarnKowr_Peak",
+  "layout": "LAYOUT_CARN_KOWR_PEAK",
+  "music": "MUS_ROUTE119",
+  "region_map_section": "MAPSEC_CARN_KOWR",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_CARN_KOWR",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_CARN_KOWR_PEAK_PERAN",
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 20,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CarnKowr_Peak_EventScript_Peran",
+      "flag": "FLAG_HIDE_CARN_KOWR_PEAK_CAST"
+    },
+    {
+      "local_id": "LOCALID_CARN_KOWR_PEAK_TANEK",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 23,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CarnKowr_Peak_EventScript_Tanek",
+      "flag": "FLAG_HIDE_CARN_KOWR_PEAK_CAST"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CarnKowr_Peak_EventScript_Well"
+    },
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CarnKowr_Peak_EventScript_Well"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CarnKowr_Peak_EventScript_SurveySign"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CarnKowr_Peak_EventScript_WellSign"
+    }
+  ]
+}

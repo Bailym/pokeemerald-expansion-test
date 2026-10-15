@@ -37,7 +37,7 @@ Reopen Porymap and check that both connections show.
 
 **Not yet:** the other buildings' doors (no warps), the gym interior, Carn Kowr, story state, townsfolk, the festival, and fly (it needs a badge and a region map anyway).
 
-### Phase 2 — The gym is shut; climb to Carn Kowr's peak
+### Phase 2 — The gym is shut; climb to Carn Kowr's peak ✅
 **Deliverable:** The gym door is blocked, with a line saying Tanek is up on Carn Kowr with Lumen. The path north leads up Carn Kowr's climb, a walkable heath tor with three of the giant's stones, and on to the peak, where the fourth stone (the Well) sits by Lumen's survey camp with Peran and Tanek (talk-only for now).
 **Verify:** Build, start a new game, and warp to Carnrudh. Check the following:
 - Try the gym door: you're turned back with the "Tanek's on the tor" line.
@@ -50,8 +50,8 @@ Reopen Porymap and check that both connections show.
 - Add `VAR_CARNRUDH_STATE` and `CARNRUDH_STATE_*` (`ARRIVED` first) in `vars.h`, in an unused var slot.
 - Gym blocker in Carnrudh (an NPC or a sign in the doorway), shown or hidden by state.
 - Generate both layouts with scripts in `tools/kernia/`, sharing Carnrudh's tilesets so both joins draw cleanly:
-  - `CarnKowr`: heath and granite outcrops, with a path winding up from the town to a gap at the top edge. The Hand, Head, and Cradle are `bg_event`s along it, placed so the path doesn't visit them in riddle order.
-  - `CarnKowr_Peak`: the summit, with the Well (`bg_event`), a survey camp and drill site beside it, and stand-ins for the castle folly and monument if vanilla tiles fit.
+  - `CarnKowr`: heath and granite outcrops, with a path winding up from the town to a gap at the top edge. The Hand, Head, and Cradle are `bg_event`s along it, placed so the path doesn't visit them in riddle order. (As built: three terraces split by Route 104-style cliffs with stairs on alternating sides, and each stone a pointed menhir with a name sign.)
+  - `CarnKowr_Peak`: the summit, with the Well (`bg_event`), a survey camp and drill site beside it, and stand-ins for the castle folly and monument if vanilla tiles fit. (As built: one more cliff up to the summit, a tor made of a boulder cluster, and a survey sign. No folly or monument, as no vanilla tiles fit.)
 - Maps, layouts, `MAPSEC_CARN_KOWR`, and the `up`/`down` connections (Carnrudh ↔ climb ↔ peak). Wild encounters only on the climb (`gCarnKowr`, early levels, a slightly different table from Route 1).
 - Peak objects: Peran (stand-in sprite), Tanek (stand-in sprite), and survey kit. Hidden with `FLAG_HIDE_*` once the tor is done.
 - Record the tor in `design/Carnrudh.md`.
