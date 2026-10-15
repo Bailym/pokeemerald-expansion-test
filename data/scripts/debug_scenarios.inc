@@ -53,15 +53,19 @@ DebugScenarioStory_CarnrudhWell:
 	settrainerflag TRAINER_CARN_KOWR_GRUNT_GATE
 	return
 
-@ Peran is beaten and has left the peak with Tanek: the gym is open and the festival is on. Back in
-@ town, the engineman has had the player pull the engine's whistle and given them Charcoal.
-DebugScenarioStory_CarnrudhGym:
+@ Peran is beaten and has left the peak with Tanek: the gym is open and the festival is on.
+DebugScenarioStory_CarnrudhTorDone:
 	call DebugScenarioStory_CarnrudhWell
 	settrainerflag TRAINER_PERAN_CARN_KOWR
 	setflag FLAG_HIDE_CARN_KOWR_PEAK_CAST
 	setflag FLAG_HIDE_CARNRUDH_GYM_BLOCKER
 	clearflag FLAG_HIDE_CARNRUDH_FESTIVAL
 	setvar VAR_CARNRUDH_STATE, CARNRUDH_STATE_TOR_DONE
+	return
+
+@ Back in town, the engineman has had the player pull the engine's whistle and given them Charcoal.
+DebugScenarioStory_CarnrudhGym:
+	call DebugScenarioStory_CarnrudhTorDone
 	additem ITEM_CHARCOAL
 	setflag FLAG_RECEIVED_CHARCOAL_CARNRUDH
 	return
@@ -120,6 +124,17 @@ DebugScenario_CarnrudhWell::
 	givemon SPECIES_ROOKIDEE, 8
 	givemon SPECIES_ROLYCOLY, 7
 	additem ITEM_POTION, 3
+	setwarp MAP_CARN_KOWR_PEAK, 20, 8
+	return
+
+@ On the peak in front of the drained Well, with Peran and Tanek gone: walk down to town for the
+@ engineman's welcome.
+DebugScenario_CarnrudhTorDone::
+	call DebugScenarioStory_CarnrudhTorDone
+	givemon SPECIES_SPHEAL, 12
+	givemon SPECIES_ROOKIDEE, 10
+	givemon SPECIES_ROLYCOLY, 9
+	additem ITEM_POTION, 5
 	setwarp MAP_CARN_KOWR_PEAK, 20, 8
 	return
 

@@ -153,6 +153,23 @@ TEST("Scenario carnrudh_well: the gate grunt is beaten and reading the Well star
     ExpectStartsAt(MAP_GROUP(MAP_CARN_KOWR_PEAK), MAP_NUM(MAP_CARN_KOWR_PEAK), 20, 8);
 }
 
+TEST("Scenario carnrudh_tor_done: Peran is beaten and the player is still on the peak")
+{
+    StartScenario(SCENARIO_CARNRUDH_TOR_DONE);
+
+    const u32 expectedCarnrudhState = CARNRUDH_STATE_TOR_DONE;
+    const u32 actualCarnrudhState = VarGet(VAR_CARNRUDH_STATE);
+    EXPECT_EQ(actualCarnrudhState, expectedCarnrudhState);
+    EXPECT(HasTrainerBeenFought(TRAINER_PERAN_CARN_KOWR));
+    EXPECT(FlagGet(FLAG_HIDE_CARN_KOWR_PEAK_CAST));
+    EXPECT(FlagGet(FLAG_HIDE_CARNRUDH_GYM_BLOCKER));
+    EXPECT(!FlagGet(FLAG_HIDE_CARNRUDH_FESTIVAL));
+    EXPECT(!FlagGet(FLAG_RECEIVED_CHARCOAL_CARNRUDH));
+    EXPECT(!CheckBagHasItem(ITEM_CHARCOAL, 1));
+    ExpectTeamReadyFor(TANEK_ACE_LEVEL);
+    ExpectStartsAt(MAP_GROUP(MAP_CARN_KOWR_PEAK), MAP_NUM(MAP_CARN_KOWR_PEAK), 20, 8);
+}
+
 TEST("Scenario carnrudh_gym: Peran is beaten, the festival is on and the gym is open")
 {
     StartScenario(SCENARIO_CARNRUDH_GYM);

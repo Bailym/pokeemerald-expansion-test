@@ -108,7 +108,8 @@ After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new 
 | `carnrudh_arrived` | Outside Carnrudh's Pokémon Center (also the respawn point); Route 1 done | Spheal 8, Rookidee 6 | Carnrudh before the climb, the verse trigger |
 | `carnrudh_riddle` | Just past the verse trigger on Carn Kowr (`RIDDLE_READ`) | Spheal 8, Rookidee 6 | The climb grunts and stones |
 | `carnrudh_cradle` | Below the gate grunt (`CRADLE_DONE`) | Spheal 9, Rookidee 7, Rolycoly 6 | The gate battle, then read the Well for the proof scene |
-| `carnrudh_well` | In front of the Well on the peak, Peran just below; gate grunt beaten (`CRADLE_DONE`) | Spheal 10, Rookidee 8, Rolycoly 7 | Read the Well: the proof scene, Peran's battle and the walk-off. Also try from the right-hand Well tile, and losing. Then walk down to town for the engineman's welcome |
+| `carnrudh_well` | In front of the Well on the peak, Peran just below; gate grunt beaten (`CRADLE_DONE`) | Spheal 10, Rookidee 8, Rolycoly 7 | Read the Well: the proof scene, Peran's battle and the walk-off. Also try from the right-hand Well tile, and losing. |
+| `carnrudh_tor_done` | On the peak in front of the drained Well; Peran beaten, Peran and Tanek gone (`TOR_DONE`) | Spheal 12, Rookidee 10, Rolycoly 9 | The dry Well, then walk down to town for the engineman's welcome and Charcoal |
 | `carnrudh_gym` | Outside the gym door; festival on and the engineman's welcome done, with Charcoal (`TOR_DONE`) | Spheal 13, Rookidee 11, Rolycoly 10 | The festival, the gym and Tanek |
 | `carnrudh_badge1` | Outside the gym door with badge 1 and TM51 (`BADGE_WON`) | Spheal 14, Rookidee 12, Rolycoly 11 | Post-badge town and NPCs |
 

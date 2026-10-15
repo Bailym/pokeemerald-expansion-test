@@ -9,9 +9,10 @@
 #define SCENARIO_CARNRUDH_RIDDLE       3
 #define SCENARIO_CARNRUDH_CRADLE       4
 #define SCENARIO_CARNRUDH_WELL         5
-#define SCENARIO_CARNRUDH_GYM          6
-#define SCENARIO_CARNRUDH_BADGE1       7
+#define SCENARIO_CARNRUDH_TOR_DONE     6
+#define SCENARIO_CARNRUDH_GYM          7
+#define SCENARIO_CARNRUDH_BADGE1       8
 
-#define SCENARIOS_COUNT                8
+#define SCENARIOS_COUNT                9
 
 #endif // GUARD_CONSTANTS_DEBUG_SCENARIOS_H
