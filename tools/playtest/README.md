@@ -5,7 +5,7 @@ Boot mGBA straight into a point in the story, for testing by hand.
 ```sh
 make
 python3 tools/playtest/play.py --list
-python3 tools/playtest/play.py carnrudh_pre_festival
+python3 tools/playtest/play.py carnrudh_well
 ```
 
 With no scenario, `play.py` shows a numbered list to pick from. In VS Code, run the **Play scenario** task (Terminal → Run Task), which builds first and then asks.

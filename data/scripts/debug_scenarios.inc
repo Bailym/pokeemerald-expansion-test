@@ -46,16 +46,16 @@ DebugScenarioStory_CarnrudhCradle:
 	setvar VAR_CARNRUDH_STATE, CARNRUDH_STATE_CRADLE_DONE
 	return
 
-@ The gate grunt is beaten and the Well has drained; Peran's battle is next.
-DebugScenarioStory_CarnrudhPreFestival:
+@ The gate grunt is beaten and the peak is open. Reading the Well plays the proof, which sets
+@ STONES_DONE itself and leads straight into Peran's battle.
+DebugScenarioStory_CarnrudhWell:
 	call DebugScenarioStory_CarnrudhCradle
 	settrainerflag TRAINER_CARN_KOWR_GRUNT_GATE
-	setvar VAR_CARNRUDH_STATE, CARNRUDH_STATE_STONES_DONE
 	return
 
 @ Peran is beaten and has left the peak with Tanek: the gym is open and the festival is on.
 DebugScenarioStory_CarnrudhGym:
-	call DebugScenarioStory_CarnrudhPreFestival
+	call DebugScenarioStory_CarnrudhWell
 	settrainerflag TRAINER_PERAN_CARN_KOWR
 	setflag FLAG_HIDE_CARN_KOWR_PEAK_CAST
 	setflag FLAG_HIDE_CARNRUDH_GYM_BLOCKER
@@ -110,9 +110,9 @@ DebugScenario_CarnrudhCradle::
 	setwarp MAP_CARN_KOWR, 22, 2
 	return
 
-@ At the Well on the peak, with Peran just below: talk to him to battle.
-DebugScenario_CarnrudhPreFestival::
-	call DebugScenarioStory_CarnrudhPreFestival
+@ In front of the Well on the peak, with Peran just below: read the Well for the proof and his battle.
+DebugScenario_CarnrudhWell::
+	call DebugScenarioStory_CarnrudhWell
 	givemon SPECIES_SPHEAL, 10
 	givemon SPECIES_ROOKIDEE, 8
 	givemon SPECIES_ROLYCOLY, 7

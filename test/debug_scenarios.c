@@ -138,11 +138,11 @@ TEST("Scenario carnrudh_cradle: the three stones are done and the gate grunt is 
     ExpectStartsAt(MAP_GROUP(MAP_CARN_KOWR), MAP_NUM(MAP_CARN_KOWR), 22, 2);
 }
 
-TEST("Scenario carnrudh_pre_festival: the Well is drained and Peran is ready to battle")
+TEST("Scenario carnrudh_well: the gate grunt is beaten and reading the Well starts the proof")
 {
-    StartScenario(SCENARIO_CARNRUDH_PRE_FESTIVAL);
+    StartScenario(SCENARIO_CARNRUDH_WELL);
 
-    const u32 expectedCarnrudhState = CARNRUDH_STATE_STONES_DONE;
+    const u32 expectedCarnrudhState = CARNRUDH_STATE_CRADLE_DONE;
     const u32 actualCarnrudhState = VarGet(VAR_CARNRUDH_STATE);
     EXPECT_EQ(actualCarnrudhState, expectedCarnrudhState);
     EXPECT(HasTrainerBeenFought(TRAINER_CARN_KOWR_GRUNT_GATE));

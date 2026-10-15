@@ -14,7 +14,7 @@ extern const u8 DebugScenario_BalwynDone[];
 extern const u8 DebugScenario_CarnrudhArrived[];
 extern const u8 DebugScenario_CarnrudhRiddle[];
 extern const u8 DebugScenario_CarnrudhCradle[];
-extern const u8 DebugScenario_CarnrudhPreFestival[];
+extern const u8 DebugScenario_CarnrudhWell[];
 extern const u8 DebugScenario_CarnrudhGym[];
 extern const u8 DebugScenario_CarnrudhBadge1[];
 
@@ -28,7 +28,7 @@ static const u8 *const sScenarioScripts[SCENARIOS_COUNT] =
     [SCENARIO_CARNRUDH_ARRIVED]      = DebugScenario_CarnrudhArrived,
     [SCENARIO_CARNRUDH_RIDDLE]       = DebugScenario_CarnrudhRiddle,
     [SCENARIO_CARNRUDH_CRADLE]       = DebugScenario_CarnrudhCradle,
-    [SCENARIO_CARNRUDH_PRE_FESTIVAL] = DebugScenario_CarnrudhPreFestival,
+    [SCENARIO_CARNRUDH_WELL]         = DebugScenario_CarnrudhWell,
     [SCENARIO_CARNRUDH_GYM]          = DebugScenario_CarnrudhGym,
     [SCENARIO_CARNRUDH_BADGE1]       = DebugScenario_CarnrudhBadge1,
 };

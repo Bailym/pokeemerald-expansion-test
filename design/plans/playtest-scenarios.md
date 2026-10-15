@@ -1,7 +1,7 @@
 # Playtest scenarios
 
 ## Goal
-One command opens mGBA with the player already at a chosen point in the story, with fitting flags, team and items, so you can test a phase by hand without replaying from the start or setting flags in the debug menu. "Carnrudh before the festival with a fitting team" becomes `play carnrudh_pre_festival`. The scenarios replace the manual jump table in `design/TestGuide.md`.
+One command opens mGBA with the player already at a chosen point in the story, with fitting flags, team and items, so you can test a phase by hand without replaying from the start or setting flags in the debug menu. "Carnrudh before the festival with a fitting team" becomes `play carnrudh_well`. The scenarios replace the manual jump table in `design/TestGuide.md`.
 
 ## Context
 - **mGBA 0.10.5 on Windows** (`C:\Program Files\mGBA\mGBA.exe`), with the repo in WSL2. WSL can start `mGBA.exe` directly (Windows interop), with paths passed through `wslpath -w`.
@@ -39,12 +39,12 @@ One command opens mGBA with the player already at a chosen point in the story, w
 
 ### Phase 2 — Carnrudh scenarios ✅
 *(As built: each scenario is split into a story part, which only sets flags, vars and story items and is chained with `call`, plus its own team and `setwarp`. That way levels go up between scenarios without anything carried over from earlier ones. The tests name each fight's ace level as a constant, because the test build swaps `gTrainers` for its own test trainers. From `carnrudh_arrived` on, the respawn point is Carnrudh's Pokémon Center.)*
-**Deliverable:** Scenarios for every row of the TestGuide jump table, chained from `balwyn_done` to `carnrudh_badge1`, each with a fitting team and items. `carnrudh_pre_festival` is one of them. TestGuide points to the scenarios instead of listing manual flag settings.
+**Deliverable:** Scenarios for every row of the TestGuide jump table, chained from `balwyn_done` to `carnrudh_badge1`, each with a fitting team and items. `carnrudh_well` (first built as `carnrudh_pre_festival`) is one of them. TestGuide points to the scenarios instead of listing manual flag settings.
 **Verify:**
 - `make check TESTS="Scenario"`: one test per scenario checks its vars and flags, the party levels within the expected range, and the warp map.
-- You load `carnrudh_pre_festival` and one other with `play.py`. Each starts where TestGuide says, with the NPCs and blockers in the right state.
+- You load `carnrudh_well` and one other with `play.py`. Each starts where TestGuide says, with the NPCs and blockers in the right state.
 **Work:**
-- `data/scripts/debug_scenarios.inc`: `carnrudh_arrived`, `carnrudh_riddle`, `carnrudh_cradle` (gate and peak), `carnrudh_pre_festival`, `carnrudh_gym` (`TOR_DONE`, festival on), `carnrudh_badge1`. Each one `call`s the one before.
+- `data/scripts/debug_scenarios.inc`: `carnrudh_arrived`, `carnrudh_riddle`, `carnrudh_cradle` (gate and peak), `carnrudh_well`, `carnrudh_gym` (`TOR_DONE`, festival on), `carnrudh_badge1`. Each one `call`s the one before.
 - Teams: species from the routes reached so far (`wild_encounters.json`) plus the starter. Levels from the next big fight's `.party` entries (a little under the ace). Default level-up moves unless a fight calls for something.
 - `design/TestGuide.md`: replace the jump table with the scenario list and the command to run.
 - `tools/playtest/README.md`: how a description ("X, before Y, fitting team") becomes a scenario (flags from the area's design doc, levels from the next fight, keep the chain in story order), and the rule that new story vars or flags get added to the relevant scenario in the same phase.
@@ -52,7 +52,7 @@ One command opens mGBA with the player already at a chosen point in the story, w
 **Not yet:** a debug menu "Scenarios" entry (the follow-up after this plan).
 
 ## Open questions
-- ~~**What does "before the festival" mean?**~~ Settled: on the peak before the Peran fight (`STONES_DONE`, the Well drained). `carnrudh_gym` covers the festival being on.
+- ~~**What does "before the festival" mean?**~~ Settled: on the peak before the Peran fight. First built at `STONES_DONE`, which only happens in play after losing to Peran, so it skipped the proof scene. Now `carnrudh_well`: gate grunt beaten, `CRADLE_DONE`, standing at the Well, so reading it plays the proof straight into the battle. `carnrudh_gym` covers the festival being on.
 - **Default player:** name `KERNOW` and male, unless you'd rather pick. A scenario could override either.
 - **Where does the play folder go?** On the Windows side, e.g. `C:\Users\Baily\AppData\Local\kernia-playtest`, so mGBA isn't loading over `\\wsl.localhost`. Saving in the game writes a `.sav` there, never in the repo. Each launch makes a fresh new game regardless.
 
