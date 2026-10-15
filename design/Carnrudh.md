@@ -204,7 +204,7 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 
 - Signs right of the pasty shop (20, 19) ("CARNRUDH PASTY SHOP") and the school (27, 19) ("OLD MINERS' SCHOOL"); the school sits at x 22–26 to make room.
 - The school's blackboard (4–7, 2) shows a chalk drawing of the *Puffing Bucca*, signed by the Cap'n.
-- The engine on show: a stand-in object (`TRUCK`, 3×3 tiles) in the field at (21, 22), with lines before and during the festival. Object events only block their anchor tile, so the generator makes the grass under the rest of the sprite (x 20–22, rows 20–22) solid.
+- The engine on show: a stand-in object (`TRUCK`, 3×3 tiles) in the field at (21, 23), with lines before and during the festival. Object events only block their anchor tile, so the generator makes the grass under the rest of the sprite (x 20–22, rows 21–23) solid. Row 20 is left walkable, since the sprite's top is transparent and the Pasty Shop sign at (20, 19) is read from there.
 - Festival only, hidden by `FLAG_HIDE_CARNRUDH_FESTIVAL` (set in `EventScript_ResetAllMapFlags`, cleared when Peran leaves the peak). Most are in the field round the engine:
 
 | Who | Where | Notes |

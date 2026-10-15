@@ -49,9 +49,11 @@ for (x, y) in [(5, 4), (13, 10), (17, 11), (22, 11), (20, 14), (26, 21), (5, 18)
     if L.m[y][x] == GRASS and not L.tree[y][x]:
         L.m[y][x] = FLOWER
 
-# The engine on show (a 48x48 object event at (21, 22)) covers x 20-22, rows 20-22. Object events
-# only block their anchor tile, so the grass under the rest of it is made solid.
-ENGINE = (21, 22)
+# The engine on show (a 48x48 object event at (21, 23)) covers x 20-22, rows 21-23. Object events
+# only block their anchor tile, so the grass under the rest of it is made solid. Row 20 stays
+# clear: the sprite's top rows are transparent, so it looks walkable, and the Pasty Shop sign at
+# (20, 19) is read from there.
+ENGINE = (21, 23)
 for y in range(ENGINE[1] - 2, ENGINE[1] + 1):
     for x in range(ENGINE[0] - 1, ENGINE[0] + 2):
         L.m[y][x] = (L.m[y][x] & 0x3FF) | (1 << 10) | (3 << 12)
