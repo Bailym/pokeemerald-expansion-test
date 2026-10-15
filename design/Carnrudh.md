@@ -6,7 +6,7 @@
 
 - The first gym town, at the east end of Route 1. Gym 1: Tanek, Fire, backs Lumen.
 - Name: carn (rocky hill or tor) + rudh (red), "red tor".
-- A festival town: its steam-engine day celebrates a local inventor whose engine first ran here. The player arrives while the town is setting up for it.
+- A festival town: Penhallow Day ("engine day" to locals) celebrates Cap'n Jowan Penhallow, a local inventor whose engine, the *Puffing Bucca*, first ran here. The player arrives while the town is setting up for it.
 - Above the town to the north is Carn Kowr, the giant's tor, where Lumen are surveying for a granite quarry. The town's quest happens there, and it has to be done before the gym.
 
 ## Inspiration
@@ -27,6 +27,18 @@
 8. Steam-engine day: with the tor saved, the festival runs, and the gym is open.
 
 - Lumen's threat on the tor is purely industrial and in the open. Their real aim stays hidden; the tor only hints that they want something deeper.
+
+## The inventor and the festival
+
+- **Cap'n Jowan Penhallow**, the inventor. Jowan is the Cornish form of John; Penhallow means "head of the moor". Locals call him "the Cap'n", as Cornish miners called a mine manager (Trevithick was "Cap'n Dick").
+- **The *Puffing Bucca***, his engine, after Trevithick's *Puffing Devil*. When it first roared up the hill, miners thought it was the Bucca itself coming out of the ground, and the name stuck. It's a festival joke now, but it plants Bucca, the legendary, in the first gym town, and echoes Peran's "it's what's under it".
+- **Penhallow Day**, the festival, after Trevithick Day. Signs use the full name ("PENHALLOW DAY: ENGINE PARADE AT NOON"); locals mostly say "engine day".
+- The crowd's song, adapted from the traditional "Going up Camborne Hill":
+
+  > *Goin' up Carnrudh hill, comin' down,*
+  > *The horses stood still, the wheels went around…*
+
+- Rejected: Trenoweth ("new homestead") as the surname, and Bucca Day as the festival's name (it gives the legendary away too early).
 
 ## The riddle and the proof
 
@@ -220,7 +232,6 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 
 ## Open questions
 
-- The inventor's Kernia name, and the festival's name.
 - Where Nova is, and whether there's a rival battle in Carnrudh.
 - The gym's puzzle (steam vents or valves), after phase 5.
 - The badge's name ("ENGINE BADGE" is a placeholder) and its art.
