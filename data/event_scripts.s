@@ -1761,6 +1761,8 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Carnrudh_Mart/scripts.inc"
 
+	.include "data/maps/Carnrudh_Gym/scripts.inc"
+
 	.include "data/maps/CarnKowr/scripts.inc"
 
 	.include "data/maps/CarnKowr_Peak/scripts.inc"

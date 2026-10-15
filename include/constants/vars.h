@@ -355,5 +355,6 @@
 #define CARNRUDH_STATE_CRADLE_DONE  4 // The gate grunt lets the player onto the peak.
 #define CARNRUDH_STATE_STONES_DONE  5 // The Well has drained and shown the carvings.
 #define CARNRUDH_STATE_TOR_DONE     6 // Peran is beaten and has left the peak; the gym is open.
+#define CARNRUDH_STATE_BADGE_WON    7 // Tanek is beaten; badge 1 and TM51 Flame Charge.
 
 #endif // GUARD_CONSTANTS_VARS_H

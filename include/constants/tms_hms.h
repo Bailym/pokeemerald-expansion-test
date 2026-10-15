@@ -51,7 +51,8 @@
     F(STEEL_WING) \
     F(SKILL_SWAP) \
     F(SNATCH) \
-    F(OVERHEAT)
+    F(OVERHEAT) \
+    F(FLAME_CHARGE) /* Kernia: Tanek's badge 1 reward. */
 
 #define FOREACH_HM(F) \
     F(CUT) \

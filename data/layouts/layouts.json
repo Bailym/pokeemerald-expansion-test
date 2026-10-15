@@ -9423,6 +9423,16 @@
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/CarnKowr_Peak/border.bin",
       "blockdata_filepath": "data/layouts/CarnKowr_Peak/map.bin"
+    },
+    {
+      "id": "LAYOUT_CARNRUDH_GYM",
+      "name": "Carnrudh_Gym_Layout",
+      "width": 15,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_LavaridgeGym",
+      "border_filepath": "data/layouts/Carnrudh_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/Carnrudh_Gym/map.bin"
     }
   ]
 }

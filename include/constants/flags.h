@@ -60,7 +60,7 @@
 #define FLAG_HIDE_BALWYN_MINE_GRUNTS    0x26
 #define FLAG_HIDE_CARNRUDH_GYM_BLOCKER    0x27
 #define FLAG_HIDE_CARN_KOWR_PEAK_CAST    0x28
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
+#define FLAG_RECEIVED_TM_FLAME_CHARGE    0x29
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
