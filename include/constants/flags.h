@@ -61,8 +61,8 @@
 #define FLAG_HIDE_CARNRUDH_GYM_BLOCKER    0x27
 #define FLAG_HIDE_CARN_KOWR_PEAK_CAST    0x28
 #define FLAG_RECEIVED_TM_FLAME_CHARGE    0x29
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
+#define FLAG_HIDE_CARNRUDH_FESTIVAL    0x2A
+#define FLAG_RECEIVED_HARD_STONE_CARNRUDH    0x2B
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag

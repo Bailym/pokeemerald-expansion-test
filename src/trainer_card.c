@@ -1509,12 +1509,15 @@ static void DrawCardFrontOrBack(u16 *ptr)
     CopyBgTilemapBufferToVram(0);
 }
 
+// Kernia: badge 1 (Tanek's Fire ENGINE BADGE) uses the Heat Badge's art as a stand-in, swapped with the Stone Badge's.
+static const u8 sHoennBadgeArt[NUM_BADGES] = {3, 1, 2, 0, 4, 5, 6, 7};
+
 static void DrawStarsAndBadgesOnCard(void)
 {
     static const u8 yOffsets[] = {7, 7};
 
     s16 i, x, y;
-    u16 tileNum = 192;
+    u16 tileNum;
     u8 palNum = 3;
 
     FillBgTilemapBufferRect(3, 143, 15, yOffsets[sData->isHoenn], sData->trainerCard.stars, 1, 4);
@@ -1522,8 +1525,9 @@ static void DrawStarsAndBadgesOnCard(void)
     {
         x = 4;
         y = IS_FRLG ? 16 : 15;
-        for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 3)
+        for (i = 0; i < NUM_BADGES; i++, x += 3)
         {
+            tileNum = 192 + 2 * (sData->isHoenn ? sHoennBadgeArt[i] : i);
             if (sData->badgeCount[i])
             {
                 FillBgTilemapBufferRect(3, tileNum, x, y, 1, 1, palNum);

@@ -109,7 +109,7 @@ Reopen Porymap and check that both connections show.
 
 **Not yet:** a gym puzzle (the trainers are simply placed in a line for now), the engine-house exterior and custom tiles, and Nova in Carnrudh.
 
-### Phase 6 — Townsfolk and steam-engine day
+### Phase 6 — Townsfolk and steam-engine day ✅
 **Deliverable:** Carnrudh feels lived in. The miners' school, two houses, and the pasty shop open, and each townsperson has lore-rich lines that change once the tor is saved. After the tor is done the festival is visibly on: crowds, an engine on show, and festival lines.
 **Verify:** Build and start a new game. Before `TOR_DONE`, talk to everyone in town and in each interior. Each line fits the lore rule (dialect, one to three short pages, nothing running off the box), and the town is clearly preparing for the festival. Then set `TOR_DONE` (play through or debug) and check that the festival NPCs have appeared and the lines have changed.
 **Work:**
@@ -120,6 +120,7 @@ Reopen Porymap and check that both connections show.
 - Nova's festival cameo (no battle): shown after `TOR_DONE`, defending Lumen.
 - The miners' school teacher gives a Hard Stone once, after the tor.
 - Swap badge 1's trainer-card art for Flannery's Heat Badge as a Fire stand-in.
+- (As built: interiors copied from Rustboro's houses and Pokémon School and Lavaridge's Herb Shop. The engine is a `TRUCK` stand-in with the tiles under it made solid. The festival also has dancers, spectators, a Wooloo and Rolycoly, a treats stall, an optional Cornish wrestler (`TRAINER_CARNRUDH_WRESTLER`), and Contest Lobby music via `src/overworld.c`. Signs were added outside the pasty shop and school, with the school moved one tile east.)
 
 **Not yet:** custom art (engine house, Peran, Tanek, the badge), and the south-west and east roads' blockers (until those routes exist). No gym puzzle is planned.
 

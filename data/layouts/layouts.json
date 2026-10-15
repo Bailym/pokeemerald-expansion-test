@@ -9433,6 +9433,46 @@
       "secondary_tileset": "gTileset_LavaridgeGym",
       "border_filepath": "data/layouts/Carnrudh_Gym/border.bin",
       "blockdata_filepath": "data/layouts/Carnrudh_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_CARNRUDH_HOUSE1",
+      "name": "Carnrudh_House1_Layout",
+      "width": 13,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Carnrudh_House1/border.bin",
+      "blockdata_filepath": "data/layouts/Carnrudh_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_CARNRUDH_PASTY_SHOP",
+      "name": "Carnrudh_PastyShop_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/Carnrudh_PastyShop/border.bin",
+      "blockdata_filepath": "data/layouts/Carnrudh_PastyShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_CARNRUDH_SCHOOL",
+      "name": "Carnrudh_School_Layout",
+      "width": 12,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonSchool",
+      "border_filepath": "data/layouts/Carnrudh_School/border.bin",
+      "blockdata_filepath": "data/layouts/Carnrudh_School/map.bin"
+    },
+    {
+      "id": "LAYOUT_CARNRUDH_HOUSE2",
+      "name": "Carnrudh_House2_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Carnrudh_House2/border.bin",
+      "blockdata_filepath": "data/layouts/Carnrudh_House2/map.bin"
     }
   ]
 }

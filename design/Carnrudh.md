@@ -119,7 +119,7 @@ Badge 1 and TM51 Flame Charge: 50 power, raising Speed after each hit ("build up
 - Tanek (stand-in `NORMAN`, trainer pic Leader Norman) on the dais at (7, 3). The stoker HEDRA (`MAN_5`, Kindler class) at (10, 9) facing left, and the bal maiden LOWENA (`GIRL_3`, Lass class) at (4, 13) facing right, both with sight 6, which reaches the far wall of the hall. No puzzle yet.
 - Gym statues at (5, 16–17) and (9, 16–17), with "TANEK'S CERTIFIED TRAINERS" once `FLAG_BADGE01_GET` is set.
 - Beating Tanek sets `FLAG_BADGE01_GET` and `CARNRUDH_STATE_BADGE_WON`, then gives TM51 (`FLAG_RECEIVED_TM_FLAME_CHARGE`). If the bag is full, talking to him again gives it.
-- The badge is the ENGINE BADGE. Its art is a stand-in: Flannery's Heat Badge (Fire) in badge 1's slot, swapped in for Roxanne's Stone Badge.
+- The badge is the ENGINE BADGE. Its art is a stand-in: Flannery's Heat Badge (Fire) in badge 1's slot, swapped with Roxanne's Stone Badge by a remap table in `src/trainer_card.c` (`sHoennBadgeArt`).
 - Of the starters, only Fletchling can learn TM51 (Spheal and Shinx can't, as in the official games).
 
 ## Locations
@@ -179,13 +179,54 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 |---|---|---|---|---|
 | 0 | Pokémon Center | (19, 10) | `Carnrudh_PokemonCenter_1F` + `_2F` (vanilla's link-club floor) | `LAYOUT_POKEMON_CENTER_1F` / `_2F` |
 | 1 | Mart | (24, 10) | `Carnrudh_Mart` | `LAYOUT_MART` |
+| 2 | Gym | (8, 9) | `Carnrudh_Gym` | Generated (see Gym map notes) |
+| 3 | House 1 | (10, 19) | `Carnrudh_House1` | Copied from Rustboro's House 1 |
+| 4 | Pasty shop | (17, 19) | `Carnrudh_PastyShop` | Copied from Lavaridge's Herb Shop (its counter) |
+| 5 | Miners' school | (24, 19) | `Carnrudh_School` | Copied from Rustboro's Pokémon School |
+| 6 | House 2 | (10, 24) | `Carnrudh_House2` | Copied from Rustboro's House 3 |
 
-- The gym, houses, pasty shop, and school doors have no warps yet. Their doors are at the gym (8, 9), house 1 (10, 19), the pasty shop (17, 19), the school (23, 19), and house 2 (10, 24).
+- Townsfolk (each has a "before" line while the town sets up and a festival line from `TOR_DONE`, unless marked):
+
+| Who | Where | Sprite | Topic |
+|---|---|---|---|
+| Bunting woman | Town (17, 5) | `WOMAN_2` | Hanging flags for Penhallow Day |
+| Old man | Town (13, 14) | `OLD_MAN` | How the *Puffing Bucca* got its name |
+| Tamsin's brother | Town (26, 14) | `MAN_3` | Signed on with Lumen; left hoping after the tor |
+| Stones woman | Town (9, 14) | `WOMAN_5` | Against the quarry; vindicated by the carvings |
+| Engineman | Town (23, 22) | `MAN_5` | Polishing the engine; then steam up for the parade |
+| Mum | House 1 | `WOMAN_3` | The town split over Lumen's jobs |
+| Boy | House 1 | `BOY_1` | The giant of Carn Kowr |
+| Old miner and wife | House 2 | `OLD_MAN`, `OLD_WOMAN` | The mines shutting, family gone overseas |
+| Pasty shop keeper | Pasty shop | `WOMAN_2` | Pasties for the festival |
+| Customer | Pasty shop | `HIKER` | The crust for the Knockers (same line both times; foreshadows the climax) |
+| Teacher | School | `GENTLEMAN` | The Cap'n studied here; gives the Hard Stone after the tor (`FLAG_RECEIVED_HARD_STONE_CARNRUDH`) |
+| Two pupils | School | `SCHOOL_KID_M`, `LASS` | A *Puffing Bucca* drawing; tinners' candles |
+
+- Signs right of the pasty shop (20, 19) ("CARNRUDH PASTY SHOP") and the school (27, 19) ("OLD MINERS' SCHOOL"); the school sits at x 22–26 to make room.
+- The school's blackboard (4–7, 2) shows a chalk drawing of the *Puffing Bucca*, signed by the Cap'n.
+- The engine on show: a stand-in object (`TRUCK`, 3×3 tiles) in the field at (21, 22), with lines before and during the festival. Object events only block their anchor tile, so the generator makes the grass under the rest of the sprite (x 20–22, rows 20–22) solid.
+- Festival only, hidden by `FLAG_HIDE_CARNRUDH_FESTIVAL` (set in `EventScript_ResetAllMapFlags`, cleared when Peran leaves the peak). Most are in the field round the engine:
+
+| Who | Where | Notes |
+|---|---|---|
+| Singer (`BOY_2`) | (18, 23) | Sings "Goin' up Carnrudh hill" |
+| Two dancers (`GIRL_2`, `GIRL_3`) | (24, 24), (17, 21) | Spin on the spot (`ROTATE_*`) |
+| Spectator (`MAN_4`) | (20, 24) | Has watched the engine every year since he was a nipper |
+| Wooloo and its owner (`WOMAN_1`) | (23, 24), (22, 24) | The Wooloo is scared of the whistle; it cries when talked to |
+| Rolycoly | (24, 21), by the engineman | Puffing smoke like the engine |
+| Running girl (`LITTLE_GIRL`) | (15, 21) | Wants to ride the engine |
+| Stall keeper (`WOMAN_4`) | (26, 21) | Sells Fresh Water, Soda Pop, Lemonade, and Lava Cookies |
+| Wrestler JAGO (`BLACK_BELT`, `TRAINER_CARNRUDH_WRESTLER`) | (15, 24) | Optional "wrasslin'" battle when talked to (Makuhita Lv11); giants wrestled on these hills, a nod to Cormoran |
+| Old woman (`OLD_WOMAN`) | (16, 9), by the Center | Remembers festivals as a girl |
+| Nova (`RICH_BOY`) | (14, 16), by the pasty shop | Defends Lumen; no battle |
+
+- Festival music: Carnrudh plays `MUS_CONTEST_LOBBY` from `TOR_DONE` (`IsCarnrudhFestivalOn` in `GetLocationMusic`, `src/overworld.c`), whether the player walks in or warps.
+- No bunting or stalls: vanilla has no tiles that fit. Custom festival tiles are a later art task.
 - `HEAL_LOCATION_CARNRUDH` is (19, 11), outside the Center's door. The Center sets it as the respawn point.
 - The Mart sells Poké Balls, Potions, Antidotes, Paralyze Heals, and Awakenings.
 - Carnrudh's `up` connection (offset 0) leads onto Carn Kowr's climb, continuing the north path (x 14–15).
 - Gym blocker: a local (`MAN_1`) stands in front of the gym door at (8, 10) and says Tanek is up on Carn Kowr. Hidden by `FLAG_HIDE_CARNRUDH_GYM_BLOCKER` once the tor is done.
-- Story state: `VAR_CARNRUDH_STATE`, with `CARNRUDH_STATE_*` values in `include/constants/vars.h`: `ARRIVED`, `RIDDLE_READ`, `HAND_DONE`, `HEAD_DONE`, `CRADLE_DONE`, `STONES_DONE`. The stone order lives in the same var: a wrong stone sets it back to `RIDDLE_READ`.
+- Story state: `VAR_CARNRUDH_STATE`, with `CARNRUDH_STATE_*` values in `include/constants/vars.h`: `ARRIVED`, `RIDDLE_READ`, `HAND_DONE`, `HEAD_DONE`, `CRADLE_DONE`, `STONES_DONE`, `TOR_DONE`, `BADGE_WON`. The stone order lives in the same var: a wrong stone sets it back to `RIDDLE_READ`.
 - The verse plays from a trigger on the climb's road at (14–15, 38) while the state is `ARRIVED`. It can be read again after any wrong stone (a yes/no after the hint).
 - Re-inspecting the stone just done is harmless. Once the Cradle is done, a climb stone only gives the Well hint and doesn't reset, so the gate stays open.
 - The peak's gate: a Lumen grunt (stand-in `DEVON_EMPLOYEE`, `LOCALID_CARN_KOWR_GATE_GRUNT`) stands in the right half of the gap at (23, 1). A trigger on the left half, (22, 1), turns the player back until `CRADLE_DONE` (the `VAR_TEMP_1` = 0 trick, with the state checked in the script). Talking to him gives the same line. Once the Cradle is done, the trigger or talking to him starts his battle (`trainerbattle_no_intro`), and after that he just says "do say hello".
@@ -243,4 +284,6 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 
 ## Next steps
 
-- Plan the build in phases (`design/plans/carnrudh.md`).
+- All six phases of `design/plans/carnrudh.md` are done.
+- Custom art: the engine house, Tanek, Peran, the grunts, the *Puffing Bucca*, festival bunting and stalls, the badge, and the tor's granite.
+- The south-west route to gym 2 and the east road to Treveur, with their Lumen blockers.

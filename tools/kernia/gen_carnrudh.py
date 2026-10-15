@@ -37,17 +37,24 @@ building('pokemon_center', PC, 18, 7, 1)
 building('mart', MART, 23, 7, 1)
 building('house1', HOUSE, 9, 16, 1)
 building('pasty_shop', COTTAGE, 16, 16, 1)
-building('school', WIDE_HOUSE, 21, 16, 2)
+building('school', WIDE_HOUSE, 22, 16, 2)
 building('house2', HOUSE, 9, 21, 1)
 
-# Signs: town sign by the west entrance, gym sign beside its door.
-SIGNS = {'town': (4, 11), 'gym': (11, 9)}
+# Signs: town sign by the west entrance; the gym, pasty shop, and school each have one right of their front.
+SIGNS = {'town': (4, 11), 'gym': (11, 9), 'pasty_shop': (20, 19), 'school': (27, 19)}
 for (x, y) in SIGNS.values():
     L.m[y][x] = SIGN
 
 for (x, y) in [(5, 4), (13, 10), (17, 11), (22, 11), (20, 14), (26, 21), (5, 18), (13, 24), (19, 23)]:
     if L.m[y][x] == GRASS and not L.tree[y][x]:
         L.m[y][x] = FLOWER
+
+# The engine on show (a 48x48 object event at (21, 22)) covers x 20-22, rows 20-22. Object events
+# only block their anchor tile, so the grass under the rest of it is made solid.
+ENGINE = (21, 22)
+for y in range(ENGINE[1] - 2, ENGINE[1] + 1):
+    for x in range(ENGINE[0] - 1, ENGINE[0] + 2):
+        L.m[y][x] = (L.m[y][x] & 0x3FF) | (1 << 10) | (3 << 12)
 
 if __name__ == '__main__':
     L.save('Carnrudh', sys.argv[1] if len(sys.argv) > 1 else None)

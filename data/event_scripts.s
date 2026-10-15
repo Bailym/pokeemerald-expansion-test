@@ -1763,6 +1763,14 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Carnrudh_Gym/scripts.inc"
 
+	.include "data/maps/Carnrudh_House1/scripts.inc"
+
+	.include "data/maps/Carnrudh_PastyShop/scripts.inc"
+
+	.include "data/maps/Carnrudh_School/scripts.inc"
+
+	.include "data/maps/Carnrudh_House2/scripts.inc"
+
 	.include "data/maps/CarnKowr/scripts.inc"
 
 	.include "data/maps/CarnKowr_Peak/scripts.inc"

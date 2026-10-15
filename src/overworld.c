@@ -1180,6 +1180,14 @@ static bool16 NoMusicInSootopolisWithLegendaries(struct WarpData *warp)
         return FALSE;
 }
 
+// Kernia: Carnrudh plays festival music once the tor is saved and Penhallow Day is on.
+static bool16 IsCarnrudhFestivalOn(struct WarpData *warp)
+{
+    return warp->mapGroup == MAP_GROUP(MAP_CARNRUDH)
+        && warp->mapNum == MAP_NUM(MAP_CARNRUDH)
+        && VarGet(VAR_CARNRUDH_STATE) >= CARNRUDH_STATE_TOR_DONE;
+}
+
 static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
 {
     if (VarGet(VAR_WEATHER_INSTITUTE_STATE))
@@ -1231,6 +1239,8 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
+    else if (IsCarnrudhFestivalOn(warp) == TRUE)
+        return MUS_CONTEST_LOBBY;
 
     const struct MapHeader *mapHeader = Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum);
     if (mapHeader->nightMusic != MUS_NONE && GetTimeOfDay() == TIME_NIGHT)
