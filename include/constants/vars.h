@@ -338,7 +338,7 @@
 #define TESTING_VAR_UNUSED_7                (TESTING_VARS_START + 0x7)
 #endif // TESTING
 
-// Values for VAR_BALWYN_STATE, in story order (see design/opening-sequence.md).
+// Values for VAR_BALWYN_STATE, in story order (see design/plans/opening-sequence.md).
 #define BALWYN_STATE_NEW_GAME       0 // Woke up; Mum's morning scene plays on first coming downstairs.
 #define BALWYN_STATE_MORNING_DONE   1 // Free to roam Balwyn.
 #define BALWYN_STATE_SENT_TO_MINE   2 // The road grunt has sent the player to Wheal Gwyn.

@@ -117,4 +117,4 @@
 
 ## Next steps
 
-- The opening sequence is done (see `opening-sequence.md`). Next for Balwyn: custom art (Nova, Kelyn, the grunts, the engine house and a site hut), and its mid-game and endgame states.
+- The opening sequence is done (see `plans/opening-sequence.md`). Next for Balwyn: custom art (Nova, Kelyn, the grunts, the engine house and a site hut), and its mid-game and endgame states.
