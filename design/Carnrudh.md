@@ -119,7 +119,7 @@ Badge 1 and TM51 Flame Charge: 50 power, raising Speed after each hit ("build up
 - Tanek (stand-in `NORMAN`, trainer pic Leader Norman) on the dais at (7, 3). The stoker HEDRA (`MAN_5`, Kindler class) at (10, 9) facing left, and the bal maiden LOWENA (`GIRL_3`, Lass class) at (4, 13) facing right, both with sight 6, which reaches the far wall of the hall. No puzzle yet.
 - Gym statues at (5, 16–17) and (9, 16–17), with "TANEK'S CERTIFIED TRAINERS" once `FLAG_BADGE01_GET` is set.
 - Beating Tanek sets `FLAG_BADGE01_GET` and `CARNRUDH_STATE_BADGE_WON`, then gives TM51 (`FLAG_RECEIVED_TM_FLAME_CHARGE`). If the bag is full, talking to him again gives it.
-- The badge is called the ENGINE BADGE in the text (a placeholder; see Open questions). The trainer card shows vanilla's badge 1 art.
+- The badge is the ENGINE BADGE. Its art is a stand-in: Flannery's Heat Badge (Fire) in badge 1's slot, swapped in for Roxanne's Stone Badge.
 - Of the starters, only Fletchling can learn TM51 (Spheal and Shinx can't, as in the official games).
 
 ## Locations
@@ -145,15 +145,21 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 - Tanek, the Fire gym leader. A local who watched the town die, and backs anything that brings work back, even a quarry on the tor. After Peran walks away he's shaken but stays loyal.
 - Peran, Lumen's Chief Engineer (see `DESIGN.md`): first appears on Carn Kowr. The local who sold out. He knows the tor and leads the survey. The player battles him on the peak.
 - Lumen grunts: the hi-vis survey team. One guards each stone on the climb, and one guards the way up to the peak.
-- Nova: said "see you at the gym" in Balwyn, so Nova is somewhere in Carnrudh (see Open questions).
+- Nova: a cameo only, no battle. Nova turns up once Penhallow Day is on, enjoying the festival, and defends Lumen, brushing off the tor ("it was only a survey"). Nova's turn against Lumen comes later.
 - Townsfolk: the festival crowd, the miners' school, the pasty shop, and the houses, all with lore lines (folklore, mining heritage, and the divide over Lumen's jobs).
+- The miners' school: a lore room (Cap'n Penhallow's drawings, the *Puffing Bucca*, mining history). After the tor, the teacher gives a Hard Stone, "a bit of the tor", once.
+
+### Decided against
+- A rival battle with Nova in Carnrudh: the next one comes later on the road.
+- A gym puzzle (steam valves, pressure plates, stoking boilers): gym 1 stays a short trainer gauntlet.
+- A move tutor or trainer school in the miners' school.
 
 ## Connections
 
 - West: Route 1 (`KerniaRoute1`), which comes in on its east edge (rows 11–12, from x 40).
 - North: Carn Kowr's climb (`CarnKowr`), and beyond it the peak (`CarnKowr_Peak`).
-- South-west: a route to gym 2 (St Ives / Penzance).
-- East: the road to Treveur, blocked until badge 2.
+- South-west: a route to gym 2 (St Ives / Penzance, Enys). Lumen's survey traffic blocks it until the tor is done, and it clears with the festival.
+- East: the road to Treveur, blocked by Lumen roadworks (a hi-vis worker turns the player back) until badge 2. It reopens because Enys, who resists Lumen, shames them publicly for closing a public road.
 
 ## Map notes
 
@@ -232,12 +238,8 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 
 ## Open questions
 
-- Where Nova is, and whether there's a rival battle in Carnrudh.
-- The gym's puzzle (steam vents or valves), after phase 5.
-- The badge's name ("ENGINE BADGE" is a placeholder) and its art.
-- What blocks the east road to Treveur until badge 2.
-- Whether the miners' school has a move tutor or any other function.
-- The town's layout and size.
+- What Lumen's roadworks on the east road are laying (a hint at "what's under it"), decided with Treveur.
+- How Enys's public row with Lumen reaches the player (a news line, an NPC, or a scene in gym 2's town).
 
 ## Next steps
 

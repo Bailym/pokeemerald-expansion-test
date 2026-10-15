@@ -117,18 +117,20 @@ Reopen Porymap and check that both connections show.
 - Townsfolk object events and scripts with "before" and "festival" lines, chosen by state. Townsfolk cover folklore, mining heritage, Lumen's jobs (Tamsin's brother), and the inventor.
 - Festival dressing: extra NPCs and an engine on show, shown with `FLAG_HIDE_*` flags. `setmetatile` for bunting or stalls if vanilla tiles fit.
 - Record the characters and festival in `design/Carnrudh.md`.
+- Nova's festival cameo (no battle): shown after `TOR_DONE`, defending Lumen.
+- The miners' school teacher gives a Hard Stone once, after the tor.
+- Swap badge 1's trainer-card art for Flannery's Heat Badge as a Fire stand-in.
 
-**Not yet:** custom art (engine house, Peran, Tanek), the south-west route and the east-road blocker's story, and Nova.
+**Not yet:** custom art (engine house, Peran, Tanek, the badge), and the south-west and east roads' blockers (until those routes exist). No gym puzzle is planned.
 
 ## Open questions
-- **The inventor's and festival's names** (needed for phase 6, and for any town signs before that).
-- **Nova:** said "see you at the gym", so where is Nova in Carnrudh, and is there a battle? It doesn't block any phase. It can slot into phase 5 or 6 once it's decided.
-- **The gym puzzle:** left out of phase 5. A boiler-room puzzle (e.g. steam vents or valves) could be its own later phase.
-- **The east-road blocker and the south-west route:** phase 1 only reserves their edges.
+- **The east-road blocker and the south-west route:** decided (Lumen roadworks until badge 2; survey traffic until the tor, see `design/Carnrudh.md`), but both roads lead off unbuilt maps, so their blockers wait until those routes exist.
 
 ## Rejected alternatives
 - **Reusing vanilla Hoenn trainer IDs instead of raising the limit:** the vanilla maps still build and reference them, so renaming them means touching unrelated scripts. Raising the limit once is cleaner, and new games are expected at this stage anyway.
 - **Making Grampy's Journal readable from the Bag now:** it's a feature for the whole game (every revealed location), not just Carnrudh. A scripted reading on the tor keeps this plan self-contained, and the Bag version can come later and reuse the verse.
+- **A gym puzzle** (steam valves, pressure plates, or stoking boilers): gym 1 stays a short trainer gauntlet.
+- **A rival battle with Nova in Carnrudh:** Nova only has a festival cameo; the next battle comes later.
 - **Building the gym first:** it's the payoff, but it's blocked in the story until the tor is done, so building it first means testing it through debug flags. Building in story order lets each phase be played straight through.
 - **Carn Kowr as one map:** the climb (puzzle and trainers) and the peak (the camp, Peran, and the scene) do different jobs. Two maps keep each smaller to generate and review, let the peak's scene scripts run only there, and make reaching the summit feel like arriving somewhere.
 - **All four stones on the climb:** simpler, but the proof and Peran's battle would happen apart. With the Well beside the drill site, the proof turns up under Peran's nose and leads straight into the battle.
