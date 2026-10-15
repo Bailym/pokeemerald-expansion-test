@@ -285,5 +285,5 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 ## Next steps
 
 - All six phases of `design/plans/carnrudh.md` are done.
-- Custom art: the engine house, Tanek, Peran, the grunts, the *Puffing Bucca*, festival bunting and stalls, the badge, and the tor's granite.
+- Custom art: the engine house, Tanek, Peran, the grunts, the *Puffing Bucca*, festival bunting and stalls, the badge, and the tor's granite. The full list is in `CustomArt.md`.
 - The south-west route to gym 2 and the east road to Treveur, with their Lumen blockers.
