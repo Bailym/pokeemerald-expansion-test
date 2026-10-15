@@ -76,7 +76,7 @@ Reopen Porymap and check that both connections show.
 
 **Not yet:** grunts guarding the stones, Peran, and the gym opening. Reading the journal from the Bag is not part of this plan (see Rejected alternatives).
 
-### Phase 4 — Beat Lumen's grunts and Peran
+### Phase 4 — Beat Lumen's grunts and Peran ✅
 **Deliverable:** A grunt guards each stone on the climb and battles the player before the stone can be inspected, and the gate grunt battles the player before letting them onto the peak. After the riddle, Peran battles the player on the peak, then walks off with his "it's what's under it" line. Tanek is left shaken but loyal and heads down to the gym, and the gym blocker is gone.
 **Verify:** First, after raising the trainer limit: `make -j$(nproc)` and `make check` both pass. In mGBA, start a new game and check that the opening still works (the Balwyn states and Nova's battle). Then, with a Pokémon from the debug menu, check the following:
 - Each grunt spots you and battles, and you can't reach their stone (or the peak) until they're beaten. They stay beaten after a reload.
@@ -89,6 +89,7 @@ Reopen Porymap and check that both connections show.
 - Four grunt trainers and Peran in `opponents.h` and `src/data/trainers.party` (levels 5–8, see Open questions). Three guard the stones on the climb, and the fourth replaces phase 3's gate grunt at the top of the climb. Trainer object events with sight lines that cover each approach. `trainerbattle_single` scripts in Lumen's PR voice, with lore lines.
 - Peran's battle and the walk-off scene (`applymovement`, `removeobject`, set the tor-cast hide flag), Tanek's line, and the state set to `TOR_DONE`. Hide the gym blocker based on state.
 - Record the trainers in `design/Carnrudh.md`.
+- (As built: new `LUMEN` and `LUMEN CHIEF` trainer classes with Aqua/Magma music. Each stone also refuses inspection until its grunt is beaten, and the gate grunt's battle is scripted from phase 3's trigger. `test/save.c`'s expected SaveBlock1 size went from 15568 to 15572 for the 4 extra flag bytes. Tanek's stand-in is `NORMAN`, as FRLG overworld sprites don't load in Emerald.)
 
 **Not yet:** the gym interior, the festival, and Peran's later appearances.
 
@@ -119,8 +120,7 @@ Reopen Porymap and check that both connections show.
 **Not yet:** custom art (engine house, Peran, Tanek), the south-west route and the east-road blocker's story, and Nova.
 
 ## Open questions
-- **The riddle verse and the proof** (needed for phase 3): what the last stone shows (a Neolithic carving, a date, or a marking). I can draft the verse for review.
-- **Levels** (needed for phase 4): grunts 5–7, Peran ~8, gym trainers ~8–10, and Tanek ~11–12 is a guess. Decide against Route 1's levels (2–5) and Nova's Lv5.
+- **Levels** (needed for phase 5): the grunts (5–7) and Peran (7–8) are set (see `design/Carnrudh.md`). Gym trainers ~8–10 and Tanek ~11–12 is still a guess.
 - **The inventor's and festival's names** (needed for phase 6, and for any town signs before that).
 - **Nova:** said "see you at the gym", so where is Nova in Carnrudh, and is there a battle? It doesn't block any phase. It can slot into phase 5 or 6 once it's decided.
 - **The gym puzzle:** left out of phase 5. A boiler-room puzzle (e.g. steam vents or valves) could be its own later phase.

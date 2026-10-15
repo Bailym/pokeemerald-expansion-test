@@ -8,10 +8,14 @@ CarnKowr_Peak_EventScript_Peran::
 	msgbox CarnKowr_Peak_Text_Peran, MSGBOX_NPC
 	end
 
+@ After the proof (or after losing to him), talking to Peran starts his battle.
 CarnKowr_Peak_EventScript_PeranAfterProof::
+	lockall
+	faceplayer
 	setspeaker SP_NAME_PERAN
-	msgbox CarnKowr_Peak_Text_PeranInMyWay, MSGBOX_NPC
-	end
+	msgbox CarnKowr_Peak_Text_PeranInMyWay, MSGBOX_DEFAULT
+	closemessage
+	goto CarnKowr_Peak_EventScript_PeranBattle
 
 CarnKowr_Peak_EventScript_Tanek::
 	goto_if_ge VAR_CARNRUDH_STATE, CARNRUDH_STATE_STONES_DONE, CarnKowr_Peak_EventScript_TanekAfterProof
@@ -41,7 +45,6 @@ CarnKowr_Peak_EventScript_WellDrained::
 	releaseall
 	end
 
-@ Phase 4 of design/plans/carnrudh.md follows Peran's last line with his battle.
 CarnKowr_Peak_EventScript_Proof::
 	msgbox CarnKowr_Peak_Text_WellDrains, MSGBOX_DEFAULT
 	msgbox CarnKowr_Peak_Text_Carvings, MSGBOX_DEFAULT
@@ -50,20 +53,99 @@ CarnKowr_Peak_EventScript_Proof::
 	playse SE_PIN
 	applymovement LOCALID_CARN_KOWR_PEAK_PERAN, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_CARN_KOWR_PEAK_PERAN, Common_Movement_FacePlayer
-	waitmovement 0
+	call CarnKowr_Peak_EventScript_PeranStepsUp
 	setspeaker SP_NAME_PERAN
 	msgbox CarnKowr_Peak_Text_PeranWeathering, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_CARN_KOWR_PEAK_TANEK, Common_Movement_FacePlayer
+	applymovement LOCALID_CARN_KOWR_PEAK_TANEK, Common_Movement_FaceLeft
 	waitmovement 0
 	setspeaker SP_NAME_TANEK
 	msgbox CarnKowr_Peak_Text_TanekSomebodyMadeThat, MSGBOX_DEFAULT
 	setspeaker SP_NAME_PERAN
 	msgbox CarnKowr_Peak_Text_PeranInMyWay, MSGBOX_DEFAULT
 	closemessage
+	goto CarnKowr_Peak_EventScript_PeranBattle
+
+@ The Well is read from (20, 8) or (21, 8), and Peran stands at (20, 9): he steps under the
+@ player if needed and looks up at them, and the player turns round to face him.
+CarnKowr_Peak_EventScript_PeranStepsUp::
+	getplayerxy VAR_0x8004, VAR_0x8005
+	goto_if_eq VAR_0x8004, 20, CarnKowr_Peak_EventScript_PeranFacesUp
+	applymovement LOCALID_CARN_KOWR_PEAK_PERAN, Common_Movement_WalkRight
+	waitmovement 0
+CarnKowr_Peak_EventScript_PeranFacesUp::
+	applymovement LOCALID_CARN_KOWR_PEAK_PERAN, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	return
+
+@ Peran's first battle. Afterwards he lets slip what Lumen are really after and walks off,
+@ and Tanek, shaken, follows him down to open the gym.
+CarnKowr_Peak_EventScript_PeranBattle::
+	trainerbattle_no_intro TRAINER_PERAN_CARN_KOWR, CarnKowr_Peak_Text_PeranDefeat
+	setspeaker SP_NAME_PERAN
+	msgbox CarnKowr_Peak_Text_PeranUnderIt, MSGBOX_DEFAULT
+	closemessage
+	getobjectxy LOCALID_CARN_KOWR_PEAK_PERAN, CURRENT_POSITION, VAR_0x8004, VAR_0x8005
+	goto_if_eq VAR_0x8004, 21, CarnKowr_Peak_EventScript_PeranLeavesFromRight
+	applymovement LOCALID_CARN_KOWR_PEAK_PERAN, CarnKowr_Peak_Movement_PeranLeaves
+	goto CarnKowr_Peak_EventScript_PeranGone
+
+CarnKowr_Peak_EventScript_PeranLeavesFromRight::
+	applymovement LOCALID_CARN_KOWR_PEAK_PERAN, CarnKowr_Peak_Movement_PeranLeavesFromRight
+CarnKowr_Peak_EventScript_PeranGone::
+	waitmovement 0
+	removeobject LOCALID_CARN_KOWR_PEAK_PERAN
+	applymovement LOCALID_CARN_KOWR_PEAK_TANEK, Common_Movement_FacePlayer
+	waitmovement 0
+	setspeaker SP_NAME_TANEK
+	msgbox CarnKowr_Peak_Text_TanekLoyal, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CARN_KOWR_PEAK_TANEK, CarnKowr_Peak_Movement_TanekLeaves
+	waitmovement 0
+	removeobject LOCALID_CARN_KOWR_PEAK_TANEK
+	setflag FLAG_HIDE_CARN_KOWR_PEAK_CAST
+	setflag FLAG_HIDE_CARNRUDH_GYM_BLOCKER
+	setvar VAR_CARNRUDH_STATE, CARNRUDH_STATE_TOR_DONE
 	releaseall
 	end
+
+@ Both head down the stairs at x 22-23 and off the bottom of the peak. Peran starts at (20, 9),
+@ or at (21, 9) if he stepped under the player.
+CarnKowr_Peak_Movement_PeranLeaves:
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+CarnKowr_Peak_Movement_PeranLeavesFromRight:
+	walk_down
+	walk_down
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+CarnKowr_Peak_Movement_TanekLeaves:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
 
 CarnKowr_Peak_EventScript_WellSign::
 	msgbox CarnKowr_Peak_Text_WellSign, MSGBOX_SIGN
@@ -118,6 +200,23 @@ CarnKowr_Peak_Text_TanekSomebodyMadeThat:
 
 CarnKowr_Peak_Text_PeranInMyWay:
 	.string "Then somebody's in my way.$"
+
+CarnKowr_Peak_Text_PeranDefeat:
+	.string "Fine. Have your hill.$"
+
+CarnKowr_Peak_Text_PeranUnderIt:
+	.string "Keep your stones. The granite\n"
+	.string "was only ever the top layer.\p"
+	.string "It's not what's on the hill.\n"
+	.string "It's what's under it.$"
+
+CarnKowr_Peak_Text_TanekLoyal:
+	.string "Lumen dropped the quarry, just\n"
+	.string "like that…\p"
+	.string "They'll bring the jobs somewhere\n"
+	.string "else, that's all. They will.\p"
+	.string "I'd best open the gym. Come and\n"
+	.string "find me, challenger.$"
 
 CarnKowr_Peak_Text_TanekAfterProof:
 	.string "Cups and rings, carved in rock…\n"

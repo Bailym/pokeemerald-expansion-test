@@ -133,8 +133,19 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 - Story state: `VAR_CARNRUDH_STATE`, with `CARNRUDH_STATE_*` values in `include/constants/vars.h`: `ARRIVED`, `RIDDLE_READ`, `HAND_DONE`, `HEAD_DONE`, `CRADLE_DONE`, `STONES_DONE`. The stone order lives in the same var: a wrong stone sets it back to `RIDDLE_READ`.
 - The verse plays from a trigger on the climb's road at (14–15, 38) while the state is `ARRIVED`. It can be read again after any wrong stone (a yes/no after the hint).
 - Re-inspecting the stone just done is harmless. Once the Cradle is done, a climb stone only gives the Well hint and doesn't reset, so the gate stays open.
-- The peak's gate: a Lumen grunt (stand-in `DEVON_EMPLOYEE`, `LOCALID_CARN_KOWR_GATE_GRUNT`) stands in the right half of the gap at (23, 1). A trigger on the left half, (22, 1), turns the player back until `CRADLE_DONE` (the `VAR_TEMP_1` = 0 trick, with the state checked in the script). Talking to him gives the same line, or "do say hello" once the gate is open.
-- The proof sets `STONES_DONE`. Afterwards the Well shows the dry basin, and Peran and Tanek have after-proof lines until phase 4 adds the battle.
+- The peak's gate: a Lumen grunt (stand-in `DEVON_EMPLOYEE`, `LOCALID_CARN_KOWR_GATE_GRUNT`) stands in the right half of the gap at (23, 1). A trigger on the left half, (22, 1), turns the player back until `CRADLE_DONE` (the `VAR_TEMP_1` = 0 trick, with the state checked in the script). Talking to him gives the same line. Once the Cradle is done, the trigger or talking to him starts his battle (`trainerbattle_no_intro`), and after that he just says "do say hello".
+- The proof sets `STONES_DONE` and goes straight into Peran's battle. When he first speaks, he steps under the player (who reads the Well from (20, 8) or (21, 8)) and they turn to face each other. If the player loses, talking to Peran starts it again. Afterwards Peran gives his "what's under it" line and walks down the stairs, Tanek gives his shaken-but-loyal line and follows, both are removed, and `FLAG_HIDE_CARN_KOWR_PEAK_CAST` and `FLAG_HIDE_CARNRUDH_GYM_BLOCKER` are set, with the state at `TOR_DONE`. The gym door still has no warp until phase 5.
+- Stone grunts: each is a normal trainer (stand-in `DEVON_EMPLOYEE`) with a sight line across the usual approach. A stone can't be inspected until its grunt is beaten ("A LUMEN GRUNT is keeping watch over the stone."), which covers any approach the sight line misses.
+
+| Trainer | ID | Where | Facing, sight | Team |
+|---|---|---|---|---|
+| Grunt (Hand) | `TRAINER_CARN_KOWR_GRUNT_HAND` | (9, 24), first terrace | Right, 4 | Rolycoly 5, Nickit 5 |
+| Grunt (Cradle) | `TRAINER_CARN_KOWR_GRUNT_CRADLE` | (17, 14), second terrace | Right, 4 | Magnemite 6 |
+| Grunt (Head) | `TRAINER_CARN_KOWR_GRUNT_HEAD` | (10, 7), top terrace | Left, 4 | Nickit 5, Rolycoly 6 |
+| Grunt (gate) | `TRAINER_CARN_KOWR_GRUNT_GATE` | (23, 1), the gap to the peak | Scripted | Rolycoly 6, Magnemite 7 |
+| Peran | `TRAINER_PERAN_CARN_KOWR` | (20, 9), the peak | Scripted | Rolycoly 7, Drilbur 8 |
+
+- New trainer classes: `TRAINER_CLASS_LUMEN` ("LUMEN") for grunts and `TRAINER_CLASS_LUMEN_CHIEF` ("LUMEN CHIEF") for Peran. Both play the Aqua/Magma battle and victory music. Pics are stand-ins: FRLG's Engineer for the grunts and FRLG's Scientist for Peran.
 
 ### Carn Kowr map notes
 
@@ -153,7 +164,7 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 | Head | Top | (10–11, 3–4) | (10, 4), (11, 4) |
 
 - The path passes them in the order Hand, Cradle, Head, so the riddle (Hand, Head, Cradle) means going back down from the Head to the Cradle.
-- The peak: one more cliff (rows 12–13, stairs at x 22–23 straight up from the climb), then the summit with the tor, a cluster of four boulders (x 5–16, rows 3–8), the Well at (20–21, 6–7) (inspected at (20, 7) and (21, 7)), and a "LUMEN SURVEY SITE" sign at (25, 9). Peran (stand-in `SCIENTIST_1`) stands at (20, 9) facing the Well, and Tanek (stand-in `HIKER`) at (23, 10). Both are hidden by `FLAG_HIDE_CARN_KOWR_PEAK_CAST` once the tor is done. No castle folly or monument yet: no vanilla tiles fit.
+- The peak: one more cliff (rows 12–13, stairs at x 22–23 straight up from the climb), then the summit with the tor, a cluster of four boulders (x 5–16, rows 3–8), the Well at (20–21, 6–7) (inspected at (20, 7) and (21, 7)), and a "LUMEN SURVEY SITE" sign at (25, 9). Peran (stand-in `SCIENTIST_1`) stands at (20, 9) facing the Well, and Tanek (stand-in `NORMAN`, a gym leader's sprite, until he has his own; FRLG sprites like Blaine don't load in Emerald) at (23, 10). Both are hidden by `FLAG_HIDE_CARN_KOWR_PEAK_CAST` once the tor is done. No castle folly or monument yet: no vanilla tiles fit.
 - Wild Pokémon, on the climb only (`gCarnKowr`, encounter rate 20), levels 4–6: heath and granite, a step up from Route 1. Rolycoly (coal) nods to the mines, and Sizzlipede foreshadows the Fire gym.
 
 | Pokémon | Levels | Chance |
@@ -168,7 +179,7 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
 
 - Name boxes: `SP_NAME_PERAN` and `SP_NAME_TANEK`.
 - The Route 1 join draws the neighbouring map with the *current* map's tilesets, so Carnrudh should share Route 1's (`gTileset_General` + `gTileset_Dewford`), or keep secondary-tileset blocks away from the west edge.
-- Trainer IDs: there's room for only 7 more before the 864 limit (`Route1.md`). The grunts, Peran, the gym's trainers, Tanek, and Carnrudh's trainers will go over that, so `MAX_TRAINERS_COUNT_EMERALD` will need raising (it costs save-block space).
+- Trainer IDs: `MAX_TRAINERS_COUNT_EMERALD` was raised from 864 to 896 in phase 4, with room for 33 more after Peran. Trainer flags now run 0x500–0x87F, so every system flag moved up by 0x20 (the `0x8xx` in their vanilla names are now 0x20 low), the flags array grew by 4 bytes, and saves from before the change don't load correctly.
 
 ## Open questions
 

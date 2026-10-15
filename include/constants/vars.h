@@ -354,5 +354,6 @@
 #define CARNRUDH_STATE_HEAD_DONE    3 // A stone out of order goes back to CARNRUDH_STATE_RIDDLE_READ.
 #define CARNRUDH_STATE_CRADLE_DONE  4 // The gate grunt lets the player onto the peak.
 #define CARNRUDH_STATE_STONES_DONE  5 // The Well has drained and shown the carvings.
+#define CARNRUDH_STATE_TOR_DONE     6 // Peran is beaten and has left the peak; the gym is open.
 
 #endif // GUARD_CONSTANTS_VARS_H

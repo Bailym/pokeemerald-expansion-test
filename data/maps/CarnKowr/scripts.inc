@@ -21,6 +21,7 @@ CarnKowr_EventScript_Verse::
 @ on the peak (see design/Carnrudh.md). Inspecting the stone just done again is harmless.
 CarnKowr_EventScript_Hand::
 	lockall
+	goto_if_not_defeated TRAINER_CARN_KOWR_GRUNT_HAND, CarnKowr_EventScript_StoneGuarded
 	msgbox CarnKowr_Text_Hand, MSGBOX_DEFAULT
 	goto_if_eq VAR_CARNRUDH_STATE, CARNRUDH_STATE_RIDDLE_READ, CarnKowr_EventScript_HandInOrder
 	goto_if_eq VAR_CARNRUDH_STATE, CARNRUDH_STATE_HAND_DONE, CarnKowr_EventScript_StoneEnd
@@ -33,6 +34,7 @@ CarnKowr_EventScript_HandInOrder::
 
 CarnKowr_EventScript_Head::
 	lockall
+	goto_if_not_defeated TRAINER_CARN_KOWR_GRUNT_HEAD, CarnKowr_EventScript_StoneGuarded
 	msgbox CarnKowr_Text_Head, MSGBOX_DEFAULT
 	goto_if_eq VAR_CARNRUDH_STATE, CARNRUDH_STATE_HAND_DONE, CarnKowr_EventScript_HeadInOrder
 	goto_if_eq VAR_CARNRUDH_STATE, CARNRUDH_STATE_HEAD_DONE, CarnKowr_EventScript_StoneEnd
@@ -45,6 +47,7 @@ CarnKowr_EventScript_HeadInOrder::
 
 CarnKowr_EventScript_Cradle::
 	lockall
+	goto_if_not_defeated TRAINER_CARN_KOWR_GRUNT_CRADLE, CarnKowr_EventScript_StoneGuarded
 	msgbox CarnKowr_Text_Cradle, MSGBOX_DEFAULT
 	goto_if_eq VAR_CARNRUDH_STATE, CARNRUDH_STATE_HEAD_DONE, CarnKowr_EventScript_CradleInOrder
 	goto_if_eq VAR_CARNRUDH_STATE, CARNRUDH_STATE_CRADLE_DONE, CarnKowr_EventScript_StoneEnd
@@ -87,15 +90,19 @@ CarnKowr_EventScript_ResetOrder::
 	call CarnKowr_EventScript_Verse
 	goto CarnKowr_EventScript_StoneEnd
 
+CarnKowr_EventScript_StoneGuarded::
+	msgbox CarnKowr_Text_StoneGuarded, MSGBOX_DEFAULT
+	goto CarnKowr_EventScript_StoneEnd
+
 CarnKowr_EventScript_StoneEnd::
 	closemessage
 	releaseall
 	end
 
 @ The peak's gate: until the Cradle is done, the grunt in the gap at the top of the climb
-@ turns the player back. Phase 4 of design/plans/carnrudh.md makes him a trainer.
+@ turns the player back. After that he battles them once, from the trigger or when talked to.
 CarnKowr_EventScript_GateTrigger::
-	goto_if_ge VAR_CARNRUDH_STATE, CARNRUDH_STATE_CRADLE_DONE, CarnKowr_EventScript_GateTriggerEnd
+	goto_if_defeated TRAINER_CARN_KOWR_GRUNT_GATE, CarnKowr_EventScript_GateTriggerEnd
 	lockall
 	playse SE_PIN
 	applymovement LOCALID_CARN_KOWR_GATE_GRUNT, Common_Movement_ExclamationMark
@@ -103,6 +110,7 @@ CarnKowr_EventScript_GateTrigger::
 	applymovement LOCALID_CARN_KOWR_GATE_GRUNT, Common_Movement_FaceLeft
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
+	goto_if_ge VAR_CARNRUDH_STATE, CARNRUDH_STATE_CRADLE_DONE, CarnKowr_EventScript_GateBattle
 	msgbox CarnKowr_Text_GateClosed, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
@@ -115,14 +123,42 @@ CarnKowr_EventScript_GateTriggerEnd::
 CarnKowr_EventScript_GateGrunt::
 	lock
 	faceplayer
-	goto_if_ge VAR_CARNRUDH_STATE, CARNRUDH_STATE_CRADLE_DONE, CarnKowr_EventScript_GateOpen
+	goto_if_defeated TRAINER_CARN_KOWR_GRUNT_GATE, CarnKowr_EventScript_GateOpen
+	goto_if_ge VAR_CARNRUDH_STATE, CARNRUDH_STATE_CRADLE_DONE, CarnKowr_EventScript_GateBattle
 	msgbox CarnKowr_Text_GateClosed, MSGBOX_DEFAULT
 	release
+	end
+
+CarnKowr_EventScript_GateBattle::
+	msgbox CarnKowr_Text_GateIntro, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_CARN_KOWR_GRUNT_GATE, CarnKowr_Text_GateDefeat
+	msgbox CarnKowr_Text_GateOpen, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CARN_KOWR_GATE_GRUNT, Common_Movement_FaceDown
+	waitmovement 0
+	releaseall
 	end
 
 CarnKowr_EventScript_GateOpen::
 	msgbox CarnKowr_Text_GateOpen, MSGBOX_DEFAULT
 	release
+	end
+
+@ The grunts guarding the stones. Their stones can't be inspected until they're beaten.
+CarnKowr_EventScript_GruntHand::
+	trainerbattle_single TRAINER_CARN_KOWR_GRUNT_HAND, CarnKowr_Text_GruntHandIntro, CarnKowr_Text_GruntHandDefeat
+	msgbox CarnKowr_Text_GruntHandPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+CarnKowr_EventScript_GruntCradle::
+	trainerbattle_single TRAINER_CARN_KOWR_GRUNT_CRADLE, CarnKowr_Text_GruntCradleIntro, CarnKowr_Text_GruntCradleDefeat
+	msgbox CarnKowr_Text_GruntCradlePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+CarnKowr_EventScript_GruntHead::
+	trainerbattle_single TRAINER_CARN_KOWR_GRUNT_HEAD, CarnKowr_Text_GruntHeadIntro, CarnKowr_Text_GruntHeadDefeat
+	msgbox CarnKowr_Text_GruntHeadPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Name signs beside the stones.
@@ -227,3 +263,48 @@ CarnKowr_Text_GateOpen:
 	.string "Seen all the stones? Super!\p"
 	.string "Our survey team's at the summit.\n"
 	.string "Do say hello!$"
+
+CarnKowr_Text_StoneGuarded:
+	.string "A LUMEN GRUNT is keeping watch\n"
+	.string "over the stone.$"
+
+CarnKowr_Text_GateIntro:
+	.string "Seen all the stones? Super!\p"
+	.string "Now for the full Lumen\n"
+	.string "experience!$"
+
+CarnKowr_Text_GateDefeat:
+	.string "Okay, okay! Summit's that way.$"
+
+CarnKowr_Text_GruntHandIntro:
+	.string "Hi! Please step back from the\n"
+	.string "heritage asset. We're measuring!$"
+
+CarnKowr_Text_GruntHandDefeat:
+	.string "Ow! Health and safety!$"
+
+CarnKowr_Text_GruntHandPostBattle:
+	.string "The HAND's all yours.\n"
+	.string "Mind the fingers.$"
+
+CarnKowr_Text_GruntCradleIntro:
+	.string "This cradle's been surveyed and\n"
+	.string "found to be… a rock! Move along!$"
+
+CarnKowr_Text_GruntCradleDefeat:
+	.string "Data inconclusive!$"
+
+CarnKowr_Text_GruntCradlePostBattle:
+	.string "Lumen respects local folklore.\p"
+	.string "It's on a poster and everything.$"
+
+CarnKowr_Text_GruntHeadIntro:
+	.string "Heads up! You're entering an\n"
+	.string "active survey zone!$"
+
+CarnKowr_Text_GruntHeadDefeat:
+	.string "That's a reportable incident!$"
+
+CarnKowr_Text_GruntHeadPostBattle:
+	.string "The HEAD's on the quarry plan.\n"
+	.string "Top layer, actually.$"
