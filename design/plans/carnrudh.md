@@ -10,7 +10,7 @@ Build Carnrudh, the first gym town, and Carn Kowr, the tor above it, as designed
 - **Trainer limit:** IDs 855–857 are taken (Jory, Tamsin, Nova), and `TRAINERS_COUNT_EMERALD` is 858 of `MAX_TRAINERS_COUNT_EMERALD` 864, so only 6 are free. Trainer flags run from `TRAINER_FLAGS_START` (0x500) and `SYSTEM_FLAGS` follows straight after, so raising the limit shifts every system flag (new game needed) and grows the flags array in the save. This plan needs at least 4 grunts + Peran + Tanek + 2 gym trainers = 8.
 - **Grampy's Journal** (`ITEM_GRAMPYS_JOURNAL`) is a key item with `ItemUseOutOfBattle_CannotUse`, so it can't be read from the Bag yet.
 - **Story state:** follows Balwyn's pattern, a single `VAR_CARNRUDH_STATE` with `CARNRUDH_STATE_*` values in story order (`include/constants/vars.h`), plus `FLAG_HIDE_*` flags for objects that come and go.
-- Naming per CLAUDE.md: `Carnrudh` / `MAP_CARNRUDH` / `LAYOUT_CARNRUDH` / `MAPSEC_CARNRUDH` in `gMapGroup_KerniaTownsAndRoutes`; `CarnKowr` / `MAP_CARN_KOWR` / `MAPSEC_CARN_KOWR`; interiors (`Carnrudh_PokemonCenter_1F`, `Carnrudh_Mart`, `Carnrudh_Gym`, …) in a new `gMapGroup_IndoorCarnrudh` appended to the end of `group_order`.
+- Naming per CLAUDE.md: `Carnrudh` / `MAP_CARNRUDH` / `LAYOUT_CARNRUDH` / `MAPSEC_CARNRUDH` in `gMapGroup_KerniaTownsAndRoutes`; `CarnKowr` / `MAP_CARN_KOWR` (the climb) and `CarnKowr_Peak` / `MAP_CARN_KOWR_PEAK` (the summit), both in `MAPSEC_CARN_KOWR`; interiors (`Carnrudh_PokemonCenter_1F`, `Carnrudh_Mart`, `Carnrudh_Gym`, …) in a new `gMapGroup_IndoorCarnrudh` appended to the end of `group_order`.
 - Maps, scripts, and dialogue are tested by hand in mGBA with a new game (CLAUDE.md). Give yourself Pokémon with the debug menu (R+Start), and warp straight to Carnrudh to skip the opening.
 
 ## Approach
@@ -37,50 +37,56 @@ Reopen Porymap and check that both connections show.
 
 **Not yet:** the other buildings' doors (no warps), the gym interior, Carn Kowr, story state, townsfolk, the festival, and fly (it needs a badge and a region map anyway).
 
-### Phase 2 — The gym is shut; climb to Carn Kowr
-**Deliverable:** The gym door is blocked, with a line saying Tanek is up on Carn Kowr with Lumen. The path north leads to Carn Kowr, a walkable heath tor with the four giant's stones and Lumen's survey on the summit (Peran and Tanek, talk-only for now).
+### Phase 2 — The gym is shut; climb to Carn Kowr's peak
+**Deliverable:** The gym door is blocked, with a line saying Tanek is up on Carn Kowr with Lumen. The path north leads up Carn Kowr's climb, a walkable heath tor with three of the giant's stones, and on to the peak, where the fourth stone (the Well) sits by Lumen's survey camp with Peran and Tanek (talk-only for now).
 **Verify:** Build, start a new game, and warp to Carnrudh. Check the following:
 - Try the gym door: you're turned back with the "Tanek's on the tor" line.
-- Walk north onto Carn Kowr ("CARN KOWR" popup, no seam) and back down again.
-- Each stone can be inspected and has a placeholder description.
-- At the summit, Peran and Tanek each have a line.
+- Walk north onto the climb ("CARN KOWR" popup, no seam), up onto the peak (no seam), and back down to town.
+- Tall grass on the climb gives wild battles. The peak has none.
+- Each of the four stones can be inspected and has a placeholder description.
+- On the peak, Peran and Tanek each have a line.
 
 **Work:**
 - Add `VAR_CARNRUDH_STATE` and `CARNRUDH_STATE_*` (`ARRIVED` first) in `vars.h`, in an unused var slot.
 - Gym blocker in Carnrudh (an NPC or a sign in the doorway), shown or hidden by state.
-- Script `data/layouts/CarnKowr/` (heath and granite, sharing Carnrudh's tilesets at the south join), with the stones as `bg_event`s and a path that climbs past each to the summit. Map, layout, `MAPSEC_CARN_KOWR`, wild encounters (`gCarnKowr`, early levels, a slightly different table from Route 1), and the `up`/`down` connections.
-- Summit objects: Peran (stand-in sprite), Tanek (stand-in sprite), and survey kit or a grunt. Hidden with `FLAG_HIDE_*` once the tor is done.
+- Generate both layouts with scripts in `tools/kernia/`, sharing Carnrudh's tilesets so both joins draw cleanly:
+  - `CarnKowr`: heath and granite outcrops, with a path winding up from the town to a gap at the top edge. The Hand, Head, and Cradle are `bg_event`s along it, placed so the path doesn't visit them in riddle order.
+  - `CarnKowr_Peak`: the summit, with the Well (`bg_event`), a survey camp and drill site beside it, and stand-ins for the castle folly and monument if vanilla tiles fit.
+- Maps, layouts, `MAPSEC_CARN_KOWR`, and the `up`/`down` connections (Carnrudh ↔ climb ↔ peak). Wild encounters only on the climb (`gCarnKowr`, early levels, a slightly different table from Route 1).
+- Peak objects: Peran (stand-in sprite), Tanek (stand-in sprite), and survey kit. Hidden with `FLAG_HIDE_*` once the tor is done.
 - Record the tor in `design/Carnrudh.md`.
 
-**Not yet:** the riddle and stone order, the grunts, battles, and the proof.
+**Not yet:** the riddle and stone order, the peak's gate, the grunts, battles, and the proof.
 
 ### Phase 3 — The journal's riddle of the stones
-**Deliverable:** On reaching Carn Kowr, the player opens Grampy's Journal and reads a verse naming the stones in order. Inspecting the stones in that order completes the riddle, and the last stone shows the proof that the tor is an ancient monument. A wrong stone resets the order with a hint pointing back to the verse.
+**Deliverable:** On reaching Carn Kowr, the player opens Grampy's Journal and reads a verse naming the stones in order. A grunt at the top of the climb keeps the player off the peak until the Hand, Head, and Cradle are done in order. Then the Well on the peak completes the riddle and shows the proof that the tor is an ancient monument. A wrong stone resets the order with a hint pointing back to the verse.
 **Verify:** Build, start a new game, and warp to Carnrudh. Check the following:
 - The journal scene plays once on first entering Carn Kowr.
 - Inspecting the stones in the wrong order (e.g. Head first) gives the hint and resets.
-- Hand → Head → Cradle → Well completes the riddle and shows the proof text.
+- The grunt at the top of the climb turns you back until Hand → Head → Cradle are done, then lets you through.
+- The Well on the peak completes the riddle and shows the proof text.
 - Afterwards the stones have "done" lines, and leaving and re-entering keeps it solved.
 - The verse can be re-read (see Work).
 
 **Work:**
 - A scripted journal reading (`ON_FRAME` or a trigger at the tor's entrance) that moves the state to `RIDDLE_READ`, plus a way to read it again. The simplest is a line at the first stone, or a trigger.
-- A progress var for the stone order, with each stone's script checking and advancing it, or resetting it with the hint. On the last stone, move to `STONES_DONE`.
+- A progress var for the stone order, with each stone's script checking and advancing it, or resetting it with the hint. On the last stone (the Well), move to `STONES_DONE`.
+- The peak's gate: a grunt (not a trainer yet) at the top of the climb, who stands aside once the first three stones are done.
 - Write the verse and the proof text (see Open questions), in Grampy's voice and following DESIGN.md's lore and brevity rules.
 
 **Not yet:** grunts guarding the stones, Peran, and the gym opening. Reading the journal from the Bag is not part of this plan (see Rejected alternatives).
 
 ### Phase 4 — Beat Lumen's grunts and Peran
-**Deliverable:** A grunt guards each stone and battles the player before the stone can be inspected. After the riddle, Peran battles the player at the summit, then walks off with his "it's what's under it" line. Tanek is left shaken but loyal and heads down to the gym, and the gym blocker is gone.
+**Deliverable:** A grunt guards each stone on the climb and battles the player before the stone can be inspected, and the gate grunt battles the player before letting them onto the peak. After the riddle, Peran battles the player on the peak, then walks off with his "it's what's under it" line. Tanek is left shaken but loyal and heads down to the gym, and the gym blocker is gone.
 **Verify:** First, after raising the trainer limit: `make -j$(nproc)` and `make check` both pass. In mGBA, start a new game and check that the opening still works (the Balwyn states and Nova's battle). Then, with a Pokémon from the debug menu, check the following:
-- Each grunt spots you and battles, and you can't reach their stone until they're beaten. They stay beaten after a reload.
-- Peran only engages once the stones are done, and battles at a level a starter can beat.
-- After the battle, Peran and Tanek's scene plays and they leave the summit.
+- Each grunt spots you and battles, and you can't reach their stone (or the peak) until they're beaten. They stay beaten after a reload.
+- Peran only engages once the Well is done, and battles at a level a starter can beat.
+- After the battle, Peran and Tanek's scene plays and they leave the peak.
 - Back in town, the gym door is open.
 
 **Work:**
 - Raise `MAX_TRAINERS_COUNT_EMERALD` (e.g. 864 → 896) in `opponents.h`, and update the overflow note. Confirm that the build's save-size asserts still pass, and note the system-flag shift in `design/Carnrudh.md`.
-- Four grunt trainers and Peran in `opponents.h` and `src/data/trainers.party` (levels 5–8, see Open questions). Trainer object events with sight lines that cover each stone's approach. `trainerbattle_single` scripts in Lumen's PR voice, with lore lines.
+- Four grunt trainers and Peran in `opponents.h` and `src/data/trainers.party` (levels 5–8, see Open questions). Three guard the stones on the climb, and the fourth replaces phase 3's gate grunt at the top of the climb. Trainer object events with sight lines that cover each approach. `trainerbattle_single` scripts in Lumen's PR voice, with lore lines.
 - Peran's battle and the walk-off scene (`applymovement`, `removeobject`, set the tor-cast hide flag), Tanek's line, and the state set to `TOR_DONE`. Hide the gym blocker based on state.
 - Record the trainers in `design/Carnrudh.md`.
 
@@ -124,4 +130,6 @@ Reopen Porymap and check that both connections show.
 - **Reusing vanilla Hoenn trainer IDs instead of raising the limit:** the vanilla maps still build and reference them, so renaming them means touching unrelated scripts. Raising the limit once is cleaner, and new games are expected at this stage anyway.
 - **Making Grampy's Journal readable from the Bag now:** it's a feature for the whole game (every revealed location), not just Carnrudh. A scripted reading on the tor keeps this plan self-contained, and the Bag version can come later and reuse the verse.
 - **Building the gym first:** it's the payoff, but it's blocked in the story until the tor is done, so building it first means testing it through debug flags. Building in story order lets each phase be played straight through.
+- **Carn Kowr as one map:** the climb (puzzle and trainers) and the peak (the camp, Peran, and the scene) do different jobs. Two maps keep each smaller to generate and review, let the peak's scene scripts run only there, and make reaching the summit feel like arriving somewhere.
+- **All four stones on the climb:** simpler, but the proof and Peran's battle would happen apart. With the Well beside the drill site, the proof turns up under Peran's nose and leads straight into the battle.
 - **Riddle and grunts in one phase:** the stone-order logic is the riskiest script. Getting it right without trainer sight lines in the way keeps each one easier to debug.
