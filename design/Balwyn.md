@@ -46,7 +46,7 @@
 - At the kitchen table:
   - Kelyn says Grampy wrote to her often about the player, hoping they'd see Kernia with Pokémon.
   - Kelyn's starter lines: Fletchling, "the robin. Bold as brass, and loyal with it". Spheal, "a seal pup from the coves. Gentle, but tough". Shinx, "a wildcat cub. Folk say a great beast roams the moor..." (the Beast of Bodmin).
-  - The player gets the starter at Lv5, the Pokédex, 5 Poké Balls, and Grampy's Journal from Mum. Kelyn: "There's more to it than stories."
+  - The player gets the starter at Lv5, the Pokédex, 5 Poké Balls, and the Town Map from Kelyn ("A map of Kernia, so you never lose your way home."; Fly opens from it with badge 2), and Grampy's Journal from Mum. Kelyn: "There's more to it than stories."
 
 - Nova's first battle (`TRAINER_NOVA_BALWYN`, class Rival, Rich Boy pic): Pawmi Lv5 with Scratch and Growl only. Nova calls the player "local" and plays to the cameras ("And that's how Lumen does it!").
 - Kelyn's goodbye invites the player to her lab in Treveur.

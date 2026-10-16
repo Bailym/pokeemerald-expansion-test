@@ -3,7 +3,7 @@
   "name": "KerniaRoute2",
   "layout": "LAYOUT_KERNIA_ROUTE2",
   "music": "MUS_ROUTE104",
-  "region_map_section": "MAPSEC_ROUTE_2",
+  "region_map_section": "MAPSEC_KERNIA_ROUTE_2",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",

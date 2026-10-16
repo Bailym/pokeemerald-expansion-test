@@ -20,11 +20,12 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 
 ## 1. Balwyn (the opening)
 
-**Story:** wake up in your bedroom, then get Mum's morning scene downstairs. Roam the village. Head east and a Lumen grunt sends you to the event at Wheal Gwyn: Nova announces the mine's reopening and Kelyn asks about the Bucca. Kelyn walks you home and offers a starter (Fletchling, Spheal, or Shinx), with the Pokédex, Poké Balls, and Grampy's Journal. Nova battles you outside, then leaves for Carnrudh. Walking past the mine fence afterwards plays faint knocking.
+**Story:** wake up in your bedroom, then get Mum's morning scene downstairs. Roam the village. Head east and a Lumen grunt sends you to the event at Wheal Gwyn: Nova announces the mine's reopening and Kelyn asks about the Bucca. Kelyn walks you home and offers a starter (Fletchling, Spheal, or Shinx), with the Pokédex, Poké Balls, the Town Map, and Grampy's Journal. Nova battles you outside, then leaves for Carnrudh. Walking past the mine fence afterwards plays faint knocking.
 
 - ⚠ The grunt stops you on both road rows (11–12) every time until you have a Pokémon, and Route 1 opens after Nova's send-off.
 - ⚠ The event crowd only appears after the grunt sends you there, and the scene plays without anyone walking through walls or each other.
-- ⚠ Each starter is the right species at Lv5, and the Pokédex, Poké Balls, and journal (Key Items) are all given.
+- ⚠ Each starter is the right species at Lv5, and the Pokédex, Poké Balls, Town Map, and journal (Key Items) are all given.
+- ⚠ **The Town Map** (from the bag) shows Kernia's stand-in map: a blocky Cornwall with Balwyn, Route 1, Carnrudh, Carn Kowr and Route 2, and the cursor names each. Your icon is where you are, on any Kernia map (not the Kanto map on the routes). Before badge 2, R does nothing; with badge 2 (set it with the debug menu), R on a visited town flies there with no Pokémon shown.
 - ⚠ Nova's battle: win and lose both continue the scene (no whiteout to the house), and re-entering Balwyn doesn't replay it.
 - Mum's morning scene plays once; talking to her later heals your team.
 - The knocking at the fence plays once only.

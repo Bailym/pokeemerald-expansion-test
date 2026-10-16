@@ -198,3 +198,11 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .hideIfLocked = TRUE,
     },
 };
+
+// Flying with R on the Town Map or PokéNav region map, with no Pokémon.
+bool32 CanFlyFromRegionMap(void)
+{
+    if (OW_FIELD_MOVES_BADGE_ONLY)
+        return IsFieldMoveUnlocked(FIELD_MOVE_FLY);
+    return FlagGet(OW_FLAG_POKE_RIDER);
+}

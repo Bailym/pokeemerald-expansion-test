@@ -30,7 +30,7 @@
 
 ## Map notes
 
-- Map `KerniaRoute2` (`MAP_KERNIA_ROUTE2`), layout `LAYOUT_KERNIA_ROUTE2` (40×52, `gTileset_General` + `gTileset_Dewford`, the same as Carnrudh so the join draws cleanly). Region map section `MAPSEC_ROUTE_2` (FireRed's, shown as "ROUTE 2"). Group `gMapGroup_KerniaTownsAndRoutes`.
+- Map `KerniaRoute2` (`MAP_KERNIA_ROUTE2`), layout `LAYOUT_KERNIA_ROUTE2` (40×52, `gTileset_General` + `gTileset_Dewford`, the same as Carnrudh so the join draws cleanly). Region map section `MAPSEC_KERNIA_ROUTE_2` (shown as "ROUTE 2"; it was FireRed's `MAPSEC_ROUTE_2` until the Town Map came in, but Kanto sections open the Kanto map). The keeper's cottage uses it too. Group `gMapGroup_KerniaTownsAndRoutes`.
 - Music `MUS_ROUTE104`, weather `WEATHER_SUNNY`. Border is trees.
 - Connections: `up` to `MAP_CARNRUDH` (offset 4): the road in at x 10–11 continues Carnrudh's south-west road (its x 6–7).
 - The sea is on the east, as on the real coast path from Hayle to St Ives, with the bay to the south.

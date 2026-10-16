@@ -13,7 +13,7 @@
 
 ## Map notes
 
-- Map `KerniaRoute1` (`MAP_KERNIA_ROUTE1`), layout `LAYOUT_KERNIA_ROUTE1` (48×24, `gTileset_General` + `gTileset_Dewford`, the same as Balwyn so the join draws cleanly). Region map section `MAPSEC_ROUTE_1` (FireRed's, shown as "ROUTE 1"). Group `gMapGroup_KerniaTownsAndRoutes`.
+- Map `KerniaRoute1` (`MAP_KERNIA_ROUTE1`), layout `LAYOUT_KERNIA_ROUTE1` (48×24, `gTileset_General` + `gTileset_Dewford`, the same as Balwyn so the join draws cleanly). Region map section `MAPSEC_KERNIA_ROUTE_1` (shown as "ROUTE 1"; it was FireRed's `MAPSEC_ROUTE_1` until the Town Map came in, but Kanto sections open the Kanto map). Group `gMapGroup_KerniaTownsAndRoutes`.
 - Named `KerniaRoute1` because plain `MAP_ROUTE1` / `LAYOUT_ROUTE1` belong to FireRed's Route 1.
 - Music `MUS_ROUTE101`, weather `WEATHER_SUNNY`. Border is trees.
 - Connections: `left` to `MAP_BALWYN` (offset 0), and `right` to `MAP_CARNRUDH` (offset -1), whose main street (rows 12–13) continues the east edge's sand road (rows 11–12, from x 40).

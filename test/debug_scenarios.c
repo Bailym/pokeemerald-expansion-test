@@ -72,6 +72,8 @@ TEST("Scenario balwyn_done: the Balwyn opening is finished")
     EXPECT(FlagGet(FLAG_HIDE_BALWYN_EVENT_CAST));
     EXPECT(!FlagGet(FLAG_HIDE_BALWYN_MINE_GRUNTS));
     EXPECT(CheckBagHasItem(ITEM_GRAMPYS_JOURNAL, 1));
+    EXPECT(CheckBagHasItem(ITEM_TOWN_MAP, 1));
+    EXPECT(FlagGet(FLAG_VISITED_BALWYN));
 }
 
 TEST("Scenario balwyn_done: the player has a starter ready for Route 1")
@@ -104,6 +106,7 @@ TEST("Scenario carnrudh_arrived: Route 1 is done and the player is outside Carnr
     EXPECT(HasTrainerBeenFought(TRAINER_JORY));
     EXPECT(HasTrainerBeenFought(TRAINER_TAMSIN));
     EXPECT(FlagGet(FLAG_HIDE_CARNRUDH_FESTIVAL));
+    EXPECT(FlagGet(FLAG_VISITED_CARNRUDH));
     // Whiting out from here on goes to Carnrudh's Pokémon Center, not home.
     const u32 expectedRespawnMapGroup = MAP_GROUP(MAP_CARNRUDH);
     const u32 expectedRespawnMapNum = MAP_NUM(MAP_CARNRUDH);

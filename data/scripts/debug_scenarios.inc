@@ -18,7 +18,9 @@ DebugScenarioStory_BalwynDone:
 	settrainerflag TRAINER_NOVA_BALWYN
 	setvar VAR_STARTER_MON, 1
 	additem ITEM_POKE_BALL, 5
+	additem ITEM_TOWN_MAP
 	additem ITEM_GRAMPYS_JOURNAL
+	setflag FLAG_VISITED_BALWYN
 	return
 
 @ Route 1's trainers and item are done, and Carnrudh's Pokémon Center has been visited.
@@ -29,6 +31,7 @@ DebugScenarioStory_CarnrudhArrived:
 	setflag FLAG_ITEM_KERNIA_ROUTE1_POKE_BALL
 	additem ITEM_POKE_BALL
 	setrespawn HEAL_LOCATION_CARNRUDH
+	setflag FLAG_VISITED_CARNRUDH
 	return
 
 @ Grampy's verse has been read on the first step onto Carn Kowr.

@@ -69,8 +69,8 @@
 #define FLAG_HIDE_KERNIA_ROUTE2_OLD_BULL    0x2F
 #define FLAG_CAUGHT_KERNIA_ROUTE2_SEEL    0x30
 #define FLAG_HIDE_KERNIA_ROUTE2_KEEPER_HOME    0x31
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
+#define FLAG_VISITED_BALWYN    0x32
+#define FLAG_VISITED_CARNRUDH    0x33
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag

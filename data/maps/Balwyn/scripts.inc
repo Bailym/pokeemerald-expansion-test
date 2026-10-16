@@ -25,6 +25,8 @@ Balwyn_EventScript_ShowMineWorks::
 	return
 
 Balwyn_OnTransition:
+	@ Balwyn can be flown to once visited (Town Map, badge 2).
+	setflag FLAG_VISITED_BALWYN
 	call_if_ge VAR_BALWYN_STATE, BALWYN_STATE_HAS_STARTER, Balwyn_EventScript_OpenRoadEast
 	end
 

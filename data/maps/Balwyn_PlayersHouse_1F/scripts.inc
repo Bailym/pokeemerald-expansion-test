@@ -136,6 +136,9 @@ Balwyn_PlayersHouse_1F_EventScript_StarterHandover::
 	setspeaker SP_NAME_KELYN
 	msgbox Balwyn_PlayersHouse_1F_Text_KelynPokeBalls, MSGBOX_DEFAULT
 	giveitem ITEM_POKE_BALL, 5
+	setspeaker SP_NAME_KELYN
+	msgbox Balwyn_PlayersHouse_1F_Text_KelynTownMap, MSGBOX_DEFAULT
+	giveitem ITEM_TOWN_MAP
 	closemessage
 	applymovement LOCALID_BALWYN_PLAYERS_HOUSE_1F_MUM, Balwyn_PlayersHouse_1F_Movement_MumToTable
 	waitmovement 0
@@ -291,7 +294,12 @@ Balwyn_PlayersHouse_1F_Text_ReceivedPokedex:
 
 Balwyn_PlayersHouse_1F_Text_KelynPokeBalls:
 	.string "And a few Poké Balls, so you\n"
-	.string "can make friends of your own.$"
+	.string "can make friends of your own.\p"
+	.string "Oh, and you'll want this too.$"
+
+Balwyn_PlayersHouse_1F_Text_KelynTownMap:
+	.string "A map of Kernia, so you never\n"
+	.string "lose your way home.$"
 
 Balwyn_PlayersHouse_1F_Text_MumJournal:
 	.string "{PLAYER}, love... Grampy wanted\n"

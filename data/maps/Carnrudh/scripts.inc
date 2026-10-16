@@ -1,5 +1,11 @@
 Carnrudh_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Carnrudh_OnTransition
 	.byte 0
+
+@ Carnrudh can be flown to once visited (Town Map, badge 2).
+Carnrudh_OnTransition:
+	setflag FLAG_VISITED_CARNRUDH
+	end
 
 Carnrudh_EventScript_TownSign::
 	msgbox Carnrudh_Text_TownSign, MSGBOX_SIGN

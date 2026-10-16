@@ -30,6 +30,8 @@ struct FieldMoveInfo
 };
 
 extern const struct FieldMoveInfo gFieldMoveInfo[];
+
+bool32 CanFlyFromRegionMap(void);
 extern const struct FieldMoveUnlock gFieldMoveUnlocks[];
 
 static inline bool32 SetUpFieldMove(enum FieldMove fieldMove)

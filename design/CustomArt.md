@@ -69,6 +69,10 @@ Each needs an overworld sprite, and a trainer front pic if they battle.
 - **The peak:** Carn Brea's castle folly and the monument to a mine-owning family (no stand-ins yet), and Lumen's survey camp and drill site beside the Well (only a sign now).
 - The rest of Carn Kowr (heath, Route 104-style cliffs and stairs) works with vanilla tiles.
 
+### Region map
+
+- Kernia's region map (the Town Map and fly map) is a stand-in: a blocky Cornwall built from Hoenn's plain sea, land, route and town tiles by `tools/kernia/gen_region_map.py`, with no coastline. Wanted: a real Cornwall map (coast, moors, rivers) in the region map's style, plus the frame and town art. Keep the grid positions in the generator in step with it.
+
 ### Route 2
 
 - The lighthouse on the headland: a stand-in, the Mirage Tower (Route 111) recoloured to grey granite, copied by `tools/kernia/add_lighthouse_tiles.py` into 18 Dewford metatiles (`0x37C`–`0x38D`, 3 wide by 6 tall) with its own palette (Dewford slot 12). A real lighthouse (a granite tower with a lantern, like Longships or Wolf Rock) can replace the tiles in place; re-run the route generator after changing the size. No interior is planned. (A hand-drawn red-and-white tower was tried first and rejected.)

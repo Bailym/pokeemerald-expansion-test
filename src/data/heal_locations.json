@@ -357,6 +357,14 @@
       "y": 11,
       "respawn_map": "MAP_CARNRUDH_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_CARNRUDH_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_BALWYN",
+      "map": "MAP_BALWYN",
+      "x": 7,
+      "y": 18,
+      "respawn_map": "MAP_BALWYN_PLAYERS_HOUSE_1F",
+      "respawn_npc": "LOCALID_BALWYN_PLAYERS_HOUSE_1F_MUM"
     }
   ]
 }

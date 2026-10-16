@@ -1,6 +1,7 @@
 #include "global.h"
 #include "bg.h"
 #include "event_data.h"
+#include "field_move.h"
 #include "field_effect.h"
 #include "gpu_regs.h"
 #include "international_string_util.h"
@@ -188,7 +189,7 @@ static void FieldUpdateRegionMap(void)
                 break;
         case MAP_INPUT_R_BUTTON:
                 if (sFieldRegionMapHandler->regionMap.mapSecType == MAPSECTYPE_CITY_CANFLY
-                    && FlagGet(OW_FLAG_POKE_RIDER) && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+                    && CanFlyFromRegionMap() && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
                 {
                     PlaySE(SE_SELECT);
                     SetFlyDestination(&sFieldRegionMapHandler->regionMap);
@@ -242,7 +243,7 @@ static void PrintTitleWindowText(void)
     FillWindowPixelBuffer(WIN_TITLE, PIXEL_FILL(1));
 
     if (sFieldRegionMapHandler->regionMap.mapSecType == MAPSECTYPE_CITY_CANFLY
-        && FlagGet(OW_FLAG_POKE_RIDER) && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+        && CanFlyFromRegionMap() && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
     {
         AddTextPrinterParameterized(WIN_TITLE, FONT_NORMAL, FlyPromptText, flyOffset, 1, 0, NULL);
         ScheduleBgCopyTilemapToVram(WIN_TITLE);

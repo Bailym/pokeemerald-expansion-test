@@ -1629,15 +1629,43 @@
     },
     {
       "id": "MAPSEC_BALWYN",
-      "name": "BALWYN"
+      "name": "BALWYN",
+      "x": 3,
+      "y": 9,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_CARNRUDH",
-      "name": "CARNRUDH"
+      "name": "CARNRUDH",
+      "x": 7,
+      "y": 9,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_CARN_KOWR",
-      "name": "CARN KOWR"
+      "name": "CARN KOWR",
+      "x": 7,
+      "y": 8,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_KERNIA_ROUTE_1",
+      "name": "ROUTE 1",
+      "x": 4,
+      "y": 9,
+      "width": 3,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_KERNIA_ROUTE_2",
+      "name": "ROUTE 2",
+      "x": 6,
+      "y": 10,
+      "width": 2,
+      "height": 1
     }
   ]
 }
