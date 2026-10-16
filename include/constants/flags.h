@@ -66,9 +66,9 @@
 #define FLAG_RECEIVED_CHARCOAL_CARNRUDH    0x2C
 #define FLAG_HIDE_CARNRUDH_SURVEY_WORKER    0x2D
 #define FLAG_HIDE_KERNIA_ROUTE2_SHOOT    0x2E
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
+#define FLAG_HIDE_KERNIA_ROUTE2_OLD_BULL    0x2F
+#define FLAG_CAUGHT_KERNIA_ROUTE2_SEEL    0x30
+#define FLAG_HIDE_KERNIA_ROUTE2_KEEPER_HOME    0x31
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag

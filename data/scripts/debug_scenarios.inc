@@ -91,6 +91,15 @@ DebugScenarioStory_Route2Summit:
 	settrainerflag TRAINER_KERNIA_ROUTE2_BIRD_KEEPER
 	return
 
+@ Nova's shoot on the summit is done, and the picnicker on the way down to the bay is beaten. The
+@ beach (the fisherman's rod, the old bull Seel, the sailor) is left.
+DebugScenarioStory_Route2Bay:
+	call DebugScenarioStory_Route2Summit
+	settrainerflag TRAINER_NOVA_ROUTE2
+	setflag FLAG_HIDE_KERNIA_ROUTE2_SHOOT
+	settrainerflag TRAINER_KERNIA_ROUTE2_PICNICKER
+	return
+
 @ Outside the house in Balwyn, ready for Route 1.
 DebugScenario_BalwynDone::
 	call DebugScenarioStory_BalwynDone
@@ -175,4 +184,16 @@ DebugScenario_Route2Summit::
 	givemon SPECIES_ROLYCOLY, 12
 	additem ITEM_POTION, 5
 	setwarp MAP_KERNIA_ROUTE2, 24, 18
+	return
+
+@ On the beach below the right-hand step, a row above the sailor's line of sight (row 36, x 10-14),
+@ with the fisherman, the old bull and the sailor to meet.
+DebugScenario_Route2Bay::
+	call DebugScenarioStory_Route2Bay
+	givemon SPECIES_SPHEAL, 15
+	givemon SPECIES_ROOKIDEE, 14
+	givemon SPECIES_ROLYCOLY, 13
+	additem ITEM_POTION, 5
+	additem ITEM_POKE_BALL, 5
+	setwarp MAP_KERNIA_ROUTE2, 15, 35
 	return

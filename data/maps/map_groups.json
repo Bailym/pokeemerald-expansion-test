@@ -77,7 +77,8 @@
     "gMapGroup_IndoorSevenIslandRoute_Frlg",
     "gMapGroup_KerniaTownsAndRoutes",
     "gMapGroup_IndoorBalwyn",
-    "gMapGroup_IndoorCarnrudh"
+    "gMapGroup_IndoorCarnrudh",
+    "gMapGroup_IndoorKerniaRoute2"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -1188,5 +1189,8 @@
     "Carnrudh_PastyShop",
     "Carnrudh_School",
     "Carnrudh_House2"
+  ],
+  "gMapGroup_IndoorKerniaRoute2": [
+    "KerniaRoute2_KeepersCottage"
   ]
 }

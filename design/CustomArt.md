@@ -72,7 +72,7 @@ Each needs an overworld sprite, and a trainer front pic if they battle.
 ### Route 2
 
 - The lighthouse on the headland: a stand-in, the Mirage Tower (Route 111) recoloured to grey granite, copied by `tools/kernia/add_lighthouse_tiles.py` into 18 Dewford metatiles (`0x37C`–`0x38D`, 3 wide by 6 tall) with its own palette (Dewford slot 12). A real lighthouse (a granite tower with a lantern, like Longships or Wolf Rock) can replace the tiles in place; re-run the route generator after changing the size. No interior is planned. (A hand-drawn red-and-white tower was tried first and rejected.)
-- The keeper's cottage: the vanilla red-roofed cottage for now.
+- The keeper's cottage: the vanilla red-roofed cottage for now. Inside, a copy of Mr Briney's house (Route 104); a keeper's home (nets, an old photo of the light) would suit it better.
 
 ### Carnrudh
 - **Festival dressing:** bunting across the main street and stalls in the field. Neither exists now (vanilla has nothing that fits). The treats stall keeper stands on open grass at (26, 21). Show them with `setmetatile` in an `ON_LOAD` script once `TOR_DONE` is set, or as objects.

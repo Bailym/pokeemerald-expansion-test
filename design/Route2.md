@@ -17,7 +17,7 @@
 1. The road leaves Carnrudh's south-west corner (x 6–7) once the tor is done and Lumen's survey traffic has cleared.
 2. Along the coast path: a few trainers and the first coastal wild Pokémon.
 3. Pen Morlo, the headland: Nova is mid photo shoot for Lumen ("sunset at the lighthouse"), and the director spots the player and asks for "a quick battle for the reel". Afterwards Nova heads off ahead; Nova isn't at Porthliw's opening night.
-4. Down in the bay below the headland, Seel on the rocks offshore and a fisherman, the lighthouse's retired keeper, who gives the player the Old Rod.
+4. Down in the bay below the headland, Seel on the rocks and in the sea offshore, one hauled out on the beach that the player can battle and catch, and a fisherman, the lighthouse's retired keeper, who gives the player the Old Rod.
 5. The beach carries on west into Porthliw.
 
 ## The headland
@@ -25,7 +25,7 @@
 - Named Pen Morlo (Cornish pen, head + morlo, seal: "seal head"), for the seals in the bay. The lighthouse is Pen Morlo Light, exterior only.
 - The keeper's cottage: the fisherman's home, with an interior (phase 4). He's out on the beach until he gives the rod, then at home.
 - Nova's battle (see Characters).
-- The bay below the headland: Seel on the offshore rocks, and a fisherman on the beach who gives the player the Old Rod, so fishing starts here.
+- The bay below the headland: Seel on the offshore rocks and in the water (scenery, out of reach), one Seel on the beach as a one-off wild encounter (battle or catch it once): the bay's old bull seal, Lv12, holding Mystic Water, with Ice Body and Aqua Jet. The fisherman says the headland was named for it. And a fisherman on the beach who gives the player the Old Rod, so fishing starts here.
 - Optional trainers (e.g. a birdwatcher on the summit and a sailor on the beach) for extra experience before the gym.
 
 ## Map notes
@@ -39,11 +39,14 @@
   - Real elevation levels keep the terraces apart, so the player moves between them only by the steps:
     - 3: the plateau you enter on, and the middle terraces below the summit (Mossdeep's 7).
     - 5: the summit (Mossdeep's 9), reached by two flights of steps at x 23–25, rows 16–20.
-    - 7: the lower terraces (Mossdeep's 5), reached by steps at x 17–18, row 25, and the bay.
+    - 7: the lower terraces (Mossdeep's 5), reached by steps at x 17–18, row 25.
+    - The bay is back on 3, below the lower terraces, reached by level-0 steps at x 14–15, row 34 and x 5–6, row 33. It has to be 3: the game only lets the player fish (or surf) from level 3 (`ELEVATION_DEFAULT`). It's walled off from the entry plateau by cliffs and the sea.
     - Grass that replaced Mossdeep's buildings and trees takes the level of the ground around it. The only level-0 cells are Mossdeep's steps.
   - The north shore: the tree band and road at the top left continue Carnrudh's south band. East of x 11 the top rows are sea, with shoreline edges (`0x002`) on the plateau and the summit.
   - The summit: the lighthouse (x 25–27, rows 5–10) and the keeper's cottage (x 19–22, rows 7–10; its door is solid until phase 4 adds the interior), with the lighthouse sign at (24, 10).
   - The bay: below the lowest terrace's cliff (row 34), with steps at x 14–15, a sand beach (x 0–29, rows 35–41) runs from the west edge to the sea, with boulders on the sand. Sea rocks sit offshore (Mossdeep's rock islet was cleared by hand). The beach reaching the west edge leaves room for the way to Porthliw.
+  - On the beach (level 3): the fisherman at (12, 41) facing the sea, the old bull Seel at (24, 40), and PASCOE the Sailor at (9, 36). Offshore (level 1): Seel on the sea rocks at (6, 45) and (16, 46), and one swimming around (21, 44).
+  - The keeper's cottage door at (20, 10) (`0x021`, an animated door) warps to `KerniaRoute2_KeepersCottage`, a copy of Mr Briney's house (Route 104, 12×9, `gTileset_Building` + `gTileset_GenericBuilding`, `MUS_PETALBURG`), in `gMapGroup_IndoorKerniaRoute2`. The keeper stands at (5, 3) once he's home (`FLAG_HIDE_KERNIA_ROUTE2_KEEPER_HOME`, set at new game, cleared when he gives the rod).
   - Tidied by hand in Porymap and copied back into the generator: shoreline edges along the top row (the sea meets Carnrudh's land above) and the east column, a few cliff corners by the road and the summit, a cliff line at x 2 (rows 10–14), the cliff foot at row 20, and steps at x 5–6, row 33.
 - Tall grass (`TALL_GRASS_PATCHES` in the generator, only on open grass, at each cell's level): the entry plateau (x 4–8, rows 10–15, level 3), the middle terraces below the summit's steps (x 26–30, rows 22–25, level 3), and the lower terraces above the bay's steps (x 3–9, rows 30–32, level 7).
 - Signs (`bg_events`): the route sign at (8, 3) ("ROUTE 2 / ↑ CARNRUDH") and the lighthouse sign at (24, 10) ("PEN MORLO LIGHT").
@@ -53,7 +56,7 @@
 ## Wild Pokémon (as built)
 
 - `gKerniaRoute2`, encounter rate 20, levels 9–12, from the three tall grass patches. The table: Wingull and Rookidee are the commonest, with Skwovet, Yamper, Wooloo, Nickit, and Gossifleur, and a rare Cramorant.
-- Fishing comes with the rod in phase 4 of `plans/route-2.md`, from the bay's water. It uses its own `fishing_mons` table (not `water_mons`, which is surfing), where the Old Rod draws only from slots 0–1: Magikarp (70%) and Tentacool (30%). The Good and Super Rod slots (2–9) are still to pick; they matter only once the player has those rods.
+- Fishing from the beach (`fishing_mons`, encounter rate 30; `water_mons` is surfing, not set yet). The Old Rod draws only from slots 0–1: Magikarp Lv9–11 (70%) and Tentacool Lv10–12 (30%). The Good and Super Rod slots are placeholders until those rods exist: Good (2–4) Magikarp, Tentacool, Shellder at Lv15–20; Super (5–9) Tentacool, Wailmer, Shellder, Chinchou at Lv25–30, and a rare Wailmer at Lv30–35.
 
 ## Characters
 
@@ -74,7 +77,7 @@
     - KENWYN, Bird Keeper, on the middle terraces at (28, 21) by the summit's steps, looking around (sight 4): Wingull 12, Rookidee 12. Lore: the chough, and King Arthur's spirit living on in one.
     - DEMELZA, Picnicker, on the lower terraces at (13, 29) facing right (sight 5, across the way down to the bay): Wooloo 12, Gossifleur 13. Lore: the mermaid who sang a chapel lad into the sea (told without the real village's name).
   - Nova: Lv13 (Pawmi and Klink).
-  - Optional headland trainers: around Lv13.
+  - Optional trainers: around Lv13. As built: PASCOE, Sailor, on the beach at (9, 36) facing right (sight 5): Wingull 12, Tentacool 13. Lore: wreckers' lamps on the cliffs, and why the light went up. (A summit trainer was dropped: KENWYN is already the route's bird keeper.)
 
 ## Decided against
 

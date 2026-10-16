@@ -33,6 +33,7 @@ static void ExpectStartsAt(u32 expectedMapGroup, u32 expectedMapNum, u32 expecte
 #define PERAN_ACE_LEVEL            8 // Drilbur.
 #define TANEK_ACE_LEVEL           12 // Torkoal.
 #define NOVA_ROUTE2_ACE_LEVEL     13 // Pawmi and Klink.
+#define PASCOE_ACE_LEVEL          13 // Tentacool, the beach's sailor.
 
 // A fitting team for the fight a scenario leads into: the strongest Pokémon is at the trainer's
 // ace level or up to two above, and nothing trails it by more than three.
@@ -221,6 +222,26 @@ TEST("Scenario route2_summit: below the summit with the way up cleared and Nova'
     EXPECT(!HasTrainerBeenFought(TRAINER_KERNIA_ROUTE2_PICNICKER));
     EXPECT(!HasTrainerBeenFought(TRAINER_NOVA_ROUTE2));
     EXPECT(!FlagGet(FLAG_HIDE_KERNIA_ROUTE2_SHOOT));
+    EXPECT(!FlagGet(FLAG_RECEIVED_OLD_ROD));
+    EXPECT(!FlagGet(FLAG_HIDE_KERNIA_ROUTE2_OLD_BULL));
+    EXPECT(FlagGet(FLAG_HIDE_KERNIA_ROUTE2_KEEPER_HOME));
     ExpectTeamReadyFor(NOVA_ROUTE2_ACE_LEVEL);
     ExpectStartsAt(MAP_GROUP(MAP_KERNIA_ROUTE2), MAP_NUM(MAP_KERNIA_ROUTE2), 24, 18);
+}
+
+TEST("Scenario route2_bay: Nova and the way down are done, with the beach still to do")
+{
+    StartScenario(SCENARIO_ROUTE2_BAY);
+
+    EXPECT(HasTrainerBeenFought(TRAINER_NOVA_ROUTE2));
+    EXPECT(FlagGet(FLAG_HIDE_KERNIA_ROUTE2_SHOOT));
+    EXPECT(HasTrainerBeenFought(TRAINER_KERNIA_ROUTE2_HIKER));
+    EXPECT(HasTrainerBeenFought(TRAINER_KERNIA_ROUTE2_BIRD_KEEPER));
+    EXPECT(HasTrainerBeenFought(TRAINER_KERNIA_ROUTE2_PICNICKER));
+    EXPECT(!HasTrainerBeenFought(TRAINER_KERNIA_ROUTE2_SAILOR));
+    EXPECT(!FlagGet(FLAG_RECEIVED_OLD_ROD));
+    EXPECT(!FlagGet(FLAG_HIDE_KERNIA_ROUTE2_OLD_BULL));
+    EXPECT(FlagGet(FLAG_HIDE_KERNIA_ROUTE2_KEEPER_HOME));
+    ExpectTeamReadyFor(PASCOE_ACE_LEVEL);
+    ExpectStartsAt(MAP_GROUP(MAP_KERNIA_ROUTE2), MAP_NUM(MAP_KERNIA_ROUTE2), 15, 35);
 }

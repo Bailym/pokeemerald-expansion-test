@@ -92,22 +92,24 @@ L.vroad(ROAD_X, 0, 3)
 L.stamp(ROAD_X, 4, [[B(0x128, 0, 3), B(0x12A, 0, 3)]])
 
 # The bay: below the lowest terrace's cliff (row 34), a sand beach replaces Mossdeep's shallows,
-# with steps down through the cliff. It's on the lowest terrace's level (7). The sea is to the
-# east and south, with Mossdeep's rock islet kept offshore (x 33-37, rows 33-37).
+# with steps down through the cliff. The sea is to the east and south. The beach is on level 3,
+# not the lowest terrace's 7: the game only lets the player fish (and later surf) from level 3,
+# so its steps are level 0 to join the two.
 LOW = 7
-SAND = B(0x124, 0, LOW)
+BAY = 3
+SAND = B(0x124, 0, BAY)
 BAY_TOP, BAY_Y1, BAY_X1 = 35, 42, 30        # Sand rows 35-41, x 0-29; edges on row 42 and x 30.
 for y in range(33, BAY_TOP):                # Mossdeep's shallows above the beach become grass.
     for x in range(2, 9):
         if L.m[y][x] & 0x3FF in (0x19E, 0x1A4, 0x1BE, 0x1BF, 0x166, 0x16E) or walkable(L.m[y][x]):
-            L.m[y][x] = B(0x001, 0, LOW)
+            L.m[y][x] = B(0x001, 0, BAY if y == 34 else LOW)
 L.m[34][8] = B(0x078, 1, 0)                 # The cliff's left end, now on land.
 L.m[34][24] = B(0x07A, 1, 0)                # Its right end, above the beach.
-L.stamp(14, 34, [[B(0x0AF, 0, LOW), B(0x0CF, 0, LOW)]])
+L.stamp(14, 34, [[B(0x0AF, 0, 0), B(0x0CF, 0, 0)]])
 L.fill(0, BAY_TOP, W - 1, H - 1, WATER)
 L.trees(0, BAY_TOP, 1, H - 1, False)        # The moor stops at the shore: the beach runs to the edge.
 L.fill(0, BAY_TOP, BAY_X1 - 1, BAY_Y1 - 1, SAND)
-L.fill(25, BAY_TOP, BAY_X1 - 1, BAY_TOP, B(0x11C, 0, LOW))   # Sea above, east of the cliff.
+L.fill(25, BAY_TOP, BAY_X1 - 1, BAY_TOP, B(0x11C, 0, BAY))   # Sea above, east of the cliff.
 L.stamp(BAY_X1, BAY_TOP, [[B(0x11D, 0, 1)]])
 L.fill(BAY_X1, BAY_TOP + 1, BAY_X1, BAY_Y1 - 1, B(0x125, 0, 1))
 L.fill(0, BAY_Y1, BAY_X1 - 1, BAY_Y1, B(0x12C, 0, 1))
@@ -154,10 +156,10 @@ HAND_EDITS = {
     (28, 20): B(0x091, 1, 0),
     (29, 20): B(0x091, 1, 0),
     (2, 33): B(0x078, 1, 0),
-    (5, 33): B(0x0AF, 0, 7),
-    (6, 33): B(0x0CF, 0, 7),
-    (0, 34): B(0x001, 0, 7),    # The moor stops a row short of the beach.
-    (1, 34): B(0x001, 0, 7),
+    (5, 33): B(0x0AF, 0, 0),
+    (6, 33): B(0x0CF, 0, 0),
+    (0, 34): B(0x001, 0, 3),    # The moor stops a row short of the beach.
+    (1, 34): B(0x001, 0, 3),
     (35, 33): WATER,            # The last of Mossdeep's rock islet, cleared.
     (36, 33): WATER,
     (34, 34): WATER,

@@ -212,3 +212,145 @@ KerniaRoute2_Text_DirectorWrap:
 KerniaRoute2_Text_NovaGoodbye:
 	.string "Next shoot's further down the\n"
 	.string "coast. Catch you later, local!$"
+
+@ The bay's old bull seal: Aqua Jet in place of Charm, which it wouldn't learn until Lv31, and its
+@ hidden ability. setwildbattle comes first because createmon neither clears the rest of the enemy
+@ party nor sets dowildbattle to a single battle.
+KerniaRoute2_EventScript_SetUpOldBullSeal::
+	setwildbattle SPECIES_SEEL, 12
+	createmon 1, 0, SPECIES_SEEL, 12, item=ITEM_MYSTIC_WATER, abilityNum=2, move1=MOVE_HEADBUTT, move2=MOVE_GROWL, move3=MOVE_ICY_WIND, move4=MOVE_AQUA_JET
+	return
+
+@ Whatever the outcome the old bull is gone for good; the fisherman has a line for a catch.
+KerniaRoute2_EventScript_RecordOldBullOutcome::
+	setflag FLAG_HIDE_KERNIA_ROUTE2_OLD_BULL
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	setflag FLAG_CAUGHT_KERNIA_ROUTE2_SEEL
+	return
+
+@ The lighthouse's retired keeper, fishing off the beach. He gives the Old Rod, then heads home to
+@ the keeper's cottage on the summit (KerniaRoute2_KeepersCottage), where he is from then on.
+KerniaRoute2_EventScript_Fisherman::
+	lock
+	faceplayer
+	msgbox KerniaRoute2_Text_FishermanIntro, MSGBOX_DEFAULT
+	call KerniaRoute2_EventScript_KeeperOnTheOldBull
+	msgbox KerniaRoute2_Text_FishermanGiveRod, MSGBOX_DEFAULT
+	giveitem ITEM_OLD_ROD
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_OLD_ROD
+	msgbox KerniaRoute2_Text_FishermanFishingAdvice, MSGBOX_DEFAULT
+	msgbox KerniaRoute2_Text_FishermanOffHome, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_KERNIA_ROUTE2_FISHERMAN
+	clearflag FLAG_HIDE_KERNIA_ROUTE2_KEEPER_HOME
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+@ The keeper's line on the old bull seal, on the beach or at home, so the rod and the seal can
+@ come in either order.
+KerniaRoute2_EventScript_KeeperOnTheOldBull::
+	goto_if_set FLAG_CAUGHT_KERNIA_ROUTE2_SEEL, KerniaRoute2_EventScript_KeeperOldBullCaught
+	goto_if_set FLAG_HIDE_KERNIA_ROUTE2_OLD_BULL, KerniaRoute2_EventScript_KeeperOldBullGone
+	msgbox KerniaRoute2_Text_KeeperOldBullNotMet, MSGBOX_DEFAULT
+	return
+
+KerniaRoute2_EventScript_KeeperOldBullCaught::
+	msgbox KerniaRoute2_Text_KeeperOldBullCaught, MSGBOX_DEFAULT
+	return
+
+KerniaRoute2_EventScript_KeeperOldBullGone::
+	msgbox KerniaRoute2_Text_KeeperOldBullGone, MSGBOX_DEFAULT
+	return
+
+@ The bay's old bull seal: a one-off wild battle. Caught, beaten or fled, it's gone for good.
+KerniaRoute2_EventScript_OldBull::
+	lock
+	faceplayer
+	playmoncry SPECIES_SEEL, CRY_MODE_ENCOUNTER
+	msgbox KerniaRoute2_Text_OldBull, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	call KerniaRoute2_EventScript_SetUpOldBullSeal
+	dowildbattle
+	call KerniaRoute2_EventScript_RecordOldBullOutcome
+	goto_if_set FLAG_CAUGHT_KERNIA_ROUTE2_SEEL, KerniaRoute2_EventScript_OldBullRemove
+	msgbox KerniaRoute2_Text_OldBullSlipsAway, MSGBOX_DEFAULT
+	closemessage
+KerniaRoute2_EventScript_OldBullRemove::
+	removeobject LOCALID_KERNIA_ROUTE2_OLD_BULL
+	release
+	end
+
+@ Wreckers' lamps, and why the light went up on Pen Morlo.
+KerniaRoute2_EventScript_Sailor::
+	trainerbattle_single TRAINER_KERNIA_ROUTE2_SAILOR, KerniaRoute2_Text_SailorIntro, KerniaRoute2_Text_SailorDefeat
+	setspeaker SP_NAME_PASCOE
+	msgbox KerniaRoute2_Text_SailorPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+KerniaRoute2_Text_FishermanIntro:
+	.string "Mornin'. I kept the light up\n"
+	.string "top for forty year, I did.\p"
+	.string "It runs itself now. Automatic.\n"
+	.string "So I come down here and fish.$"
+
+KerniaRoute2_Text_FishermanGiveRod:
+	.string "You've a fisher's look about\n"
+	.string "you. Here, have my old rod.$"
+
+KerniaRoute2_Text_FishermanFishingAdvice:
+	.string "Cast it off the beach, into the\n"
+	.string "deep water.\p"
+	.string "Magikarp, mostly. And the odd\n"
+	.string "Tentacool, if you're unlucky!$"
+
+KerniaRoute2_Text_FishermanOffHome:
+	.string "Right, that's me done. I'm off\n"
+	.string "home, up by the light.\p"
+	.string "Come by the cottage dreckly,\n"
+	.string "my 'ansum.$"
+
+KerniaRoute2_Text_KeeperOldBullNotMet:
+	.string "See him down on the sand?\n"
+	.string "That's the old bull.\p"
+	.string "PEN MORLO's named for his kind.$"
+
+KerniaRoute2_Text_KeeperOldBullCaught:
+	.string "You caught the old bull?\n"
+	.string "Well, I'll be…\p"
+	.string "Forty year I've watched him on\n"
+	.string "that beach. Never let no one\l"
+	.string "near him.\p"
+	.string "Must've seen summat in you.\n"
+	.string "You look after him, my 'ansum.$"
+
+KerniaRoute2_Text_KeeperOldBullGone:
+	.string "Met the old bull, did you?\p"
+	.string "He'll be off round the point,\n"
+	.string "sulking. Gone for good now,\l"
+	.string "I reckon.$"
+
+KerniaRoute2_Text_OldBull:
+	.string "A big old Seel eyes you from\n"
+	.string "the sand. It won't budge!$"
+
+KerniaRoute2_Text_OldBullSlipsAway:
+	.string "The old bull Seel slid back\n"
+	.string "into the sea…$"
+
+KerniaRoute2_Text_SailorIntro:
+	.string "Ahoy! Fresh off the boat, me.\n"
+	.string "Fancy a scrap on the sand?$"
+
+KerniaRoute2_Text_SailorDefeat:
+	.string "Sunk without a trace!$"
+
+KerniaRoute2_Text_SailorPostBattle:
+	.string "Folk say wreckers once hung\n"
+	.string "lamps on these cliffs,\p"
+	.string "to lure ships onto the rocks.\n"
+	.string "That's why the light went up.$"

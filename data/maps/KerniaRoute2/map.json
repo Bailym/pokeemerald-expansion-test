@@ -130,9 +130,98 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_KERNIA_ROUTE2_SHOOT"
+    },
+    {
+      "local_id": "LOCALID_KERNIA_ROUTE2_FISHERMAN",
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 12,
+      "y": 41,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KerniaRoute2_EventScript_Fisherman",
+      "flag": "FLAG_RECEIVED_OLD_ROD"
+    },
+    {
+      "local_id": "LOCALID_KERNIA_ROUTE2_OLD_BULL",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SEEL)",
+      "x": 24,
+      "y": 40,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KerniaRoute2_EventScript_OldBull",
+      "flag": "FLAG_HIDE_KERNIA_ROUTE2_OLD_BULL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SEEL)",
+      "x": 6,
+      "y": 45,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SEEL)",
+      "x": 16,
+      "y": 46,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SEEL)",
+      "x": 21,
+      "y": 44,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_KERNIA_ROUTE2_SAILOR",
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "x": 9,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "KerniaRoute2_EventScript_Sailor",
+      "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 20,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_KERNIA_ROUTE2_KEEPERS_COTTAGE",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [
     {
       "type": "trigger",
@@ -183,7 +272,7 @@
       "type": "hidden_item",
       "x": 26,
       "y": 37,
-      "elevation": 7,
+      "elevation": 3,
       "item": "ITEM_PEARL",
       "flag": "FLAG_HIDDEN_ITEM_KERNIA_ROUTE2_PEARL"
     }
