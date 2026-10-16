@@ -33,6 +33,19 @@
 - Levels: gym trainers Lv14–15, Enys's ace Lv16.
 - Reward: badge 2 and TM Aerial Ace.
 
+## Already built that the plan must hook into
+
+- **The way in:** Route 2's beach runs to its west edge (x 0–1, rows 34–41, level 3), the likely connection to Porthliw. Route 2's map section is `MAPSEC_KERNIA_ROUTE_2`. Any new route or town needs Kernia's own `MAPSEC_*` (appended to `src/data/region_map/region_map_sections.json`): FireRed's sections open the Kanto map.
+- **Badge 2 unlocks Fly** (`design/plans/hm-free-field-moves.md`). After Enys's badge line, her script does `buffermovename STR_VAR_1, MOVE_FLY` then `call EventScript_FieldMoveUnlocked` (the jingle and "You can now use Fly outside of battle!"), as Tanek does for Rock Smash in `Carnrudh_Gym/scripts.inc`. Enys gets a line of her own about flying, in her voice.
+- **Porthliw as a fly point**, like Balwyn and Carnrudh:
+  - a `MAPSEC_PORTHLIW` section;
+  - a `FLAG_VISITED_PORTHLIW` (next free Kernia flag) set in the town's `ON_TRANSITION` script and in its scenario story part;
+  - a `HEAL_LOCATION_PORTHLIW` outside its Pokémon Center;
+  - a `GetMapsecType` case, `sFlyLocations` entry and `sMapHealLocations` entry in `src/region_map.c`;
+  - a `PLACES` entry in `tools/kernia/gen_region_map.py` (planned at grid (5, 10), west of Route 2's cells), then re-run it.
+- **Field moves:** with badge 1 the player can already smash rocks; Cut and Flash wait for badge 3. Breakable rocks need a `FLAG_TEMP_*` each.
+- **Scenarios:** `route2_bay` is the latest. Add Porthliw ones chained from it (`tools/playtest/README.md`).
+
 ## Decided against
 
 - Penzance and a tidal-island gym (after St Michael's Mount), or a blend of both towns: Porthliw is the St Ives-style art town.

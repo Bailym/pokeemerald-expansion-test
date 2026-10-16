@@ -203,3 +203,4 @@
 ## Open questions
 
 - How much moor wild levels rise per badge (decide when balancing trainer levels).
+- Whether Kernia keeps the FireRed build working. `make firered` fails on master because the Kernia layouts in `data/layouts/layouts.json` have no `border_width` (FireRed's mapjson needs it). Fix that, or treat Kernia as Emerald-only and drop the FireRed checks from plans.
