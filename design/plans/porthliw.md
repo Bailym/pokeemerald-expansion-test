@@ -1,0 +1,111 @@
+# Porthliw
+
+## Goal
+Build Porthliw, the second gym town, as designed in `design/Porthliw.md`. The player walks in along Route 2's beach and finds the gym shut for the gallery's opening night. They meet Enys painting on the harbour wall, who invites them to the opening. There they watch Sloane's Lumen speech and Enys's counter-speech. Then they take on Enys's rooftop studio gym for badge 2, TM Aerial Ace, and Fly.
+
+## Context
+- **The way in:** Route 2's beach runs to its west edge (x 0–1, rows 34–41, level 3), so Porthliw joins it with a `left` connection. Route 2 is `gTileset_General` + `gTileset_Dewford` (40×52), and the game draws the neighbouring map with the *current* map's tilesets. So Porthliw shares them, which suits a harbour: Dewford's set has docks, boats, and sand. Keep secondary-tileset blocks clear of the join anyway.
+- **Levels:** Route 2's bay is level 3 because the game only lets you fish or surf from level 3, and the beach at the join is level 3. Porthliw's harbourside stays level 3 too. Run `tools/kernia/check_levels.py` on it, and match each object's `elevation` to its tile.
+- **Interiors to borrow:** `LAYOUT_POKEMON_CENTER_1F`/`_2F` and `LAYOUT_MART` are shared, as in Carnrudh. For the gallery, Lilycove's art museum (`gTileset_LilycoveMuseum`, 21×14 on 1F) is a ready-made stand-in. For the rooftop studio gym, Fortree's gym (`gTileset_FortreeGym`) is the Flying stand-in. Houses and studios use `gTileset_GenericBuilding`, as Carnrudh's do.
+- **Story state:** Carnrudh's pattern. A single `VAR_PORTHLIW_STATE` in an unused var slot (e.g. `VAR_UNUSED_0x408B`) with `PORTHLIW_STATE_*` values in story order (`include/constants/vars.h`), plus `FLAG_HIDE_*` flags for people who come and go. Kernia's own flags carry on at 0x34 (`FLAG_UNUSED_0x034`–`0x03F` are free).
+- **Trainers:** `TRAINERS_COUNT_EMERALD` is 872 of 896, so 24 are free. This plan needs about 4 (2–3 gym trainers and Enys).
+- **Already built that this hooks into** (from `design/Porthliw.md`):
+  - **Fly:** badge 2 unlocks it. After Enys's badge line, her script does `buffermovename STR_VAR_1, MOVE_FLY` then `call EventScript_FieldMoveUnlocked`, as Tanek does in `Carnrudh_Gym/scripts.inc`.
+  - **The fly point:** `MAPSEC_PORTHLIW`, `FLAG_VISITED_PORTHLIW` (set on `ON_TRANSITION` and in the story part), `HEAL_LOCATION_PORTHLIW`, the `GetMapsecType`/`sFlyLocations`/`sMapHealLocations` entries in `src/region_map.c`, and a `PLACES` entry in `tools/kernia/gen_region_map.py` at grid (5, 10).
+  - **The TM:** Aerial Ace is already TM40 in `FOREACH_TM`.
+- **The east road:** Carnrudh's east-road blocker (Lumen roadworks until badge 2) isn't built, because the road leads to an unbuilt map. Enys's line about it reopening is just dialogue for now. The blocker comes with the Treveur route.
+- **Scenarios:** `route2_bay` is the latest. Each phase that adds story state adds or extends a story part chained from it, with a test (`tools/playtest/README.md`).
+- **Testing:** maps, scenes, and dialogue are tested by hand in mGBA (CLAUDE.md). Story state and the fly point are covered by `make check` tests. Kernia is Emerald-only, so there are no `make firered` checks.
+- Naming per CLAUDE.md: `Porthliw` / `MAP_PORTHLIW` / `LAYOUT_PORTHLIW` / `MAPSEC_PORTHLIW` in `gMapGroup_KerniaTownsAndRoutes`. Interiors (`Porthliw_PokemonCenter_1F`, `Porthliw_Mart`, `Porthliw_Gallery`, `Porthliw_Gym`, …) go in a new `gMapGroup_IndoorPorthliw`, appended to the end of `group_order`.
+
+## Approach
+Same as Carnrudh and Route 2. Generate the town's layout by script (`tools/kernia/gen_porthliw.py`, copying Dewford's harbour blocks so collision and elevation are right), render it to PNG for review, then fine-tune in Porymap. Phase 1 proves the riskiest part: the join to Route 2's beach and a working town with a fly point. Each later phase adds one story beat in the order the player meets it. `VAR_PORTHLIW_STATE` moves from "arrived" through "met Enys" and "opening done" to "badge won". The town's map scripts read it to place Enys, open the gallery door, and unblock the gym.
+
+## Phases
+
+### Phase 1 — Walk into Porthliw, heal, shop, and fly back
+**Deliverable:** The player walks west off Route 2's beach into Porthliw, with a "PORTHLIW" popup and no seam at the join. They can heal at the Center, use the PC, shop at the Mart, and white out back to Porthliw's Center. The town map shows Porthliw west of Route 2, and once visited (with badge 2) it's a fly point. The gym door is shut with a sign about the opening night.
+**Verify:**
+- `make check TESTS="test/kernia_field_moves.c"` and `TESTS="Scenario"`: new tests, written first, pass. Porthliw opens Kernia's region map and is a fly destination once visited. A `porthliw_arrived` scenario has `FLAG_VISITED_PORTHLIW`.
+- `python3 tools/kernia/check_levels.py Porthliw …` passes (entry at the join, the harbour, and the town).
+- mGBA, `play.py route2_bay`: walk west along the beach into Porthliw (popup, no seam either side). Heal, use the PC, and buy from the Mart. Try the gym door and get the sign. Lose a battle and wake in Porthliw's Center.
+- Set badge 2 (R+Start), open the Town Map, and fly to Porthliw from Carnrudh, and back.
+**Work:**
+- `tools/kernia/gen_porthliw.py`: the harbour bowl (a curved harbour with boats and a pier, from Dewford's sand and docks, and the town on rising ground around it). The Center, Mart, and gallery go on the harbourfront, a stand-in gym building at the top of the hill at the back, and spaces for houses and studios. The beach join is on its east edge at level 3, and the harbourfront is the way every path from it into town goes (for phase 2's trigger). Render and review.
+- The map, layout, `MAPSEC_PORTHLIW`, `scripts.inc`, a town sign, and both `left`/`right` connections with matching offsets.
+- `Porthliw_PokemonCenter_1F`/`_2F` and `Porthliw_Mart` (stock a step up from Carnrudh's: Great Balls, Super Potions), with `HEAL_LOCATION_PORTHLIW` and `setrespawn`.
+- Fly point: `FLAG_VISITED_PORTHLIW` (0x34) on `ON_TRANSITION`, the region map entries in `src/region_map.c`, and the `PLACES` entry, then re-run `gen_region_map.py`.
+- `VAR_PORTHLIW_STATE` (`ARRIVED`), and a shut-gym sign or blocker.
+- `porthliw_arrived` scenario (story part from `route2_bay` with the visited flag), test, and TestGuide shortcut.
+- `design/Porthliw.md` map notes and warp table, and `design/Route2.md`'s connection note.
+
+**Not yet:** Enys, the gallery's interior, the gym interior, townsfolk, and fishing.
+
+### Phase 2 — Meet Enys on the harbour wall
+**Deliverable:** Enys is painting the seabirds on the harbour wall. Walking along the harbourfront, the player is spotted: she calls out and comes over for a short meeting, in which she's sharp about Lumen sponsoring the gallery and invites the player to the opening anyway. Before that, the gallery's door staff turn the player away ("invitation only, love"). Afterwards they let the player in, and the gallery has an empty-room placeholder.
+**Verify:**
+- `make check TESTS="Scenario"`: the `porthliw_arrived` test still passes, and a new `porthliw_met_enys` scenario test passes.
+- mGBA, `play.py porthliw_arrived`: the gallery staff turn you back. Walk along the harbourfront from each way in: Enys calls out and the meeting plays once, with her name box. The staff now let you into the gallery. After a reload, Enys has a short repeat line and the door stays open.
+**Work:**
+- `PORTHLIW_STATE_MET_ENYS`. Enys's object (stand-in `OBJ_EVENT_GFX_WINONA`) at her easel, and trigger tiles across the harbourfront (`VAR_TEMP_*`, returning early once met), as Nova's shoot on Route 2 does. She walks to the player, and her lines follow DESIGN.md's lore and brevity rules. Talking to her afterwards gives a repeat line.
+- The gallery door staff and their state check. `Porthliw_Gallery` copied from Lilycove's museum 1F, with door warps.
+- `porthliw_met_enys` story part and scenario, test, and TestGuide.
+
+**Not yet:** the speeches, Sloane, the crowd, and the gym opening.
+
+### Phase 3 — The opening night
+**Deliverable:** Walking into the gallery after meeting Enys starts the opening night. The gallery is full of guests. Sloane, Lumen's Head of PR, gives her polished speech presenting Lumen as friends of the arts. Enys answers with a counter-speech that turns the room, naming Lumen's closures, Carnrudh's east road included. The guests react, Sloane makes a smooth exit, and Enys tells the player to come and find her at the gym. Back outside, the gym is open.
+**Verify:**
+- `make check TESTS="Scenario"`: a new `porthliw_opening` scenario (at the gallery door, `MET_ENYS`) test passes, and the opening's story part sets `OPENING_DONE` and the hide flags.
+- mGBA, `play.py porthliw_opening`: walk in and the scene plays through once, with the name boxes. Leave and re-enter the gallery: no replay, Sloane and the crowd are gone, and the guests left have after-lines. The gym door is now open. Each text box fits the lore rule (one to three short pages, nothing running off the box).
+**Work:**
+- `PORTHLIW_STATE_OPENING_DONE`, and a `FLAG_HIDE_PORTHLIW_OPENING` for Sloane and the crowd. Enys moves from the harbour to the gym with her own hide flag.
+- The scene in `Porthliw_Gallery/scripts.inc` (an `ON_FRAME` trigger on the state): Sloane (`OBJ_EVENT_GFX_TEALA`, not a trainer), guests, a lectern or stage spot, `applymovement` for reactions, and Sloane's exit.
+- Write both speeches in the characters' voices (beats in `design/Porthliw.md`). Sloane is polished, on-brand, and vague: Lumen lighting up Kernia's creative coast, with jobs in Carnrudh. Enys is plain and sharp: the closures (the east road), the light and the land Lumen's digging dulls, and Carn Kowr's stones "surveyed" until some kid turned up.
+- Remove the gym blocker by state.
+- Story part, scenario, test, TestGuide.
+
+**Not yet:** the gym interior and the badge.
+
+### Phase 4 — Enys's rooftop studio and badge 2
+**Deliverable:** The player climbs to Enys's rooftop studio, beats two or three gym trainers in a line and then Enys, and gets badge 2 and TM40 Aerial Ace. Enys's badge line leads into the Fly unlock cue. After the battle she shares her suspicion about Lumen and mentions the east road has reopened.
+**Verify:**
+- `make check TESTS="Scenario"`: `porthliw_gym` (at the gym door, team levelled for Enys's Lv16 ace) and `porthliw_badge2` scenario tests pass. `porthliw_badge2` has badge 2 and the TM.
+- `make check` (full) passes.
+- mGBA, `play.py porthliw_gym`: each trainer spots you and battles once. Beat Enys, then see her badge line, the Fly jingle and message, then the TM. The badge shows on the trainer card. Talking to her again gives the post-battle line, also after a reload. Open the Town Map and fly to Carnrudh. Lose to Enys once too: nothing extra plays.
+**Work:**
+- `Porthliw_Gym`: one interior map, the rooftop studio, from Fortree Gym's tiles (skylights, canvases, perches where tiles allow), generated by a script, with a door warp from the building at the top of the hill.
+- Two of Enys's painting students (Lv14–15, a bird or two each) and Enys (Wingull Lv15, Wattrel Lv15, ace Cramorant Lv16) in `opponents.h` and `trainers.party`, using the leader class and Winona's sprite.
+- Badge 2's name, the GULL BADGE, wherever the ENGINE BADGE's name was set for badge 1.
+- The gym script: intro, defeat, `setflag FLAG_BADGE02_GET`, the Fly cue, `giveitem` TM40, post-battle lines (the suspicion: her seabirds won't fly over Lumen's sites, and the flocks wheel away west when the ground hums; then the east road), `PORTHLIW_STATE_BADGE_WON`, and the gym statue lines.
+- Badge 2's trainer-card art: Winona's Feather Badge as a stand-in.
+- Story parts, scenarios, tests, TestGuide.
+
+**Not yet:** townsfolk, houses and studios, and fishing.
+
+### Phase 5 — Townsfolk, studios, and the harbour
+**Deliverable:** Porthliw feels lived in. The gallery is a real gallery after the opening: paintings with lore captions (the light, the seabirds, an old mine, Grampy's era), a curator, and visitors. Two or three interiors (an artist's studio, a fisherman's house, a pasty-thieving-gull story somewhere) open. Townsfolk have lore lines on the colony, the light, and Lumen's money, and the lines change after the opening night. The harbour can be fished with the Old Rod.
+**Verify:**
+- mGBA, `play.py porthliw_arrived`: talk to everyone in town and in each interior. Every line fits the lore rule. Fish off the harbour and get a battle. Then `play.py porthliw_badge2`: the lines have changed after the opening.
+- `make check TESTS="Scenario"` still passes.
+**Work:**
+- The gallery's paintings as `bg_event`s with captions, shown after `OPENING_DONE`, plus the curator and visitors.
+- Interiors copied from vanilla, with door warps, generated or hand-tuned in Porymap.
+- Townsfolk objects and scripts with "before" and "after" lines chosen by state. Include a gull-and-pasty joke and the gallery staff's view of the row.
+- A fishing table for Porthliw in `src/data/wild_encounters.json`.
+- An item or two, and optionally a breakable rock with its own `FLAG_TEMP_*`.
+- `design/Porthliw.md`: the characters and their lines.
+
+**Not yet:** custom art (the gallery, studio, Enys, Sloane), and the east-road blocker (it comes with the Treveur route).
+
+## Open questions
+- **The exact lines:** the beats are settled in `design/Porthliw.md`. Write the meeting in phase 2, the speeches in phase 3, and the suspicion in phase 4.
+- **The town's exact layout:** the harbour-bowl shape is settled. Its size and positions are settled with a render at the start of phase 1.
+
+## Rejected alternatives
+- **Talking to Enys to meet her:** a walk-past trigger means no player misses her before the gallery.
+- **Stairs up the outside of the gym, or a two-floor gym:** an ordinary door into a single rooftop map is simplest.
+- **Walking straight into the gallery, a door attendant, or a fade to evening:** the user chose meeting Enys first. It introduces her before her counter-speech, and needs no night version of the town.
+- **Building the gym first:** it's the payoff, but it's blocked in the story until the opening night is done. Story order lets each phase be played straight through, as in Carnrudh.
+- **A gallery maze or wind-current puzzle in the gym:** decided against in `design/Porthliw.md`. Gym 2 stays a short gauntlet.
+- **Porthliw on its own tilesets:** the connection draws Route 2's side with Porthliw's tilesets, so sharing General + Dewford avoids a garbled seam.

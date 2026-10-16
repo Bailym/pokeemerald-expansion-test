@@ -15,23 +15,30 @@
 ## Story
 
 1. Arrival: the town is getting ready for the gallery's big opening night, an exhibition sponsored by Lumen. The gym is shut: Enys is tied up with the opening.
-2. The opening night: the player attends. Sloane, Lumen's Head of PR, makes her first appearance and gives a polished speech presenting Lumen as friends of the arts.
-3. Enys answers with a counter-speech and turns the room against Lumen. She names Lumen's closures, Carnrudh's east road included. This is the public row the rest of Kernia hears about.
-4. After the opening, the gym opens.
-5. Gym 2: the player beats Enys for badge 2 and TM Aerial Ace. After the battle, Enys mentions that Lumen have reopened the east road, so the way to Treveur is open (see `Carnrudh.md`).
+   - The player meets Enys painting on the harbour wall: walking along the harbourfront, she calls out and comes over, so it can't be missed. She invites them to the opening. The gallery's door staff let the player in once they've met her. Until then the town is free to explore (Center, Mart, townsfolk).
+2. The opening night: the player attends. Sloane, Lumen's Head of PR, makes her first appearance and gives a polished speech presenting Lumen as friends of the arts: general PR about lighting up Kernia's creative coast, with a nod to jobs in Carnrudh, and nothing concrete to attack.
+3. Enys answers with a counter-speech and turns the room against Lumen. She names Lumen's closures, Carnrudh's east road included. She says painters come for the light and the wild coast, and Lumen's quarries and drills are what's dulling it. And she's heard Lumen were "surveying" Carn Kowr's giant's stones until some kid turned up (a nod to the player: word of the tor has spread despite Lumen's spin). This is the public row the rest of Kernia hears about.
+4. After the opening, the gym opens. The gallery stays open as a real gallery: paintings with short lore captions, a curator, and visitors.
+5. Gym 2: the player beats Enys for badge 2 (the GULL BADGE) and TM Aerial Ace. After the battle, Enys shares her suspicion: her seabirds have gone quiet, won't fly over Lumen's sites, and the flocks wheel away west whenever the ground hums (an early hint of Bucca stirring). She also mentions that Lumen have reopened the east road, so the way to Treveur is open (see `Carnrudh.md`).
 
 ## Characters
 
 - Enys (Cornish for "island"): a young painter, sharp and outspoken, who paints the seabirds over the bay. Flying gym leader. Resists Lumen, and like the other resisting leaders, shares a suspicion about them after her battle.
-- Sloane: Lumen's Head of PR and Nova's manager (see `DESIGN.md`). First appearance, at the opening night, on her own (Nova has moved on after the lighthouse).
+- Sloane: Lumen's Head of PR and Nova's manager (see `DESIGN.md`). First appearance, at the opening night, on her own (Nova has moved on after the lighthouse). Stand-in sprite: Teala.
 - Townsfolk: artists, fishermen, gallery staff, and visitors, with lore lines on the colony, the light, and how the town feels about Lumen's money.
 
 ## The gym
 
 - A rooftop studio: skylights, canvases, and gull perches.
-- A short trainer gauntlet like gym 1, with no puzzle: two or three trainers in a line, then Enys.
-- Levels: gym trainers Lv14–15, Enys's ace Lv16.
-- Reward: badge 2 and TM Aerial Ace.
+- At the top of the hill at the back of the town, entered by an ordinary front door; the interior is the rooftop.
+- A short trainer gauntlet like gym 1, with no puzzle: two of Enys's painting students in a line (Lv14–15, a bird or two each), then Enys.
+- Enys's team: Wingull Lv15, Wattrel Lv15, and her ace Cramorant Lv16.
+- Reward: badge 2, the GULL BADGE, and TM Aerial Ace.
+
+## The town
+
+- A St Ives-style harbour bowl: a curved harbour with boats and a pier in the middle, and the town packed round it on rising ground.
+- The Pokémon Center, Mart, and gallery on the harbourfront; the gym at the top of the hill at the back.
 
 ## Already built that the plan must hook into
 
@@ -53,13 +60,12 @@
 - Other opening-night scenes: Enys pulling her painting off the wall, a battle at the gallery, Enys simply not turning up.
 - Sloane with Nova, Nova or Sterling as Lumen's speaker.
 - The gym open on arrival, or a small errand instead of the opening night.
+- Other ways into the opening: walking straight into the gallery (Enys would first appear mid-speech), a door attendant with no Enys meeting, or a fade to an evening version of the town (needs a night tint or map state).
 - A wind-current puzzle or a gallery maze in the gym.
 - Reopening the east road straight after the speech: it stays gated on badge 2.
 - Porthwyn, Treliw, and Golowyn as the town's name.
 
 ## Open questions
 
-- How the opening night starts (e.g. entering the gallery, or talking to someone at the door), and what the player can do in town before it.
-- The speeches' text, and the suspicion Enys shares after her battle.
-- The badge's name, Enys's team, and the gym trainers.
-- The town's layout and interiors (the gallery, the studio gym, the Center and Mart, houses).
+- The exact lines of the speeches, the meeting, and the suspicion (the beats are settled above).
+- The town's exact layout and the other interiors (houses, studios), settled with a render.

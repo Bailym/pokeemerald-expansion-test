@@ -134,7 +134,7 @@ Kernia's badges go into `gFieldMoveInfo`. A shared `EventScript_FieldMoveUnlocke
 **All five phases are done.** Placing TM52–TM59 in Kernia is left to the areas that give them out.
 
 ## Open questions
-- **The FireRed build** is broken on master: none of the Kernia layouts have the `border_width` field FireRed's mapjson needs. Until it's fixed or dropped, the phases' "`make firered` still builds" checks can't pass. Decide whether Kernia keeps FireRed building (a small separate fix) or is Emerald-only (drop those checks).
+- ~~**The FireRed build:**~~ Settled: Kernia is Emerald-only, so the `make firered` checks are dropped (see `DESIGN.md`'s Build section).
 - ~~**Flash with no Pokémon:**~~ Settled: dark maps light up by themselves on entry once badge 3 is won, with a message saying the area has been lit.
 - **The stand-in region map image:** which vanilla map to reuse, and where Balwyn, Carnrudh and Carn Kowr sit on it. Settle at the start of phase 3. Rendering a couple of candidates would help.
 - **Where the retrofit rocks go**, and what they hide (an item, a shortcut, a hidden cove). Settle at the start of phase 2.
