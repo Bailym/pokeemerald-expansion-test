@@ -40,7 +40,8 @@ Kernia's badges go into `gFieldMoveInfo`. A shared `EventScript_FieldMoveUnlocke
 
 ## Phases
 
-### Phase 1 — Smash a rock with no Pokémon that knows Rock Smash
+### Phase 1 — Smash a rock with no Pokémon that knows Rock Smash ✅
+*(As built: `OW_FIELD_MOVES_BADGE_ONLY` (`(!IS_FRLG)`) in `include/config/overworld.h`. Kernia's badges go into `gFieldMoveInfo` through a `FIELD_MOVE_BADGE(kernia, vanilla)` macro. `checkfieldmove` returns `FIELD_MOVE_USER_NONE` (7) for unlocked badge-gated moves whatever the party knows, and `PARTY_SIZE` without the badge even when the script skips the badge check. Always-unlocked moves like Secret Power are unchanged. `EventScript_RockSmash` has a badge-only branch ("Smash it?", the smash sound, then the rock-break movement, skipping the show-Pokémon effect), and the Kernia hint before the badge. The first rock is on Route 2 at (3, 30), guarding a Revive at (3, 29). Its grass patch was moved so the rock isn't on tall grass, and it needs `FLAG_TEMP_11` or it respawns as the camera moves. Four tests in `test/kernia_field_moves.c`, written first. The FireRed build fails, but on master too (the Kernia layouts lack `border_width`); see the open questions.)*
 **Deliverable:** With badge 1, the player can break a Kernia rock even though no party Pokémon knows Rock Smash. The prompt asks first, the rock breaks with no Pokémon shown, and the item behind it can be picked up. Without badge 1, the rock hints that a badge would help. The engine change is in place for every move, but only Rock Smash is wired up.
 **Verify:**
 - `make check TESTS="test/kernia_field_moves.c"`: tests written first pass. With badge 1 and a party without Rock Smash, the Rock Smash check succeeds and reports no Pokémon. Without badge 1 it fails. A Pokémon that does know Rock Smash makes no difference.
@@ -48,8 +49,8 @@ Kernia's badges go into `gFieldMoveInfo`. A shared `EventScript_FieldMoveUnlocke
 - mGBA, `play.py route2_bay` (badge 1, no Pokémon knows Rock Smash): walk to the new rock, say yes, and it breaks cleanly (no garbled sprite, no Pokémon pop-up), and stays broken after a reload. `play.py balwyn_done` (no badge): if the rock is reachable before badge 1, it gives the hint.
 **Work:**
 - The config switch, and Kernia's badges in `gFieldMoveInfo` (`src/field_move.c`): Rock Smash 1, Fly 2, Cut and Flash 3, Surf 4, Strength 5, Dive 6, Waterfall 8. Rock Climb's badge (5) goes in phase 4.
-- `ScrCmd_checkfieldmove` (`src/scrcmd.c`): with the switch on, badge only. Return a "no Pokémon" result (not 6), with `VAR_0x8004` left as `SPECIES_NONE`.
-- `CreateFieldMoveTask` (`src/fldeff_rocksmash.c`): skip the show-Pokémon step when there's no slot.
+- `ScrCmd_checkfieldmove` (`src/scrcmd.c`): with the switch on, badge only, for badge-gated moves only (Secret Power and the other always-unlocked ones still need a Pokémon). Return `FIELD_MOVE_USER_NONE` (7, in `include/constants/field_move.h`), not a slot. Until phase 4, the other badge moves' scripts don't handle that result, but none of their badges (3+) can be won yet.
+- No field effect change for Rock Smash: its badge-only branch plays the smash sound and goes straight to the rock-break movement, skipping `FLDEFF_USE_ROCK_SMASH` and its show-Pokémon step. (The plan first had `CreateFieldMoveTask` skip it; the script route is smaller.)
 - `EventScript_RockSmash` (`data/scripts/field_move_scripts.inc`): the badge-only branch, its prompt text, and the hint before the badge.
 - One breakable rock on a built Kernia map (Route 2's beach or lower terraces is easiest to reach in a scenario), hiding an item behind it, with an item flag.
 - `test/kernia_field_moves.c`, exporting the field move values to the test asm if needed.
@@ -68,7 +69,7 @@ Kernia's badges go into `gFieldMoveInfo`. A shared `EventScript_FieldMoveUnlocke
 **Work:**
 - A shared `EventScript_FieldMoveUnlocked` (in `data/scripts/`), taking the move name: the jingle, then the message.
 - `Carnrudh_Gym_EventScript_TanekDefeated`: Tanek's line, then the shared script, before Flame Charge.
-- 2–3 rocks on Carn Kowr, Route 1 and Route 2, each with an item flag. Re-run `check_levels.py` for maps with levels.
+- 2–3 rocks on Carn Kowr, Route 1 and Route 2, each with an item flag. Each rock needs its own `FLAG_TEMP_*` (unused on that map), as vanilla's do: with flag `0`, `removeobject` doesn't stick and the rock respawns as soon as the camera moves. Re-run `check_levels.py` for maps with levels.
 - Docs: each area doc's map notes, `TestGuide.md` (a Rock Smash check per area, and the gym scene).
 
 **Not yet:** Fly, the Town Map, other moves, and HMs as TMs.
@@ -127,6 +128,7 @@ Kernia's badges go into `gFieldMoveInfo`. A shared `EventScript_FieldMoveUnlocke
 **Not yet:** placing the new TMs in Kernia (each area's plan), and the real region map art.
 
 ## Open questions
+- **The FireRed build** is broken on master: none of the Kernia layouts have the `border_width` field FireRed's mapjson needs. Until it's fixed or dropped, the phases' "`make firered` still builds" checks can't pass. Decide whether Kernia keeps FireRed building (a small separate fix) or is Emerald-only (drop those checks).
 - **Flash with no Pokémon:** there's no overworld trigger to hang it on. Three options:
   - Dark maps light up on entry once badge 3 is won.
   - Entering a dark map asks "Light the way?".

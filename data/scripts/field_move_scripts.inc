@@ -65,6 +65,7 @@ EventScript_RockSmash::
 	lockall
 	checkfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
+	goto_if_eq VAR_RESULT, FIELD_MOVE_USER_NONE, EventScript_RockSmashWithBadge
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	buffermovename STR_VAR_2, MOVE_ROCK_SMASH
@@ -208,6 +209,15 @@ EventScript_CantSmashRock::
 	releaseall
 	end
 
+@ OW_FIELD_MOVES_BADGE_ONLY: the badge is enough, and the rock breaks with no Pokémon shown.
+EventScript_RockSmashWithBadge:
+	msgbox Text_WantToSmashWithBadge, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
+	closemessage
+	playse SE_M_ROCK_THROW
+	setvar VAR_0x8004, FALSE
+	goto EventScript_SmashRock
+
 EventScript_CancelSmash::
 	closemessage
 	releaseall
@@ -218,8 +228,17 @@ Text_WantToSmash:
 	.string "Would you like to use ROCK SMASH?$"
 
 Text_CantSmash:
+#if OW_FIELD_MOVES_BADGE_ONLY
+	.string "A sturdy rock. A gym BADGE might\n"
+	.string "help you break it.$"
+#else
 	.string "It's a rugged rock, but a POKéMON\n"
 	.string "may be able to smash it.$"
+#endif
+
+Text_WantToSmashWithBadge:
+	.string "This rock looks breakable.\n"
+	.string "Smash it?$"
 
 EventScript_StrengthBoulder::
 	lockall

@@ -23,5 +23,9 @@ enum FieldMove
     FIELD_MOVES_COUNT
 };
 
+// checkfieldmove's result when a field move can be used without a Pokémon (OW_FIELD_MOVES_BADGE_ONLY).
+// A failed check gives PARTY_SIZE; a party slot means that Pokémon uses it.
+#define FIELD_MOVE_USER_NONE (PARTY_SIZE + 1)
+
 
 #endif //GUARD_CONSTANTS_FIELD_MOVE_H

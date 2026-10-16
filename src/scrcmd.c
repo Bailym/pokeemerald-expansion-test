@@ -2300,6 +2300,13 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1);
 
     gSpecialVar_Result = PARTY_SIZE;
+    // Badge-gated field moves need only their badge, and no Pokémon is shown using them.
+    if (OW_FIELD_MOVES_BADGE_ONLY && gFieldMoveInfo[fieldMove].unlockType == BADGE_UNLOCK)
+    {
+        if (IsFieldMoveUnlocked(fieldMove))
+            gSpecialVar_Result = FIELD_MOVE_USER_NONE;
+        return FALSE;
+    }
     if (doUnlockedCheck && !IsFieldMoveUnlocked(fieldMove))
         return FALSE;
 

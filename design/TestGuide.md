@@ -111,6 +111,7 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 - ⚠ **The Old Rod:** the fisherman on the beach gives it once, then fades away. Before that the cottage on the summit is empty; afterwards he's inside, with his lore and an old bull line, also after a reload.
 - ⚠ **Fishing:** casting from the beach into the sea gets bites (Magikarp or Tentacool). The steps down to the beach still work both ways (the beach is level 3, the terraces above it 7).
 - ⚠ **The old bull Seel:** talking to it plays its cry and starts a battle (Lv12 Seel with Mystic Water, Ice Body, Aqua Jet). Catch it, beat it, or run, and it's gone for good. The keeper's line changes to match (caught, or gone), on the beach or at home. Losing to it (whiting out) leaves it there.
+- ⚠ **Rock Smash, no Pokémon needed:** the rock at the west end of the lower terraces asks "Smash it?" with badge 1, even if no Pokémon knows Rock Smash. It breaks with no Pokémon shown and no garbled sprite, and the Revive behind it can be taken once. Without badge 1 it says a gym badge might help.
 - PASCOE the Sailor on the beach battles once. The Seel offshore can be seen but not reached.
 - Tall grass on each terrace gives wild battles (Lv9–12); open ground doesn't. You can walk into every patch.
 - The Great Ball (past the middle terraces' grass) and the hidden Pearl (by a boulder on the beach) can each be taken once.

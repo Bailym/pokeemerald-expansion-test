@@ -165,6 +165,7 @@ HAND_EDITS = {
     (34, 34): WATER,
     (35, 34): WATER,
     (36, 34): WATER,
+    (3, 29): B(0x001, 0, 7),    # The nook behind the Rock Smash rock, plain grass under its item.
 }
 for (x, y), v in HAND_EDITS.items():
     L.stamp(x, y, [[v]])           # Stamping also clears any tree there.
@@ -172,7 +173,7 @@ for (x, y), v in HAND_EDITS.items():
 # Tall grass on the way down: the entry plateau, the middle terraces below the summit's steps,
 # and the lower terraces above the bay's steps. Only open grass and flowers turn into tall grass,
 # each at its own cell's level, so cliff edges and the terraces' levels stay as they are.
-TALL_GRASS_PATCHES = [(4, 10, 8, 15), (26, 22, 30, 25), (3, 30, 9, 32)]
+TALL_GRASS_PATCHES = [(4, 10, 8, 15), (26, 22, 30, 25), (4, 30, 9, 32)]   # x 3 is the Rock Smash rock's way in.
 for (x0, y0, x1, y1) in TALL_GRASS_PATCHES:
     for y in range(y0, y1 + 1):
         for x in range(x0, x1 + 1):
