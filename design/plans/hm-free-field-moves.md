@@ -57,7 +57,8 @@ Kernia's badges go into `gFieldMoveInfo`. A shared `EventScript_FieldMoveUnlocke
 
 **Not yet:** the unlock cues, the other retrofit rocks, any other move, and the Town Map.
 
-### Phase 2 — Badge 1 tells you about Rock Smash, and pays off
+### Phase 2 — Badge 1 tells you about Rock Smash, and pays off ✅
+*(As built: `EventScript_FieldMoveUnlocked` in `data/scripts/field_move_scripts.inc` plays `MUS_OBTAIN_TMHM` with "You can now use {STR_VAR_1} outside of battle!"; the caller buffers the move name. Tanek's badge line now says you can smash rocks yourself ("Proper miner's work"), then the unlock cue, then "And take this as well." and Flame Charge. Rocks: Route 1 (11, 9) guarding a Super Potion (0x479), and a two-rock rockfall on Carn Kowr's top terrace (26, 2) and (27, 3) guarding a Nugget (0x493), each with its own `FLAG_TEMP_*`. With phase 1's Route 2 rock, that's three spots.)*
 **Deliverable:**
 - **The cues:** winning badge 1 now ends with Tanek's Rock Smash line and the system message ("You can now use ROCK SMASH outside of battle!" with a jingle).
 - **The rocks:** a few more optional rocks on maps already built (Carn Kowr, Route 1, Route 2) hide items or a shortcut.

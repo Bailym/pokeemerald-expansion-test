@@ -209,6 +209,19 @@ EventScript_CantSmashRock::
 	releaseall
 	end
 
+@ OW_FIELD_MOVES_BADGE_ONLY: after a gym leader's line about it, tells the player their new badge
+@ lets them use a field move. The caller buffers the move's name into STR_VAR_1 first.
+EventScript_FieldMoveUnlocked::
+	playfanfare MUS_OBTAIN_TMHM
+	message Text_FieldMoveUnlocked
+	waitmessage
+	waitfanfare
+	return
+
+Text_FieldMoveUnlocked:
+	.string "You can now use {STR_VAR_1}\n"
+	.string "outside of battle!$"
+
 @ OW_FIELD_MOVES_BADGE_ONLY: the badge is enough, and the rock breaks with no Pokémon shown.
 EventScript_RockSmashWithBadge:
 	msgbox Text_WantToSmashWithBadge, MSGBOX_YESNO

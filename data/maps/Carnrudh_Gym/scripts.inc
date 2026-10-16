@@ -18,6 +18,10 @@ Carnrudh_Gym_EventScript_TanekDefeated::
 	msgbox Carnrudh_Gym_Text_ExplainBadge, MSGBOX_DEFAULT
 	setflag FLAG_BADGE01_GET
 	setvar VAR_CARNRUDH_STATE, CARNRUDH_STATE_BADGE_WON
+	buffermovename STR_VAR_1, MOVE_ROCK_SMASH
+	call EventScript_FieldMoveUnlocked
+	setspeaker SP_NAME_TANEK
+	msgbox Carnrudh_Gym_Text_TakeThisToo, MSGBOX_DEFAULT
 	call Carnrudh_Gym_EventScript_GiveFlameCharge
 	closemessage
 	release
@@ -81,6 +85,11 @@ Carnrudh_Gym_Text_ReceivedBadge:
 
 Carnrudh_Gym_Text_ExplainBadge:
 	.string "The ENGINE BADGE. Wear it proud.\p"
+	.string "Rocks in your way? With that,\n"
+	.string "you can smash 'em yourself.\p"
+	.string "Proper miner's work, that is.$"
+
+Carnrudh_Gym_Text_TakeThisToo:
 	.string "And take this as well.$"
 
 Carnrudh_Gym_Text_ExplainFlameCharge:

@@ -27,6 +27,7 @@
 
 - Route sign at (10, 10), where the lane opens into the meadow: "ROUTE 1 / ← BALWYN   CARNRUDH →".
 - Item ball: a Poké Ball in the meadow's dead-end corner at (10, 13) (`FLAG_ITEM_KERNIA_ROUTE1_POKE_BALL`, renamed from `FLAG_UNUSED_0x468`).
+- Rock Smash: a breakable rock at (11, 9), just above the route sign, guards a Super Potion in the one-tile nook at (10, 9) (`FLAG_ITEM_KERNIA_ROUTE1_SUPER_POTION`, 0x479). It needs badge 1, so it's a reason to come back from Carnrudh. The rock's flag is `FLAG_TEMP_11`.
 - Hidden item: a Potion at (10, 5) in the ledge nook (`FLAG_HIDDEN_ITEM_KERNIA_ROUTE1_POTION`, renamed from `FLAG_UNUSED_0x264`; hidden-item flags must be ≥ `FLAG_HIDDEN_ITEMS_START`).
 - Ledge: a nook off the top corridor (x 10–13, rows 5–7) with a south-facing ledge across row 8 (`0x0D5`/`0x087`/`0x0D6`). It's a one-way hop down into the meadow on the way back to Balwyn. The ledge blocks the nook from the meadow, so the first-bend tall grass still can't be avoided going east.
 

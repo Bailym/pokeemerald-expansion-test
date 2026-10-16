@@ -39,6 +39,7 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 - Tall grass gives wild battles (Lv2–4); open ground doesn't.
 - The Poké Ball at (10, 13) and the hidden Potion at (10, 5) can each be taken once.
 - The ledge at row 8 only lets you hop down, not climb up.
+- After badge 1: the rock above the route sign smashes (no Pokémon needed) and the Super Potion behind it can be taken once. Before badge 1 it hints at a gym badge.
 
 ## 3. Carnrudh (arrival)
 
@@ -63,6 +64,7 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 - You can't walk through any cliff, boulder, or stone, and the stairs are the only way up.
 - Wild battles only come from the tall grass patches, and the riddle route never forces you through them.
 - Seamless joins: town ↔ climb ↔ peak.
+- After badge 1: the two rocks in the top terrace's far right corner smash, and the Nugget behind them can be taken once. Each rock stays gone while you're on the map.
 
 ## 5. Carn Kowr peak (the proof and Peran)
 
@@ -79,6 +81,7 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 **Story:** back in town, the gym blocker is gone. The gym is a boiler room with two trainers (a stoker and a bal maiden) and Tanek on his dais. Beating him gives the ENGINE BADGE and TM51 Flame Charge.
 
 - ⚠ Badge 1 shows on the trainer card (with the Heat Badge's flame art), and TM51 Flame Charge is in your bag.
+- ⚠ After the badge, Tanek says you can smash rocks yourself, then a jingle plays with "You can now use Rock Smash outside of battle!" (no name box), then Flame Charge as before. Losing to Tanek plays none of it.
 - ⚠ Talking to Tanek again gives his post-battle line, not a rematch, and still does after a reload.
 - Both gym trainers spot you, even if you hug the far wall.
 - You can't step onto the steam vents (they'd try to warp you).
