@@ -43,14 +43,17 @@
     - Grass that replaced Mossdeep's buildings and trees takes the level of the ground around it. The only level-0 cells are Mossdeep's steps.
   - The north shore: the tree band and road at the top left continue Carnrudh's south band. East of x 11 the top rows are sea, with shoreline edges (`0x002`) on the plateau and the summit.
   - The summit: the lighthouse (x 25–27, rows 5–10) and the keeper's cottage (x 19–22, rows 7–10; its door is solid until phase 4 adds the interior), with the lighthouse sign at (24, 10).
-  - The bay: below the lowest terrace's cliff (row 34), with steps at x 14–15, a sand beach (x 0–29, rows 35–41) runs from the west edge to the sea, with boulders on the sand. Sea rocks and Mossdeep's small rock islet (x 33–37, rows 33–37) sit offshore. The beach reaching the west edge leaves room for the way to Porthliw.
+  - The bay: below the lowest terrace's cliff (row 34), with steps at x 14–15, a sand beach (x 0–29, rows 35–41) runs from the west edge to the sea, with boulders on the sand. Sea rocks sit offshore (Mossdeep's rock islet was cleared by hand). The beach reaching the west edge leaves room for the way to Porthliw.
   - Tidied by hand in Porymap and copied back into the generator: shoreline edges along the top row (the sea meets Carnrudh's land above) and the east column, a few cliff corners by the road and the summit, a cliff line at x 2 (rows 10–14), the cliff foot at row 20, and steps at x 5–6, row 33.
-- Signs (`bg_events`): the route sign at (8, 3) ("ROUTE 2 / ↑ CARNRUDH") and the lighthouse sign at (24, 10).
+- Tall grass (`TALL_GRASS_PATCHES` in the generator, only on open grass, at each cell's level): the entry plateau (x 4–8, rows 10–15, level 3), the middle terraces below the summit's steps (x 26–30, rows 22–25, level 3), and the lower terraces above the bay's steps (x 3–9, rows 30–32, level 7).
+- Signs (`bg_events`): the route sign at (8, 3) ("ROUTE 2 / ↑ CARNRUDH") and the lighthouse sign at (24, 10) ("PEN MORLO LIGHT").
+- Items: a Great Ball item ball at (29, 26) past the middle terraces' grass (`FLAG_ITEM_KERNIA_ROUTE2_GREAT_BALL`, 0x470), and a hidden Pearl in the sand by a boulder at (26, 37) (`FLAG_HIDDEN_ITEM_KERNIA_ROUTE2_PEARL`, 0x265).
+- The level check: `python3 tools/kernia/check_levels.py KerniaRoute2 entry=10,0 summit=22,12 bay=10,38` (also checks object elevations).
 
 ## Wild Pokémon (as built)
 
-- An encounter table is set (`gKerniaRoute2`, encounter rate 20, levels 9–12), but the new layout has no tall grass yet; it goes in with phase 2's trainers. The table: Wingull and Rookidee are the commonest, with Skwovet, Yamper, Wooloo, Nickit, and Gossifleur, and a rare Cramorant.
-- Fishing comes with the rod in phase 4 of `plans/route-2.md`: Old Rod slots for Magikarp, Tentacool, and a Kernia coastal pick, from the bay's water.
+- `gKerniaRoute2`, encounter rate 20, levels 9–12, from the three tall grass patches. The table: Wingull and Rookidee are the commonest, with Skwovet, Yamper, Wooloo, Nickit, and Gossifleur, and a rare Cramorant.
+- Fishing comes with the rod in phase 4 of `plans/route-2.md`, from the bay's water. It uses its own `fishing_mons` table (not `water_mons`, which is surfing), where the Old Rod draws only from slots 0–1: Magikarp (70%) and Tentacool (30%). The Good and Super Rod slots (2–9) are still to pick; they matter only once the player has those rods.
 
 ## Characters
 
@@ -65,7 +68,10 @@
 ## Trainers and levels
 
 - Gentle step up from gym 1 (Tanek's ace is Lv12; Enys's is Lv16, see `Porthliw.md`):
-  - Route trainers: Lv11–13.
+  - Route trainers (as built), one per area on the way down, each spotting the player:
+    - BRYOK, Hiker, on the entry plateau at (6, 8) facing right (sight 5, across the way down from the road): Rolycoly 11, Nacli 12. Lore: the huers who kept watch from Pen Morlo for pilchard shoals and cried "HEVVA!".
+    - KENWYN, Bird Keeper, on the middle terraces at (28, 21) by the summit's steps, looking around (sight 4): Wingull 12, Rookidee 12. Lore: the chough, and King Arthur's spirit living on in one.
+    - DEMELZA, Picnicker, on the lower terraces at (13, 29) facing right (sight 5, across the way down to the bay): Wooloo 12, Gossifleur 13. Lore: the mermaid who sang a chapel lad into the sea (told without the real village's name).
   - Nova: Lv13 (Pawmi and Klink).
   - Optional headland trainers: around Lv13.
 
@@ -78,5 +84,4 @@
 ## Open questions
 
 - Nova's and the fisherman's exact lines. Written in phases 3 and 4.
-- The route trainers' classes, teams, and lines, and the items. Settled while building phase 2.
 - Settled: the Old Rod, the land table, Nova's team and tone, the cottage, the names (Pen Morlo and Pen Morlo Light), and Seel as the seals.

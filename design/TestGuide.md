@@ -101,14 +101,17 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 
 ## 8. Route 2 (the coast path)
 
-**Story:** the coast path south from Carnrudh, opened once the tor is saved. A terraced headland steps down to the sea, with a lighthouse on its summit and a sandy bay at its foot. (Being built: Nova's battle, trainers, tall grass, and the fisherman come in later phases of `design/plans/route-2.md`.)
+**Story:** the coast path south from Carnrudh, opened once the tor is saved. A terraced headland, Pen Morlo, steps down to the sea, with Pen Morlo Light on its summit and a sandy bay at its foot. Three trainers wait on the way down (a hiker, a bird keeper, a picnicker), with tall grass on each terrace. (Being built: Nova's battle and the fisherman come in later phases of `design/plans/route-2.md`.)
 
 - ⚠ Before the tor, the survey worker blocks the way out of Carnrudh. After it (`carnrudh_tor_done` or later), the worker's gone and the road is open.
 - ⚠ Seamless join with Carnrudh: the tree band and road line up, and the "ROUTE 2" popup shows.
 - ⚠ **Levels:** you can only change level by the steps: up two flights to the summit, down to the lower terraces, and down to the beach. Walking along a cliff edge never lets you step down (or up) without steps, and you can't get onto the thin ledges in the sea cliffs.
+- ⚠ Each trainer (BRYOK on the plateau, KENWYN by the summit's steps, DEMELZA on the lower terraces) spots you, battles once, and stays beaten after saving and reloading. If one can't be walked up to or talked to, its elevation is wrong.
+- Tall grass on each terrace gives wild battles (Lv9–12); open ground doesn't. You can walk into every patch.
+- The Great Ball (past the middle terraces' grass) and the hidden Pearl (by a boulder on the beach) can each be taken once.
 - You can't walk onto the sea, the lighthouse, or the cottage.
 - The lighthouse and cottage draw cleanly, and walking round them never puts them over the player.
-- Both signs read correctly.
+- Both signs read correctly (the lighthouse's says PEN MORLO LIGHT).
 
 ## Shortcuts
 

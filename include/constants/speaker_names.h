@@ -16,6 +16,9 @@ enum SpeakerNames {
     SP_NAME_TAMSIN,
     SP_NAME_PERAN,
     SP_NAME_TANEK,
+    SP_NAME_BRYOK,
+    SP_NAME_KENWYN,
+    SP_NAME_DEMELZA,
     SP_NAME_COUNT
 };
 

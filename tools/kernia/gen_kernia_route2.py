@@ -132,7 +132,7 @@ for (x, y) in [(12, 1), (19, 2), (19, 3)]:
 L.fill(W - 1, 1, W - 1, 10, B(0x192, 0, 1))
 
 # The rest of the hand tidy-up: cliff edges by the road, the summit's west corner, the west cliff
-# at x 2, the cliff foot at row 20, and steps down to the bay at x 5-6.
+# at x 2, the cliff foot at row 20, steps down to the bay at x 5-6, and the rock islet cleared.
 HAND_EDITS = {
     (7, 2): B(0x068, 1, 0),
     (8, 2): B(0x002, 0, 3),
@@ -155,10 +155,28 @@ HAND_EDITS = {
     (29, 20): B(0x091, 1, 0),
     (2, 33): B(0x078, 1, 0),
     (5, 33): B(0x0AF, 0, 7),
-    (6, 33): B(0x0AF, 0, 7)
+    (6, 33): B(0x0CF, 0, 7),
+    (0, 34): B(0x001, 0, 7),    # The moor stops a row short of the beach.
+    (1, 34): B(0x001, 0, 7),
+    (35, 33): WATER,            # The last of Mossdeep's rock islet, cleared.
+    (36, 33): WATER,
+    (34, 34): WATER,
+    (35, 34): WATER,
+    (36, 34): WATER,
 }
 for (x, y), v in HAND_EDITS.items():
-    L.m[y][x] = v
+    L.stamp(x, y, [[v]])           # Stamping also clears any tree there.
+
+# Tall grass on the way down: the entry plateau, the middle terraces below the summit's steps,
+# and the lower terraces above the bay's steps. Only open grass and flowers turn into tall grass,
+# each at its own cell's level, so cliff edges and the terraces' levels stay as they are.
+TALL_GRASS_PATCHES = [(4, 10, 8, 15), (26, 22, 30, 25), (3, 30, 9, 32)]
+for (x0, y0, x1, y1) in TALL_GRASS_PATCHES:
+    for y in range(y0, y1 + 1):
+        for x in range(x0, x1 + 1):
+            v = L.m[y][x]
+            if v & 0x3FF in (0x001, 0x004) and walkable(v):
+                L.m[y][x] = (TALL_GRASS & 0xFFF) | (v & 0xF000)
 
 SIGNS = {'route': (8, 3), 'lighthouse': (24, 10)}
 for (x, y) in SIGNS.values():
