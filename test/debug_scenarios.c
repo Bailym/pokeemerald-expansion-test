@@ -248,3 +248,28 @@ TEST("Scenario route2_bay: Nova and the way down are done, with the beach still 
     ExpectTeamReadyFor(PASCOE_ACE_LEVEL);
     ExpectStartsAt(MAP_GROUP(MAP_KERNIA_ROUTE2), MAP_NUM(MAP_KERNIA_ROUTE2), 15, 35);
 }
+
+// Pokémon in a scenario stand in for ones the player raised, so they must obey: they're the
+// player's own, and met at or below the badge level limit (Gen 8+ obedience goes by met level).
+TEST("Every scenario's Pokémon obey the player")
+{
+    u32 scenario = 0;
+    for (u32 i = SCENARIO_NONE + 1; i < SCENARIOS_COUNT; i++)
+        PARAMETRIZE { scenario = i; }
+
+    StartScenario(scenario);
+
+    u32 expectedMaxMetLevel = 10;
+    for (u32 flag = FLAG_BADGE01_GET; flag <= FLAG_BADGE07_GET; flag++)
+    {
+        if (FlagGet(flag))
+            expectedMaxMetLevel += 10;
+    }
+    for (u32 i = 0; i < CalculatePlayerPartyCount(); i++)
+    {
+        struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][i];
+        u32 actualMetLevel = GetMonData(mon, MON_DATA_MET_LEVEL);
+        EXPECT(!IsTradedMon(mon));
+        EXPECT_LE(actualMetLevel, expectedMaxMetLevel);
+    }
+}

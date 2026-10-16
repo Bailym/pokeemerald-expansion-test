@@ -56,6 +56,25 @@ void CB2_BootScenario(void)
     SetMainCallback2(CB2_NewGame);
 }
 
+// A scenario's Pokémon stand in for ones the player caught early and raised. Gen 8+ obedience
+// goes by the level a Pokémon was met at, so giving them at their full level would make them
+// disobey before enough badges.
+#define SCENARIO_MET_LEVEL 5
+
+static void MakeScenarioPartyObey(void)
+{
+    for (u32 i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][i];
+        u32 metLevel = GetMonData(mon, MON_DATA_MET_LEVEL);
+        if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE && metLevel > SCENARIO_MET_LEVEL)
+        {
+            metLevel = SCENARIO_MET_LEVEL;
+            SetMonData(mon, MON_DATA_MET_LEVEL, &metLevel);
+        }
+    }
+}
+
 // Runs on top of NewGameInitData: the scenario script sets the story state and calls setwarp,
 // then the player is moved there in place of the new game's bedroom.
 void RunScenario(u32 scenario)
@@ -64,6 +83,7 @@ void RunScenario(u32 scenario)
         return;
 
     RunScriptImmediately(sScenarioScripts[scenario]);
+    MakeScenarioPartyObey();
     WarpIntoMap();
 }
 
