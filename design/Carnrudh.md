@@ -172,7 +172,7 @@ Two maps north of Carnrudh, both in the region map section "CARN KOWR" so they r
   - North of the street: the gym (Dewford's building, x 5–10, rows 5–9) and its sign at (11, 9), the Pokémon Center (x 18–21, rows 7–10), and the Mart (x 23–26, rows 7–10).
   - The path north to Carn Kowr runs up x 14–15 to the top edge (no connection yet).
   - South of the street: house 1 (x 9–12, rows 16–19), the pasty shop (the red cottage, x 16–19, rows 16–19), the miners' school (the wide house, x 21–25, rows 16–19), and house 2 (x 9–12, rows 21–24).
-  - The south-west road runs down x 6–7 to the bottom edge, where it joins Route 2 (`down` connection, offset -20).
+  - The south-west road runs down x 6–7 to the bottom edge, where it joins Route 2 (`down` connection, offset -4; Route 2's road is x 10–11).
   - Town sign at (4, 11), at the west entrance.
 - Door warps on `Carnrudh` are numbered in the order below. Don't reorder them, because each interior's doormat warps back to that number.
 

@@ -1,11 +1,11 @@
 # Route 2
 
-> Draft only: nothing here is set, and everything is subject to change.
+> Phase 1 (the walkable route) is built; see `plans/route-2.md` for what's next. The map notes and wild table describe what's built; the rest is still a draft and may change.
 
 ## Overview
 
-- The second route, running south-west from Carnrudh along the cliffs to Porthliw, the second gym town (inspired by St Ives).
-- A cliff-top coast path with sea views, gorse and heather. It ends at a lighthouse headland before the way drops into Porthliw.
+- The second route, running south from Carnrudh over a coastal headland, then west along the beach to Porthliw, the second gym town (inspired by St Ives).
+- A terraced headland with sea views, gorse and heather, a lighthouse on its summit and a sandy bay at its foot, where the way on to Porthliw starts.
 - A breather after Carnrudh's quest: no Lumen on this stretch. The set piece is Nova's photo shoot at the lighthouse and the rival battle that follows.
 
 ## Inspiration
@@ -16,16 +16,17 @@
 
 1. The road leaves Carnrudh's south-west corner (x 6–7) once the tor is done and Lumen's survey traffic has cleared.
 2. Along the coast path: a few trainers and the first coastal wild Pokémon.
-3. The headland: Nova is mid photo shoot for Lumen ("sunset at the lighthouse"), and challenges the player for the cameras. Afterwards Nova heads off ahead; Nova isn't at Porthliw's opening night.
-4. Below the cliffs, a seal cove with a fisherman who gives the player a fishing rod.
-5. The path carries on into Porthliw.
+3. Pen Morlo, the headland: Nova is mid photo shoot for Lumen ("sunset at the lighthouse"), and the director spots the player and asks for "a quick battle for the reel". Afterwards Nova heads off ahead; Nova isn't at Porthliw's opening night.
+4. Down in the bay below the headland, Seel on the rocks offshore and a fisherman, the lighthouse's retired keeper, who gives the player the Old Rod.
+5. The beach carries on west into Porthliw.
 
 ## The headland
 
-- The lighthouse is exterior only (no interior for now).
+- Named Pen Morlo (Cornish pen, head + morlo, seal: "seal head"), for the seals in the bay. The lighthouse is Pen Morlo Light, exterior only.
+- The keeper's cottage: the fisherman's home, with an interior (phase 4). He's out on the beach until he gives the rod, then at home.
 - Nova's battle (see Characters).
-- A seal cove below the cliffs: seals on the rocks, and a fisherman who gives the player a rod (the Old Rod, unless decided otherwise), so fishing starts here.
-- Optional trainers (e.g. a birdwatcher and a sailor) for extra experience before the gym.
+- The bay below the headland: Seel on the offshore rocks, and a fisherman on the beach who gives the player the Old Rod, so fishing starts here.
+- Optional trainers (e.g. a birdwatcher on the summit and a sailor on the beach) for extra experience before the gym.
 
 ## Map notes
 
@@ -41,7 +42,7 @@
     - 7: the lower terraces (Mossdeep's 5), reached by steps at x 17–18, row 25, and the bay.
     - Grass that replaced Mossdeep's buildings and trees takes the level of the ground around it. The only level-0 cells are Mossdeep's steps.
   - The north shore: the tree band and road at the top left continue Carnrudh's south band. East of x 11 the top rows are sea, with shoreline edges (`0x002`) on the plateau and the summit.
-  - The summit: the lighthouse (x 25–27, rows 5–10) and the keeper's cottage (x 19–22, rows 7–10, no interior yet, so its door is solid), with the lighthouse sign at (24, 10).
+  - The summit: the lighthouse (x 25–27, rows 5–10) and the keeper's cottage (x 19–22, rows 7–10; its door is solid until phase 4 adds the interior), with the lighthouse sign at (24, 10).
   - The bay: below the lowest terrace's cliff (row 34), with steps at x 14–15, a sand beach (x 0–29, rows 35–41) runs from the west edge to the sea, with boulders on the sand. Sea rocks and Mossdeep's small rock islet (x 33–37, rows 33–37) sit offshore. The beach reaching the west edge leaves room for the way to Porthliw.
   - Tidied by hand in Porymap and copied back into the generator: shoreline edges along the top row (the sea meets Carnrudh's land above) and the east column, a few cliff corners by the road and the summit, a cliff line at x 2 (rows 10–14), the cliff foot at row 20, and steps at x 5–6, row 33.
 - Signs (`bg_events`): the route sign at (8, 3) ("ROUTE 2 / ↑ CARNRUDH") and the lighthouse sign at (24, 10).
@@ -49,26 +50,24 @@
 ## Wild Pokémon (as built)
 
 - An encounter table is set (`gKerniaRoute2`, encounter rate 20, levels 9–12), but the new layout has no tall grass yet; it goes in with phase 2's trainers. The table: Wingull and Rookidee are the commonest, with Skwovet, Yamper, Wooloo, Nickit, and Gossifleur, and a rare Cramorant.
-- Fishing comes with the rod in phase 4 of `plans/route-2.md`.
+- Fishing comes with the rod in phase 4 of `plans/route-2.md`: Old Rod slots for Magikarp, Tentacool, and a Kernia coastal pick, from the bay's water.
 
 ## Characters
 
 - Nova: second rival battle, at the lighthouse during a Lumen photo shoot, all smiles for the cameras.
-  - Team: Pawmi, now with Electric moves, plus one "tech" Pokémon that feels like Lumen issued it (e.g. Magnemite or Voltorb). Levels 13–14.
+  - Team: Pawmi (Electric moves now) and Klink, Lumen-issued, both Lv13. Klink is Steel, so the team isn't all Electric.
+  - Tone: a polished brand ambassador, with rehearsed PR lines to the camera ("Lumen: bringing light to Kernia!"), slipping back into the real Nova when talking to the player.
+  - The battle is for the cameras: the director asks for "a quick battle for the reel", and Nova obliges.
+  - Nova doesn't know the player stopped Lumen at Carn Kowr; Lumen kept it quiet. The irony is the player's to enjoy.
   - Nova still believes in Lumen; the turn comes much later.
-- The fisherman at the seal cove (unnamed, local dialect): gives the rod.
+- The fisherman (unnamed, local dialect): the lighthouse's retired keeper. The light was automated years ago, and he stayed on and fishes the bay, wistful but content. He gives the Old Rod on the beach, then is at home in the cottage with lore about the light and after-lines.
 
 ## Trainers and levels
 
 - Gentle step up from gym 1 (Tanek's ace is Lv12; Enys's is Lv16, see `Porthliw.md`):
   - Route trainers: Lv11–13.
-  - Nova: Lv13–14.
+  - Nova: Lv13 (Pawmi and Klink).
   - Optional headland trainers: around Lv13.
-
-## Wild Pokémon
-
-- Coastal Flying and Water types start appearing alongside the moorland species from Route 1. Exact tables are decided when the route is built.
-- Fishing from the cove once the player has the rod.
 
 ## Decided against
 
@@ -78,7 +77,6 @@
 
 ## Open questions
 
-- The headland's and the lighthouse's Kernia names.
-- Nova's second Pokémon, and Nova's lines.
-- The rod: Old Rod or something else, and which water encounters it opens.
-- The route's trainers, wild tables, and items.
+- Nova's and the fisherman's exact lines. Written in phases 3 and 4.
+- The route trainers' classes, teams, and lines, and the items. Settled while building phase 2.
+- Settled: the Old Rod, the land table, Nova's team and tone, the cottage, the names (Pen Morlo and Pen Morlo Light), and Seel as the seals.
