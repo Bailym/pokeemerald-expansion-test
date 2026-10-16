@@ -147,6 +147,34 @@
 - Each Elite Four member has a line reacting to the corporation's fall, since it sponsored the League.
 - Champion: the professor. An ageing Champion who still holds the title, and whose final match is against the player. Can't openly act against the corporation because the League is officially neutral and the corporation sponsors it.
 
+## Field moves
+
+- HM-free, badge only: no Pokémon needs to know Cut, Surf and the rest. Each field ability unlocks with a badge, with no item or scene, and works for any party.
+- Using one: facing a rock, tree, boulder or water asks first ("This rock looks breakable. Smash it?"), then the obstacle clears with no Pokémon shown. Before the badge, the usual "can't use this yet" message.
+- Fly opens from the Town Map, which Kelyn gives with the starter kit in Balwyn (alongside the Pokédex, Poké Balls and Grampy's Journal). Kernia has no region map yet, so a stand-in image is used with Kernia's towns placed on its grid until the real map is drawn (`CustomArt.md`).
+- The moves themselves become ordinary TMs for battle: no HM discs, and they can be forgotten like any move.
+- Unlocks, themed to each gym and the moor zone that opens then:
+
+| Badge | Gym | Unlocks |
+|---|---|---|
+| 1 | Fire, Carnrudh (mining town) | Rock Smash |
+| 2 | Flying, Porthliw | Fly |
+| 3 | Psychic, Treveur (heath & tors opens) | Cut, Flash |
+| 4 | Steel, Falmouth (lake & river opens) | Surf |
+| 5 | Rock, clay country | Strength, Rock Climb |
+| 6 | Water, Newquay | Dive |
+| 7 | Ice, Padstow | — |
+| 8 | Dragon, Tintagel | Waterfall |
+
+- Defog isn't used.
+- Making unlocks obvious, three ways:
+  - The leader says it after handing over the badge, in their own voice (e.g. Tanek: smashing rocks is proper miner's work). Tanek's gym scene, already built, gets this line added.
+  - A system message with a jingle straight after: "You can now use ROCK SMASH outside of battle!" (two lines for badges that unlock two).
+  - The obstacle hints before the badge ("A sturdy rock. A gym badge might help you break it.") and offers to use the ability after it.
+  - Badge 7 unlocks nothing, so Padstow's leader has no line about it.
+- Areas already built get a few optional Rock Smash spots (hiding items or a shortcut), so badge 1 has a reward straight away.
+- Built as its own plan before Porthliw's.
+
 ## Pokémon
 
 - Starters: a themed trio of British wildlife, given by the professor in the player's village. All are 3-stage lines that evolve purely by level. No Grass starter.
