@@ -837,6 +837,19 @@ enum __attribute__((packed)) Item
     #undef ENUM_HM
     #undef TO_TMHM_NUMS
 
+    // OW_FIELD_MOVES_BADGE_ONLY: the HMs are TMs (see constants/tms_hms.h), so the old HM names
+    // refer to their TM items.
+    #if OW_FIELD_MOVES_BADGE_ONLY
+    #define ITEM_HM_CUT ITEM_TM_CUT
+    #define ITEM_HM_FLY ITEM_TM_FLY
+    #define ITEM_HM_SURF ITEM_TM_SURF
+    #define ITEM_HM_STRENGTH ITEM_TM_STRENGTH
+    #define ITEM_HM_FLASH ITEM_TM_FLASH
+    #define ITEM_HM_ROCK_SMASH ITEM_TM_ROCK_SMASH
+    #define ITEM_HM_WATERFALL ITEM_TM_WATERFALL
+    #define ITEM_HM_DIVE ITEM_TM_DIVE
+    #endif
+
     // Charms
     ITEM_OVAL_CHARM = 690,
     ITEM_SHINY_CHARM = 691,

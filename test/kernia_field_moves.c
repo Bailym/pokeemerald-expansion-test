@@ -2,6 +2,7 @@
 #include "event_data.h"
 #include "field_effect.h"
 #include "field_move.h"
+#include "item.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
 #include "constants/field_effects.h"
@@ -166,4 +167,30 @@ TEST("Dark maps light up with badge 3")
     u32 actualLitLevel = gSaveBlock1Ptr->flashLevel;
     EXPECT_EQ(actualLitLevel, expectedLitLevel);
     EXPECT(FlagGet(FLAG_SYS_USE_FLASH));
+}
+
+TEST("The former HM moves are ordinary moves that can be forgotten")
+{
+    enum Move move = MOVE_NONE;
+    PARAMETRIZE { move = MOVE_CUT; }
+    PARAMETRIZE { move = MOVE_FLY; }
+    PARAMETRIZE { move = MOVE_SURF; }
+    PARAMETRIZE { move = MOVE_STRENGTH; }
+    PARAMETRIZE { move = MOVE_FLASH; }
+    PARAMETRIZE { move = MOVE_ROCK_SMASH; }
+    PARAMETRIZE { move = MOVE_WATERFALL; }
+    PARAMETRIZE { move = MOVE_DIVE; }
+
+    EXPECT(!IsMoveHM(move));
+    EXPECT(!CannotForgetMove(move));
+}
+
+TEST("TM Surf is an ordinary TM that teaches Surf")
+{
+    const enum Move expectedMove = MOVE_SURF;
+    enum Move actualMove = GetItemTMHMMoveId(ITEM_TM_SURF);
+    EXPECT_EQ(actualMove, expectedMove);
+    EXPECT_LE(GetItemTMHMIndex(ITEM_TM_SURF), NUM_TECHNICAL_MACHINES);
+    // The old HM name still works, for vanilla scripts that give it.
+    EXPECT_EQ(ITEM_HM_SURF, ITEM_TM_SURF);
 }

@@ -52,7 +52,25 @@
     F(SKILL_SWAP) \
     F(SNATCH) \
     F(OVERHEAT) \
-    F(FLAME_CHARGE) /* Kernia: Tanek's badge 1 reward. */
+    F(FLAME_CHARGE) /* Kernia: Tanek's badge 1 reward. */ \
+    FOREACH_HM_AS_TM(F)
+
+// OW_FIELD_MOVES_BADGE_ONLY: field moves need only their badge, so the HMs are ordinary TMs
+// (TM52-TM59) that can be forgotten, and there are no HMs.
+#if OW_FIELD_MOVES_BADGE_ONLY
+#define FOREACH_HM_AS_TM(F) \
+    F(CUT) \
+    F(FLY) \
+    F(SURF) \
+    F(STRENGTH) \
+    F(FLASH) \
+    F(ROCK_SMASH) \
+    F(WATERFALL) \
+    F(DIVE)
+
+#define FOREACH_HM(F)
+#else
+#define FOREACH_HM_AS_TM(F)
 
 #define FOREACH_HM(F) \
     F(CUT) \
@@ -63,6 +81,7 @@
     F(ROCK_SMASH) \
     F(WATERFALL) \
     F(DIVE)
+#endif
 
 #define FOREACH_TMHM(F) \
     FOREACH_TM(F) \

@@ -115,7 +115,8 @@ Kernia's badges go into `gFieldMoveInfo`. A shared `EventScript_FieldMoveUnlocke
 
 **Not yet:** HMs as TMs, and unlock cues for badges 3–8 (each gym's own plan adds its leader's line and the shared message).
 
-### Phase 5 — HM moves become ordinary TMs
+### Phase 5 — HM moves become ordinary TMs ✅
+*(As built, behind `OW_FIELD_MOVES_BADGE_ONLY`: `FOREACH_HM_AS_TM` appends the eight moves to `FOREACH_TM` as TM52–TM59, and `FOREACH_HM` is empty, so `IsMoveHM` is never true and every move can be forgotten (`P_CAN_FORGET_HIDDEN_MOVE` left alone). `ITEM_HM_*` are aliases of the new `ITEM_TM_*`, so vanilla references needed no edits. The HM item entries became TMs (TM names, price 3000, `I_REUSABLE_TMS`), the `ITEM_TM52`–`59` placeholders are compiled out, and the old `ITEM_HM01`–`08` IDs are unused "?????" key items, so the item text tests and the random-item ban still pass. Tests: the former HM moves can be forgotten (written first), and TM Surf teaches Surf.)*
 **Deliverable:** No HM discs exist. Cut, Fly, Surf, Strength, Flash, Rock Smash, Waterfall and Dive are TM52–TM59, shown and used like any TM, and any move can be forgotten.
 **Verify:**
 - `make check` (full) passes, with `test/bag.c` updated for the new TM items.
@@ -125,10 +126,12 @@ Kernia's badges go into `gFieldMoveInfo`. A shared `EventScript_FieldMoveUnlocke
 - `include/constants/tms_hms.h`: the eight moves move from `FOREACH_HM` to the end of `FOREACH_TM` (`FOREACH_HM` empty). Make sure an empty list still compiles in `include/item.h` and `src/item.c`.
 - `src/data/items.h`: the `ITEM_HM_*` entries become `ITEM_TM_*` (replacing the `ITEM_TM52`–`59` placeholders), with TM prices and descriptions.
 - Every `ITEM_HM*` reference (vanilla map scripts, FRLG item balls, `test/bag.c`, `test/random_mon_generator.h`) moves to the TM names.
-- `P_CAN_FORGET_HIDDEN_MOVE` set to `TRUE`.
+- `P_CAN_FORGET_HIDDEN_MOVE` set to `TRUE`. (Not needed as built: with `FOREACH_HM` empty, `IsMoveHM` is always false, so every move can be forgotten anyway.)
 - `DESIGN.md`: where each new TM is found, left to the areas that place them.
 
 **Not yet:** placing the new TMs in Kernia (each area's plan), and the real region map art.
+
+**All five phases are done.** Placing TM52–TM59 in Kernia is left to the areas that give them out.
 
 ## Open questions
 - **The FireRed build** is broken on master: none of the Kernia layouts have the `border_width` field FireRed's mapjson needs. Until it's fixed or dropped, the phases' "`make firered` still builds" checks can't pass. Decide whether Kernia keeps FireRed building (a small separate fix) or is Emerald-only (drop those checks).

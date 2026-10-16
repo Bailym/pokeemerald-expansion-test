@@ -13082,6 +13082,7 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
+#if !OW_FIELD_MOVES_BADGE_ONLY
     [ITEM_TM52] =
     {
         .name = ITEM_NAME("TM52"),
@@ -13092,7 +13093,9 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
+#endif
 
+#if !OW_FIELD_MOVES_BADGE_ONLY
     [ITEM_TM53] =
     {
         .name = ITEM_NAME("TM53"),
@@ -13103,7 +13106,9 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
+#endif
 
+#if !OW_FIELD_MOVES_BADGE_ONLY
     [ITEM_TM54] =
     {
         .name = ITEM_NAME("TM54"),
@@ -13114,7 +13119,9 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
+#endif
 
+#if !OW_FIELD_MOVES_BADGE_ONLY
     [ITEM_TM55] =
     {
         .name = ITEM_NAME("TM55"),
@@ -13125,7 +13132,9 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
+#endif
 
+#if !OW_FIELD_MOVES_BADGE_ONLY
     [ITEM_TM56] =
     {
         .name = ITEM_NAME("TM56"),
@@ -13136,7 +13145,9 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
+#endif
 
+#if !OW_FIELD_MOVES_BADGE_ONLY
     [ITEM_TM57] =
     {
         .name = ITEM_NAME("TM57"),
@@ -13147,7 +13158,9 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
+#endif
 
+#if !OW_FIELD_MOVES_BADGE_ONLY
     [ITEM_TM58] =
     {
         .name = ITEM_NAME("TM58"),
@@ -13158,7 +13171,9 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
+#endif
 
+#if !OW_FIELD_MOVES_BADGE_ONLY
     [ITEM_TM59] =
     {
         .name = ITEM_NAME("TM59"),
@@ -13169,6 +13184,7 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
+#endif
 
     [ITEM_TM60] =
     {
@@ -13623,13 +13639,18 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_HM_CUT] =
     {
+    #if OW_FIELD_MOVES_BADGE_ONLY
+        .name = ITEM_NAME("TM52"),
+        .price = 3000,
+    #else
         .name = ITEM_NAME("HM01"),
         .price = 0,
+    #endif
         .description = COMPOUND_STRING(
             "Attacks the foe\n"
             "with sharp blades\n"
             "or claws."),
-        .importance = 1,
+        .importance = OW_FIELD_MOVES_BADGE_ONLY ? I_REUSABLE_TMS : 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
@@ -13637,13 +13658,18 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_HM_FLY] =
     {
+    #if OW_FIELD_MOVES_BADGE_ONLY
+        .name = ITEM_NAME("TM53"),
+        .price = 3000,
+    #else
         .name = ITEM_NAME("HM02"),
         .price = 0,
+    #endif
         .description = COMPOUND_STRING(
             "Flies up on the\n"
             "first turn, then\n"
             "attacks next turn."),
-        .importance = 1,
+        .importance = OW_FIELD_MOVES_BADGE_ONLY ? I_REUSABLE_TMS : 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
@@ -13651,8 +13677,13 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_HM_SURF] =
     {
+    #if OW_FIELD_MOVES_BADGE_ONLY
+        .name = ITEM_NAME("TM54"),
+        .price = 3000,
+    #else
         .name = ITEM_NAME("HM03"),
         .price = 0,
+    #endif
         .description = COMPOUND_STRING(
             "Creates a huge\n"
             "wave, then crashes\n"
@@ -13661,7 +13692,7 @@ const struct ItemInfo gItemsInfo[] =
         #else
             "it down on foes."),
         #endif
-        .importance = 1,
+        .importance = OW_FIELD_MOVES_BADGE_ONLY ? I_REUSABLE_TMS : 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
@@ -13669,13 +13700,18 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_HM_STRENGTH] =
     {
+    #if OW_FIELD_MOVES_BADGE_ONLY
+        .name = ITEM_NAME("TM55"),
+        .price = 3000,
+    #else
         .name = ITEM_NAME("HM04"),
         .price = 0,
+    #endif
         .description = COMPOUND_STRING(
             "Builds enormous\n"
             "power, then slams\n"
             "the foe."),
-        .importance = 1,
+        .importance = OW_FIELD_MOVES_BADGE_ONLY ? I_REUSABLE_TMS : 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
@@ -13683,13 +13719,18 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_HM_FLASH] =
     {
+    #if OW_FIELD_MOVES_BADGE_ONLY
+        .name = ITEM_NAME("TM56"),
+        .price = 3000,
+    #else
         .name = ITEM_NAME("HM05"),
         .price = 0,
+    #endif
         .description = COMPOUND_STRING(
             "Looses a powerful\n"
             "blast of light that\n"
             "lowers accuracy."),
-        .importance = 1,
+        .importance = OW_FIELD_MOVES_BADGE_ONLY ? I_REUSABLE_TMS : 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
@@ -13697,13 +13738,18 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_HM_ROCK_SMASH] =
     {
+    #if OW_FIELD_MOVES_BADGE_ONLY
+        .name = ITEM_NAME("TM57"),
+        .price = 3000,
+    #else
         .name = ITEM_NAME("HM06"),
         .price = 0,
+    #endif
         .description = COMPOUND_STRING(
             "A rock-crushingly\n"
             "tough attack that\n"
             "may lower Defense."),
-        .importance = 1,
+        .importance = OW_FIELD_MOVES_BADGE_ONLY ? I_REUSABLE_TMS : 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
@@ -13711,8 +13757,13 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_HM_WATERFALL] =
     {
+    #if OW_FIELD_MOVES_BADGE_ONLY
+        .name = ITEM_NAME("TM58"),
+        .price = 3000,
+    #else
         .name = ITEM_NAME("HM07"),
         .price = 0,
+    #endif
         .description = COMPOUND_STRING(
         #if B_UPDATED_MOVE_DATA >= GEN_4
             "Attacks with power\n"
@@ -13723,7 +13774,7 @@ const struct ItemInfo gItemsInfo[] =
             "with enough power\n"
             "to climb waterfalls."),
         #endif
-        .importance = 1,
+        .importance = OW_FIELD_MOVES_BADGE_ONLY ? I_REUSABLE_TMS : 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
@@ -13731,17 +13782,106 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_HM_DIVE] =
     {
+    #if OW_FIELD_MOVES_BADGE_ONLY
+        .name = ITEM_NAME("TM59"),
+        .price = 3000,
+    #else
         .name = ITEM_NAME("HM08"),
         .price = 0,
+    #endif
         .description = COMPOUND_STRING(
             "Dives underwater\n"
             "the 1st turn, then\n"
             "attacks next turn."),
-        .importance = 1,
+        .importance = OW_FIELD_MOVES_BADGE_ONLY ? I_REUSABLE_TMS : 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
+
+#if OW_FIELD_MOVES_BADGE_ONLY
+    // The HMs' old item IDs are unused: the HMs are TM52-TM59 (see constants/tms_hms.h).
+    [ITEM_HM01] =
+    {
+        .name = ITEM_NAME("?????"),
+        .price = 0,
+        .description = COMPOUND_STRING("?????"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_HM02] =
+    {
+        .name = ITEM_NAME("?????"),
+        .price = 0,
+        .description = COMPOUND_STRING("?????"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_HM03] =
+    {
+        .name = ITEM_NAME("?????"),
+        .price = 0,
+        .description = COMPOUND_STRING("?????"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_HM04] =
+    {
+        .name = ITEM_NAME("?????"),
+        .price = 0,
+        .description = COMPOUND_STRING("?????"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_HM05] =
+    {
+        .name = ITEM_NAME("?????"),
+        .price = 0,
+        .description = COMPOUND_STRING("?????"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_HM06] =
+    {
+        .name = ITEM_NAME("?????"),
+        .price = 0,
+        .description = COMPOUND_STRING("?????"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_HM07] =
+    {
+        .name = ITEM_NAME("?????"),
+        .price = 0,
+        .description = COMPOUND_STRING("?????"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_HM08] =
+    {
+        .name = ITEM_NAME("?????"),
+        .price = 0,
+        .description = COMPOUND_STRING("?????"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+#endif
 
 // Charms
 
