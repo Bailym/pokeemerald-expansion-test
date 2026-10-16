@@ -4,7 +4,7 @@
 
 Porthliw shares Route 2's General + Dewford tilesets, but Dewford has no paving or harbour walls.
 Slateport's grey paving, white kerbed quay edges (solid, so they work as the harbour railing),
-bollards, and moored sailboats are copied in whole: both layers, their attributes, and their
+bollards, moored sailboats, and its white statue (Porthliw's old harbour light) are copied in whole: both layers, their attributes, and their
 palettes. Slateport's palette 6 goes into Dewford's unused slot 6 and its palette 8 into unused
 slot 11; the tiles go into blank slots.
 
@@ -34,6 +34,12 @@ PIECES = [
     (0x338, 'BOAT_0'), (0x339, 'BOAT_1'), (0x33A, 'BOAT_2'),     # A 3x3 moored sailboat.
     (0x340, 'BOAT_3'), (0x341, 'BOAT_4'), (0x342, 'BOAT_5'),
     (0x348, 'BOAT_6'), (0x349, 'BOAT_7'), (0x34A, 'BOAT_8'),
+    # Slateport's white statue on its grass bed, Porthliw's old harbour light: a 6x5 bed with the
+    # 2x4 statue in its middle (the top half walk-behind, the base solid), framed in paving.
+    (0x2DE, 'BED_NW'), (0x34C, 'BED_N'), (0x2DD, 'BED_NE'), (0x345, 'BED_W'), (0x343, 'BED_E'),
+    (0x2D6, 'BED_SW'), (0x33C, 'BED_S'), (0x2D5, 'BED_SE'),
+    (0x246, 'LIGHT_0'), (0x247, 'LIGHT_1'), (0x24E, 'LIGHT_2'), (0x24F, 'LIGHT_3'),
+    (0x256, 'LIGHT_4'), (0x257, 'LIGHT_5'), (0x25E, 'LIGHT_6'), (0x25F, 'LIGHT_7'),
 ]
 HARBOUR = {name: FIRST_METATILE + i for i, (_, name) in enumerate(PIECES)}
 

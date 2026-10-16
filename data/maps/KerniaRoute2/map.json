@@ -306,6 +306,14 @@
       "elevation": 3,
       "item": "ITEM_PEARL",
       "flag": "FLAG_HIDDEN_ITEM_KERNIA_ROUTE2_PEARL"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 35,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "KerniaRoute2_EventScript_PorthliwSign"
     }
   ]
 }

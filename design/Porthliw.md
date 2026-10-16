@@ -39,6 +39,9 @@
 
 - A St Ives-style harbour bowl: a curved harbour with boats and a pier in the middle, and the town packed round it on rising ground.
 - The Pokémon Center, Mart, and gallery on the harbourfront; the gym at the top of the hill at the back.
+- Kerensa's Garden by the gym: a sculpture garden of standing stones, after Barbara Hepworth's in St Ives. Kerensa was a sculptor who carved there for forty years.
+- The harbour square on the paved headland west of the basin: the old harbour light (Slateport's white statue) on a bed of flowers, with flower planters. Its plaque: it guided the pilchard boats home for a hundred years.
+- Signs: the town, the gym (shut for the opening night until it's over), the gallery ("sponsored by Lumen"), Kerensa's Garden, and one on Route 2's beach pointing west.
 
 ## Already built that the plan must hook into
 

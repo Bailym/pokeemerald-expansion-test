@@ -181,7 +181,7 @@ for (x0, y0, x1, y1) in TALL_GRASS_PATCHES:
             if v & 0x3FF in (0x001, 0x004) and walkable(v):
                 L.m[y][x] = (TALL_GRASS & 0xFFF) | (v & 0xF000)
 
-SIGNS = {'route': (8, 3), 'lighthouse': (24, 10)}
+SIGNS = {'route': (8, 3), 'lighthouse': (24, 10), 'porthliw': (12, 35)}   # The last points west along the beach.
 for (x, y) in SIGNS.values():
     L.m[y][x] = SIGN
 

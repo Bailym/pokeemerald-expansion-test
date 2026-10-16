@@ -66,6 +66,20 @@ for (x, y) in [(20, 30), (25, 32), (14, 33)]:
 for x in (16, 23, 28):
     L.m[STREET_Y1][x] = B(HARBOUR['BOLLARD'], 1, 0)
 
+# The square on the headland: the old harbour light on a bed of flowers.
+def bed(name):
+    return B(HARBOUR['BED_' + name], 0, 3)
+def light(i, solid):
+    return B(HARBOUR['LIGHT_%d' % i], 1 if solid else 0, 0 if solid else 3)
+SQUARE_X, SQUARE_Y = 3, 28             # The bed's top-left; the light stands at x 5-6.
+L.stamp(SQUARE_X, SQUARE_Y, [
+    [bed('NW'), bed('N'), light(0, False), light(1, False), bed('N'), bed('NE')],
+    [bed('W'), FLOWER, light(2, False), light(3, False), FLOWER, bed('E')],
+    [bed('W'), FLOWER, light(4, True), light(5, True), FLOWER, bed('E')],
+    [bed('W'), FLOWER, light(6, True), light(7, True), FLOWER, bed('E')],
+    [bed('SW'), bed('S'), bed('S'), bed('S'), bed('S'), bed('SE')],
+])
+
 # The bowl: wooded slopes down each side, and two terraces climbing to the gym at the back.
 # Each terrace's cliff steps down at its ends.
 L.trees(0, 0, W - 1, 1)
@@ -96,8 +110,8 @@ def building(name, rows, x, y, door_dx):
     DOORS[name] = (x + door_dx, y + len(rows) - 1)
 
 building('gym', GYM, 18, 2, 3)
-building('house1', HOUSE, 9, 14, 1)
-building('house2', HOUSE, 30, 14, 1)
+building('house1', HOUSE, 7, 14, 1)
+building('house2', HOUSE, 27, 12, 1)
 building('pokemon_center', PC, 4, 22, 1)
 building('mart', MART, 9, 22, 1)
 building('gallery', WIDE_HOUSE, 26, 22, 2)
@@ -135,7 +149,7 @@ for (x, y) in [(29, 3), (34, 3), (29, 7), (34, 7), (28, 5), (35, 5)]:
 for (x, y) in [(31, 3), (32, 3), (30, 8), (33, 8), (29, 5), (34, 5)]:
     L.m[y][x] = FLOWER
 
-SIGNS = {'town': (32, 30), 'gym': (24, 6)}
+SIGNS = {'town': (32, 30), 'gym': (24, 6), 'gallery': (25, 25), 'sculpture_garden': (12, 5)}
 for (x, y) in SIGNS.values():
     L.m[y][x] = SIGN
 
@@ -195,6 +209,19 @@ HAND_EDITS = {
     (20, 12): B(0x38E, 0, 3),
     (20, 13): B(0x38E, 0, 3),
     (20, 14): B(0x38E, 0, 3),
+    # The middle terrace: the lower cliff's left end trimmed, and the trees above the Center
+    # finished with their bottom halves.
+    (10, 19): B(0x001, 0, 3),
+    (11, 19): B(0x001, 0, 3),
+    (12, 19): B(0x07B, 1, 0),
+    (2, 21): B(0x1E4, 0, 3),
+    (3, 21): B(0x1E5, 0, 3),
+    (4, 21): B(0x1E4, 0, 3),
+    (5, 21): B(0x1E5, 0, 3),
+    (2, 21): B(0x1E4, 1, 0),    # Then made solid, so the player can't walk under them.
+    (3, 21): B(0x1E5, 1, 0),
+    (4, 21): B(0x1E4, 1, 0),
+    (5, 21): B(0x1E5, 1, 0),
 }
 for (x, y), v in HAND_EDITS.items():
     L.stamp(x, y, [[v]])

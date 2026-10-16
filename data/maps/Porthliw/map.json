@@ -30,6 +30,54 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Porthliw_EventScript_TownSign"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Porthliw_EventScript_GymSign"
+    },
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Porthliw_EventScript_GymDoor"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Porthliw_EventScript_GallerySign"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Porthliw_EventScript_SculptureGardenSign"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Porthliw_EventScript_HarbourLight"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Porthliw_EventScript_HarbourLight"
     }
   ]
 }
