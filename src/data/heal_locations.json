@@ -365,6 +365,14 @@
       "y": 18,
       "respawn_map": "MAP_BALWYN_PLAYERS_HOUSE_1F",
       "respawn_npc": "LOCALID_BALWYN_PLAYERS_HOUSE_1F_MUM"
+    },
+    {
+      "id": "HEAL_LOCATION_PORTHLIW",
+      "map": "MAP_PORTHLIW",
+      "x": 5,
+      "y": 26,
+      "respawn_map": "MAP_PORTHLIW_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_PORTHLIW_NURSE"
     }
   ]
 }

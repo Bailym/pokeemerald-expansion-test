@@ -8,6 +8,7 @@
 #include "constants/field_effects.h"
 #include "overworld.h"
 #include "region_map.h"
+#include "constants/heal_locations.h"
 #include "constants/map_groups.h"
 #include "test/overworld_script.h"
 #include "test/test.h"
@@ -88,6 +89,7 @@ TEST("Kernia's outdoor maps open the Town Map on Kernia's region map")
     PARAMETRIZE { mapGroup = MAP_GROUP(MAP_CARNRUDH);     mapNum = MAP_NUM(MAP_CARNRUDH); }
     PARAMETRIZE { mapGroup = MAP_GROUP(MAP_CARN_KOWR);    mapNum = MAP_NUM(MAP_CARN_KOWR); }
     PARAMETRIZE { mapGroup = MAP_GROUP(MAP_KERNIA_ROUTE2); mapNum = MAP_NUM(MAP_KERNIA_ROUTE2); }
+    PARAMETRIZE { mapGroup = MAP_GROUP(MAP_PORTHLIW);     mapNum = MAP_NUM(MAP_PORTHLIW); }
 
     const enum RegionMapType expectedRegionMap = REGION_MAP_HOENN;
     u32 mapSec = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->regionMapSectionId;
@@ -102,6 +104,17 @@ TEST("Flying from the Town Map needs badge 2")
 
     FlagSet(FLAG_BADGE02_GET);
     EXPECT(CanFlyFromRegionMap());
+}
+
+// Picking a town on the Town Map flies the player to that town's heal location.
+TEST("Flying to Porthliw lands outside its Pokémon Center")
+{
+    struct RegionMap regionMap = {0};
+    regionMap.mapSecId = MAPSEC_PORTHLIW;
+
+    const u32 expectedDestination = HEAL_LOCATION_PORTHLIW;
+    u32 actualDestination = FilterFlyDestination(&regionMap);
+    EXPECT_EQ(actualDestination, expectedDestination);
 }
 
 TEST("Each field move unlocks at its Kernia badge and not before")

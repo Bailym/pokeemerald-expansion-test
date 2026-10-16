@@ -23,7 +23,8 @@ Same as Carnrudh and Route 2. Generate the town's layout by script (`tools/kerni
 
 ## Phases
 
-### Phase 1 — Walk into Porthliw, heal, shop, and fly back
+### Phase 1 — Walk into Porthliw, heal, shop, and fly back ✅
+*(As built: a harbour bowl after St Ives. A paved street runs along the harbour behind a solid white kerb, with the Center, Mart, gallery, and cottages facing it. The paved headland has the old harbour light, and the top terrace has the gym's plaza, Kerensa's Garden, and a lily pond. Slateport's paving, kerbs, bollards, boats, and statue are copied into Dewford by `tools/kernia/add_harbour_tiles.py`. The gym is shut by a note on its door (a sign event, no blocker). Signs for the gym, gallery, garden, and harbour light, plus one on Route 2's beach. Tests, written first: flying to Porthliw lands at `HEAL_LOCATION_PORTHLIW`, Porthliw opens Kernia's region map, and the `porthliw_arrived` scenario. No `check_levels.py` run: everything walkable is level 3. See `design/Porthliw.md`'s map notes.)*
 **Deliverable:** The player walks west off Route 2's beach into Porthliw, with a "PORTHLIW" popup and no seam at the join. They can heal at the Center, use the PC, shop at the Mart, and white out back to Porthliw's Center. The town map shows Porthliw west of Route 2, and once visited (with badge 2) it's a fly point. The gym door is shut with a sign about the opening night.
 **Verify:**
 - `make check TESTS="test/kernia_field_moves.c"` and `TESTS="Scenario"`: new tests, written first, pass. Porthliw opens Kernia's region map and is a fly destination once visited. A `porthliw_arrived` scenario has `FLAG_VISITED_PORTHLIW`.

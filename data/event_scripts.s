@@ -1762,6 +1762,12 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Porthliw/scripts.inc"
 
+	.include "data/maps/Porthliw_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/Porthliw_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/Porthliw_Mart/scripts.inc"
+
 	.include "data/maps/Carnrudh/scripts.inc"
 
 	.include "data/maps/Carnrudh_PokemonCenter_1F/scripts.inc"

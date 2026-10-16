@@ -14,7 +14,8 @@
 #define SCENARIO_CARNRUDH_BADGE1       8
 #define SCENARIO_ROUTE2_SUMMIT         9
 #define SCENARIO_ROUTE2_BAY            10
+#define SCENARIO_PORTHLIW_ARRIVED      11
 
-#define SCENARIOS_COUNT                11
+#define SCENARIOS_COUNT                12
 
 #endif // GUARD_CONSTANTS_DEBUG_SCENARIOS_H

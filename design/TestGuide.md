@@ -125,6 +125,18 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 - The lighthouse and cottage draw cleanly, and walking round them never puts them over the player.
 - Both signs read correctly (the lighthouse's says PEN MORLO LIGHT).
 
+## 9. Porthliw (arrival)
+
+**Story:** the beach carries on west from Route 2 into Porthliw, a harbour town after St Ives. A paved street runs along the harbour, and the town climbs two terraces to Enys's gym, which is shut for the gallery's opening night.
+
+- ⚠ **The join with Route 2** (`route2_bay`, then walk west): the beach and the moor's trees line up, the "PORTHLIW" popup shows, and walking back east shows "ROUTE 2".
+- ⚠ **Healing and whiting out:** the Center's nurse heals and the PC works. Losing a battle after visiting the Center sends you back to Porthliw's Center.
+- ⚠ **Fly** (`porthliw_arrived`): set badge 2 with the debug menu, open the Town Map, and Porthliw (west of Route 2) flies you to outside its Center. Fly to Carnrudh and back. Before badge 2, R does nothing.
+- The Mart sells Great Balls and Super Potions as well as the basics.
+- The gym door says it's locked, with Enys's note about the opening night.
+- The harbour wall's kerb, the bollards, the boats, and the harbour light's base are solid. You can walk out along the pier, and behind the top half of the harbour light and the middle terrace's roofs.
+- Every sign reads correctly: the town, the gym, the gallery, Kerensa's Garden, the harbour light's plaque (face its base), and Route 2's beach sign pointing west.
+
 ## Shortcuts
 
 After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new game already at that point (player KERNOW, Spheal as the starter), with trainers up to that point beaten and a team levelled for the next fight. `--list` shows them all. In VS Code, the **Play scenario** task builds and then lets you pick one.
@@ -141,6 +153,7 @@ After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new 
 | `carnrudh_badge1` | Outside the gym door with badge 1 and TM51 (`BADGE_WON`) | Spheal 14, Rookidee 12, Rolycoly 11 | Post-badge town and NPCs |
 | `route2_summit` | On Route 2's summit steps, between the two flights; hiker and bird keeper beaten, Nova's shoot on | Spheal 15, Rookidee 13, Rolycoly 12 | Walk up for Nova's shoot and battle. Also try losing, and the left and right step columns. |
 | `route2_bay` | On Route 2's beach below the middle steps, out of PASCOE's sight; Nova's shoot done, BRYOK, KENWYN and DEMELZA beaten | Spheal 15, Rookidee 14, Rolycoly 13, 5 Poké Balls | The fisherman and Old Rod, fishing, the old bull Seel (catch, beat, or run), PASCOE, the keeper's cottage |
+| `porthliw_arrived` | On the sand just inside Porthliw's east edge, in from Route 2's beach; Porthliw visited, no badge 2 | Spheal 16, Rookidee 15, Rolycoly 14, 5 Poké Balls | The town, the Center and Mart, signs, and Fly (set badge 2 with the debug menu) |
 
 - Optional extras (the Carnrudh wrestler, the school's Hard Stone) are left for you to do.
 - For anything else, the debug menu (R+Start) sets flags and vars. The values are in `include/constants/vars.h` (`BALWYN_STATE_*`, `CARNRUDH_STATE_*`) and the flag IDs in `include/constants/flags.h`.

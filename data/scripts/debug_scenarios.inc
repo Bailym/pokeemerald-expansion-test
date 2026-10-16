@@ -103,6 +103,13 @@ DebugScenarioStory_Route2Bay:
 	settrainerflag TRAINER_KERNIA_ROUTE2_PICNICKER
 	return
 
+@ West along Route 2's beach into Porthliw. The beach's fisherman, old bull Seel, and sailor are
+@ off the way, so they're left.
+DebugScenarioStory_PorthliwArrived:
+	call DebugScenarioStory_Route2Bay
+	setflag FLAG_VISITED_PORTHLIW
+	return
+
 @ Outside the house in Balwyn, ready for Route 1.
 DebugScenario_BalwynDone::
 	call DebugScenarioStory_BalwynDone
@@ -199,4 +206,15 @@ DebugScenario_Route2Bay::
 	additem ITEM_POTION, 5
 	additem ITEM_POKE_BALL, 5
 	setwarp MAP_KERNIA_ROUTE2, 15, 35
+	return
+
+@ On the sand just inside Porthliw's east edge, in from Route 2's beach, before the harbourfront.
+DebugScenario_PorthliwArrived::
+	call DebugScenarioStory_PorthliwArrived
+	givemon SPECIES_SPHEAL, 16
+	givemon SPECIES_ROOKIDEE, 15
+	givemon SPECIES_ROLYCOLY, 14
+	additem ITEM_POTION, 5
+	additem ITEM_POKE_BALL, 5
+	setwarp MAP_PORTHLIW, 40, 31
 	return

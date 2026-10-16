@@ -78,7 +78,8 @@
     "gMapGroup_KerniaTownsAndRoutes",
     "gMapGroup_IndoorBalwyn",
     "gMapGroup_IndoorCarnrudh",
-    "gMapGroup_IndoorKerniaRoute2"
+    "gMapGroup_IndoorKerniaRoute2",
+    "gMapGroup_IndoorPorthliw"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -1193,5 +1194,10 @@
   ],
   "gMapGroup_IndoorKerniaRoute2": [
     "KerniaRoute2_KeepersCottage"
+  ],
+  "gMapGroup_IndoorPorthliw": [
+    "Porthliw_PokemonCenter_1F",
+    "Porthliw_PokemonCenter_2F",
+    "Porthliw_Mart"
   ]
 }

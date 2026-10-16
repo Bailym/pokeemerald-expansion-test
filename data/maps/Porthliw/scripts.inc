@@ -1,5 +1,11 @@
 Porthliw_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Porthliw_OnTransition
 	.byte 0
+
+@ Porthliw can be flown to once visited (Town Map, badge 2).
+Porthliw_OnTransition:
+	setflag FLAG_VISITED_PORTHLIW
+	end
 
 Porthliw_EventScript_TownSign::
 	msgbox Porthliw_Text_TownSign, MSGBOX_SIGN

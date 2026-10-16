@@ -34,6 +34,7 @@ static void ExpectStartsAt(u32 expectedMapGroup, u32 expectedMapNum, u32 expecte
 #define TANEK_ACE_LEVEL           12 // Torkoal.
 #define NOVA_ROUTE2_ACE_LEVEL     13 // Pawmi and Klink.
 #define PASCOE_ACE_LEVEL          13 // Tentacool, the beach's sailor.
+#define ENYS_ACE_LEVEL            16 // Cramorant; Porthliw's gym is the next fight (planned, design/Porthliw.md).
 
 // A fitting team for the fight a scenario leads into: the strongest Pokémon is at the trainer's
 // ace level or up to two above, and nothing trails it by more than three.
@@ -247,6 +248,18 @@ TEST("Scenario route2_bay: Nova and the way down are done, with the beach still 
     EXPECT(FlagGet(FLAG_HIDE_KERNIA_ROUTE2_KEEPER_HOME));
     ExpectTeamReadyFor(PASCOE_ACE_LEVEL);
     ExpectStartsAt(MAP_GROUP(MAP_KERNIA_ROUTE2), MAP_NUM(MAP_KERNIA_ROUTE2), 15, 35);
+}
+
+TEST("Scenario porthliw_arrived: just in from Route 2's beach, with Porthliw visited and its gym shut")
+{
+    StartScenario(SCENARIO_PORTHLIW_ARRIVED);
+
+    EXPECT(FlagGet(FLAG_VISITED_PORTHLIW));
+    EXPECT(HasTrainerBeenFought(TRAINER_NOVA_ROUTE2));
+    EXPECT(!FlagGet(FLAG_BADGE02_GET));
+    EXPECT(CheckBagHasItem(ITEM_TOWN_MAP, 1));
+    ExpectTeamReadyFor(ENYS_ACE_LEVEL);
+    ExpectStartsAt(MAP_GROUP(MAP_PORTHLIW), MAP_NUM(MAP_PORTHLIW), 40, 31);
 }
 
 // Pokémon in a scenario stand in for ones the player raised, so they must obey: they're the
