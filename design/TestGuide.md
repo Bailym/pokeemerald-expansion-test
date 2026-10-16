@@ -101,11 +101,12 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 
 ## 8. Route 2 (the coast path)
 
-**Story:** the coast path south from Carnrudh, opened once the tor is saved. A terraced headland, Pen Morlo, steps down to the sea, with Pen Morlo Light on its summit and a sandy bay at its foot. Three trainers wait on the way down (a hiker, a bird keeper, a picnicker), with tall grass on each terrace. (Being built: Nova's battle and the fisherman come in later phases of `design/plans/route-2.md`.)
+**Story:** the coast path south from Carnrudh, opened once the tor is saved. A terraced headland, Pen Morlo, steps down to the sea, with Pen Morlo Light on its summit and a sandy bay at its foot. Three trainers wait on the way down (a hiker, a bird keeper, a picnicker), with tall grass on each terrace. At the top of the summit's steps, Nova is mid photo shoot for Lumen by the lighthouse, and the director wants a battle for the reel. (Being built: the fisherman and the bay come in phase 4 of `design/plans/route-2.md`.)
 
 - ⚠ Before the tor, the survey worker blocks the way out of Carnrudh. After it (`carnrudh_tor_done` or later), the worker's gone and the road is open.
 - ⚠ Seamless join with Carnrudh: the tree band and road line up, and the "ROUTE 2" popup shows.
 - ⚠ **Levels:** you can only change level by the steps: up two flights to the summit, down to the lower terraces, and down to the beach. Walking along a cliff edge never lets you step down (or up) without steps, and you can't get onto the thin ledges in the sea cliffs.
+- ⚠ **Nova's shoot** (`route2_summit`): stepping onto the summit from any of the three step columns starts the scene, and you end up facing Nova. Win and lose both carry on to the wrap (no whiteout), Nova and the crew vanish in the fade, and they stay gone after leaving and reloading. Nova's name box shows; the director's doesn't.
 - ⚠ Each trainer (BRYOK on the plateau, KENWYN by the summit's steps, DEMELZA on the lower terraces) spots you, battles once, and stays beaten after saving and reloading. If one can't be walked up to or talked to, its elevation is wrong.
 - Tall grass on each terrace gives wild battles (Lv9–12); open ground doesn't. You can walk into every patch.
 - The Great Ball (past the middle terraces' grass) and the hidden Pearl (by a boulder on the beach) can each be taken once.
@@ -127,6 +128,7 @@ After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new 
 | `carnrudh_tor_done` | On the peak in front of the drained Well; Peran beaten, Peran and Tanek gone (`TOR_DONE`) | Spheal 12, Rookidee 10, Rolycoly 9 | The dry Well, then walk down to town for the engineman's welcome and Charcoal |
 | `carnrudh_gym` | Outside the gym door; festival on and the engineman's welcome done, with Charcoal (`TOR_DONE`) | Spheal 13, Rookidee 11, Rolycoly 10 | The festival, the gym and Tanek |
 | `carnrudh_badge1` | Outside the gym door with badge 1 and TM51 (`BADGE_WON`) | Spheal 14, Rookidee 12, Rolycoly 11 | Post-badge town and NPCs |
+| `route2_summit` | On Route 2's summit steps, between the two flights; hiker and bird keeper beaten, Nova's shoot on | Spheal 15, Rookidee 13, Rolycoly 12 | Walk up for Nova's shoot and battle. Also try losing, and the left and right step columns. |
 
 - Optional extras (the Carnrudh wrestler, the school's Hard Stone) are left for you to do.
 - For anything else, the debug menu (R+Start) sets flags and vars. The values are in `include/constants/vars.h` (`BALWYN_STATE_*`, `CARNRUDH_STATE_*`) and the flag IDs in `include/constants/flags.h`.

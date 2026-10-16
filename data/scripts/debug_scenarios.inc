@@ -83,6 +83,14 @@ DebugScenarioStory_CarnrudhBadge1:
 	setflag FLAG_RECEIVED_TM_FLAME_CHARGE
 	return
 
+@ Down Route 2 and up to the summit: the hiker on the plateau and the bird keeper by the summit's
+@ steps are beaten. The picnicker, on the lower terraces off the way up, is left.
+DebugScenarioStory_Route2Summit:
+	call DebugScenarioStory_CarnrudhBadge1
+	settrainerflag TRAINER_KERNIA_ROUTE2_HIKER
+	settrainerflag TRAINER_KERNIA_ROUTE2_BIRD_KEEPER
+	return
+
 @ Outside the house in Balwyn, ready for Route 1.
 DebugScenario_BalwynDone::
 	call DebugScenarioStory_BalwynDone
@@ -157,4 +165,14 @@ DebugScenario_CarnrudhBadge1::
 	givemon SPECIES_ROLYCOLY, 11
 	additem ITEM_POTION, 3
 	setwarp MAP_CARNRUDH, 8, 10
+	return
+
+@ On the landing between the summit's two flights of steps, below the trigger for Nova's shoot.
+DebugScenario_Route2Summit::
+	call DebugScenarioStory_Route2Summit
+	givemon SPECIES_SPHEAL, 15
+	givemon SPECIES_ROOKIDEE, 13
+	givemon SPECIES_ROLYCOLY, 12
+	additem ITEM_POTION, 5
+	setwarp MAP_KERNIA_ROUTE2, 24, 18
 	return

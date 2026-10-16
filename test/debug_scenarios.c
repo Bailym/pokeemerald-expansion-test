@@ -32,6 +32,7 @@ static void ExpectStartsAt(u32 expectedMapGroup, u32 expectedMapNum, u32 expecte
 #define GRUNT_GATE_ACE_LEVEL       7 // Magnemite.
 #define PERAN_ACE_LEVEL            8 // Drilbur.
 #define TANEK_ACE_LEVEL           12 // Torkoal.
+#define NOVA_ROUTE2_ACE_LEVEL     13 // Pawmi and Klink.
 
 // A fitting team for the fight a scenario leads into: the strongest Pokémon is at the trainer's
 // ace level or up to two above, and nothing trails it by more than three.
@@ -205,4 +206,21 @@ TEST("Scenario carnrudh_badge1: Tanek is beaten, with badge 1 and TM51")
     EXPECT(CheckBagHasItem(ITEM_TM_FLAME_CHARGE, 1));
     ExpectTeamReadyFor(TANEK_ACE_LEVEL);
     ExpectStartsAt(MAP_GROUP(MAP_CARNRUDH), MAP_NUM(MAP_CARNRUDH), 8, 10);
+}
+
+TEST("Scenario route2_summit: below the summit with the way up cleared and Nova's shoot still on")
+{
+    StartScenario(SCENARIO_ROUTE2_SUMMIT);
+
+    const u32 expectedCarnrudhState = CARNRUDH_STATE_BADGE_WON;
+    const u32 actualCarnrudhState = VarGet(VAR_CARNRUDH_STATE);
+    EXPECT_EQ(actualCarnrudhState, expectedCarnrudhState);
+    EXPECT(FlagGet(FLAG_BADGE01_GET));
+    EXPECT(HasTrainerBeenFought(TRAINER_KERNIA_ROUTE2_HIKER));
+    EXPECT(HasTrainerBeenFought(TRAINER_KERNIA_ROUTE2_BIRD_KEEPER));
+    EXPECT(!HasTrainerBeenFought(TRAINER_KERNIA_ROUTE2_PICNICKER));
+    EXPECT(!HasTrainerBeenFought(TRAINER_NOVA_ROUTE2));
+    EXPECT(!FlagGet(FLAG_HIDE_KERNIA_ROUTE2_SHOOT));
+    ExpectTeamReadyFor(NOVA_ROUTE2_ACE_LEVEL);
+    ExpectStartsAt(MAP_GROUP(MAP_KERNIA_ROUTE2), MAP_NUM(MAP_KERNIA_ROUTE2), 24, 18);
 }

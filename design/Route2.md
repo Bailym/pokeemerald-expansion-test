@@ -63,6 +63,7 @@
   - The battle is for the cameras: the director asks for "a quick battle for the reel", and Nova obliges.
   - Nova doesn't know the player stopped Lumen at Carn Kowr; Lumen kept it quiet. The irony is the player's to enjoy.
   - Nova still believes in Lumen; the turn comes much later.
+  - As built (phase 3): `TRAINER_NOVA_ROUTE2` (Pawmi with Thunder Shock, Quick Attack, Charge, and Nuzzle; Klink with Vise Grip, Charge, and Thunder Shock). On the summit, Nova (24, 12) poses in front of the lighthouse with Pawmi (23, 12), a cameraman (26, 13), and a Lumen director (22, 13, `DEVON_EMPLOYEE` stand-in, no name box). Triggers on row 15 (x 23-25, the top of the steps, `VAR_TEMP_1` 0) start the scene: the director spots the player, who steps in to (24, 14). Nova does a piece to camera, then challenges the player as the real Nova. After the battle (win or lose) Nova mentions Lumen's "survey hiccup" on Carn Kowr, the director wraps, and Nova and the crew vanish in a fade (`FLAG_HIDE_KERNIA_ROUTE2_SHOOT`).
 - The fisherman (unnamed, local dialect): the lighthouse's retired keeper. The light was automated years ago, and he stayed on and fishes the bay, wistful but content. He gives the Old Rod on the beach, then is at home in the cottage with lore about the light and after-lines.
 
 ## Trainers and levels

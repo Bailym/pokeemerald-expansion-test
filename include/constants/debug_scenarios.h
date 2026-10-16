@@ -12,7 +12,8 @@
 #define SCENARIO_CARNRUDH_TOR_DONE     6
 #define SCENARIO_CARNRUDH_GYM          7
 #define SCENARIO_CARNRUDH_BADGE1       8
+#define SCENARIO_ROUTE2_SUMMIT         9
 
-#define SCENARIOS_COUNT                9
+#define SCENARIOS_COUNT                10
 
 #endif // GUARD_CONSTANTS_DEBUG_SCENARIOS_H
