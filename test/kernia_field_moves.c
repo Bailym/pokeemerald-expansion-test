@@ -1,6 +1,10 @@
 #include "global.h"
 #include "event_data.h"
+#include "field_effect.h"
 #include "field_move.h"
+#include "field_player_avatar.h"
+#include "field_screen_effect.h"
+#include "constants/field_effects.h"
 #include "overworld.h"
 #include "region_map.h"
 #include "constants/map_groups.h"
@@ -97,4 +101,69 @@ TEST("Flying from the Town Map needs badge 2")
 
     FlagSet(FLAG_BADGE02_GET);
     EXPECT(CanFlyFromRegionMap());
+}
+
+TEST("Each field move unlocks at its Kernia badge and not before")
+{
+    enum FieldMove fieldMove = 0;
+    u32 badgeFlag = 0;
+    PARAMETRIZE { fieldMove = FIELD_MOVE_ROCK_SMASH; badgeFlag = FLAG_BADGE01_GET; }
+    PARAMETRIZE { fieldMove = FIELD_MOVE_FLY;        badgeFlag = FLAG_BADGE02_GET; }
+    PARAMETRIZE { fieldMove = FIELD_MOVE_CUT;        badgeFlag = FLAG_BADGE03_GET; }
+    PARAMETRIZE { fieldMove = FIELD_MOVE_FLASH;      badgeFlag = FLAG_BADGE03_GET; }
+    PARAMETRIZE { fieldMove = FIELD_MOVE_SURF;       badgeFlag = FLAG_BADGE04_GET; }
+    PARAMETRIZE { fieldMove = FIELD_MOVE_STRENGTH;   badgeFlag = FLAG_BADGE05_GET; }
+    PARAMETRIZE { fieldMove = FIELD_MOVE_ROCK_CLIMB; badgeFlag = FLAG_BADGE05_GET; }
+    PARAMETRIZE { fieldMove = FIELD_MOVE_DIVE;       badgeFlag = FLAG_BADGE06_GET; }
+    PARAMETRIZE { fieldMove = FIELD_MOVE_WATERFALL;  badgeFlag = FLAG_BADGE08_GET; }
+
+    for (u32 flag = FLAG_BADGE01_GET; flag <= FLAG_BADGE08_GET; flag++)
+        FlagSet(flag);
+    FlagClear(badgeFlag);
+    EXPECT(!IsFieldMoveUnlocked(fieldMove));
+
+    FlagSet(badgeFlag);
+    EXPECT(IsFieldMoveUnlocked(fieldMove));
+}
+
+TEST("Surf can be used with badge 4 when no Pokémon knows it")
+{
+    ZeroPlayerPartyMons();
+    RUN_OVERWORLD_SCRIPT(
+        givemon SPECIES_SPHEAL, 10;
+    );
+
+    FlagClear(FLAG_BADGE04_GET);
+    EXPECT(!PartyHasMonWithSurf());
+
+    FlagSet(FLAG_BADGE04_GET);
+    EXPECT(PartyHasMonWithSurf());
+}
+
+TEST("No Pokémon is shown using a field move when there's no party slot")
+{
+    gFieldEffectArguments[0] = FIELD_MOVE_USER_NONE;
+
+    FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+
+    EXPECT(!FieldEffectActiveListContains(FLDEFF_FIELD_MOVE_SHOW_MON));
+}
+
+TEST("Dark maps light up with badge 3")
+{
+    gMapHeader.cave = TRUE;
+    FlagClear(FLAG_SYS_USE_FLASH);
+
+    FlagClear(FLAG_BADGE03_GET);
+    SetDefaultFlashLevel();
+    const u32 expectedDarkLevel = gMaxFlashLevel - 1;
+    u32 actualDarkLevel = gSaveBlock1Ptr->flashLevel;
+    EXPECT_EQ(actualDarkLevel, expectedDarkLevel);
+
+    FlagSet(FLAG_BADGE03_GET);
+    SetDefaultFlashLevel();
+    const u32 expectedLitLevel = 1; // The same light as using Flash.
+    u32 actualLitLevel = gSaveBlock1Ptr->flashLevel;
+    EXPECT_EQ(actualLitLevel, expectedLitLevel);
+    EXPECT(FlagGet(FLAG_SYS_USE_FLASH));
 }

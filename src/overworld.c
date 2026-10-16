@@ -11,6 +11,7 @@
 #include "debug_scenarios.h"
 #include "dexnav.h"
 #include "event_data.h"
+#include "field_move.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
 #include "fake_rtc.h"
@@ -1103,12 +1104,23 @@ bool32 Overworld_IsBikingAllowed(void)
 // Flash level of 1 is the largest flash radius
 // Flash level of 7 is the smallest flash radius
 // Flash level of 8 is fully black
+// Set when a dark map lights up by itself with Flash's badge, to show a message.
+bool8 gFlashLitByBadge;
+
 void SetDefaultFlashLevel(void)
 {
     if (!gMapHeader.cave)
         gSaveBlock1Ptr->flashLevel = 0;
     else if (FlagGet(FLAG_SYS_USE_FLASH))
         gSaveBlock1Ptr->flashLevel = 1;
+    else if (OW_FIELD_MOVES_BADGE_ONLY && IsFieldMoveUnlocked(FIELD_MOVE_FLASH))
+    {
+        // Dark maps light up by themselves once Flash's badge is won, with a message once the
+        // player has control (see ProcessPlayerFieldInput).
+        FlagSet(FLAG_SYS_USE_FLASH);
+        gSaveBlock1Ptr->flashLevel = 1;
+        gFlashLitByBadge = TRUE;
+    }
     else
         gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;
 }

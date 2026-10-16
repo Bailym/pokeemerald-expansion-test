@@ -3,6 +3,7 @@ EventScript_CutTree::
 	lockall
 	checkfieldmove FIELD_MOVE_CUT, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
+	goto_if_eq VAR_RESULT, FIELD_MOVE_USER_NONE, EventScript_CutTreeWithBadge
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	buffermovename STR_VAR_2, MOVE_CUT
@@ -38,6 +39,15 @@ EventScript_CheckTreeCantCut::
 	releaseall
 	end
 
+@ OW_FIELD_MOVES_BADGE_ONLY: the badge is enough, and the tree comes down with no Pokémon shown.
+EventScript_CutTreeWithBadge:
+	msgbox Text_WantToCut, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelCut
+	closemessage
+	playse SE_M_CUT
+	setvar VAR_0x8004, FALSE
+	goto EventScript_CutTreeDown
+
 EventScript_CancelCut::
 	closemessage
 	releaseall
@@ -52,8 +62,13 @@ Text_MonUsedFieldMove:
 	.string "{STR_VAR_1} used {STR_VAR_2}!$"
 
 Text_CantCut:
+#if OW_FIELD_MOVES_BADGE_ONLY
+	.string "A thick tree. A gym BADGE might\n"
+	.string "help you cut it down.$"
+#else
 	.string "This tree looks like it can be\n"
 	.string "CUT down!$"
+#endif
 
 @ Use rock smash from party menu
 EventScript_UseRockSmash::
@@ -258,6 +273,7 @@ EventScript_StrengthBoulder::
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
 	checkfieldmove FIELD_MOVE_STRENGTH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
+	goto_if_eq VAR_RESULT, FIELD_MOVE_USER_NONE, EventScript_StrengthWithBadge
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToStrength, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_CancelStrength
@@ -285,6 +301,15 @@ EventScript_CantStrength::
 	releaseall
 	end
 
+@ OW_FIELD_MOVES_BADGE_ONLY: boulders can be pushed for the rest of the map, with no Pokémon shown.
+EventScript_StrengthWithBadge:
+	msgbox Text_WantToStrengthWithBadge, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelStrength
+	setflag FLAG_SYS_USE_STRENGTH
+	msgbox Text_StrengthActivated, MSGBOX_DEFAULT
+	releaseall
+	end
+
 EventScript_CheckActivatedBoulder::
 	msgbox Text_StrengthActivated, MSGBOX_DEFAULT
 	releaseall
@@ -306,8 +331,17 @@ Text_MonUsedStrength:
 	.string "possible to move boulders around!$"
 
 Text_CantStrength:
+#if OW_FIELD_MOVES_BADGE_ONLY
+	.string "A big boulder. A gym BADGE might\n"
+	.string "help you push it aside.$"
+#else
 	.string "It's a big boulder, but a POKéMON\n"
 	.string "may be able to push it aside.$"
+#endif
+
+Text_WantToStrengthWithBadge:
+	.string "It's a big boulder.\n"
+	.string "Push it aside?$"
 
 Text_StrengthActivated:
 	.string "STRENGTH made it possible to move\n"
@@ -317,11 +351,23 @@ EventScript_UseWaterfall::
 	lockall
 	checkfieldmove FIELD_MOVE_WATERFALL
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
+	goto_if_eq VAR_RESULT, FIELD_MOVE_USER_NONE, EventScript_WaterfallWithBadge
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToWaterfall, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
 	msgbox Text_MonUsedWaterfall, MSGBOX_DEFAULT
+	hidefollowernpc
+	dofieldeffect FLDEFF_USE_WATERFALL
+	callnative FollowerNPC_WarpSetEnd
+	goto EventScript_EndWaterfall
+
+@ OW_FIELD_MOVES_BADGE_ONLY: climb the waterfall with no Pokémon shown.
+EventScript_WaterfallWithBadge:
+	setfieldeffectargument 0, VAR_RESULT
+	msgbox Text_WantToWaterfall, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
+	closemessage
 	hidefollowernpc
 	dofieldeffect FLDEFF_USE_WATERFALL
 	callnative FollowerNPC_WarpSetEnd
@@ -338,8 +384,13 @@ EventScript_EndWaterfall::
 	end
 
 Text_CantWaterfall:
+#if OW_FIELD_MOVES_BADGE_ONLY
+	.string "A wall of water is crashing down.\n"
+	.string "A gym BADGE might help you climb it.$"
+#else
 	.string "A wall of water is crashing down with\n"
 	.string "a mighty roar.$"
+#endif
 
 Text_WantToWaterfall:
 	.string "It's a large waterfall.\n"
@@ -352,6 +403,7 @@ EventScript_UseDive::
 	lockall
 	checkfieldmove FIELD_MOVE_DIVE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantDive
+	goto_if_eq VAR_RESULT, FIELD_MOVE_USER_NONE, EventScript_DiveWithBadge
 	copyvar 0x8004 VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -371,6 +423,17 @@ EventScript_CantDive::
 	releaseall
 	end
 
+@ OW_FIELD_MOVES_BADGE_ONLY: dive with no Pokémon shown.
+EventScript_DiveWithBadge:
+	msgbox Text_WantToDive, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_EndDive
+	closemessage
+	hidefollowernpc
+	setfieldeffectargument 0, FIELD_MOVE_USER_NONE
+	setfieldeffectargument 1, 1
+	dofieldeffect FLDEFF_USE_DIVE
+	goto EventScript_EndDive
+
 EventScript_EndDive::
 	releaseall
 	end
@@ -379,6 +442,7 @@ EventScript_UseDiveUnderwater::
 	lockall
 	checkfieldmove FIELD_MOVE_DIVE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSurface
+	goto_if_eq VAR_RESULT, FIELD_MOVE_USER_NONE, EventScript_SurfaceWithBadge
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
 	setfieldeffectargument 1, 1
@@ -389,6 +453,17 @@ EventScript_UseDiveUnderwater::
 	dofieldeffect FLDEFF_USE_DIVE
 	goto EventScript_EndSurface
 	end
+
+@ OW_FIELD_MOVES_BADGE_ONLY: surface with no Pokémon shown.
+EventScript_SurfaceWithBadge:
+	msgbox Text_WantToSurface, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_NoSurface
+	closemessage
+	hidefollowernpc
+	setfieldeffectargument 0, FIELD_MOVE_USER_NONE
+	setfieldeffectargument 1, 1
+	dofieldeffect FLDEFF_USE_DIVE
+	goto EventScript_EndSurface
 
 EventScript_CantSurface::
 	lockall
@@ -432,8 +507,13 @@ EventScript_UseCutGrass::
 	goto EventScript_CutGrassCommon
 
 Text_CantDive:
+#if OW_FIELD_MOVES_BADGE_ONLY
+	.string "The sea is deep here. A gym BADGE\n"
+	.string "might help you go underwater.$"
+#else
 	.string "The sea is deep here. A POKéMON\n"
 	.string "may be able to go underwater.$"
+#endif
 
 Text_WantToDive:
 	.string "The sea is deep here.\n"
@@ -478,6 +558,7 @@ EventScript_UseRockClimb::
 	lockall
 	checkfieldmove FIELD_MOVE_ROCK_CLIMB
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantRockClimb
+	goto_if_eq VAR_RESULT, FIELD_MOVE_USER_NONE, EventScript_RockClimbWithBadge
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToRockClimb, MSGBOX_YESNO
@@ -488,6 +569,16 @@ EventScript_UseRockClimb::
 	waitstate
 	goto EventScript_EndRockClimb
 	end
+
+@ OW_FIELD_MOVES_BADGE_ONLY: climb the cliff with no Pokémon shown.
+EventScript_RockClimbWithBadge:
+	setfieldeffectargument 0, VAR_RESULT
+	msgbox Text_WantToRockClimb, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_EndRockClimb
+	closemessage
+	dofieldeffect FLDEFF_USE_ROCK_CLIMB
+	waitstate
+	goto EventScript_EndRockClimb
 
 EventScript_CantRockClimb::
 	msgbox Text_CantRockClimb, MSGBOX_DEFAULT
@@ -504,5 +595,21 @@ Text_MonUsedRockClimb:
 	.string "{STR_VAR_1} used Rock Climb!$"
 
 Text_CantRockClimb:
+#if OW_FIELD_MOVES_BADGE_ONLY
+	.string "The cliff is steep.\n"
+	.string "A gym BADGE might help you climb it.$"
+#else
 	.string "The cliff is steep.\n"
 	.string "A Pokémon may be able to climb it.$"
+#endif
+
+@ OW_FIELD_MOVES_BADGE_ONLY: a dark map lit up by itself with Flash's badge (SetDefaultFlashLevel).
+EventScript_AreaLitByBadge::
+	lockall
+	msgbox Text_AreaLitByBadge, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Text_AreaLitByBadge:
+	.string "It's dark here, but your BADGE's\n"
+	.string "light has lit up the area!$"

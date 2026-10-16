@@ -176,7 +176,10 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_ROCK_CLIMB] =
     {
         .fieldMoveFunc = SetUpFieldMove_RockClimb,
-#if OW_ROCK_CLIMB_FIELD_MOVE
+#if OW_FIELD_MOVES_BADGE_ONLY
+        .unlockType = BADGE_UNLOCK,
+        .arg = FLAG_TO_BADGE(FLAG_BADGE05_GET),
+#elif OW_ROCK_CLIMB_FIELD_MOVE
         .unlockType = ALWAYS_UNLOCKED,
 #else
         .unlockType = CANT_UNLOCK,

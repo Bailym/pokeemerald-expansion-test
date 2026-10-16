@@ -8,6 +8,7 @@
 #include "field_effect.h"
 #include "field_effect_helpers.h"
 #include "field_screen_effect.h"
+#include "field_move.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
 #include "follower_npc.h"
@@ -1619,6 +1620,9 @@ bool8 PartyHasMonWithSurf(void)
 
     if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
+        // Surf needs only its badge, not a Pokémon that knows it.
+        if (OW_FIELD_MOVES_BADGE_ONLY)
+            return IsFieldMoveUnlocked(FIELD_MOVE_SURF);
         for (i = 0; i < PARTY_SIZE; i++)
         {
             if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) == SPECIES_NONE)

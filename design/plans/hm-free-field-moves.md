@@ -97,7 +97,8 @@ Kernia's badges go into `gFieldMoveInfo`. A shared `EventScript_FieldMoveUnlocke
 
 **Not yet:** Porthliw as a fly point (Porthliw's plan adds its section, visited flag, and Enys's unlock cue), and other moves.
 
-### Phase 4 — Cut, Strength, Surf, Waterfall, Dive and Rock Climb with no Pokémon
+### Phase 4 — Cut, Strength, Surf, Waterfall, Dive and Rock Climb with no Pokémon ✅
+*(As built: `FldEff_FieldMoveShowMonInit` shows nothing for a slot past the party, so every move's field effect runs with no Pokémon shown. `PartyHasMonWithSurf` is badge-only with the switch on. Rock Climb is `BADGE_UNLOCK` at badge 5 (its config switch stays off; only the table used it). Cut, Strength, Waterfall, Dive (and surfacing), Rock Climb and Surf scripts each have a `...WithBadge` branch, and Kernia hints before the badge. Flash: `SetDefaultFlashLevel` lights a dark map with badge 3 (flash level 1, vanilla's Flash circle) and sets `gFlashLitByBadge`, so `ProcessPlayerFieldInput` runs `EventScript_AreaLitByBadge` once the player has control. Tests written first: each move's badge, Surf without a Pokémon, no Pokémon shown with no slot, and dark maps lighting up. Checked in mGBA on Route 2 (Surf) and vanilla maps (Cut, Strength, Flash, Waterfall, Dive); Rock Climb has no vanilla walls.)*
 **Deliverable:** Every obstacle-based field move works on a party that doesn't know it, once its Kernia badge is won, with the ask-first prompt, no Pokémon shown, and the hint before the badge. This covers cutting a tree, pushing a boulder, surfing from a level-3 shore, climbing a waterfall, diving, and climbing a rock face.
 **Verify:**
 - `make check TESTS="test/kernia_field_moves.c"`: a test per move. Unlocked only at its Kernia badge, regardless of moves known.
@@ -131,12 +132,7 @@ Kernia's badges go into `gFieldMoveInfo`. A shared `EventScript_FieldMoveUnlocke
 
 ## Open questions
 - **The FireRed build** is broken on master: none of the Kernia layouts have the `border_width` field FireRed's mapjson needs. Until it's fixed or dropped, the phases' "`make firered` still builds" checks can't pass. Decide whether Kernia keeps FireRed building (a small separate fix) or is Emerald-only (drop those checks).
-- **Flash with no Pokémon:** there's no overworld trigger to hang it on. Three options:
-  - Dark maps light up on entry once badge 3 is won.
-  - Entering a dark map asks "Light the way?".
-  - It's left until Kernia has a dark map.
-
-  Settle by phase 4. No Kernia map is dark yet.
+- ~~**Flash with no Pokémon:**~~ Settled: dark maps light up by themselves on entry once badge 3 is won, with a message saying the area has been lit.
 - **The stand-in region map image:** which vanilla map to reuse, and where Balwyn, Carnrudh and Carn Kowr sit on it. Settle at the start of phase 3. Rendering a couple of candidates would help.
 - **Where the retrofit rocks go**, and what they hide (an item, a shortcut, a hidden cove). Settle at the start of phase 2.
 - **Balwyn's fly point:** outside the player's house, or by the village sign. Settle in phase 3.

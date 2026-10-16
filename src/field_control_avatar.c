@@ -178,6 +178,14 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (TryRunOnFrameMapScript() == TRUE)
         return TRUE;
 
+    // A dark map has just lit up by itself with Flash's badge (see SetDefaultFlashLevel).
+    if (gFlashLitByBadge)
+    {
+        gFlashLitByBadge = FALSE;
+        ScriptContext_SetupScript(EventScript_AreaLitByBadge);
+        return TRUE;
+    }
+
     if (input->pressedBButton && TrySetupDiveEmergeScript() == TRUE)
         return TRUE;
     if (input->tookStep)

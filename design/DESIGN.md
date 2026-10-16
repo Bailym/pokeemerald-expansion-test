@@ -166,6 +166,7 @@
 | 7 | Ice, Padstow | — |
 | 8 | Dragon, Tintagel | Waterfall |
 
+- Flash works by itself: once badge 3 is won, a dark map lights up as you enter it (the same light as using Flash), with a message saying the area has been lit.
 - Defog isn't used.
 - Making unlocks obvious, three ways:
   - The leader says it after handing over the badge, in their own voice (e.g. Tanek: smashing rocks is proper miner's work). Tanek's gym scene, already built, gets this line added.
