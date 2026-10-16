@@ -17,6 +17,11 @@
       "map": "MAP_CARNRUDH",
       "offset": 4,
       "direction": "up"
+    },
+    {
+      "map": "MAP_PORTHLIW",
+      "offset": 6,
+      "direction": "left"
     }
   ],
   "object_events": [

@@ -33,6 +33,7 @@ PLACES = [
     ('MAPSEC_CARNRUDH', [(7, 9)], TOWN),
     ('MAPSEC_CARN_KOWR', [(7, 8)], MOOR),
     ('MAPSEC_KERNIA_ROUTE_2', [(7, 10), (6, 10)], ROUTE),
+    ('MAPSEC_PORTHLIW', [(5, 10)], TOWN),
 ]
 
 

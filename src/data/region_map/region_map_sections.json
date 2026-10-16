@@ -1666,6 +1666,14 @@
       "y": 10,
       "width": 2,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_PORTHLIW",
+      "name": "PORTHLIW",
+      "x": 5,
+      "y": 10,
+      "width": 1,
+      "height": 1
     }
   ]
 }

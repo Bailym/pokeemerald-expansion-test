@@ -8,7 +8,8 @@ granite, like Cornwall's rock lighthouses, keeping the pale glass top as the lam
 Dewford's unused palette slot 12, and the tiles go into blank slots.
 
 A stand-in until real art exists (see design/CustomArt.md). Safe to re-run: earlier lighthouse
-tiles are cleared first, and the metatiles are appended once, then overwritten in place.
+tiles are cleared first, and the metatiles are appended once, then overwritten in place. Metatiles
+appended after the lighthouse (tools/kernia/add_harbour_tiles.py) are kept.
 """
 import os, struct, sys, zlib
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -88,20 +89,23 @@ def main():
     w, h, rows = read_png_indexed(tiles_path)
     plte, trns = png_chunk(tiles_path, b'PLTE'), png_chunk(tiles_path, b'tRNS')
 
-    # Clear any lighthouse from an earlier run.
-    for i in range(METATILE_COUNT_BEFORE * 16 + 8, len(meta), 16):
+    # Clear any lighthouse from an earlier run, keeping what comes after it.
+    count_after = METATILE_COUNT_BEFORE + len(MIRAGE_TOWER) * 3
+    for i in range(METATILE_COUNT_BEFORE * 16 + 8, min(len(meta), count_after * 16), 16):
         for q in range(4):
             n = (struct.unpack_from('<H', meta, i + q * 2)[0] & 0x3FF) - 512
             put_tile(rows, w, n, [[0] * 8 for _ in range(8)])
+    attrs = bytearray(open(attr_path, 'rb').read())
+    meta_tail, attrs_tail = meta[count_after * 16:], attrs[count_after * 2:]
     meta = meta[:METATILE_COUNT_BEFORE * 16]
-    attrs = bytearray(open(attr_path, 'rb').read())[:METATILE_COUNT_BEFORE * 2]
+    attrs = attrs[:METATILE_COUNT_BEFORE * 2]
 
     # Copy each distinct Mirage Tower tile once, keeping its flips.
     mw, mh, mrows = read_png_indexed(os.path.join(MAUVILLE, 'tiles.png'))
     mmeta = open(os.path.join(MAUVILLE, 'metatiles.bin'), 'rb').read()
     tops = [[struct.unpack_from('<4H', mmeta, (mid - 512) * 16 + 8) for mid in row] for row in MIRAGE_TOWER]
     sources = sorted({(e & 0x3FF) - 512 for row in tops for top in row for e in top})
-    slots = dict(zip(sources, free_slots(rows, w, meta, len(sources))))
+    slots = dict(zip(sources, free_slots(rows, w, meta + meta_tail, len(sources))))
     for src, dst in slots.items():
         put_tile(rows, w, dst, get_tile(mrows, mw, src))
     for row in tops:
@@ -116,8 +120,8 @@ def main():
         'JASC-PAL\n0100\n16\n' + ''.join(f'{r} {g} {b}\n' for r, g, b in pal))
 
     write_png_indexed(tiles_path, w, h, rows, plte, trns)
-    open(meta_path, 'wb').write(meta)
-    open(attr_path, 'wb').write(attrs)
+    open(meta_path, 'wb').write(meta + meta_tail)
+    open(attr_path, 'wb').write(attrs + attrs_tail)
     last = FIRST_METATILE + len(MIRAGE_TOWER) * 3 - 1
     print('metatiles', hex(FIRST_METATILE), '-', hex(last), 'tiles', len(slots), 'palette', PAL)
     if len(sys.argv) > 1:

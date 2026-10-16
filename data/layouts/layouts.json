@@ -9493,6 +9493,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/KerniaRoute2_KeepersCottage/border.bin",
       "blockdata_filepath": "data/layouts/KerniaRoute2_KeepersCottage/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORTHLIW",
+      "name": "Porthliw_Layout",
+      "width": 44,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/Porthliw/border.bin",
+      "blockdata_filepath": "data/layouts/Porthliw/map.bin"
     }
   ]
 }
