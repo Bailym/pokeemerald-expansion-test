@@ -102,6 +102,7 @@ Same as Carnrudh and Route 2. Generate the town's layout by script (`tools/kerni
 **Work:**
 - The gallery's paintings as `bg_event`s with captions, shown after `OPENING_DONE`, plus the curator and visitors.
 - Interiors copied from vanilla, with door warps, generated or hand-tuned in Porymap.
+  - **The east cottage (door (33, 25))** is east of Enys's triggers (x 31), so it can be entered before meeting her. Its lines must make sense before the meeting, or switch on `VAR_PORTHLIW_STATE`. Give it only its front door: an exit west of x 31 would let the player slip past her.
 - Townsfolk objects and scripts with "before" and "after" lines chosen by state. Include a gull-and-pasty joke and the gallery staff's view of the row.
 - A fishing table for Porthliw in `src/data/wild_encounters.json`.
 - An item or two, and optionally a breakable rock with its own `FLAG_TEMP_*`.
