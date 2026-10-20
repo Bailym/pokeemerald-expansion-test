@@ -57,7 +57,7 @@
 |---|---|---|---|---|
 | 0 | Pokémon Center | (5, 25) | `Porthliw_PokemonCenter_1F` (and `_2F`) | Shared `LAYOUT_POKEMON_CENTER_1F`/`_2F` |
 | 1 | Mart | (10, 25) | `Porthliw_Mart` | Shared `LAYOUT_MART` |
-| 2 | Gallery | (28, 25) | `Porthliw_Gallery` | Shared `LAYOUT_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F` |
+| 2 | Gallery | (28, 25) | `Porthliw_Gallery` | `LAYOUT_PORTHLIW_GALLERY`, a copy of Lilycove museum 1F with its stairs walled over |
 
 - No warps yet: the gym (21, 6) (shut, see its door note) and the cottages (16, 25), (33, 25), (8, 17), and (28, 15).
 - Enys paints at (29, 27), facing the harbour, until the opening night (`FLAG_HIDE_PORTHLIW_HARBOUR_ENYS`). Her walk-past triggers run down x 31, rows 21-28, the column every way in from Route 2 crosses. The gallery staff stand left of its door at (27, 26).

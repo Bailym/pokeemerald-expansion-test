@@ -1,7 +1,7 @@
 {
   "id": "MAP_PORTHLIW_GALLERY",
   "name": "Porthliw_Gallery",
-  "layout": "LAYOUT_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F",
+  "layout": "LAYOUT_PORTHLIW_GALLERY",
   "music": "MUS_LILYCOVE_MUSEUM",
   "region_map_section": "MAPSEC_PORTHLIW",
   "requires_flash": false,

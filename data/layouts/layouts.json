@@ -9503,6 +9503,16 @@
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Porthliw/border.bin",
       "blockdata_filepath": "data/layouts/Porthliw/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORTHLIW_GALLERY",
+      "name": "Porthliw_Gallery_Layout",
+      "width": 21,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_LilycoveMuseum",
+      "border_filepath": "data/layouts/Porthliw_Gallery/border.bin",
+      "blockdata_filepath": "data/layouts/Porthliw_Gallery/map.bin"
     }
   ]
 }
