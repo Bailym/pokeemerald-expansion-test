@@ -9513,6 +9513,16 @@
       "secondary_tileset": "gTileset_LilycoveMuseum",
       "border_filepath": "data/layouts/Porthliw_Gallery/border.bin",
       "blockdata_filepath": "data/layouts/Porthliw_Gallery/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORTHLIW_GYM",
+      "name": "Porthliw_Gym_Layout",
+      "width": 28,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_FortreeGym",
+      "border_filepath": "data/layouts/Porthliw_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/Porthliw_Gym/map.bin"
     }
   ]
 }

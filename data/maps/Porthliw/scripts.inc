@@ -15,15 +15,15 @@ Porthliw_EventScript_GymSign::
 	msgbox Porthliw_Text_GymSign, MSGBOX_SIGN
 	end
 
-@ The gym is shut until the gallery's opening night is over. Its studio comes with phase 4
-@ of design/plans/porthliw.md; until then the door stays locked with the note gone.
-Porthliw_EventScript_GymDoor::
-	goto_if_ge VAR_PORTHLIW_STATE, PORTHLIW_STATE_OPENING_DONE, Porthliw_EventScript_GymDoorNoteGone
-	msgbox Porthliw_Text_GymDoorShut, MSGBOX_SIGN
-	end
-
-Porthliw_EventScript_GymDoorNoteGone::
-	msgbox Porthliw_Text_GymDoorNoteGone, MSGBOX_SIGN
+@ The gym is shut until the gallery's opening night is over. Walking into a door warps before any
+@ sign is read, so the note is a trigger on the step below the door that turns the player back.
+Porthliw_EventScript_GymShut::
+	lockall
+	msgbox Porthliw_Text_GymDoorShut, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	releaseall
 	end
 
 Porthliw_EventScript_GallerySign::
@@ -200,11 +200,6 @@ Porthliw_Text_GymDoorShut:
 	.string "pinned to it…\p"
 	.string "“GYM SHUT for the gallery's\n"
 	.string "opening night. - ENYS”$"
-
-Porthliw_Text_GymDoorNoteGone:
-	.string "The note's been taken down.\p"
-	.string "Someone's moving canvases about\n"
-	.string "in there…$"
 
 Porthliw_Text_GallerySign:
 	.string "PORTHLIW GALLERY\n"

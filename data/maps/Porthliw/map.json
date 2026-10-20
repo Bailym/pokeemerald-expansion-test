@@ -70,6 +70,13 @@
       "elevation": 0,
       "dest_map": "MAP_PORTHLIW_GALLERY",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_PORTHLIW_GYM",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -153,6 +160,24 @@
       "var": "VAR_PORTHLIW_STATE",
       "var_value": "0",
       "script": "Porthliw_EventScript_GalleryTurnedAway"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 7,
+      "elevation": 3,
+      "var": "VAR_PORTHLIW_STATE",
+      "var_value": "0",
+      "script": "Porthliw_EventScript_GymShut"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 7,
+      "elevation": 3,
+      "var": "VAR_PORTHLIW_STATE",
+      "var_value": "1",
+      "script": "Porthliw_EventScript_GymShut"
     }
   ],
   "bg_events": [
@@ -171,14 +196,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Porthliw_EventScript_GymSign"
-    },
-    {
-      "type": "sign",
-      "x": 21,
-      "y": 6,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Porthliw_EventScript_GymDoor"
     },
     {
       "type": "sign",
