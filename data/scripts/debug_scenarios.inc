@@ -110,6 +110,12 @@ DebugScenarioStory_PorthliwArrived:
 	setflag FLAG_VISITED_PORTHLIW
 	return
 
+@ Enys has called the player over on the harbourfront and invited them to the gallery's opening.
+DebugScenarioStory_PorthliwMetEnys:
+	call DebugScenarioStory_PorthliwArrived
+	setvar VAR_PORTHLIW_STATE, PORTHLIW_STATE_MET_ENYS
+	return
+
 @ Outside the house in Balwyn, ready for Route 1.
 DebugScenario_BalwynDone::
 	call DebugScenarioStory_BalwynDone
@@ -217,4 +223,15 @@ DebugScenario_PorthliwArrived::
 	additem ITEM_POTION, 5
 	additem ITEM_POKE_BALL, 5
 	setwarp MAP_PORTHLIW, 40, 31
+	return
+
+@ On the harbourfront street just west of where Enys stopped the player, short of the gallery door.
+DebugScenario_PorthliwMetEnys::
+	call DebugScenarioStory_PorthliwMetEnys
+	givemon SPECIES_SPHEAL, 16
+	givemon SPECIES_ROOKIDEE, 15
+	givemon SPECIES_ROLYCOLY, 14
+	additem ITEM_POTION, 5
+	additem ITEM_POKE_BALL, 5
+	setwarp MAP_PORTHLIW, 30, 27
 	return

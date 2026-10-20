@@ -15,7 +15,8 @@
 #define SCENARIO_ROUTE2_SUMMIT         9
 #define SCENARIO_ROUTE2_BAY            10
 #define SCENARIO_PORTHLIW_ARRIVED      11
+#define SCENARIO_PORTHLIW_MET_ENYS     12
 
-#define SCENARIOS_COUNT                12
+#define SCENARIOS_COUNT                13
 
 #endif // GUARD_CONSTANTS_DEBUG_SCENARIOS_H

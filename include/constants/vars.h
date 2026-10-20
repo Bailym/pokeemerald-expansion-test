@@ -158,7 +158,7 @@
 #define VAR_CONTEST_TYPE                                 0x4088
 #define VAR_SECRET_BASE_INITIALIZED                      0x4089
 #define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-#define VAR_UNUSED_0x408B                                0x408B // Unused Var
+#define VAR_PORTHLIW_STATE                               0x408B // Porthliw's story, see PORTHLIW_STATE_*
 #define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN              0x408C
 #define VAR_LITTLEROOT_RIVAL_STATE                       0x408D
 #define VAR_BOARD_BRINEY_BOAT_STATE                      0x408E
@@ -356,5 +356,9 @@
 #define CARNRUDH_STATE_STONES_DONE  5 // The Well has drained and shown the carvings.
 #define CARNRUDH_STATE_TOR_DONE     6 // Peran is beaten and has left the peak; the gym is open.
 #define CARNRUDH_STATE_BADGE_WON    7 // Tanek is beaten; badge 1 and TM51 Flame Charge.
+
+// Values for VAR_PORTHLIW_STATE, in story order (see design/plans/porthliw.md).
+#define PORTHLIW_STATE_ARRIVED      0 // The gym is shut for the gallery's opening night.
+#define PORTHLIW_STATE_MET_ENYS     1 // Enys has invited the player; the gallery staff let them in.
 
 #endif // GUARD_CONSTANTS_VARS_H

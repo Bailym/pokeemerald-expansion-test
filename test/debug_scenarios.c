@@ -254,12 +254,28 @@ TEST("Scenario porthliw_arrived: just in from Route 2's beach, with Porthliw vis
 {
     StartScenario(SCENARIO_PORTHLIW_ARRIVED);
 
+    const u32 expectedPorthliwState = PORTHLIW_STATE_ARRIVED;
+    const u32 actualPorthliwState = VarGet(VAR_PORTHLIW_STATE);
+    EXPECT_EQ(actualPorthliwState, expectedPorthliwState);
     EXPECT(FlagGet(FLAG_VISITED_PORTHLIW));
     EXPECT(HasTrainerBeenFought(TRAINER_NOVA_ROUTE2));
     EXPECT(!FlagGet(FLAG_BADGE02_GET));
     EXPECT(CheckBagHasItem(ITEM_TOWN_MAP, 1));
     ExpectTeamReadyFor(ENYS_ACE_LEVEL);
     ExpectStartsAt(MAP_GROUP(MAP_PORTHLIW), MAP_NUM(MAP_PORTHLIW), 40, 31);
+}
+
+TEST("Scenario porthliw_met_enys: on the harbourfront after Enys's invitation, before the opening")
+{
+    StartScenario(SCENARIO_PORTHLIW_MET_ENYS);
+
+    const u32 expectedPorthliwState = PORTHLIW_STATE_MET_ENYS;
+    const u32 actualPorthliwState = VarGet(VAR_PORTHLIW_STATE);
+    EXPECT_EQ(actualPorthliwState, expectedPorthliwState);
+    EXPECT(FlagGet(FLAG_VISITED_PORTHLIW));
+    EXPECT(!FlagGet(FLAG_BADGE02_GET));
+    ExpectTeamReadyFor(ENYS_ACE_LEVEL);
+    ExpectStartsAt(MAP_GROUP(MAP_PORTHLIW), MAP_NUM(MAP_PORTHLIW), 30, 27);
 }
 
 // Pokémon in a scenario stand in for ones the player raised, so they must obey: they're the

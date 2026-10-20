@@ -20,6 +20,7 @@ enum SpeakerNames {
     SP_NAME_KENWYN,
     SP_NAME_DEMELZA,
     SP_NAME_PASCOE,
+    SP_NAME_ENYS,
     SP_NAME_COUNT
 };
 
