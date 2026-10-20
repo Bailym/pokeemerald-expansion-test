@@ -116,6 +116,15 @@ DebugScenarioStory_PorthliwMetEnys:
 	setvar VAR_PORTHLIW_STATE, PORTHLIW_STATE_MET_ENYS
 	return
 
+@ The gallery's opening night is done: Sloane's speech, Enys's answer, and Sloane's exit. Sloane,
+@ the crowd, and Enys have left the gallery, and Enys has left the harbour for the gym.
+DebugScenarioStory_PorthliwOpeningDone:
+	call DebugScenarioStory_PorthliwMetEnys
+	setvar VAR_PORTHLIW_STATE, PORTHLIW_STATE_OPENING_DONE
+	setflag FLAG_HIDE_PORTHLIW_OPENING
+	setflag FLAG_HIDE_PORTHLIW_HARBOUR_ENYS
+	return
+
 @ Outside the house in Balwyn, ready for Route 1.
 DebugScenario_BalwynDone::
 	call DebugScenarioStory_BalwynDone
@@ -234,4 +243,15 @@ DebugScenario_PorthliwMetEnys::
 	additem ITEM_POTION, 5
 	additem ITEM_POKE_BALL, 5
 	setwarp MAP_PORTHLIW, 30, 27
+	return
+
+@ Just outside the gallery door, after the opening night, with the gym open up the hill.
+DebugScenario_PorthliwOpeningDone::
+	call DebugScenarioStory_PorthliwOpeningDone
+	givemon SPECIES_SPHEAL, 16
+	givemon SPECIES_ROOKIDEE, 15
+	givemon SPECIES_ROLYCOLY, 14
+	additem ITEM_POTION, 5
+	additem ITEM_POKE_BALL, 5
+	setwarp MAP_PORTHLIW, 28, 26
 	return

@@ -15,9 +15,15 @@ Porthliw_EventScript_GymSign::
 	msgbox Porthliw_Text_GymSign, MSGBOX_SIGN
 	end
 
-@ The gym is shut until the gallery's opening night is over.
+@ The gym is shut until the gallery's opening night is over. Its rooftop studio comes with phase 4
+@ of design/plans/porthliw.md; until then the door stays locked with the note gone.
 Porthliw_EventScript_GymDoor::
+	goto_if_ge VAR_PORTHLIW_STATE, PORTHLIW_STATE_OPENING_DONE, Porthliw_EventScript_GymDoorNoteGone
 	msgbox Porthliw_Text_GymDoorShut, MSGBOX_SIGN
+	end
+
+Porthliw_EventScript_GymDoorNoteGone::
+	msgbox Porthliw_Text_GymDoorNoteGone, MSGBOX_SIGN
 	end
 
 Porthliw_EventScript_GallerySign::
@@ -195,6 +201,11 @@ Porthliw_Text_GymDoorShut:
 	.string "“GYM SHUT for the gallery's\n"
 	.string "opening night. - ENYS”$"
 
+Porthliw_Text_GymDoorNoteGone:
+	.string "The note's been taken down.\p"
+	.string "Someone's moving canvases about\n"
+	.string "up on the roof…$"
+
 Porthliw_Text_GallerySign:
 	.string "PORTHLIW GALLERY\n"
 	.string "Grand opening night!\p"
@@ -219,7 +230,7 @@ Porthliw_Text_EnysCallsOut:
 Porthliw_Text_EnysIntro:
 	.string "Sorry to holler. You walked\n"
 	.string "right into my light!\p"
-	.string "I'm ENYS. I paint the gulls\n"
+	.string "I'm Enys. I paint the gulls\n"
 	.string "over the bay, when they sit still.$"
 
 Porthliw_Text_EnysGymShut:
@@ -242,7 +253,7 @@ Porthliw_Text_EnysInvite:
 
 Porthliw_Text_EnysRepeat:
 	.string "The gallery's just there. Tell\n"
-	.string "the door ENYS sent you.\p"
+	.string "the door Enys sent you.\p"
 	.string "I'll finish these gulls first.\n"
 	.string "Proper fidgets, they are.$"
 
@@ -252,5 +263,5 @@ Porthliw_Text_GalleryInvitationOnly:
 	.string "Lumen's orders, not mine.$"
 
 Porthliw_Text_GalleryGoOnIn:
-	.string "ENYS's guest? Go on in,\n"
+	.string "Enys's guest? Go on in,\n"
 	.string "my 'ansum.$"

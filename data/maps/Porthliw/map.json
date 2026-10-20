@@ -31,7 +31,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Porthliw_EventScript_Enys",
-      "flag": "0",
+      "flag": "FLAG_HIDE_PORTHLIW_HARBOUR_ENYS",
       "local_id": "LOCALID_PORTHLIW_ENYS"
     },
     {

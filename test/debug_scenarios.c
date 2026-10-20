@@ -278,6 +278,20 @@ TEST("Scenario porthliw_met_enys: on the harbourfront after Enys's invitation, b
     ExpectStartsAt(MAP_GROUP(MAP_PORTHLIW), MAP_NUM(MAP_PORTHLIW), 30, 27);
 }
 
+TEST("Scenario porthliw_opening_done: outside the gallery after the opening night, with the gym open")
+{
+    StartScenario(SCENARIO_PORTHLIW_OPENING_DONE);
+
+    const u32 expectedPorthliwState = PORTHLIW_STATE_OPENING_DONE;
+    const u32 actualPorthliwState = VarGet(VAR_PORTHLIW_STATE);
+    EXPECT_EQ(actualPorthliwState, expectedPorthliwState);
+    EXPECT(FlagGet(FLAG_HIDE_PORTHLIW_OPENING));
+    EXPECT(FlagGet(FLAG_HIDE_PORTHLIW_HARBOUR_ENYS));
+    EXPECT(!FlagGet(FLAG_BADGE02_GET));
+    ExpectTeamReadyFor(ENYS_ACE_LEVEL);
+    ExpectStartsAt(MAP_GROUP(MAP_PORTHLIW), MAP_NUM(MAP_PORTHLIW), 28, 26);
+}
+
 // Pokémon in a scenario stand in for ones the player raised, so they must obey: they're the
 // player's own, and met at or below the badge level limit (Gen 8+ obedience goes by met level).
 TEST("Every scenario's Pokémon obey the player")

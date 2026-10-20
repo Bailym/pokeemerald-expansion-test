@@ -146,6 +146,15 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 - Talking to Enys afterwards gives her short repeat line, and she turns back to the harbour.
 - No one blocks the street: you can walk past Enys and the staff to the Center and Mart.
 
+## 11. Porthliw (the opening night)
+
+**Story:** at the gallery's opening, Sloane, Lumen's Head of PR, presents Lumen as friends of the arts. Enys answers her in front of everyone: the east road, the light going dull, and Carn Kowr's stones. Sloane makes a smooth exit, and Enys opens her gym.
+
+- ⚠ **The scene** (`porthliw_met_enys`, then walk into the gallery): you walk up behind the crowd, and the scene plays through with Sloane's and Enys's name boxes. The guests turn to Enys, two react, and Sloane stops in front of you before leaving by the door. Nobody walks through anyone else. After the fade, only two guests are left.
+- ⚠ **No replay** (`porthliw_opening_done`): go into the gallery. The scene doesn't play, and the two guests left have after-lines. Also after a reload.
+- Outside, Enys has gone from the harbour wall, and the gym door's note is gone (the gym itself comes next).
+- Every text box fits (one to three short pages, nothing running off the box).
+
 ## Shortcuts
 
 After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new game already at that point (player KERNOW, Spheal as the starter), with trainers up to that point beaten and a team levelled for the next fight. `--list` shows them all. In VS Code, the **Play scenario** task builds and then lets you pick one.
@@ -163,7 +172,8 @@ After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new 
 | `route2_summit` | On Route 2's summit steps, between the two flights; hiker and bird keeper beaten, Nova's shoot on | Spheal 15, Rookidee 13, Rolycoly 12 | Walk up for Nova's shoot and battle. Also try losing, and the left and right step columns. |
 | `route2_bay` | On Route 2's beach below the middle steps, out of PASCOE's sight; Nova's shoot done, BRYOK, KENWYN and DEMELZA beaten | Spheal 15, Rookidee 14, Rolycoly 13, 5 Poké Balls | The fisherman and Old Rod, fishing, the old bull Seel (catch, beat, or run), PASCOE, the keeper's cottage |
 | `porthliw_arrived` | On the sand just inside Porthliw's east edge, in from Route 2's beach; Porthliw visited, no badge 2 | Spheal 16, Rookidee 15, Rolycoly 14, 5 Poké Balls | The town, the Center and Mart, signs, and Fly (set badge 2 with the debug menu) |
-| `porthliw_met_enys` | On the harbourfront street next to Enys, just west of her triggers; Enys met (`MET_ENYS`) | Spheal 16, Rookidee 15, Rolycoly 14, 5 Poké Balls | Enys's repeat line, the gallery staff and door |
+| `porthliw_met_enys` | On the harbourfront street next to Enys, just west of her triggers; Enys met (`MET_ENYS`) | Spheal 16, Rookidee 15, Rolycoly 14, 5 Poké Balls | Enys's repeat line, the gallery staff and door, and the opening night |
+| `porthliw_opening_done` | Outside the gallery door after the opening night (`OPENING_DONE`) | Spheal 16, Rookidee 15, Rolycoly 14, 5 Poké Balls | The gallery after the opening, the gym door |
 
 - Optional extras (the Carnrudh wrestler, the school's Hard Stone) are left for you to do.
 - For anything else, the debug menu (R+Start) sets flags and vars. The values are in `include/constants/vars.h` (`BALWYN_STATE_*`, `CARNRUDH_STATE_*`, `PORTHLIW_STATE_*`) and the flag IDs in `include/constants/flags.h`.

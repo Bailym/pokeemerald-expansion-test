@@ -360,5 +360,6 @@
 // Values for VAR_PORTHLIW_STATE, in story order (see design/plans/porthliw.md).
 #define PORTHLIW_STATE_ARRIVED      0 // The gym is shut for the gallery's opening night.
 #define PORTHLIW_STATE_MET_ENYS     1 // Enys has invited the player; the gallery staff let them in.
+#define PORTHLIW_STATE_OPENING_DONE 2 // Sloane's speech and Enys's answer are done; the gym is open.
 
 #endif // GUARD_CONSTANTS_VARS_H
