@@ -155,6 +155,16 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 - Outside, Enys has gone from the harbour wall, and the gym door opens into her studio, the walkway shaped like a standing gull. Before the opening night (`porthliw_met_enys`), stepping up to the door shows the note and turns you back.
 - Every text box fits (one to three short pages, nothing running off the box).
 
+## 12. Porthliw Gym (Enys)
+
+**Story:** Enys's studio, its walkway shaped like a standing gull. Two of her painting students, then Enys for the GULL BADGE, Fly, and TM40 Aerial Ace. Afterwards she shares her suspicion: her gulls won't fly over Lumen's sites, and wheel away west when the ground hums.
+
+- ⚠ **The gauntlet** (`porthliw_gym`): walk the bird. TOMAS spots you in the belly and MORVEN on the back, and you can't sneak past either. Each battles once, and neither blocks the way afterwards.
+- ⚠ **Enys** (`porthliw_gym`): beat her, then the badge jingle, "You can now use FLY outside of battle!", and the TM. Talking to her again gives her suspicion and the east road, also after a reload. Lose to her once too: nothing extra plays.
+- ⚠ **Fly** (`porthliw_badge2`): open the Town Map and fly to Carnrudh, then back to Porthliw.
+- The trainer card shows badge 2 (the Feather Badge's art for now).
+- The gym guide's tip, and his line after the badge. The statues name you after the badge.
+
 ## Shortcuts
 
 After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new game already at that point (player KERNOW, Spheal as the starter), with trainers up to that point beaten and a team levelled for the next fight. `--list` shows them all. In VS Code, the **Play scenario** task builds and then lets you pick one.
@@ -174,6 +184,8 @@ After `make`, `python3 tools/playtest/play.py <scenario>` opens mGBA with a new 
 | `porthliw_arrived` | On the sand just inside Porthliw's east edge, in from Route 2's beach; Porthliw visited, no badge 2 | Spheal 16, Rookidee 15, Rolycoly 14, 5 Poké Balls | The town, the Center and Mart, signs, and Fly (set badge 2 with the debug menu) |
 | `porthliw_met_enys` | On the harbourfront street next to Enys, just west of her triggers; Enys met (`MET_ENYS`) | Spheal 16, Rookidee 15, Rolycoly 14, 5 Poké Balls | Enys's repeat line, the gallery staff and door, and the opening night |
 | `porthliw_opening_done` | Outside the gallery door after the opening night (`OPENING_DONE`) | Spheal 16, Rookidee 15, Rolycoly 14, 5 Poké Balls | The gallery after the opening, the gym door |
+| `porthliw_gym` | Inside Enys's studio, by the door (`OPENING_DONE`) | Spheal 16, Rookidee 15, Rolycoly 14, Yamper 14 (Nuzzle), 5 Poké Balls | The gym's students and Enys |
+| `porthliw_badge2` | Outside the gym door with badge 2 and TM40 (`BADGE_WON`) | Spheal 16, Rookidee 15, Rolycoly 14, Yamper 14 (Nuzzle), 5 Poké Balls | Fly, post-badge Enys, the gym guide and statues |
 
 - Optional extras (the Carnrudh wrestler, the school's Hard Stone) are left for you to do.
 - For anything else, the debug menu (R+Start) sets flags and vars. The values are in `include/constants/vars.h` (`BALWYN_STATE_*`, `CARNRUDH_STATE_*`, `PORTHLIW_STATE_*`) and the flag IDs in `include/constants/flags.h`.

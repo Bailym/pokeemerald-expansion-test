@@ -31,7 +31,7 @@
 
 - Enys's painting studio: canvases, easels, and skylights, in the building at the top of the hill at the back of the town.
 - The walkway is a gull standing side-on, facing left, as Misty's pool is a seahorse (chosen from renders on 2026-10-20). In at the right foot, along the belly to the tail, back along the bird's back, then up the neck to Enys in the head. The folded wing is solid right up to the chest, so the belly only joins the back round the tail end. Straight corridors only, two tiles wide, with no puzzle. The beak and the left leg are short nooks (the gym guide stands in the leg).
-- Two of Enys's painting students (Lv14–15, a bird or two each), then Enys.
+- Two of Enys's painting students, then Enys: TOMAS the Sketcher (Pidove and Starly Lv14) in the belly, and MORVEN the Painter (Ducklett Lv15) on the back. A gym guide in the left leg tips ROCK and ELECTRIC moves, and a Yamper from Route 2 (its Nuzzle is 4× against Wingull and Cramorant).
 - Enys's team: Wingull Lv15, Wattrel Lv15, and her ace Cramorant Lv16.
 - Reward: badge 2, the GULL BADGE, and TM Aerial Ace.
 

@@ -34,7 +34,7 @@ static void ExpectStartsAt(u32 expectedMapGroup, u32 expectedMapNum, u32 expecte
 #define TANEK_ACE_LEVEL           12 // Torkoal.
 #define NOVA_ROUTE2_ACE_LEVEL     13 // Pawmi and Klink.
 #define PASCOE_ACE_LEVEL          13 // Tentacool, the beach's sailor.
-#define ENYS_ACE_LEVEL            16 // Cramorant; Porthliw's gym is the next fight (planned, design/Porthliw.md).
+#define ENYS_ACE_LEVEL            16 // Cramorant, Porthliw's gym. Also stands in for the fight after it, still unbuilt.
 
 // A fitting team for the fight a scenario leads into: the strongest Pokémon is at the trainer's
 // ace level or up to two above, and nothing trails it by more than three.
@@ -290,6 +290,38 @@ TEST("Scenario porthliw_opening_done: outside the gallery after the opening nigh
     EXPECT(!FlagGet(FLAG_BADGE02_GET));
     ExpectTeamReadyFor(ENYS_ACE_LEVEL);
     ExpectStartsAt(MAP_GROUP(MAP_PORTHLIW), MAP_NUM(MAP_PORTHLIW), 28, 26);
+}
+
+TEST("Scenario porthliw_gym: inside Enys's studio with the gym still to do")
+{
+    StartScenario(SCENARIO_PORTHLIW_GYM);
+
+    const u32 expectedPorthliwState = PORTHLIW_STATE_OPENING_DONE;
+    const u32 actualPorthliwState = VarGet(VAR_PORTHLIW_STATE);
+    EXPECT_EQ(actualPorthliwState, expectedPorthliwState);
+    EXPECT(!HasTrainerBeenFought(TRAINER_PORTHLIW_GYM_SKETCHER));
+    EXPECT(!HasTrainerBeenFought(TRAINER_PORTHLIW_GYM_PAINTER));
+    EXPECT(!HasTrainerBeenFought(TRAINER_ENYS));
+    EXPECT(!FlagGet(FLAG_BADGE02_GET));
+    ExpectTeamReadyFor(ENYS_ACE_LEVEL);
+    ExpectStartsAt(MAP_GROUP(MAP_PORTHLIW_GYM), MAP_NUM(MAP_PORTHLIW_GYM), 16, 20);
+}
+
+TEST("Scenario porthliw_badge2: Enys is beaten, with badge 2 and TM40")
+{
+    StartScenario(SCENARIO_PORTHLIW_BADGE2);
+
+    const u32 expectedPorthliwState = PORTHLIW_STATE_BADGE_WON;
+    const u32 actualPorthliwState = VarGet(VAR_PORTHLIW_STATE);
+    EXPECT_EQ(actualPorthliwState, expectedPorthliwState);
+    EXPECT(HasTrainerBeenFought(TRAINER_PORTHLIW_GYM_SKETCHER));
+    EXPECT(HasTrainerBeenFought(TRAINER_PORTHLIW_GYM_PAINTER));
+    EXPECT(HasTrainerBeenFought(TRAINER_ENYS));
+    EXPECT(FlagGet(FLAG_BADGE02_GET));
+    EXPECT(FlagGet(FLAG_RECEIVED_TM_AERIAL_ACE));
+    EXPECT(CheckBagHasItem(ITEM_TM_AERIAL_ACE, 1));
+    ExpectTeamReadyFor(ENYS_ACE_LEVEL);
+    ExpectStartsAt(MAP_GROUP(MAP_PORTHLIW), MAP_NUM(MAP_PORTHLIW), 21, 7);
 }
 
 // Pokémon in a scenario stand in for ones the player raised, so they must obey: they're the

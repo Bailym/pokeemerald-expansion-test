@@ -125,6 +125,18 @@ DebugScenarioStory_PorthliwOpeningDone:
 	setflag FLAG_HIDE_PORTHLIW_HARBOUR_ENYS
 	return
 
+@ Enys's studio is done: both students and Enys beaten, badge 2 (Fly), and TM40 Aerial Ace.
+DebugScenarioStory_PorthliwBadge2:
+	call DebugScenarioStory_PorthliwOpeningDone
+	settrainerflag TRAINER_PORTHLIW_GYM_SKETCHER
+	settrainerflag TRAINER_PORTHLIW_GYM_PAINTER
+	settrainerflag TRAINER_ENYS
+	setflag FLAG_BADGE02_GET
+	setvar VAR_PORTHLIW_STATE, PORTHLIW_STATE_BADGE_WON
+	additem ITEM_TM_AERIAL_ACE
+	setflag FLAG_RECEIVED_TM_AERIAL_ACE
+	return
+
 @ Outside the house in Balwyn, ready for Route 1.
 DebugScenario_BalwynDone::
 	call DebugScenarioStory_BalwynDone
@@ -254,4 +266,28 @@ DebugScenario_PorthliwOpeningDone::
 	additem ITEM_POTION, 5
 	additem ITEM_POKE_BALL, 5
 	setwarp MAP_PORTHLIW, 28, 26
+	return
+
+@ Inside Enys's studio, just in from the door, with both students and Enys still to fight.
+DebugScenario_PorthliwGym::
+	call DebugScenarioStory_PorthliwOpeningDone
+	givemon SPECIES_SPHEAL, 16
+	givemon SPECIES_ROOKIDEE, 15
+	givemon SPECIES_ROLYCOLY, 14
+	givemon SPECIES_YAMPER, 14
+	additem ITEM_POTION, 5
+	additem ITEM_POKE_BALL, 5
+	setwarp MAP_PORTHLIW_GYM, 16, 20
+	return
+
+@ Outside the gym door with badge 2 and TM40.
+DebugScenario_PorthliwBadge2::
+	call DebugScenarioStory_PorthliwBadge2
+	givemon SPECIES_SPHEAL, 16
+	givemon SPECIES_ROOKIDEE, 15
+	givemon SPECIES_ROLYCOLY, 14
+	givemon SPECIES_YAMPER, 14
+	additem ITEM_POTION, 5
+	additem ITEM_POKE_BALL, 5
+	setwarp MAP_PORTHLIW, 21, 7
 	return

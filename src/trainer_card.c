@@ -1510,7 +1510,8 @@ static void DrawCardFrontOrBack(u16 *ptr)
 }
 
 // Kernia: badge 1 (Tanek's Fire ENGINE BADGE) uses the Heat Badge's art as a stand-in, swapped with the Stone Badge's.
-static const u8 sHoennBadgeArt[NUM_BADGES] = {3, 1, 2, 0, 4, 5, 6, 7};
+// Badge 2 (Enys's Flying GULL BADGE) uses the Feather Badge's, swapped with the Knuckle Badge's.
+static const u8 sHoennBadgeArt[NUM_BADGES] = {3, 5, 2, 0, 4, 1, 6, 7};
 
 static void DrawStarsAndBadgesOnCard(void)
 {
