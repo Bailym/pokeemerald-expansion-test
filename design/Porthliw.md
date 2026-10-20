@@ -29,9 +29,9 @@
 
 ## The gym
 
-- A rooftop studio: skylights, canvases, and gull perches.
-- At the top of the hill at the back of the town, entered by an ordinary front door; the interior is the rooftop.
-- A short trainer gauntlet like gym 1, with no puzzle: two of Enys's painting students in a line (Lv14–15, a bird or two each), then Enys.
+- Enys's painting studio: canvases, easels, and skylights, in the building at the top of the hill at the back of the town.
+- The walkway is shaped like a gull in flight, as Misty's pool is a seahorse. In through the tail, out along one wing to the first student and the other wing to the second, then up the neck to Enys at the head. It's mostly linear, with a few short dead ends and no puzzle. Its exact shape is settled with a render.
+- Two of Enys's painting students (Lv14–15, a bird or two each), then Enys.
 - Enys's team: Wingull Lv15, Wattrel Lv15, and her ace Cramorant Lv16.
 - Reward: badge 2, the GULL BADGE, and TM Aerial Ace.
 
@@ -85,7 +85,8 @@
 - Sloane with Nova, Nova or Sterling as Lumen's speaker.
 - The gym open on arrival, or a small errand instead of the opening night.
 - Other ways into the opening: walking straight into the gallery (Enys would first appear mid-speech), a door attendant with no Enys meeting, or a fade to an evening version of the town (needs a night tint or map state).
-- A wind-current puzzle or a gallery maze in the gym.
+- A wind-current puzzle or a true maze in the gym: the gull-shaped walkway gives it shape and stays mostly linear.
+- A rooftop studio (dropped on 2026-10-20): it added nothing to the story, and the building has only one floor.
 - Reopening the east road straight after the speech: it stays gated on badge 2.
 - Porthwyn, Treliw, and Golowyn as the town's name.
 

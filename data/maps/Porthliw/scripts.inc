@@ -15,7 +15,7 @@ Porthliw_EventScript_GymSign::
 	msgbox Porthliw_Text_GymSign, MSGBOX_SIGN
 	end
 
-@ The gym is shut until the gallery's opening night is over. Its rooftop studio comes with phase 4
+@ The gym is shut until the gallery's opening night is over. Its studio comes with phase 4
 @ of design/plans/porthliw.md; until then the door stays locked with the note gone.
 Porthliw_EventScript_GymDoor::
 	goto_if_ge VAR_PORTHLIW_STATE, PORTHLIW_STATE_OPENING_DONE, Porthliw_EventScript_GymDoorNoteGone
@@ -204,7 +204,7 @@ Porthliw_Text_GymDoorShut:
 Porthliw_Text_GymDoorNoteGone:
 	.string "The note's been taken down.\p"
 	.string "Someone's moving canvases about\n"
-	.string "up on the roof…$"
+	.string "in there…$"
 
 Porthliw_Text_GallerySign:
 	.string "PORTHLIW GALLERY\n"
