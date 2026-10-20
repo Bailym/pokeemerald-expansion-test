@@ -61,7 +61,7 @@
 
 - No warps yet: the gym (21, 6) (shut, see its door note) and the cottages (16, 25), (33, 25), (8, 17), and (28, 15).
 - Enys paints at (29, 27), facing the harbour, until the opening night (`FLAG_HIDE_PORTHLIW_HARBOUR_ENYS`). Her walk-past triggers run down x 31, rows 21-28, the column every way in from Route 2 crosses. The gallery staff stand left of its door at (27, 26).
-- `Porthliw_Gallery`: the opening night's stage spot is (11, 7), where Sloane stands. The player watches from (11, 11), behind the crowd. Of the four guests, the beauty (10, 9) and the artist (8, 9) stay after the opening.
+- `Porthliw_Gallery`: the opening night's stage spot is (11, 7), where Sloane stands. The player watches from (11, 11), behind the crowd. Of the four guests, the beauty (10, 9) and the artist (8, 9) stay after the opening, moved to the paintings at (5, 2) and (3, 7) (in the closing fade, then by `ON_TRANSITION`).
 - The Mart sells Poké Balls, Great Balls, Potions, Super Potions, Antidotes, Paralyze Heals, Awakenings, and Escape Ropes.
 
 ## Already built that the plan must hook into

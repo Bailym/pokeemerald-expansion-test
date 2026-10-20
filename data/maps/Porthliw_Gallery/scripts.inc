@@ -1,6 +1,20 @@
 Porthliw_Gallery_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Porthliw_Gallery_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Porthliw_Gallery_OnFrame
 	.byte 0
+
+@ The two guests who stay after the opening stand in the crowd until then, and with the
+@ paintings after it.
+Porthliw_Gallery_OnTransition:
+	call_if_ge VAR_PORTHLIW_STATE, PORTHLIW_STATE_OPENING_DONE, Porthliw_Gallery_EventScript_GuestsToPaintings
+	end
+
+Porthliw_Gallery_EventScript_GuestsToPaintings::
+	setobjectxyperm LOCALID_PORTHLIW_GALLERY_BEAUTY, 5, 2
+	setobjectmovementtype LOCALID_PORTHLIW_GALLERY_BEAUTY, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_PORTHLIW_GALLERY_ARTIST, 3, 7
+	setobjectmovementtype LOCALID_PORTHLIW_GALLERY_ARTIST, MOVEMENT_TYPE_FACE_UP
+	return
 
 Porthliw_Gallery_OnFrame:
 	map_script_2 VAR_PORTHLIW_STATE, PORTHLIW_STATE_MET_ENYS, Porthliw_Gallery_EventScript_OpeningNight
@@ -59,6 +73,10 @@ Porthliw_Gallery_EventScript_OpeningNight::
 	removeobject LOCALID_PORTHLIW_GALLERY_ENYS
 	removeobject LOCALID_PORTHLIW_GALLERY_GENTLEMAN
 	removeobject LOCALID_PORTHLIW_GALLERY_WOMAN
+	setobjectxy LOCALID_PORTHLIW_GALLERY_BEAUTY, 5, 2
+	turnobject LOCALID_PORTHLIW_GALLERY_BEAUTY, DIR_NORTH
+	setobjectxy LOCALID_PORTHLIW_GALLERY_ARTIST, 3, 7
+	turnobject LOCALID_PORTHLIW_GALLERY_ARTIST, DIR_NORTH
 	setflag FLAG_HIDE_PORTHLIW_OPENING
 	setflag FLAG_HIDE_PORTHLIW_HARBOUR_ENYS
 	setvar VAR_PORTHLIW_STATE, PORTHLIW_STATE_OPENING_DONE

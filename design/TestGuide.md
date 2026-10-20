@@ -150,8 +150,8 @@ A rough playthrough of Kernia from a new game, with what to check along the way.
 
 **Story:** at the gallery's opening, Sloane, Lumen's Head of PR, presents Lumen as friends of the arts. Enys answers her in front of everyone: the east road, the light going dull, and Carn Kowr's stones. Sloane makes a smooth exit, and Enys opens her gym.
 
-- ⚠ **The scene** (`porthliw_met_enys`, then walk into the gallery): you walk up behind the crowd, and the scene plays through with Sloane's and Enys's name boxes. The guests turn to Enys, two react, and Sloane stops in front of you before leaving by the door. Nobody walks through anyone else. After the fade, only two guests are left.
-- ⚠ **No replay** (`porthliw_opening_done`): go into the gallery. The scene doesn't play, and the two guests left have after-lines. Also after a reload.
+- ⚠ **The scene** (`porthliw_met_enys`, then walk into the gallery): you walk up behind the crowd, and the scene plays through with Sloane's and Enys's name boxes. The guests turn to Enys, two react, and Sloane stops in front of you before leaving by the door. Nobody walks through anyone else. After the fade, only two guests are left, looking at the paintings.
+- ⚠ **No replay** (`porthliw_opening_done`): go into the gallery. The scene doesn't play, and the two guests left are looking at the paintings, with after-lines. Also after a reload.
 - Outside, Enys has gone from the harbour wall, and the gym door's note is gone (the gym itself comes next).
 - Every text box fits (one to three short pages, nothing running off the box).
 
