@@ -666,7 +666,7 @@
 
 #define FLAG_HIDDEN_ITEM_KERNIA_ROUTE1_POTION  0x264
 #define FLAG_HIDDEN_ITEM_KERNIA_ROUTE2_PEARL  0x265
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
+#define FLAG_HIDDEN_ITEM_PORTHLIW_SUPER_POTION  0x266
 #define FLAG_UNUSED_0x267  0x267 // Unused Flag
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
@@ -1223,7 +1223,7 @@
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
 #define FLAG_ITEM_CARN_KOWR_NUGGET                                  0x493
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
+#define FLAG_ITEM_PORTHLIW_STAR_PIECE                               0x494
 #define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag

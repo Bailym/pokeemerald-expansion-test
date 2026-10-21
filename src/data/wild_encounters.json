@@ -36772,6 +36772,65 @@
           }
         },
         {
+          "map": "MAP_PORTHLIW",
+          "base_label": "gPorthliw",
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 10,
+                "max_level": 12,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 12,
+                "species": "SPECIES_ARROKUDA"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_ARROKUDA"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_FINIZEN"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_WAILMER"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_ARROKUDA"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_BARRASKEWDA"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_CARN_KOWR",
           "base_label": "gCarnKowr",
           "land_mons": {

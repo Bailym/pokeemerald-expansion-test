@@ -31,8 +31,8 @@
 
 - Enys's painting studio: canvases, easels, and skylights, in the building at the top of the hill at the back of the town.
 - The walkway is a gull standing side-on, facing left, as Misty's pool is a seahorse (chosen from renders on 2026-10-20). In at the right foot, along the belly to the tail, back along the bird's back, then up the neck to Enys in the head. The folded wing is solid right up to the chest, so the belly only joins the back round the tail end. Straight corridors only, two tiles wide, with no puzzle. The beak and the left leg are short nooks (the gym guide stands in the leg).
-- Two of Enys's painting students, then Enys: TOMAS the Sketcher (Pidove and Starly Lv14) in the belly, and MORVEN the Painter (Ducklett Lv15) on the back. A gym guide in the left leg tips ROCK and ELECTRIC moves, and a Yamper from Route 2 (its Nuzzle is 4× against Wingull and Cramorant).
-- Enys's team: Wingull Lv15, Wattrel Lv15, and her ace Cramorant Lv16.
+- Two of Enys's painting students, then Enys: TOMAS the Sketcher (Pidove and Starly Lv14) in the belly, and MORVEN the Painter (Ducklett Lv14) on the back. A gym guide in the left leg tips ROCK and ELECTRIC moves, and a Yamper from Route 2 (its Nuzzle is 4× against Wingull and Cramorant).
+- Enys's team (rebalanced on 2026-10-21): Wingull Lv14, Wattrel Lv14, and her ace Cramorant Lv15, with no held item.
 - Reward: badge 2, the GULL BADGE, and TM Aerial Ace.
 
 ## The town
@@ -64,6 +64,8 @@
 - No warps yet: the cottages (16, 25), (33, 25), (8, 17), and (28, 15).
 - Enys paints at (29, 27), facing the harbour, until the opening night (`FLAG_HIDE_PORTHLIW_HARBOUR_ENYS`). Her walk-past triggers run down x 31, rows 21-28, the column every way in from Route 2 crosses. The gallery staff stand left of its door at (27, 26).
 - `Porthliw_Gallery`: the opening night's stage spot is (11, 7), where Sloane stands. The player watches from (11, 11), behind the crowd. Of the four guests, the beauty (10, 9) and the artist (8, 9) stay after the opening, moved to the paintings at (5, 2) and (3, 7) (in the closing fade, then by `ON_TRANSITION`).
+- Fishing (`MAP_PORTHLIW` in `src/data/wild_encounters.json`): the Old Rod gets Magikarp and Arrokuda (Lv10–12). The Good Rod adds Tentacool (Lv15–20), and the Super Rod has Finizen, Wailmer, Arrokuda, Tentacool (Lv25–30) and a rare Barraskewda (Lv30–35).
+- Items: a Star Piece ball in Kerensa's Garden at (10, 6), tucked under the left boulder, a sculptor's offcut (the strip above the boulders, rows 3–4, can't be reached) (`FLAG_ITEM_PORTHLIW_STAR_PIECE`, renamed from `FLAG_UNUSED_0x494`). A hidden Super Potion in the beach's sand at (37, 34) (`FLAG_HIDDEN_ITEM_PORTHLIW_SUPER_POTION`, renamed from `FLAG_UNUSED_0x266`). No breakable rock.
 - The Mart sells Poké Balls, Great Balls, Potions, Super Potions, Antidotes, Paralyze Heals, Awakenings, and Escape Ropes.
 
 ## Already built that the plan must hook into
