@@ -9523,6 +9523,46 @@
       "secondary_tileset": "gTileset_FortreeGym",
       "border_filepath": "data/layouts/Porthliw_Gym/border.bin",
       "blockdata_filepath": "data/layouts/Porthliw_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORTHLIW_FISHERMANS_HOUSE",
+      "name": "Porthliw_FishermansHouse_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Porthliw_FishermansHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Porthliw_FishermansHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORTHLIW_HOUSE",
+      "name": "Porthliw_House_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Porthliw_House/border.bin",
+      "blockdata_filepath": "data/layouts/Porthliw_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORTHLIW_HUERS_HOUSE",
+      "name": "Porthliw_HuersHouse_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Porthliw_HuersHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Porthliw_HuersHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORTHLIW_STUDIO",
+      "name": "Porthliw_Studio_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Porthliw_Studio/border.bin",
+      "blockdata_filepath": "data/layouts/Porthliw_Studio/map.bin"
     }
   ]
 }

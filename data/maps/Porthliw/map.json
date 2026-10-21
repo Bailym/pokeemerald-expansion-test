@@ -90,6 +90,34 @@
       "elevation": 0,
       "dest_map": "MAP_PORTHLIW_GYM",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_PORTHLIW_FISHERMANS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 33,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_PORTHLIW_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_PORTHLIW_HUERS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_PORTHLIW_STUDIO",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

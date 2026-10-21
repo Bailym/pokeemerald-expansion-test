@@ -1,0 +1,64 @@
+{
+  "id": "MAP_PORTHLIW_STUDIO",
+  "name": "Porthliw_Studio",
+  "layout": "LAYOUT_PORTHLIW_STUDIO",
+  "music": "MUS_SLATEPORT",
+  "region_map_section": "MAPSEC_PORTHLIW",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_PORTHLIW_STUDIO_PAINTER",
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "x": 7,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Porthliw_Studio_EventScript_Painter",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_PORTHLIW_STUDIO_SITTER",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "x": 9,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Porthliw_Studio_EventScript_Sitter",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_PORTHLIW",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_PORTHLIW",
+      "dest_warp_id": "7"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}
