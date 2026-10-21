@@ -26,6 +26,12 @@
 - Enys (Cornish for "island"): a young painter, sharp and outspoken, who paints the seabirds over the bay. Flying gym leader. Resists Lumen, and like the other resisting leaders, shares a suspicion about them after her battle.
 - Sloane: Lumen's Head of PR and Nova's manager (see `DESIGN.md`). First appearance, at the opening night, on her own (Nova has moved on after the lighthouse). Stand-in sprite: Teala.
 - Townsfolk: artists, fishermen, gallery staff, and visitors, with lore lines on the colony, the light, and how the town feels about Lumen's money.
+  - Outside (phase 5), each with an "after the opening night" line:
+    - A tourist with a pasty in the harbour square at (8, 29), watched by a gull. Later he's lost two pasties and will eat the next one in the Pokémon Center.
+    - A painter on the middle terrace at (14, 16): Lumen's free wine is still free. Later: when Enys stood up, you could've heard a brush drop.
+    - A birdwatcher on the beach at (38, 32): Enys paints the seabirds every morning. Later the flocks won't fly east over the moor, which hints at Enys's suspicion after her battle.
+    - A local on the harbour street at (13, 27), whose brother works for Lumen in Carnrudh: not everyone can live off paintings. Later: the light don't pay his brother's rent.
+    - The gallery staff, after the opening: the sponsor's banners came down first thing.
   - The fisherman (16, 25): a gull had his pasty off the harbour wall, bag and all. After the opening, Lumen's people stop buying fish off the quay. His daughter's ice cream went the same way.
   - The old couple (33, 25): she thinks Lumen paying for the opening is lovely, and he says nothing's ever free. He calls painters emmets. After the opening she cheers Enys on, and he says Lumen's money bought one night's smiles.
   - The huer (8, 17): Porthliw's last, who cried "HEVVA!" from the cliff when the pilchard shoals came in, fifty years ago. After the opening he backs Enys: the sea's changing. His granddaughter tells of the harbour light, and of Lumen wanting their logo on it.

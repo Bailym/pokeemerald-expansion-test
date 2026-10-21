@@ -152,8 +152,14 @@ Porthliw_EventScript_Enys::
 Porthliw_EventScript_GalleryStaff::
 	lock
 	faceplayer
+	goto_if_ge VAR_PORTHLIW_STATE, PORTHLIW_STATE_OPENING_DONE, Porthliw_EventScript_GalleryStaffAfterOpening
 	goto_if_ge VAR_PORTHLIW_STATE, PORTHLIW_STATE_MET_ENYS, Porthliw_EventScript_GalleryStaffLetsIn
 	msgbox Porthliw_Text_GalleryInvitationOnly, MSGBOX_DEFAULT
+	release
+	end
+
+Porthliw_EventScript_GalleryStaffAfterOpening::
+	msgbox Porthliw_Text_GalleryStaffAfterOpening, MSGBOX_DEFAULT
 	release
 	end
 
@@ -183,6 +189,42 @@ Porthliw_EventScript_SculptureGardenSign::
 @ The statue in the harbour square, read from below its base.
 Porthliw_EventScript_HarbourLight::
 	msgbox Porthliw_Text_HarbourLight, MSGBOX_SIGN
+	end
+
+Porthliw_EventScript_Tourist::
+	goto_if_ge VAR_PORTHLIW_STATE, PORTHLIW_STATE_OPENING_DONE, Porthliw_EventScript_TouristAfterOpening
+	msgbox Porthliw_Text_Tourist, MSGBOX_NPC
+	end
+
+Porthliw_EventScript_TouristAfterOpening::
+	msgbox Porthliw_Text_TouristAfterOpening, MSGBOX_NPC
+	end
+
+Porthliw_EventScript_Painter::
+	goto_if_ge VAR_PORTHLIW_STATE, PORTHLIW_STATE_OPENING_DONE, Porthliw_EventScript_PainterAfterOpening
+	msgbox Porthliw_Text_Painter, MSGBOX_NPC
+	end
+
+Porthliw_EventScript_PainterAfterOpening::
+	msgbox Porthliw_Text_PainterAfterOpening, MSGBOX_NPC
+	end
+
+Porthliw_EventScript_Birdwatcher::
+	goto_if_ge VAR_PORTHLIW_STATE, PORTHLIW_STATE_OPENING_DONE, Porthliw_EventScript_BirdwatcherAfterOpening
+	msgbox Porthliw_Text_Birdwatcher, MSGBOX_NPC
+	end
+
+Porthliw_EventScript_BirdwatcherAfterOpening::
+	msgbox Porthliw_Text_BirdwatcherAfterOpening, MSGBOX_NPC
+	end
+
+Porthliw_EventScript_Local::
+	goto_if_ge VAR_PORTHLIW_STATE, PORTHLIW_STATE_OPENING_DONE, Porthliw_EventScript_LocalAfterOpening
+	msgbox Porthliw_Text_Local, MSGBOX_NPC
+	end
+
+Porthliw_EventScript_LocalAfterOpening::
+	msgbox Porthliw_Text_LocalAfterOpening, MSGBOX_NPC
 	end
 
 Porthliw_Text_TownSign:
@@ -260,3 +302,56 @@ Porthliw_Text_GalleryInvitationOnly:
 Porthliw_Text_GalleryGoOnIn:
 	.string "Enys's guest? Go on in,\n"
 	.string "my 'ansum.$"
+
+Porthliw_Text_Tourist:
+	.string "Proper Cornish pasty, this!\n"
+	.string "Going to eat it right here.\p"
+	.string "Why's that gull looking at me\n"
+	.string "like that?$"
+
+Porthliw_Text_TouristAfterOpening:
+	.string "That was my second pasty today.\n"
+	.string "The gulls had both.\p"
+	.string "I'm eating the next one in the\n"
+	.string "POKéMON CENTER.$"
+
+Porthliw_Text_Painter:
+	.string "Lumen are paying for the opening,\n"
+	.string "so there's free wine.\p"
+	.string "Folk say they're buying us.\n"
+	.string "I say the wine's still free.$"
+
+Porthliw_Text_PainterAfterOpening:
+	.string "You were there, weren't you?\p"
+	.string "When Enys stood up, you could've\n"
+	.string "heard a brush drop.$"
+
+Porthliw_Text_Birdwatcher:
+	.string "Enys paints these seabirds every\n"
+	.string "morning from the harbour wall.\p"
+	.string "You'll not see more gulls in one\n"
+	.string "sky anywhere in Kernia.$"
+
+Porthliw_Text_BirdwatcherAfterOpening:
+	.string "Funny thing. The flocks won't fly\n"
+	.string "east over the moor any more.\p"
+	.string "They get halfway, then wheel\n"
+	.string "back west. Every time.$"
+
+Porthliw_Text_Local:
+	.string "My brother's got a Lumen job up\n"
+	.string "in Carnrudh. Sends money home.\p"
+	.string "Not everyone here can live off\n"
+	.string "paintings, you know.$"
+
+Porthliw_Text_LocalAfterOpening:
+	.string "Enys might be right about the\n"
+	.string "light. I'm not saying she isn't.\p"
+	.string "But the light don't pay my\n"
+	.string "brother's rent, does it?$"
+
+Porthliw_Text_GalleryStaffAfterOpening:
+	.string "The sponsor's banners came down\n"
+	.string "first thing this morning.\p"
+	.string "Go on in. The paintings are still\n"
+	.string "there, Lumen or no Lumen.$"
