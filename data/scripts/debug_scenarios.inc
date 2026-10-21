@@ -260,9 +260,9 @@ DebugScenario_PorthliwMetEnys::
 @ Just outside the gallery door, after the opening night, with the gym open up the hill.
 DebugScenario_PorthliwOpeningDone::
 	call DebugScenarioStory_PorthliwOpeningDone
-	givemon SPECIES_SPHEAL, 16
-	givemon SPECIES_ROOKIDEE, 15
-	givemon SPECIES_ROLYCOLY, 14
+	givemon SPECIES_SPHEAL, 17
+	givemon SPECIES_ROOKIDEE, 16
+	givemon SPECIES_ROLYCOLY, 16
 	additem ITEM_POTION, 5
 	additem ITEM_POKE_BALL, 5
 	setwarp MAP_PORTHLIW, 28, 26
@@ -271,10 +271,10 @@ DebugScenario_PorthliwOpeningDone::
 @ Inside Enys's studio, just in from the door, with both students and Enys still to fight.
 DebugScenario_PorthliwGym::
 	call DebugScenarioStory_PorthliwOpeningDone
-	givemon SPECIES_SPHEAL, 16
-	givemon SPECIES_ROOKIDEE, 15
-	givemon SPECIES_ROLYCOLY, 14
-	givemon SPECIES_YAMPER, 14
+	givemon SPECIES_SPHEAL, 17
+	givemon SPECIES_ROOKIDEE, 16
+	givemon SPECIES_ROLYCOLY, 16
+	givemon SPECIES_YAMPER, 16
 	additem ITEM_POTION, 5
 	additem ITEM_POKE_BALL, 5
 	setwarp MAP_PORTHLIW_GYM, 16, 20
@@ -283,10 +283,10 @@ DebugScenario_PorthliwGym::
 @ Outside the gym door with badge 2 and TM40.
 DebugScenario_PorthliwBadge2::
 	call DebugScenarioStory_PorthliwBadge2
-	givemon SPECIES_SPHEAL, 16
-	givemon SPECIES_ROOKIDEE, 15
-	givemon SPECIES_ROLYCOLY, 14
-	givemon SPECIES_YAMPER, 14
+	givemon SPECIES_SPHEAL, 17
+	givemon SPECIES_ROOKIDEE, 16
+	givemon SPECIES_ROLYCOLY, 16
+	givemon SPECIES_YAMPER, 16
 	additem ITEM_POTION, 5
 	additem ITEM_POKE_BALL, 5
 	setwarp MAP_PORTHLIW, 21, 7

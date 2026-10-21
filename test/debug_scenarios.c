@@ -34,7 +34,7 @@ static void ExpectStartsAt(u32 expectedMapGroup, u32 expectedMapNum, u32 expecte
 #define TANEK_ACE_LEVEL           12 // Torkoal.
 #define NOVA_ROUTE2_ACE_LEVEL     13 // Pawmi and Klink.
 #define PASCOE_ACE_LEVEL          13 // Tentacool, the beach's sailor.
-#define ENYS_ACE_LEVEL            16 // Cramorant, Porthliw's gym. Also stands in for the fight after it, still unbuilt.
+#define ENYS_ACE_LEVEL            15 // Cramorant, Porthliw's gym. Also stands in for the fight after it, still unbuilt.
 
 // A fitting team for the fight a scenario leads into: the strongest Pokémon is at the trainer's
 // ace level or up to two above, and nothing trails it by more than three.
