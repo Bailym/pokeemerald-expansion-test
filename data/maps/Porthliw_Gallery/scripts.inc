@@ -120,6 +120,54 @@ Porthliw_Gallery_EventScript_Artist::
 	msgbox Porthliw_Gallery_Text_Artist, MSGBOX_NPC
 	end
 
+Porthliw_Gallery_EventScript_Curator::
+	msgbox Porthliw_Gallery_Text_Curator, MSGBOX_NPC
+	end
+
+Porthliw_Gallery_EventScript_SchoolKid::
+	msgbox Porthliw_Gallery_Text_SchoolKid, MSGBOX_NPC
+	end
+
+Porthliw_Gallery_EventScript_HarbourPainting::
+	msgbox Porthliw_Gallery_Text_HarbourPainting, MSGBOX_SIGN
+	end
+
+Porthliw_Gallery_EventScript_GullsPainting::
+	msgbox Porthliw_Gallery_Text_GullsPainting, MSGBOX_SIGN
+	end
+
+Porthliw_Gallery_EventScript_LastShiftPainting::
+	msgbox Porthliw_Gallery_Text_LastShiftPainting, MSGBOX_SIGN
+	end
+
+Porthliw_Gallery_EventScript_PastyPainting::
+	msgbox Porthliw_Gallery_Text_PastyPainting, MSGBOX_SIGN
+	end
+
+Porthliw_Gallery_EventScript_LightPainting::
+	msgbox Porthliw_Gallery_Text_LightPainting, MSGBOX_SIGN
+	end
+
+Porthliw_Gallery_EventScript_KerensaPainting::
+	msgbox Porthliw_Gallery_Text_KerensaPainting, MSGBOX_SIGN
+	end
+
+Porthliw_Gallery_EventScript_BuccaPainting::
+	msgbox Porthliw_Gallery_Text_BuccaPainting, MSGBOX_SIGN
+	end
+
+Porthliw_Gallery_EventScript_CarvedSlab::
+	msgbox Porthliw_Gallery_Text_CarvedSlab, MSGBOX_SIGN
+	end
+
+Porthliw_Gallery_EventScript_BronzeGull::
+	msgbox Porthliw_Gallery_Text_BronzeGull, MSGBOX_SIGN
+	end
+
+Porthliw_Gallery_EventScript_HoledStone::
+	msgbox Porthliw_Gallery_Text_HoledStone, MSGBOX_SIGN
+	end
+
 Porthliw_Gallery_Text_SloaneWelcome:
 	.string "Good evening, Porthliw!\n"
 	.string "What a turnout.\p"
@@ -182,3 +230,85 @@ Porthliw_Gallery_Text_Artist:
 	.string "Enys is right about the light.\n"
 	.string "It's gone flatter out east since\l"
 	.string "the drilling started.$"
+
+Porthliw_Gallery_Text_Curator:
+	.string "Lumen paid for the frames, the\n"
+	.string "wine, and every poster in town.\p"
+	.string "Then Enys had her say, and the\n"
+	.string "posters came down by morning.\p"
+	.string "Don't bother me, my 'ansum.\n"
+	.string "Folk are looking at the paintings.$"
+
+Porthliw_Gallery_Text_SchoolKid:
+	.string "Miss says we've got to find a\n"
+	.string "POKéMON in every painting.\p"
+	.string "I found the gulls. And the one\n"
+	.string "that ate the pasty!$"
+
+Porthliw_Gallery_Text_HarbourPainting:
+	.string "“Evening, Porthliw Harbour.”\p"
+	.string "The old light glows over a bay\n"
+	.string "full of pilchard boats.\p"
+	.string "The card says the shoals haven't\n"
+	.string "come in like that for fifty years.$"
+
+Porthliw_Gallery_Text_GullsPainting:
+	.string "“Gulls Over the Bay,” by Enys.\p"
+	.string "Hundreds of seabirds wheel over\n"
+	.string "the water in a low, gold light.\p"
+	.string "The paint's thick enough to\n"
+	.string "feel the wind in it.$"
+
+Porthliw_Gallery_Text_LastShiftPainting:
+	.string "“Wheal Gwyn, the Last Shift.”\p"
+	.string "Tinners file out of an engine\n"
+	.string "house on a clifftop.\p"
+	.string "The young one at the back…\n"
+	.string "That's Grampy's grin, surely?$"
+
+Porthliw_Gallery_Text_PastyPainting:
+	.string "“Still Life with Pasty.”\p"
+	.string "A golden pasty on a harbour wall.\p"
+	.string "The card says it was painted fast.\n"
+	.string "A gull had the pasty before the\l"
+	.string "paint was dry.$"
+
+Porthliw_Gallery_Text_LightPainting:
+	.string "“West Light,” painter unknown.\p"
+	.string "Nothing but sea and sky, in a\n"
+	.string "hundred shades of blue.\p"
+	.string "Painters have come to Porthliw\n"
+	.string "for this light for a hundred years.$"
+
+Porthliw_Gallery_Text_KerensaPainting:
+	.string "“Kerensa in Her Garden.”\p"
+	.string "An old woman, chisel in hand,\n"
+	.string "among her stones up the hill.\p"
+	.string "She carved there for forty years,\n"
+	.string "the card says.$"
+
+Porthliw_Gallery_Text_BuccaPainting:
+	.string "“Bucca.” Just a shadow under\n"
+	.string "dark water.\p"
+	.string "Fishermen once left a fish on the\n"
+	.string "sand for Bucca, for a safe catch.\p"
+	.string "Miners swore it lived under the\n"
+	.string "ground instead. Nobody's painted\l"
+	.string "more than its shadow.$"
+
+Porthliw_Gallery_Text_CarvedSlab:
+	.string "A granite slab, carved by Kerensa.\p"
+	.string "Old tinners' words run across it:\n"
+	.string "“Leave a crust for the Knockers.”$"
+
+Porthliw_Gallery_Text_BronzeGull:
+	.string "A bronze gull by Kerensa.\p"
+	.string "It looks ready to snatch\n"
+	.string "something right out of your hand.$"
+
+Porthliw_Gallery_Text_HoledStone:
+	.string "A round stone with a hole\n"
+	.string "through the middle.\p"
+	.string "The card says children were once\n"
+	.string "passed through stones like this,\l"
+	.string "for luck.$"
